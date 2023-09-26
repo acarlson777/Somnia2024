@@ -16,6 +16,8 @@ public class Joystick : MonoBehaviour
     GameObject medium;
     GameObject small;
 
+    public float joystickConstant;
+
     void Start()
     {
         largest = GameObject.Find("largest");
@@ -36,23 +38,37 @@ public class Joystick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
+            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
             startHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
-            print("Clicked" + startHoldPos);
+            //print("Clicked" + startHoldPos);
+
+
+            Vector3 newNewMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            this.gameObject.transform.position = newNewMousePosition;
         } 
 
         if (Input.GetMouseButton(0))
         {   
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
+            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
             currentHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
-            print("Held" + currentHoldPos);
+            //print("Held" + currentHoldPos);
 
-            deltaHoldPos = startHoldPos - currentHoldPos;
-            mediumCircle.MoveRelativeToParent(-deltaHoldPos);
+            deltaHoldPos = currentHoldPos  - startHoldPos;
+
+            if (deltaHoldPos.magnitude > joystickConstant)
+            {
+                deltaHoldPos = deltaHoldPos.normalized * joystickConstant;
+            }
+
+            print(deltaHoldPos/joystickConstant);
+            JoystickInput.joystickDirection = deltaHoldPos / joystickConstant;
+
+            mediumCircle.MoveRelativeToParent(deltaHoldPos);
         }
 
         if (!Input.GetMouseButton(0))
         {
+            JoystickInput.joystickDirection = Vector3.zero;
             mediumCircle.MoveRelativeToParent(Vector3.zero);
         }
     }
