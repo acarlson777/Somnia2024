@@ -14,6 +14,7 @@ public class tempScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(JoystickInput.joystickDirection);
+        //rb.AddForce(JoystickInput.joystickDirection);
+        transform.Translate(JoystickInput.joystickDirection * 5 * Time.deltaTime);
     }
 }
