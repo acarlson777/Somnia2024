@@ -39,7 +39,6 @@ public class Joystick : MonoBehaviour
         {
             Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
             startHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
-            //print("Clicked" + startHoldPos);
 
             Vector3 newNewMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
             this.gameObject.transform.position = newNewMousePosition;
@@ -49,7 +48,6 @@ public class Joystick : MonoBehaviour
         {   
             Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
             currentHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
-            //print("Held" + currentHoldPos);
 
             deltaHoldPos = currentHoldPos  - startHoldPos;
 
