@@ -6,7 +6,7 @@ public class JoystickCircle : MonoBehaviour
 {
     public JoystickCircle parentCircle;
     public JoystickCircle childCircle;
-    public GameObject gameObject;
+    public new GameObject gameObject;
     public Vector3 joystickDirection;
 
     public void SetFamily(JoystickCircle parentCircle, JoystickCircle childCircle, GameObject gameObject)

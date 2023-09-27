@@ -38,26 +38,22 @@ public class Joystick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, sensitivity);
-            startHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
-
-            Vector3 newNewMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-            this.gameObject.transform.position = newNewMousePosition;
+            startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
+            
+            this.gameObject.transform.position = startHoldPos;
         } 
 
         if (Input.GetMouseButton(0))
         {   
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, sensitivity);
-            currentHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
+            currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
 
-            deltaHoldPos = currentHoldPos  - startHoldPos;
+            deltaHoldPos = currentHoldPos - startHoldPos;
 
             if (deltaHoldPos.magnitude > joystickConstant)
             {
                 deltaHoldPos = deltaHoldPos.normalized * joystickConstant;
             }
 
-            print(deltaHoldPos/joystickConstant);
             JoystickInput.joystickDirection = deltaHoldPos / joystickConstant;
 
             mediumCircle.MoveRelativeToParent(deltaHoldPos);
