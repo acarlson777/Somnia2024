@@ -33,7 +33,6 @@ public class Joystick : MonoBehaviour
         smallCircle.SetFamily(mediumCircle, null, small);
     }
 
-    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -41,7 +40,6 @@ public class Joystick : MonoBehaviour
             Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
             startHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
             //print("Clicked" + startHoldPos);
-
 
             Vector3 newNewMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
             this.gameObject.transform.position = newNewMousePosition;

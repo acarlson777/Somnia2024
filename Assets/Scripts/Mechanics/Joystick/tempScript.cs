@@ -6,6 +6,7 @@ public class tempScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
+    public float movementDirection = 5;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -15,6 +16,6 @@ public class tempScript : MonoBehaviour
     void Update()
     {
         //rb.AddForce(JoystickInput.joystickDirection);
-        transform.Translate(JoystickInput.joystickDirection * 5 * Time.deltaTime);
+        transform.Translate(JoystickInput.joystickDirection * movementDirection * Time.deltaTime);
     }
 }
