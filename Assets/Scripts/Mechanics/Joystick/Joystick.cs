@@ -17,6 +17,7 @@ public class Joystick : MonoBehaviour
     GameObject small;
 
     public float joystickConstant;
+    public int sensitivity;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class Joystick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
+            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, sensitivity);
             startHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
 
             Vector3 newNewMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
@@ -46,7 +47,7 @@ public class Joystick : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {   
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
+            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, sensitivity);
             currentHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
 
             deltaHoldPos = currentHoldPos  - startHoldPos;
