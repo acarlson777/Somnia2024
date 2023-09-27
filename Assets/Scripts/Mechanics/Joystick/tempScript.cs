@@ -16,6 +16,7 @@ public class tempScript : MonoBehaviour
     void Update()
     {
         //rb.AddForce(JoystickInput.joystickDirection);
+
         transform.Translate(JoystickInput.joystickDirection * movementDirection * Time.deltaTime);
     }
 }
