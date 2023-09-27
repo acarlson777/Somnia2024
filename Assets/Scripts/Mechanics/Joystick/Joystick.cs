@@ -17,6 +17,7 @@ public class Joystick : MonoBehaviour
     GameObject small;
 
     public float joystickConstant;
+    public int sensitivity;
 
     void Start()
     {
@@ -33,16 +34,14 @@ public class Joystick : MonoBehaviour
         smallCircle.SetFamily(mediumCircle, null, small);
     }
 
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
-            startHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
-            //print("Clicked" + startHoldPos);
-
-            Vector3 newNewMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
+            
+            this.gameObject.transform.position = startHoldPos;
+        } 
 
             // move joystick to tap on left half of screen
             if (newNewMousePosition.x <= Screen.width / 2)
@@ -52,10 +51,8 @@ public class Joystick : MonoBehaviour
         }
 
         if (Input.GetMouseButton(0))
-        {
-            Vector3 newMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50);
-            currentHoldPos = Camera.main.ScreenToWorldPoint(newMousePosition);
-            //print("Held" + currentHoldPos);
+        {   
+            currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
 
             deltaHoldPos = currentHoldPos - startHoldPos;
 
@@ -64,7 +61,6 @@ public class Joystick : MonoBehaviour
                 deltaHoldPos = deltaHoldPos.normalized * joystickConstant;
             }
 
-            print(deltaHoldPos / joystickConstant);
             JoystickInput.joystickDirection = deltaHoldPos / joystickConstant;
 
             //deltaHoldPos = Quaternion.Euler(0, -45, 0) * deltaHoldPos;
