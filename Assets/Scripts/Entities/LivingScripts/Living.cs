@@ -7,7 +7,8 @@ public class Living : Entities
     // Start is called before the first frame update
     void Start()
     {
-        
+        base.Start();
+        PrintName();
     }
 
     // Update is called once per frame
@@ -15,4 +16,5 @@ public class Living : Entities
     {
         
     }
+   
 }
