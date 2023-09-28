@@ -39,19 +39,12 @@ public class Joystick : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
-            
-            this.gameObject.transform.position = startHoldPos;
-        } 
 
-            // move joystick to tap on left half of screen
-            if (newNewMousePosition.x <= Screen.width / 2)
-            {
-                this.gameObject.transform.position = newNewMousePosition;
-            }
+            this.gameObject.transform.position = startHoldPos;
         }
 
         if (Input.GetMouseButton(0))
-        {   
+        {
             currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
 
             deltaHoldPos = currentHoldPos - startHoldPos;
