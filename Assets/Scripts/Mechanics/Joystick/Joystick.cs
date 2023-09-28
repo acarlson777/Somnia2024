@@ -55,21 +55,24 @@ public class Joystick : MonoBehaviour
             }
 
             JoystickInput.joystickDirection = deltaHoldPos / joystickConstant;
-            //JoystickInput.worldOrientedJoystickDirection =      
+            JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
             mediumCircle.MoveRelativeToParent(deltaHoldPos);
         }
 
         if (!Input.GetMouseButton(0))
         {
             JoystickInput.joystickDirection = Vector3.zero;
+            JoystickInput.worldOrientedJoystickDirection = Vector3.zero;
             mediumCircle.MoveRelativeToParent(Vector3.zero);
         }
     }
 
     private Vector3 RotateVector2ForVector3(Vector3 vector, float angle)
     {
-        //Mathf.Cos(45*Mathf.Deg2Rad) - Mathf.Sin(45*Mathf.Deg2Rad), Mathf.Sin(45*Mathf.Deg2Rad) + Mathf.Cos(45*Mathf.Deg2Rad), JoystickInput.joystickDirection.z);
-        //Rotate Vector3 using the vector2 formula and return the vector (ignoring the z axis);
-        return new Vector3();
+        return new Vector3(
+                           Mathf.Cos(angle*Mathf.Deg2Rad)*vector.x - Mathf.Sin(angle*Mathf.Deg2Rad)*vector.y,
+                           JoystickInput.joystickDirection.z,
+                           Mathf.Sin(angle*Mathf.Deg2Rad)*vector.x + Mathf.Cos(angle*Mathf.Deg2Rad)*vector.y
+                           );
     }
 }
