@@ -17,6 +17,6 @@ public class tempScript : MonoBehaviour
     {
         //rb.AddForce(JoystickInput.joystickDirection);
 
-        transform.Translate(JoystickInput.joystickDirection * movementDirection * Time.deltaTime);
+        transform.Translate(JoystickInput.worldOrientedJoystickDirection * movementDirection * Time.deltaTime);
     }
 }
