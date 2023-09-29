@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Living : Entities
 {
-    // Start is called before the first frame update
+    // Living Entities should have the following attributes:
+    // - Hitpoints
+    // - Speed
+    // - 
     void Start()
     {
-        base.Start();
-        PrintName();
+        Initialize();
+
     }
 
     // Update is called once per frame
