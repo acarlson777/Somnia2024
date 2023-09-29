@@ -17,8 +17,6 @@ public class CameraFollow : MonoBehaviour
     
     void Update()
     {
-        float z = transform.position.z;
-        transform.position = Vector3.MoveTowards(transform.position + offset, objectToFollow.transform.position, Time.deltaTime * convergeConstant);
-        transform.position = new Vector3(transform.position.x, transform.position.y, z);
+        transform.position = Vector3.MoveTowards(transform.position, objectToFollow.transform.position + offset, Time.deltaTime * convergeConstant);
     }
 }
