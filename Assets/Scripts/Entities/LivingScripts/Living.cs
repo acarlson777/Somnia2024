@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Living : Entities
+public class Living : EntityBase
 {
     // Living Entities should have the following attributes:
     // - Hitpoints
