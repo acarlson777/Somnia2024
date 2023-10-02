@@ -8,8 +8,9 @@ public class Living : EntityBase
     // - Hitpoints
     // - Speed
     // - 
-    void Start()
+    new void Start()
     {
+        
         Initialize();
 
     }

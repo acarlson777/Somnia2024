@@ -5,7 +5,7 @@ using UnityEngine;
 public class Monsters : Living
 {
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         
     }
