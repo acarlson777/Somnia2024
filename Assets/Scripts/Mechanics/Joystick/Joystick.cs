@@ -42,8 +42,6 @@ public class Joystick : MonoBehaviour
 #endif
 
         MobileJoystickLogic();
-
-
     }
 
     private Vector3 RotateVector2ForVector3(Vector3 vector, float angle)
