@@ -18,11 +18,12 @@ public class JoystickCircle : MonoBehaviour
 
     public void MoveRelativeToParent(Vector3 deltaDrag)
     {
-        gameObject.transform.position = parentCircle.gameObject.transform.position + deltaDrag;
 
+        gameObject.transform.position = parentCircle.gameObject.transform.position + deltaDrag;
         if (childCircle != null)
         {
             childCircle.MoveRelativeToParent(deltaDrag);
         }
     }
 }
+
