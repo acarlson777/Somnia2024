@@ -18,6 +18,7 @@ public class Joystick : MonoBehaviour
 
     public float joystickConstant;
     public int sensitivity;
+    public bool debug;
 
     void Start()
     {
@@ -37,10 +38,17 @@ public class Joystick : MonoBehaviour
     void Update()
     {
 #if UNITY_EDITOR
-        UnityEditorJoystickLogic();
+        if (debug)
+        {
+            MobileJoystickLogic();
+        }
+        else
+        {
+            UnityEditorJoystickLogic();
+        }
+        
         return;
 #endif
-
         MobileJoystickLogic();
     }
 
