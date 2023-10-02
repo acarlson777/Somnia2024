@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entities : MonoBehaviour
+public class EntityBase : MonoBehaviour
 {
     // Start is called before the first frame update
     // Each entity should be a:
@@ -17,11 +17,16 @@ public class Entities : MonoBehaviour
     private Vector3 accel;
     private Vector3 vel;
     private float entityMaxSpeed = 4f;
-
-
-    protected void Start()
+    protected void Initialize()
     {
-        rb = GetComponent<Rigidbody>();   
+        rb = GetComponent<Rigidbody>();
+
+    }
+
+
+    public void Start()
+    {
+        Initialize();
     }
     // Update is called once per frame
     void Update()
