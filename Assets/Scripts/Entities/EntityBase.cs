@@ -41,8 +41,17 @@ public class EntityBase : MonoBehaviour
     {
         vel += accel;
     }
+    string GetName()
+    {
+        return GetType().Name;
+    }
+
     protected void PrintName()
     {
         print(GetType().Name);
+    }
+    void Interact(EntityBase entity)
+    {
+        print(entity.GetName());
     }
 }

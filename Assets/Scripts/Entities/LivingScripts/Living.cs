@@ -7,7 +7,11 @@ public class Living : EntityBase
     // Living Entities should have the following attributes:
     // - Hitpoints
     // - Speed
-    // - 
+    // - Brain
+    public Brain brain;
+    public int health;
+    public float speed = 1.0f;
+
     new void Start()
     {
         
@@ -16,7 +20,7 @@ public class Living : EntityBase
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         
     }
