@@ -11,7 +11,7 @@ public class NonLiving : EntityBase
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         
     }

@@ -11,12 +11,12 @@ public class Player : Living
     }
 
     // Update is called once per frame
-    protected void Update()
+    new protected void Update()
     {
         base.Update();
         if (Input.GetKeyDown(KeyCode.I))
         {
-
+            
         }   
     }
 }

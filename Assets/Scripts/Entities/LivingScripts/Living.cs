@@ -8,7 +8,7 @@ public class Living : EntityBase
     // - Hitpoints
     // - Speed
     // - Brain
-    public Brain brain;
+    public Brain brain = new Brain();
     public int health;
     public float speed = 1.0f;
 
@@ -20,9 +20,13 @@ public class Living : EntityBase
     }
 
     // Update is called once per frame
-    protected void Update()
+    new protected void Update()
     {
-        
+        base.Update(); // Update normal entity stuff like physics and other stuff???
+
+        // update things that are specific to living entities like brain
+        brain.Update();
+
     }
    
 }
