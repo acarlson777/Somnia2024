@@ -11,7 +11,7 @@ public class NPCs : Living
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         
     }

@@ -29,7 +29,7 @@ public class EntityBase : MonoBehaviour
         Initialize();
     }
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (vel.magnitude > entityMaxSpeed)
         {
@@ -37,11 +37,11 @@ public class EntityBase : MonoBehaviour
         }
         rb.velocity = vel;
     }
-    void Move(Vector3 accel)
+    protected void Move(Vector3 accel)
     {
         vel += accel;
     }
-    string GetName()
+    public string GetName()
     {
         return GetType().Name;
     }
@@ -50,7 +50,7 @@ public class EntityBase : MonoBehaviour
     {
         print(GetType().Name);
     }
-    void Interact(EntityBase entity)
+    public void Interact(EntityBase entity)
     {
         print(entity.GetName());
     }
