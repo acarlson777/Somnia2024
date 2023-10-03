@@ -6,31 +6,42 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     public GameObject loadingScreen;
-    
 
-    // Start is called before the first frame update
+    [HideInInspector] public bool fadeOut;
+    [HideInInspector] public bool fadeIn = false;
+    public int loadingScreenLength = 3;
+
     void Start()
     {
-        loadingScreen.SetActive(false);
-        Invoke("SceneLoad", 3f); 
+        //temporary test load scene, in the future just call sceneload
+        Invoke("SceneLoad", 3); 
     }
 
-    // Update is called once per frame
     void Update()
     {
         DontDestroyOnLoad(gameObject);
     }
 
+    // on scene load, fade in the black screen then fade out once scene changes
     void SceneLoad()
     {
-        SceneManager.LoadScene("SceneChange2");
-        StartCoroutine(StartLoadingScreen());
+        StartCoroutine(FadeInLoading());
+        StartCoroutine(FadeOutLoading());
     }
 
-    IEnumerator StartLoadingScreen()
+    IEnumerator FadeInLoading()
     {
-        loadingScreen.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        loadingScreen.SetActive(false);
+        fadeIn = true;
+        yield return new WaitForSeconds(2);
+        fadeIn = false;
+        SceneManager.LoadScene("SceneChange2");
+    }
+
+
+    IEnumerator FadeOutLoading()
+    {
+        fadeOut = true;
+        yield return new WaitForSeconds(loadingScreenLength);
+        fadeOut = false;
     }
 }

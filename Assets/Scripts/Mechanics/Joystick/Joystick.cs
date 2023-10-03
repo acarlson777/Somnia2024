@@ -35,6 +35,11 @@ public class Joystick : MonoBehaviour
         smallCircle.SetFamily(mediumCircle, null, small);
     }
 
+    private void Awake()
+    {
+
+    }
+
     void Update()
     {
 #if UNITY_EDITOR
