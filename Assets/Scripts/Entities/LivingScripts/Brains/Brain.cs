@@ -29,7 +29,7 @@ public class Brain
             float shortestDistance = float.MaxValue;
             for (int i = 0; i < Colliding.Length;i++)
             {
-
+                if (!isEntity(Colliding[i].gameObject)) continue;
                 float dist = Distance(Colliding[i].gameObject.transform.position, SphereOfInteraction.center);
 
                 if (dist < shortestDistance)
@@ -41,7 +41,7 @@ public class Brain
 
             for (int i = 0; i < Colliding.Length; i++)
             {
-
+                if (!isEntity(Colliding[i].gameObject)) continue;
                 float dist = Distance(Colliding[i].gameObject.transform.position, SphereOfInteraction.center);
                 if (Colliding[i].gameObject == us) continue;
                 if (dist < shortestDistance)
@@ -62,9 +62,9 @@ public class Brain
     {
         
     }
-    public GameObject GetClosestEntity()
+    public Entity GetClosestEntity()
     {
-        return EntityFocus;
+        return EntityFocus.GetComponent<Entity>();
     }
     // Helper Functions
 
@@ -73,6 +73,12 @@ public class Brain
         return (a - b).magnitude;
     }
 
+    private bool isEntity(GameObject obj)
+    {
+        return obj.tag == "entity";
+        
+        
+    }
 
 }
     

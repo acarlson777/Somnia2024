@@ -11,12 +11,15 @@ public class Player : Living
     }
 
     // Update is called once per frame
-    new protected void Update()
+    new public void Update()
     {
         base.Update();
         if (Input.GetKeyDown(KeyCode.I))
         {
-            
+            if (brain.GetClosestEntity() != null)
+            {
+                brain.GetClosestEntity().Interact(this);
+            }
         }   
     }
 }

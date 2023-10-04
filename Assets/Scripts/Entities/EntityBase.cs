@@ -2,7 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityBase : MonoBehaviour
+public interface Entity 
+{
+    void Start();
+    void Update();
+    void Move(Vector3 accel);
+    string GetName();
+    void PrintName();
+    void Interact(Entity entity);
+}
+
+public class EntityBase : MonoBehaviour,Entity
 {
     // Start is called before the first frame update
     // Each entity should be a:
@@ -17,7 +27,7 @@ public class EntityBase : MonoBehaviour
     private Vector3 accel;
     private Vector3 vel;
     private float entityMaxSpeed = 4f;
-    protected void Initialize()
+    public void Initialize()
     {
         rb = GetComponent<Rigidbody>();
 
@@ -26,10 +36,11 @@ public class EntityBase : MonoBehaviour
 
     public void Start()
     {
+        tag = "entity";
         Initialize();
     }
     // Update is called once per frame
-    protected void Update()
+    public void Update()
     {
         if (vel.magnitude > entityMaxSpeed)
         {
@@ -37,7 +48,7 @@ public class EntityBase : MonoBehaviour
         }
         rb.velocity = vel;
     }
-    protected void Move(Vector3 accel)
+    public void Move(Vector3 accel)
     {
         vel += accel;
     }
@@ -46,12 +57,12 @@ public class EntityBase : MonoBehaviour
         return GetType().Name;
     }
 
-    protected void PrintName()
+    public void PrintName()
     {
         print(GetType().Name);
     }
-    public void Interact(EntityBase entity)
+    public void Interact(Entity entity)
     {
-        print(entity.GetName());
+        print("Interacted with me "+entity.GetName());
     }
 }
