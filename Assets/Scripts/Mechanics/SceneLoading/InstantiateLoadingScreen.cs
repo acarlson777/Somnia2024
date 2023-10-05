@@ -7,15 +7,20 @@ using UnityEditor;
 
 public class InstantiateLoadingScreen : MonoBehaviour
 {
-    public GameObject loadingScreenCanvasPrefab;
-    public GameObject loadingScreenPrefab;
-    public GameObject sceneLoaderPrefab;
+    // Cached references
+    [HideInInspector] public GameObject loadingScreenCanvasPrefab;
+    [HideInInspector] public GameObject loadingScreenPrefab;
+    [HideInInspector] public GameObject sceneLoaderPrefab;
+
+    // passes what scene to change to, can be changed via inspector per entity
+    public string sceneToLoad = "SceneChange2";
 
     Image loadingScreenImage;
     private Color originalImage;
 
     private void Awake()
     {
+        // cache references from assets folder
         loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
         sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
         loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
@@ -29,7 +34,8 @@ public class InstantiateLoadingScreen : MonoBehaviour
         }
     }
 
-    void LoadANewScene()
+    // Instantiates the loadingScreenCanvas, the loading screen, and the sceneloader which passes the sceneName to change to
+    public void LoadANewScene()
     {
         GameObject loadingScreenCanvas = Instantiate(loadingScreenCanvasPrefab);
         loadingScreenCanvas.name = "LoadingScreenCanvas";
@@ -39,9 +45,11 @@ public class InstantiateLoadingScreen : MonoBehaviour
 
         GameObject sceneLoader = Instantiate(sceneLoaderPrefab);
         sceneLoader.name = "Scene Loader";
+        sceneLoader.GetComponent<SceneLoader>().sceneToLoad = this.sceneToLoad;
 
         loadingScreenImage = GameObject.Find("LoadingScreen").GetComponent<Image>();
         originalImage = loadingScreenImage.color;
+        // sets loadingscreen opacity to zero to be able to fade in later
         loadingScreenImage.color = new Color(originalImage.r, originalImage.g, originalImage.b, 0);
     }
 }
