@@ -14,14 +14,13 @@ public interface Entity
 
 public class EntityBase : MonoBehaviour,Entity
 {
-    // Start is called before the first frame update
     // Each entity should be a:
     //    - World Collidable(aka. collider
     //    - Interactable via Interact button
     //    - Questions: how big should the interact collider be????
     private Rigidbody rb;
     public BoxCollider entityCollider;
-    public Collider interactCollider;
+    public SphereCollider interactCollider;
     public float BoxColliderThickness;
 
     private Vector3 accel;
@@ -42,16 +41,20 @@ public class EntityBase : MonoBehaviour,Entity
     // Update is called once per frame
     public void Update()
     {
-        if (vel.magnitude > entityMaxSpeed)
+        vel += accel;
+        if (vel.magnitude > entityMaxSpeed) // Can be optimized
         {
             vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
         }
+        vel.y = rb.velocity.y; // Overwrite the y axis since that should be taken care of by unity itself
         rb.velocity = vel;
     }
+
     public void Move(Vector3 accel)
     {
         vel += accel;
     }
+
     public string GetName()
     {
         return GetType().Name;
@@ -61,6 +64,7 @@ public class EntityBase : MonoBehaviour,Entity
     {
         print(GetType().Name);
     }
+
     public void Interact(Entity entity)
     {
         print("Interacted with me "+entity.GetName());

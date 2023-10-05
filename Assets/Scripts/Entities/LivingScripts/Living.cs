@@ -8,14 +8,17 @@ public class Living : EntityBase
     // - Hitpoints
     // - Speed
     // - Brain
+    // Brain wil manage:
+    // Entity behavior
     public Brain brain = new Brain();
+
     public int health;
     public float speed = 1.0f;
 
-    new void Start()
+    new protected void Start()
     {
-        
         Initialize();
+        brain.SphereOfInteraction = interactCollider;
 
     }
 

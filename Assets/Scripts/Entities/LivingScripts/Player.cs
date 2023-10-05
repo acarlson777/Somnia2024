@@ -7,7 +7,9 @@ public class Player : Living
     // Start is called before the first frame update
     new void Start()
     {
+        brain.SphereOfInteraction = interactCollider;
         base.Start();
+        
     }
 
     // Update is called once per frame
@@ -19,6 +21,10 @@ public class Player : Living
             if (brain.GetClosestEntity() != null)
             {
                 brain.GetClosestEntity().Interact(this);
+            }
+            else
+            {
+                print("No entity to interact with!");   
             }
         }   
     }

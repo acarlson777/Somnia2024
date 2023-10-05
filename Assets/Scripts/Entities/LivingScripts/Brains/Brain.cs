@@ -52,8 +52,8 @@ public class Brain
             }
         }
     }
-
-    public Vector2 GetDirectionVelocity()
+    // Should be called every frame to accelerate the entity
+    public Vector2 GetDirectionAcceleration()
     {
         return Vector2.zero;
     }
@@ -66,6 +66,12 @@ public class Brain
     {
         return EntityFocus.GetComponent<Entity>();
     }
+
+
+
+
+
+
     // Helper Functions
 
     private float Distance(Vector3 a, Vector3 b)
