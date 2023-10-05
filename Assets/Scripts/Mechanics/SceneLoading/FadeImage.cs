@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FadeImage : MonoBehaviour
 {
     public float fadeSpeed = 1f; 
-
+    
     private Image image;
     private Color originalImage;
 
@@ -15,6 +15,7 @@ public class FadeImage : MonoBehaviour
     private void Start()
     {
         sceneLoader = GameObject.Find("Scene Loader").GetComponent<SceneLoader>();
+
         image = GetComponent<Image>();
         originalImage = image.color;
         image.color = new Color(originalImage.r, originalImage.g, originalImage.b, 0);

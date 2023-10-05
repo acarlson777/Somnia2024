@@ -7,14 +7,19 @@ public class SceneLoader : MonoBehaviour
 {
     public GameObject loadingScreen;
 
+    Canvas loadingScreenCanvas;
+
+    FadeImage fadeImage;
+
     [HideInInspector] public bool fadeOut;
     [HideInInspector] public bool fadeIn = false;
     public int loadingScreenLength = 3;
 
     void Start()
     {
-        //temporary test load scene, in the future just call sceneload
-        Invoke("SceneLoad", 3); 
+        loadingScreenCanvas = GameObject.Find("LoadingScreenCanvas").GetComponent<Canvas>();
+        fadeImage = GameObject.Find("LoadingScreen").GetComponent<FadeImage>();
+        SceneLoad();
     }
 
     void Update()
@@ -43,5 +48,8 @@ public class SceneLoader : MonoBehaviour
         fadeOut = true;
         yield return new WaitForSeconds(loadingScreenLength);
         fadeOut = false;
+        yield return new WaitForSeconds(fadeImage.fadeSpeed);
+        Destroy(loadingScreenCanvas.gameObject);
+        Destroy(gameObject);
     }
 }
