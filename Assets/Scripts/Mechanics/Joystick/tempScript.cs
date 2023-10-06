@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class tempScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Translates the player's position (not by force) using the joystick world orientated value times a movementDirection constant
     private Rigidbody rb;
     public float movementDirection = 5;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //rb.AddForce(JoystickInput.joystickDirection);

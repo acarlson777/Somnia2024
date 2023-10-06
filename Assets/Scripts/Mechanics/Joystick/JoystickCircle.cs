@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class JoystickCircle : MonoBehaviour
 {
+    //A basic unit of the Joystick's circles:
+    // - Contains both a circle's parent and child circle (if possible)
+
     public JoystickCircle parentCircle;
     public JoystickCircle childCircle;
     public new GameObject gameObject;

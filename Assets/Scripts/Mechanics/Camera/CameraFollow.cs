@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    // CameraFollow converges on the player's position with an offset according to a constant
     public float convergeConstant;
     public Vector3 offset;
     public GameObject objectToFollow;
-
-
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {

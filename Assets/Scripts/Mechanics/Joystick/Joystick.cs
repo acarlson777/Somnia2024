@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Joystick : MonoBehaviour
 {
+    //Contains logic for Mobile and Unity Joysticks and sets the JoystickInput classes' values
+
     Vector3 startHoldPos;
     Vector3 currentHoldPos;
     Vector3 deltaHoldPos;
