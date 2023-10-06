@@ -20,8 +20,10 @@ public class SpriteRotationHandling : MonoBehaviour
     void Update()
     {
         acceleration = JoystickInput.joystickDirection;
-        print(acceleration);
-        animator.SetFloat("accelerationX", acceleration.x * accelerationConstant);
-        animator.SetFloat("accelerationZ", acceleration.y * accelerationConstant);
+        if (JoystickInput.joystickDirection != Vector3.zero)
+        {
+            animator.SetFloat("accelerationX", acceleration.x * accelerationConstant);
+            animator.SetFloat("accelerationZ", acceleration.y * accelerationConstant);
+        }
     }
 }
