@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
 
+// class to instantiate all loadingScreen prefabs and load the scene
 public class InstantiateLoadingScreen : MonoBehaviour
 {
     // Cached references

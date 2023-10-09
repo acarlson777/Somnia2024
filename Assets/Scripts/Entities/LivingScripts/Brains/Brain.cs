@@ -8,12 +8,24 @@ public class Brain
     public ArrayList EntitiesSeen = new ArrayList();
     private GameObject EntityFocus = null;
     //Should return a (x,y) within a unit circle which can be used by the Living Entities to accelerate
+    private int CollidingCount = 0;
 
+    public int getCollidingCount()
+    {
+        return CollidingCount;
+    }
+    public Vector3 SphereCenter()
+    {
+        return SphereOfInteraction.transform.position;
+    }
+    
 
     public void Update()
     {
+        ArrayList seen = new ArrayList();
         //Get a list of entities that the brain/entity can see
-        Collider[] Colliding = Physics.OverlapSphere(SphereOfInteraction.center, SphereOfInteraction.radius);
+        Collider[] Colliding = Physics.OverlapSphere(SphereCenter(), SphereOfInteraction.radius);
+        CollidingCount = 0;
         if (Colliding.Length == 0)
         {
             throw new System.Exception("No entities were detected... which is pretty bad");
@@ -24,12 +36,13 @@ public class Brain
         }
         else
         {
+
             // Iterate over the list of overlapped entities and get the closest one
             GameObject us = Colliding[0].gameObject;    
             float shortestDistance = float.MaxValue;
-            for (int i = 0; i < Colliding.Length;i++)
+            for (int i = 0; i < seen.Capacity;i++)
             {
-                if (!isEntity(Colliding[i].gameObject)) continue;
+                if (!isEntity(Colliding[i])) continue;
                 float dist = Distance(Colliding[i].gameObject.transform.position, SphereOfInteraction.center);
 
                 if (dist < shortestDistance)
@@ -41,7 +54,8 @@ public class Brain
 
             for (int i = 0; i < Colliding.Length; i++)
             {
-                if (!isEntity(Colliding[i].gameObject)) continue;
+                if (!isEntity(Colliding[i])) continue;
+                CollidingCount++;
                 float dist = Distance(Colliding[i].gameObject.transform.position, SphereOfInteraction.center);
                 if (Colliding[i].gameObject == us) continue;
                 if (dist < shortestDistance)
@@ -64,6 +78,7 @@ public class Brain
     }
     public Entity GetClosestEntity()
     {
+        if (EntityFocus == null) { return null; }
         return EntityFocus.GetComponent<Entity>();
     }
 
@@ -79,11 +94,13 @@ public class Brain
         return (a - b).magnitude;
     }
 
-    private bool isEntity(GameObject obj)
+    private bool isEntity(Collider col)
     {
-        return obj.tag == "entity";
-        
-        
+        return col is SphereCollider && col.gameObject.tag == "entity";
+    }
+    private bool id_eq(Object a, Object b)
+    {
+        return ReferenceEquals(a, b);
     }
 
 }

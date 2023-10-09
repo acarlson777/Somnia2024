@@ -29,6 +29,7 @@ public class Living : EntityBase
 
         // update things that are specific to living entities like brain
         brain.Update();
+        print(brain.getCollidingCount());
 
     }
    
