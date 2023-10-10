@@ -17,20 +17,27 @@ public interface Sound
     void SetVolume();
 
     float GetVolume();
+
+    void SetData(SoundBaseData soundBaseData);
 }
 
 public abstract class SoundBase : MonoBehaviour, Sound
 {
     public float volume;
     public AudioClip audioClip;
+    public bool loop;
     protected AudioSource audioSource;
 
     public abstract void SetVolume();
 
     public abstract float GetVolume();
 
-    void Start()
+    public void SetData(SoundBaseData soundBaseData)
     {
+        name = soundBaseData.name;
+        volume = soundBaseData.volume;
+        audioClip = soundBaseData.audioClip;
+        loop = soundBaseData.loop;
         audioSource.clip = audioClip;
     }
 
@@ -95,8 +102,6 @@ public class SFX : SoundBase
 
 public class Song : SoundBase
 {
-    public bool loop;
-
     public override void SetVolume()
     {
         audioSource.volume = volume * VolumeSliderValues.song;
@@ -106,4 +111,14 @@ public class Song : SoundBase
     {
         return volume * VolumeSliderValues.song;
     }
+}
+
+[System.Serializable]
+public class SoundBaseData
+{
+    public string type;
+    public string name;
+    public float volume;
+    public bool loop;
+    public AudioClip audioClip;
 }
