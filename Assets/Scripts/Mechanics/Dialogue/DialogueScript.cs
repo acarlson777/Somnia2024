@@ -8,17 +8,22 @@ public class DialogueScript : MonoBehaviour
 {
 
     public TextMeshProUGUI dialogueText;
+    GameObject joystick;
 
     public string[] numberOfLines;
     public float textSpeed;
-
     [SerializeField] int lineNumber;
 
     public bool isActive;
 
+    private void Awake()
+    {
+        joystick = GameObject.Find("Joystick");
+    }
 
     void Start()
     {
+        joystick.SetActive(false);
         isActive = true;
         dialogueText.text = "";
         StartText();
@@ -35,16 +40,17 @@ public class DialogueScript : MonoBehaviour
         StartCoroutine(WriteLine());
     }
 
+    // sets the dialogue box's text from another script on another gameobject, taking in the length in lines of dialogue and the actual text
     public void SetText(int arrayLength, string[] text)
     {
         numberOfLines = new string[arrayLength];
-        for (int line = 0; line <= numberOfLines.Length -1; line++)
+        for (int line = 0; line < numberOfLines.Length; line++)
         {
             numberOfLines[line] = text[line];
         }
     }
 
-
+    // progresses text box on click / autofills text on click
     void TextOnClick()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -63,8 +69,7 @@ public class DialogueScript : MonoBehaviour
 
     IEnumerator WriteLine()
     {
-        string currentLine = numberOfLines[lineNumber];
-        foreach (char letter  in currentLine)
+        foreach (char letter  in numberOfLines[lineNumber])
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
@@ -77,14 +82,13 @@ public class DialogueScript : MonoBehaviour
         dialogueText.text = string.Empty;
         if (lineNumber > numberOfLines.Length - 1)
         {
+            joystick.SetActive(true);
            isActive = false;
-           gameObject.SetActive(false);
+           Destroy(gameObject);
         }
         else
         {
             StartCoroutine(WriteLine());
         }
     }
-
-
 }
