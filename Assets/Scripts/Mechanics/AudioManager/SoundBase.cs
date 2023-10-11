@@ -31,7 +31,7 @@ public abstract class SoundBase : MonoBehaviour, Sound
     public float volume;
     public AudioClip audioClip;
     public bool loop;
-    protected AudioSource audioSource;
+    protected AudioSource audioSource = new AudioSource();
 
     public abstract void SetVolume();
 
