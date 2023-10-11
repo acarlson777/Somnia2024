@@ -19,10 +19,15 @@ public interface Sound
     float GetVolume();
 
     void SetData(SoundBaseData soundBaseData);
+
+    string GetName();
+
+    void SetName(string name);
 }
 
 public abstract class SoundBase : MonoBehaviour, Sound
 {
+    public string name;
     public float volume;
     public AudioClip audioClip;
     public bool loop;
@@ -34,7 +39,7 @@ public abstract class SoundBase : MonoBehaviour, Sound
 
     public void SetData(SoundBaseData soundBaseData)
     {
-        name = soundBaseData.name;
+        SetName(soundBaseData.name);
         volume = soundBaseData.volume;
         audioClip = soundBaseData.audioClip;
         loop = soundBaseData.loop;
@@ -85,18 +90,28 @@ public abstract class SoundBase : MonoBehaviour, Sound
             yield return null;
         }
     }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public void SetName(string name)
+    {
+        this.name = name;
+    }
 }
 
 public class SFX : SoundBase
 {
     public override void SetVolume()
     {
-        audioSource.volume = volume * VolumeSliderValues.sfx;
+        audioSource.volume = volume * VolumeSliderValues.sfxVolume;
     }
 
     public override float GetVolume()
     {
-        return volume * VolumeSliderValues.sfx;
+        return volume * VolumeSliderValues.sfxVolume;
     }
 }
 
@@ -104,12 +119,12 @@ public class Song : SoundBase
 {
     public override void SetVolume()
     {
-        audioSource.volume = volume * VolumeSliderValues.song;
+        audioSource.volume = volume * VolumeSliderValues.songVolume;
     }
 
     public override float GetVolume()
     {
-        return volume * VolumeSliderValues.song;
+        return volume * VolumeSliderValues.songVolume;
     }
 }
 
