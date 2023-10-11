@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -25,6 +26,27 @@ public class DialogueScript : MonoBehaviour
 
     void Update()
     {
+        TextOnClick();
+    }
+
+    void StartText()
+    {
+        lineNumber = 0;
+        StartCoroutine(WriteLine());
+    }
+
+    public void SetText(int arrayLength, string[] text)
+    {
+        numberOfLines = new string[arrayLength];
+        for (int line = 0; line <= numberOfLines.Length -1; line++)
+        {
+            numberOfLines[line] = text[line];
+        }
+    }
+
+
+    void TextOnClick()
+    {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (dialogueText.text != numberOfLines[lineNumber])
@@ -37,12 +59,6 @@ public class DialogueScript : MonoBehaviour
                 WriteNextLine();
             }
         }
-    }
-
-    void StartText()
-    {
-        lineNumber = 0;
-        StartCoroutine(WriteLine());
     }
 
     IEnumerator WriteLine()
@@ -59,13 +75,15 @@ public class DialogueScript : MonoBehaviour
     {
         lineNumber++;
         dialogueText.text = string.Empty;
-        StartCoroutine(WriteLine());
         if (lineNumber > numberOfLines.Length - 1)
         {
-            isActive = false;
-            gameObject.SetActive(false);
+           isActive = false;
+           gameObject.SetActive(false);
         }
-        
+        else
+        {
+            StartCoroutine(WriteLine());
+        }
     }
 
 
