@@ -67,6 +67,6 @@ public class EntityBase : MonoBehaviour,Entity
 
     public void Interact(Entity entity)
     {
-        print("Interacted with me "+entity.GetName());
+        print(entity.GetName() + " interacted with me... a " + GetName());
     }
 }

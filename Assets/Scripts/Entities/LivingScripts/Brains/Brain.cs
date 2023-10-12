@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Collections.Generic;
 
 public class Brain
 {
@@ -9,6 +11,7 @@ public class Brain
     private GameObject EntityFocus = null;
     //Should return a (x,y) within a unit circle which can be used by the Living Entities to accelerate
     private int CollidingCount = 0;
+
 
     public int getCollidingCount()
     {
@@ -20,50 +23,33 @@ public class Brain
     }
     
 
+
     public void Update()
     {
-        ArrayList seen = new ArrayList();
+         List<Collider> touching = new List<Collider>();
         //Get a list of entities that the brain/entity can see
         Collider[] Colliding = Physics.OverlapSphere(SphereCenter(), SphereOfInteraction.radius);
-        CollidingCount = 0;
-        if (Colliding.Length == 0)
+        // Cu ll all the other spheres of interactions
+        foreach (Collider collider in Colliding)
         {
-            throw new System.Exception("No entities were detected... which is pretty bad");
+            if (isEntity(collider)) { touching.Add(collider); }
         }
-        else if (Colliding.Length == 1)
+        CollidingCount = touching.Count - 1;
+        if (touching.Capacity == 0)
         {
+            throw new Exception("No entities were detected... which is pretty bad");
+        }
+        else if (touching.Capacity < 2)
+        {
+            // If we are only detecting ourselves and our spherecollider
             EntityFocus = null;
         }
         else
         {
-
+            Array.Sort<Collider>(touching.ToArray(),CompareDistances);
+           
             // Iterate over the list of overlapped entities and get the closest one
-            GameObject us = Colliding[0].gameObject;    
-            float shortestDistance = float.MaxValue;
-            for (int i = 0; i < seen.Capacity;i++)
-            {
-                if (!isEntity(Colliding[i])) continue;
-                float dist = Distance(Colliding[i].gameObject.transform.position, SphereOfInteraction.center);
-
-                if (dist < shortestDistance)
-                {
-                    shortestDistance = dist;
-                    us = Colliding[i].gameObject;
-                }
-            }
-
-            for (int i = 0; i < Colliding.Length; i++)
-            {
-                if (!isEntity(Colliding[i])) continue;
-                CollidingCount++;
-                float dist = Distance(Colliding[i].gameObject.transform.position, SphereOfInteraction.center);
-                if (Colliding[i].gameObject == us) continue;
-                if (dist < shortestDistance)
-                {
-                    shortestDistance = dist;
-                    EntityFocus = Colliding[i].gameObject;
-                }
-            }
+            EntityFocus = ((BoxCollider)touching[0]).gameObject;
         }
     }
     // Should be called every frame to accelerate the entity
@@ -96,11 +82,15 @@ public class Brain
 
     private bool isEntity(Collider col)
     {
-        return col is SphereCollider && col.gameObject.tag == "entity";
+        return col is BoxCollider && col.gameObject.tag == "entity";
     }
-    private bool id_eq(Object a, Object b)
+    private bool id_eq(System.Object a, System.Object b)
     {
         return ReferenceEquals(a, b);
+    }
+    Int32 CompareDistances(Collider x, Collider y)
+    {
+        return Mathf.RoundToInt(Distance(x.gameObject.transform.position, SphereOfInteraction.center) - Distance(y.gameObject.transform.position, SphereOfInteraction.center));
     }
 
 }

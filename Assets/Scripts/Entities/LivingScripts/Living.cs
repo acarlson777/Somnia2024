@@ -15,10 +15,12 @@ public class Living : EntityBase
     public int health;
     public float speed = 1.0f;
 
-    new protected void Start()
+    new public void Start()
     {
+        print("Starting from Living");
         Initialize();
         brain.SphereOfInteraction = interactCollider;
+
 
     }
 
@@ -29,8 +31,11 @@ public class Living : EntityBase
 
         // update things that are specific to living entities like brain
         brain.Update();
-        print(brain.getCollidingCount());
 
     }
-   
+    new public void Interact(Entity other)
+    {
+        print(other.GetName() + " interacted with me... a " + GetName());
+    }
+
 }
