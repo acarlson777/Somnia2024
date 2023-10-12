@@ -4,13 +4,13 @@ using System.Collections;
 
 public interface Sound
 {
-    string name { get; set; }
+    public string soundName { get => soundName; set => soundName = value; }
 
-    void Play();
+    void Play(GameObject compiler);
 
     void Stop();
 
-    void FadeIn(float seconds);
+    void FadeIn(float seconds, GameObject compiler);
 
     void FadeOut(float seconds);
 
@@ -27,14 +27,15 @@ public interface Sound
 
 public abstract class SoundBase : MonoBehaviour, Sound
 {
-    public string name;
+    public string soundName;
+
     public float volume;
     public AudioClip audioClip;
     public bool loop;
-    protected AudioSource audioSource = new AudioSource();
+    protected AudioSource audioSource = null;
+
 
     public abstract void SetVolume();
-
     public abstract float GetVolume();
 
     public void SetData(SoundBaseData soundBaseData)
@@ -43,11 +44,18 @@ public abstract class SoundBase : MonoBehaviour, Sound
         volume = soundBaseData.volume;
         audioClip = soundBaseData.audioClip;
         loop = soundBaseData.loop;
+    }
+
+    protected void CreateAudioSource(GameObject caller)
+    {
+        audioSource = caller.AddComponent<AudioSource>();
+        audioSource.loop = loop;
         audioSource.clip = audioClip;
     }
 
-    public void Play()
+    public void Play(GameObject caller)
     {
+        if (audioSource == null) { CreateAudioSource(caller); }
         SetVolume();
         audioSource.Play();
     }
@@ -57,14 +65,16 @@ public abstract class SoundBase : MonoBehaviour, Sound
         audioSource.Stop();
     }
 
-    public void FadeIn(float seconds)
+    public void FadeIn(float seconds, GameObject caller)
     {
-        StartCoroutine(FadeOutRoutine(seconds));
+        if (audioSource == null) { CreateAudioSource(caller); }
+        //FADE IN NEEDS TO PLAY SOUND BEFORE INCREASING VOLUME TO FADE IT IN
+        StartCoroutine(FadeInRoutine(seconds));
     }
     
     public void FadeOut(float seconds)
     {
-        StartCoroutine(FadeInRoutine(seconds));
+        StartCoroutine(FadeOutRoutine(seconds));
     }
 
     IEnumerator FadeInRoutine(float seconds)
@@ -93,20 +103,20 @@ public abstract class SoundBase : MonoBehaviour, Sound
 
     public string GetName()
     {
-        return name;
+        return soundName;
     }
 
-    public void SetName(string name)
+    public void SetName(string soundName)
     {
-        this.name = name;
+        this.soundName = soundName;
     }
 }
 
-public class SFX : SoundBase
+public class Sfx : SoundBase
 {
     public override void SetVolume()
     {
-        audioSource.volume = volume * VolumeSliderValues.sfxVolume;
+        if (audioSource != null) { audioSource.volume = volume * VolumeSliderValues.sfxVolume; }
     }
 
     public override float GetVolume()
@@ -119,7 +129,7 @@ public class Song : SoundBase
 {
     public override void SetVolume()
     {
-        audioSource.volume = volume * VolumeSliderValues.songVolume;
+        if (audioSource != null) { audioSource.volume = volume * VolumeSliderValues.songVolume; }
     }
 
     public override float GetVolume()

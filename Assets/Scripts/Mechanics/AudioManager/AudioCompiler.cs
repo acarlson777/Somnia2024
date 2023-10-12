@@ -15,13 +15,13 @@ public class AudioCompiler : MonoBehaviour
         {
             if (sound.type == "sfx")
             {
-                SFX sfx = new SFX();
+                Sfx sfx = gameObject.AddComponent<Sfx>();
                 sfx.SetData(sound);
                 sounds.Add(sfx);
             }
             else if (sound.type == "song")
             {
-                Song song = new Song();
+                Song song = gameObject.AddComponent<Song>();
                 song.SetData(sound);
                 sounds.Add(song);
             }
