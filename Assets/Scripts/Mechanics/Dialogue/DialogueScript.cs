@@ -18,12 +18,18 @@ public class DialogueScript : MonoBehaviour
 
     private void Awake()
     {
-        joystick = GameObject.Find("Joystick");
+        if (GameObject.Find("Joystick") != null)
+        {
+            joystick = GameObject.Find("Joystick");
+        }
     }
 
     void Start()
     {
-        joystick.SetActive(false);
+        if (GameObject.Find("Joystick") != null)
+        {
+            joystick.SetActive(false);
+        }
         isActive = true;
         dialogueText.text = "";
         StartText();
@@ -82,7 +88,10 @@ public class DialogueScript : MonoBehaviour
         dialogueText.text = string.Empty;
         if (lineNumber > numberOfLines.Length - 1)
         {
-            joystick.SetActive(true);
+            if (GameObject.Find("Joystick") != null)
+            {
+                joystick.SetActive(true);
+            }
            isActive = false;
            Destroy(gameObject);
         }
