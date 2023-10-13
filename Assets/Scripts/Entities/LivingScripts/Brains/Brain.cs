@@ -35,11 +35,11 @@ public class Brain
             if (isEntity(collider)) { touching.Add(collider); }
         }
         CollidingCount = touching.Count - 1;
-        if (touching.Capacity == 0)
+        if (touching.Count == 0)
         {
-            throw new Exception("No entities were detected... which is pretty bad");
+            throw new Exception("No entities were detected... which is pretty bad, check if entities are tagged as \"entity\" ");
         }
-        else if (touching.Capacity < 2)
+        else if (touching.Count == 1)
         {
             // If we are only detecting ourselves and our spherecollider
             EntityFocus = null;
@@ -49,7 +49,7 @@ public class Brain
             Array.Sort<Collider>(touching.ToArray(),CompareDistances);
            
             // Iterate over the list of overlapped entities and get the closest one
-            EntityFocus = ((BoxCollider)touching[0]).gameObject;
+            EntityFocus = ((BoxCollider)touching[1]).gameObject;
         }
     }
     // Should be called every frame to accelerate the entity

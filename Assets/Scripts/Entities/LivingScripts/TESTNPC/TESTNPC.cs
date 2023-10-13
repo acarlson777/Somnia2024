@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TESTNPC : Living,Entity
+public class TESTNPC : NPCs,Entity
 {
 
     SetDialogueBoxText dialogue;
@@ -20,7 +20,6 @@ public class TESTNPC : Living,Entity
     }
     new public void Interact(Entity entity) // Interact is a method which can be overridden but does not need to call the base version
     {
-        print("interacting");
         dialogue.Talk();
     }
 }

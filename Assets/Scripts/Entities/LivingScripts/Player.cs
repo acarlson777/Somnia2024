@@ -5,15 +5,14 @@ using UnityEngine;
 public class Player : Living
 {
     // Start is called before the first frame update
-    new void Start()
+    new public void Start()
     {
-        brain.SphereOfInteraction = interactCollider;
         base.Start();
         
     }
 
     // Update is called once per frame
-    new public void Update()
+    new protected void Update()
     {
         base.Update();
         if (Input.GetKeyDown(KeyCode.I))
