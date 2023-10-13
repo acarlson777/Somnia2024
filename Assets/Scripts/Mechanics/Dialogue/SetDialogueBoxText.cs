@@ -25,7 +25,11 @@ public class SetDialogueBoxText : MonoBehaviour
 
     public void Talk()
     {
-        GameObject dialogueBox = Instantiate(dialogueBoxPrefab, canvas.transform);
-        dialogueBox.GetComponent<DialogueScript>().SetText(lines.Length, lines);
+        if (GameObject.Find("DialogueBox") == false)
+        {
+            GameObject dialogueBox = Instantiate(dialogueBoxPrefab, canvas.transform);
+            dialogueBox.name = "DialogueBox";
+            dialogueBox.GetComponent<DialogueScript>().SetText(lines.Length, lines);
+        }
     }
 }
