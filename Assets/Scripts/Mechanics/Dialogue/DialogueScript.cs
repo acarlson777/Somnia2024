@@ -26,7 +26,7 @@ public class DialogueScript : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.Find("Joystick") != null)
+        if (joystick != null)
         {
             joystick.SetActive(false);
         }
@@ -88,7 +88,7 @@ public class DialogueScript : MonoBehaviour
         dialogueText.text = string.Empty;
         if (lineNumber > numberOfLines.Length - 1)
         {
-            if (GameObject.Find("Joystick") != null)
+            if (joystick != null)
             {
                 joystick.SetActive(true);
             }
