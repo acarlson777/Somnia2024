@@ -80,6 +80,7 @@ public abstract class SoundBase : MonoBehaviour, Sound
 
     IEnumerator FadeInRoutine(float seconds)
     {
+        //float targetVolume = GetVolume();
         float totalTime = 0;
         while (totalTime < seconds)
         {
@@ -92,6 +93,7 @@ public abstract class SoundBase : MonoBehaviour, Sound
 
     IEnumerator FadeOutRoutine(float seconds)
     {
+        //float targetVolume = GetVolume();
         float totalTime = 0;
         while (totalTime < seconds)
         {

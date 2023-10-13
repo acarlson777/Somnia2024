@@ -11,6 +11,9 @@ public class VolumeSliderLogic : MonoBehaviour
     {
         slider = GetComponent<Slider>();
 
+        VolumeSliderValues.sfxVolume = PlayerPrefs.GetFloat("sfxVolume");
+        VolumeSliderValues.songVolume = PlayerPrefs.GetFloat("songVolume");
+
         if (type == "sfx")
         {
             slider.value = VolumeSliderValues.sfxVolume;
