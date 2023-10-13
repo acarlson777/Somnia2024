@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    [SerializeField] Transform transform;
     [SerializeField] Rigidbody rb;
     private Vector3 input;
     private float speed = 5f;
