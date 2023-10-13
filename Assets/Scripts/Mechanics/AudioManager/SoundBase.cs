@@ -68,7 +68,8 @@ public abstract class SoundBase : MonoBehaviour, Sound
     public void FadeIn(float seconds, GameObject caller)
     {
         if (audioSource == null) { CreateAudioSource(caller); }
-        //FADE IN NEEDS TO PLAY SOUND BEFORE INCREASING VOLUME TO FADE IT IN
+        audioSource.volume = 0;
+        audioSource.Play();
         StartCoroutine(FadeInRoutine(seconds));
     }
     
@@ -99,6 +100,7 @@ public abstract class SoundBase : MonoBehaviour, Sound
             totalTime += Time.deltaTime;
             yield return null;
         }
+        Stop();
     }
 
     public string GetName()

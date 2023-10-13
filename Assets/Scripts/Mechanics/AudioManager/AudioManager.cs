@@ -11,7 +11,7 @@ public static class AudioManager
         DictionaryOfSounds.soundsDictionary[name].Play(caller);
     }
 
-    public static void PlayStop(string name)
+    public static void StopSound(string name)
     {
         DictionaryOfSounds.soundsDictionary[name].Stop();
     }
