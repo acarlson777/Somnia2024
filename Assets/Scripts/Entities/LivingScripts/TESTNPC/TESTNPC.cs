@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TESTNPC : NPCs,Entity
 {
-
+    string[] diaglogues;
+    int timesInteracted = 0;
     SetDialogueBoxText dialogue;
 
     public string[] futureDialogue;
-    int dialogueLine = 0;
+    bool interactedWith = false;
     // Start is called before the first frame update
     new void Start()
     {
@@ -23,22 +24,32 @@ public class TESTNPC : NPCs,Entity
     }
     new public void Interact(Entity entity) // Interact is a method which can be overridden but does not need to call the base version
     {
-        //dialogue.lines[0] = futureDialogue[dialogueLine];
-        if (dialogue.lines.Length > 0)
+        //PopDialogue(dialogues[timesInteracted]);
+        if (interactedWith == false)
         {
             print("interacting");
             dialogue.Talk();
-            if (futureDialogue.Length == 0)
+            if (futureDialogue.Length > 0)
+            {
+                interactedWith = true;
+                timesInteracted++;
+            }
+            else
             {
                 return;
             }
-            if (futureDialogue.Length > 0)
-            {
-                dialogue.lines = new string[futureDialogue.Length];
-            }
         }
-        
-
-        //dialogueLine++;
+        if (timesInteracted == 1)
+        {
+            dialogue.lines = futureDialogue;
+            dialogue.Talk();
+            timesInteracted++;
+        }
+        if (timesInteracted == 2)
+        {
+            dialogue.lines = new string[1];
+            dialogue.lines[0] = "Hello";
+            dialogue.Talk();
+        }
     }
 }
