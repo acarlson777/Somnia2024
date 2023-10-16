@@ -35,7 +35,7 @@ public class EntityBase : MonoBehaviour,Entity
 
     public void Start()
     {
-        tag = "entity";
+        tag = "entity"; 
         Initialize();
     }
     // Update is called once per frame
