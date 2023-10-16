@@ -6,11 +6,18 @@ using System.Collections.Generic;
 public class Brain
 {
     // The Entities should be responsible for sending the data to the brain.
-    public SphereCollider SphereOfInteraction;
+    private SphereCollider SphereOfInteraction;
     public ArrayList EntitiesSeen = new ArrayList();
     private GameObject EntityFocus = null;
+    private Entity entity = null;
     //Should return a (x,y) within a unit circle which can be used by the Living Entities to accelerate
     private int CollidingCount = 0;
+
+    public Brain(Entity entity, SphereCollider interactCollider)
+    {
+        this.entity = entity;
+        this.SphereOfInteraction = interactCollider;
+    }
 
 
     public int getCollidingCount()
@@ -32,14 +39,11 @@ public class Brain
         // Cu ll all the other spheres of interactions
         foreach (Collider collider in Colliding)
         {
-            if (isEntity(collider)) { touching.Add(collider); }
+            if (isEntity(collider) && !isSelf(collider) ) { touching.Add(collider); }
         }
         CollidingCount = touching.Count - 1;
+
         if (touching.Count == 0)
-        {
-            throw new Exception("No entities were detected... which is pretty bad, check if entities are tagged as \"entity\" ");
-        }
-        else if (touching.Count == 1)
         {
             // If we are only detecting ourselves and our spherecollider
             EntityFocus = null;
@@ -49,7 +53,7 @@ public class Brain
             Array.Sort<Collider>(touching.ToArray(),CompareDistances);
            
             // Iterate over the list of overlapped entities and get the closest one
-            EntityFocus = ((BoxCollider)touching[1]).gameObject;
+            EntityFocus = ((BoxCollider)touching[0]).gameObject;
         }
     }
     // Should be called every frame to accelerate the entity
@@ -84,9 +88,10 @@ public class Brain
     {
         return col is BoxCollider && col.gameObject.tag == "entity";
     }
-    private bool id_eq(System.Object a, System.Object b)
+
+    private bool isSelf(Collider col)
     {
-        return ReferenceEquals(a, b);
+        return ReferenceEquals(col.gameObject.GetComponent<Entity>(), entity);
     }
     Int32 CompareDistances(Collider x, Collider y)
     {

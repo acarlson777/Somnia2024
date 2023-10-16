@@ -10,7 +10,7 @@ public class Living : EntityBase
     // - Brain
     // Brain wil manage:
     // Entity behavior
-    public Brain brain = new Brain();
+    public Brain brain;
 
     public int health;
     public float speed = 1.0f;
@@ -18,8 +18,11 @@ public class Living : EntityBase
     new public void Start()
     {
         print("Starting from Living");
+
+
+        brain = new Brain(this,interactCollider);
+        print("Made Brain");
         Initialize();
-        brain.SphereOfInteraction = interactCollider;
 
 
     }
