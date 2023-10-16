@@ -42,11 +42,8 @@ public class Brain
             if (isEntity(collider) && !isSelf(collider) ) { touching.Add(collider); }
         }
         CollidingCount = touching.Count - 1;
+
         if (touching.Count == 0)
-        {
-            throw new Exception("No entities were detected... which is pretty bad, check if entities are tagged as \"entity\" ");
-        }
-        else if (touching.Count == 1)
         {
             // If we are only detecting ourselves and our spherecollider
             EntityFocus = null;
@@ -94,7 +91,7 @@ public class Brain
 
     private bool isSelf(Collider col)
     {
-        return ReferenceEquals(col.gameObject, entity);
+        return ReferenceEquals(col.gameObject.GetComponent<Entity>(), entity);
     }
     Int32 CompareDistances(Collider x, Collider y)
     {
