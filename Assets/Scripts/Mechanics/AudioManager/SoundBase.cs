@@ -6,11 +6,11 @@ public interface Sound
 {
     public string soundName { get => soundName; set => soundName = value; }
 
-    void Play(GameObject compiler);
+    void Play(GameObject caller);
 
     void Stop();
 
-    void FadeIn(float seconds, GameObject compiler);
+    void FadeIn(float seconds, GameObject caller);
 
     void FadeOut(float seconds);
 
@@ -23,6 +23,12 @@ public interface Sound
     string GetName();
 
     void SetName(string name);
+
+    bool IsPlaying();
+
+    void Pause();
+
+    void Unpause();
 }
 
 public abstract class SoundBase : MonoBehaviour, Sound
@@ -113,6 +119,21 @@ public abstract class SoundBase : MonoBehaviour, Sound
     public void SetName(string soundName)
     {
         this.soundName = soundName;
+    }
+
+    public bool IsPlaying()
+    {
+        return audioSource.isPlaying;
+    }
+
+    public void Pause()
+    {
+        audioSource.Pause();
+    }
+
+    public void Unpause()
+    {
+        audioSource.UnPause();
     }
 }
 

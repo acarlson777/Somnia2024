@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Living
+public class Player : Living, Entity
 {
     // Start is called before the first frame update
     new public void Start()
@@ -26,5 +26,9 @@ public class Player : Living
                 print("No entity to interact with!");   
             }
         }   
+    }
+    new public void Interact(Entity entity)
+    { 
+        base.Interact(this);
     }
 }
