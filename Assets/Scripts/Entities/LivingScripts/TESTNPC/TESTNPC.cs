@@ -7,13 +7,21 @@ public class TESTNPC : NPCs,Entity
 
     SetDialogueBoxText dialogue;
 
-    public string[] futureDialogue;
-    int dialogueLine = 0;
+    string[] futureDialogue;
+    public int timesInteracted = 0;
+    int numberOfFutureDialogue;
+
+    bool futureDialogueExists;
+
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
         dialogue = gameObject.GetComponent<SetDialogueBoxText>();
+
+        // changes depending on npc
+        numberOfFutureDialogue = 3;
+        futureDialogueExists = true;
     }
 
     // Update is called once per frame
@@ -23,22 +31,66 @@ public class TESTNPC : NPCs,Entity
     }
     new public void Interact(Entity entity) // Interact is a method which can be overridden but does not need to call the base version
     {
-        //dialogue.lines[0] = futureDialogue[dialogueLine];
-        if (dialogue.lines.Length > 0)
+        // Keep same for every npc / entity
+        if (timesInteracted == numberOfFutureDialogue)
+        {
+            dialogue.Talk();
+        }
+        if (timesInteracted == 0)
+         {
+             print("interacting");
+             dialogue.Talk();
+            if (futureDialogueExists)
+            {
+                timesInteracted++;
+            }
+             return;
+         }
+
+        // change for every npc / entity
+         if (timesInteracted == 1)
+         {
+            string [] futureDialogue = { "Hello", "whats up"};
+            SetFutureDialogue(2, futureDialogue);
+         }
+         if (timesInteracted == 2)
+         {
+            string[] futureDialogue = { "How inefficient is this", "slightly better than last time", "yay!" };
+            SetFutureDialogue(3, futureDialogue);
+         }
+
+         
+
+        void SetFutureDialogue(int length, string[] dialogueLines)
+        {
+             dialogue.lines = new string[length];
+             for (int i = 0; i < length; i++)
+             {
+                 dialogue.lines[i] = dialogueLines[i];
+             }
+             dialogue.Talk();
+             timesInteracted++;
+             return;
+
+        }
+        /*
+        if (hasInteracted == false)
         {
             print("interacting");
             dialogue.Talk();
-            if (futureDialogue.Length == 0)
-            {
-                return;
-            }
             if (futureDialogue.Length > 0)
             {
-                dialogue.lines = new string[futureDialogue.Length];
+                hasInteracted = true;
             }
         }
-        
+        if (hasInteracted == true)
+        {
+            dialogue.lines = futureDialogue;
+            dialogue.Talk();
+        }
+        */
 
-        //dialogueLine++;
     }
 }
+
+

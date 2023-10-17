@@ -12,17 +12,6 @@ public class SetDialogueBoxText : MonoBehaviour
         dialogueBoxPrefab = Resources.Load("DialogueBox") as GameObject;
     }
 
-    void Update()
-    {
-        // temporary, will later be checking if the player interacts with this gameobjec
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            //Talk();
-            print("TRYING TO DIALOGUE but this is only for debug??? PURPOSES DO YEAH...");
-            return;
-        }
-    }
-
     public void Talk()
     {
         if (GameObject.Find("DialogueBox") == false)
