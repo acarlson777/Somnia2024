@@ -20,3 +20,4 @@ public class tempScript : MonoBehaviour
         transform.Translate(JoystickInput.worldOrientedJoystickDirection * movementDirection * Time.deltaTime);
     }
 }
+    

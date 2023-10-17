@@ -47,9 +47,9 @@ public class DialogueScript : MonoBehaviour
     }
 
     // sets the dialogue box's text from another script on another gameobject, taking in the length in lines of dialogue and the actual text
-    public void SetText(int arrayLength, string[] text)
+    public void SetText(string[] text)
     {
-        numberOfLines = new string[arrayLength];
+        numberOfLines = new string[text.Length];
         for (int line = 0; line < numberOfLines.Length; line++)
         {
             numberOfLines[line] = text[line];

@@ -8,6 +8,7 @@ public class TESTNPC : NPCs,Entity
     SetDialogueBoxText dialogue;
 
     string[] futureDialogue;
+    string[][] dialogueText;
     public int timesInteracted = 0;
     int numberOfFutureDialogue;
 
@@ -19,6 +20,13 @@ public class TESTNPC : NPCs,Entity
         base.Start();
         dialogue = gameObject.GetComponent<SetDialogueBoxText>();
 
+        dialogueText = new string[][]
+        {
+            new string[] {"Hello I am a Testing NPC !!!", "THIS IS THE SECOND LINE OF TEXT"},
+            new string[] {"2.1", "2.2", "2.3", "2.4"},
+            new string[] {"3.1", "3.2", "3.3"}
+        };
+
         // changes depending on npc
         numberOfFutureDialogue = 3;
         futureDialogueExists = true;
@@ -29,8 +37,19 @@ public class TESTNPC : NPCs,Entity
     {
         base.Update();
     }
-    new public void Interact(Entity entity) // Interact is a method which can be overridden but does not need to call the base version
+    new public void Interact(Entity entity)
     {
+
+        timesInteracted++;
+        if (timesInteracted > dialogueText.Length)
+        {
+            timesInteracted = dialogueText.Length;
+        }
+        DialogueManager.PopDialogue(dialogueText[timesInteracted]);
+    }
+    public void _Interact(Entity entity) // Interact is a method which can be overridden but does not need to call the base version
+    {
+        
         // Keep same for every npc / entity
         if (timesInteracted == numberOfFutureDialogue)
         {
