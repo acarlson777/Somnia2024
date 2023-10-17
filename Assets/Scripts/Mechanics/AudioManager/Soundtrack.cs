@@ -6,12 +6,33 @@ public class Soundtrack : SoundBase, Sound
     public string soundName;
     public Sound[] allSounds;
     public int index;
-    public bool active = true;
+    private bool active = false;
+    public float fadeConst = 1f;
+    private bool fading;
 
 
-    void Play(GameObject caller)
+    public new void Play(GameObject caller)
     {
+        active = true;
         allSounds[index].Play(caller);
+    }
+
+    public new void Stop()
+    {
+        active = false;
+        allSounds[index].Stop();
+    }
+
+    public new void FadeIn(float seconds, GameObject caller)
+    {
+        active = true;
+        allSounds[index].FadeIn(seconds, caller);
+    }
+
+    public new void FadeOut(float seconds)
+    {
+        active = false;
+        allSounds[index].FadeOut(seconds);
     }
 
     void Update()
@@ -20,32 +41,25 @@ public class Soundtrack : SoundBase, Sound
         {
             if (allSounds[index].IsPlaying())
             {
+                //Check if allSounds[index] is fadeConst seconds from reaching end. if so, begin fadeout
+                if (allSounds[index].audioClip.length - allSounds[index].audioSource.time <= fadeConst && fading == false)
+                {
+                    fading = true;
+                    allSounds[index].FadeOut(fadeConst);
+                }
                 return;
             }
             if (index >= allSounds.Length - 1)
             {
-                index = 0;
+                index = -1;
             }
             else
             {
                 index++;
+                fading = false;
+                allSounds[index].FadeIn(fadeConst, this.gameObject);
             }
         }
-    }
-
-    void Stop()
-    {
-        active = false;
-    }
-
-    void FadeIn(float seconds, GameObject compiler)
-    {
-
-    }
-
-    void FadeOut(float seconds)
-    {
-
     }
 
     public override void SetVolume()
