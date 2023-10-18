@@ -16,12 +16,34 @@ public static class AudioManager
         DictionaryOfSounds.soundsDictionary[name].Stop();
     }
 
-    public static void FadeIn(string name, GameObject caller, float seconds)
+    public static void FadeInSound(string name, GameObject caller, float seconds)
     {
         DictionaryOfSounds.soundsDictionary[name].FadeIn(seconds, caller);
     }
 
-    public static void FadeOut(string name, float seconds)
+    public static void FadeOutSound(string name, float seconds)
+    {
+        DictionaryOfSounds.soundsDictionary[name].FadeOut(seconds);
+    }
+
+
+    public static void PlaySoundtrack(string name, GameObject caller)
+    {
+        Debug.Log("Soundtrack Played");
+        DictionaryOfSounds.soundsDictionary[name].Play(caller);
+    }
+
+    public static void StopSoundtrack(string name)
+    {
+        DictionaryOfSounds.soundsDictionary[name].Stop();
+    }
+
+    public static void FadeInSoundtrack(string name, GameObject caller, float seconds)
+    {
+        DictionaryOfSounds.soundsDictionary[name].FadeIn(seconds, caller);
+    }
+
+    public static void FadeOutSoundtrack(string name, float seconds)
     {
         DictionaryOfSounds.soundsDictionary[name].FadeOut(seconds);
     }
