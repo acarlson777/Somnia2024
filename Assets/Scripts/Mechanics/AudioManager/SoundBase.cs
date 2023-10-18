@@ -169,6 +169,7 @@ public class Song : SoundBase
 public class SoundBaseData
 {
     public string type;
+    public string soundtrack;
     public string name;
     public float volume;
     public bool loop;
