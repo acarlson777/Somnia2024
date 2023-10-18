@@ -5,6 +5,8 @@ using System.Collections;
 public interface Sound
 {
     public string soundName { get => soundName; set => soundName = value; }
+    public AudioSource audioSource { get => audioSource; set => audioSource = value; }
+    public AudioClip audioClip { get => audioClip; set => audioClip = value; }
 
     void Play(GameObject caller);
 
@@ -38,7 +40,7 @@ public abstract class SoundBase : MonoBehaviour, Sound
     public float volume;
     public AudioClip audioClip;
     public bool loop;
-    protected AudioSource audioSource = null;
+    public AudioSource audioSource = null;
 
 
     public abstract void SetVolume();

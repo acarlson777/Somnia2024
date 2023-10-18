@@ -9,27 +9,16 @@ public class SetDialogueBoxText : MonoBehaviour
 
     private void Awake()
     {
-        dialogueBoxPrefab = Resources.Load("DialogueBox") as GameObject;
-    }
-
-    void Update()
-    {
-        // temporary, will later be checking if the player interacts with this gameobjec
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            //Talk();
-            print("TRYING TO DIALOGUE but this is only for debug??? PURPOSES DO YEAH...");
-            return;
-        }
+        dialogueBoxPrefab = Resources.Load("DialogueBox") as GameObject; // get the Dialogue Prefab in the Resources Folder named "DialogueBox"
     }
 
     public void Talk()
     {
-        if (GameObject.Find("DialogueBox") == false)
+        if (GameObject.Find("DialogueBox") == null) // If DialogueBox doesn't exist in the scene yet
         {
             GameObject dialogueBox = Instantiate(dialogueBoxPrefab, canvas.transform);
-            dialogueBox.name = "DialogueBox";
-            dialogueBox.GetComponent<DialogueScript>().SetText(lines.Length, lines);
+            dialogueBox.name = "DialogueBox"; // Set its name to "DialogueBox"
+            dialogueBox.GetComponent<DialogueScript>().SetText(lines);
         }
     }
 }

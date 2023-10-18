@@ -9,7 +9,9 @@ public class AudioCompiler : MonoBehaviour
     public List<Sound> sounds = new List<Sound>();
     public Dictionary<string, Sound> soundsDictionary = new Dictionary<string, Sound>();
 
-    void Start()
+    //TO DO IMPLEMENT SOUNDTRACK INTO THIS AUDIO COMPILER
+
+    void Start() 
     {
         foreach (SoundBaseData sound in soundBaseDatas)
         {
