@@ -27,7 +27,6 @@ public class DialogueManager : MonoBehaviour
         if (dialogueBox != null)
         {
             return false;
-            //Destroy(dialogueBox);
         }
         // Step 2: Make a new DialogueBox with the textLines as before
         dialogueBox = Instantiate(dialogueBoxPrefab, canvas.transform);
