@@ -7,15 +7,18 @@ using TMPro;
 public class DialogueScript : MonoBehaviour
 {
 
+    // cached references
     public TextMeshProUGUI dialogueText;
     GameObject joystick;
 
+    // variables for dialogue functionality
     public string[] numberOfLines;
     public float textSpeed;
     [SerializeField] int lineNumber;
 
     public bool isActive;
 
+    // finds a joystick caches it
     private void Awake()
     {
         if (GameObject.Find("Joystick") != null)
@@ -24,6 +27,7 @@ public class DialogueScript : MonoBehaviour
         }
     }
 
+    // sets joystick inactive and then starts writing text
     void Start()
     {
         if (joystick != null)
@@ -73,6 +77,7 @@ public class DialogueScript : MonoBehaviour
         }
     }
 
+    // for every char in the line, add it to the text with delay
     IEnumerator WriteLine()
     {
         foreach (char letter  in numberOfLines[lineNumber])
@@ -82,6 +87,7 @@ public class DialogueScript : MonoBehaviour
         }
     }
 
+    // reset dialogue box, if no lines left to write, set joystick to active and delete dialogue box
     void WriteNextLine()
     {
         lineNumber++;
@@ -95,6 +101,7 @@ public class DialogueScript : MonoBehaviour
            isActive = false;
            Destroy(gameObject);
         }
+        // otherwise, continue printing next line
         else
         {
             StartCoroutine(WriteLine());
