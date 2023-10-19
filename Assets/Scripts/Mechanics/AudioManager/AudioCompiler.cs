@@ -46,6 +46,6 @@ public class AudioCompiler : MonoBehaviour
         }
 
         DictionaryOfSounds.soundsDictionary = soundsDictionary;
-        DictionaryOfSounds.
+        DictionaryOfSounds.soundtrackDictionary = soundtrackDictionary;
     }
 }

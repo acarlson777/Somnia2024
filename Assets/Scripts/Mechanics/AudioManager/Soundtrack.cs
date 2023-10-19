@@ -70,7 +70,9 @@ public class Soundtrack : SoundBase, Sound
 
     public override float GetVolume()
     {
-        return volume * VolumeSliderValues.songVolume;
+        // This method does nothing
+        Debug.Log("WARNING: RUNNING \"GetVolume\" METHOD ON SOUNDTRACK DOES NOTHING");
+        return -1;
     }
 
     void SetData(Sound[] allSounds)
