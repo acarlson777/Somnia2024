@@ -7,7 +7,6 @@ public static class AudioManager
 
     public static void PlaySound(string name, GameObject caller)
     {
-        Debug.Log("Sound Played");
         DictionaryOfSounds.soundsDictionary[name].Play(caller);
     }
 
@@ -29,22 +28,21 @@ public static class AudioManager
 
     public static void PlaySoundtrack(string name, GameObject caller)
     {
-        Debug.Log("Soundtrack Played");
-        DictionaryOfSounds.soundsDictionary[name].Play(caller);
+        DictionaryOfSounds.soundtrackDictionary[name].Play(caller);
     }
 
     public static void StopSoundtrack(string name)
     {
-        DictionaryOfSounds.soundsDictionary[name].Stop();
+        DictionaryOfSounds.soundtrackDictionary[name].Stop();
     }
 
     public static void FadeInSoundtrack(string name, GameObject caller, float seconds)
     {
-        DictionaryOfSounds.soundsDictionary[name].FadeIn(seconds, caller);
+        DictionaryOfSounds.soundtrackDictionary[name].FadeIn(seconds, caller);
     }
 
     public static void FadeOutSoundtrack(string name, float seconds)
     {
-        DictionaryOfSounds.soundsDictionary[name].FadeOut(seconds);
+        DictionaryOfSounds.soundtrackDictionary[name].FadeOut(seconds);
     }
 }
