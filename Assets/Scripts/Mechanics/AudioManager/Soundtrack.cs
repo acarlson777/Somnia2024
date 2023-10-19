@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Soundtrack : SoundBase, Sound
 {
-    public string soundName;
-    public Sound[] allSounds;
+    public List<Sound> allSounds = new List<Sound>();
     public int index;
     private bool active = false;
     public float fadeConst = 1f;
@@ -49,7 +49,7 @@ public class Soundtrack : SoundBase, Sound
                 }
                 return;
             }
-            if (index >= allSounds.Length - 1)
+            if (index >= allSounds.Count - 1)
             {
                 index = -1;
             }
@@ -73,10 +73,5 @@ public class Soundtrack : SoundBase, Sound
         // This method does nothing
         Debug.Log("WARNING: RUNNING \"GetVolume\" METHOD ON SOUNDTRACK DOES NOTHING");
         return -1;
-    }
-
-    void SetData(Sound[] allSounds)
-    {
-        this.allSounds = allSounds;
     }
 }

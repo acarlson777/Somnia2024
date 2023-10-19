@@ -9,12 +9,12 @@ public class TestAudio : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             AudioManager.FadeInSound("boom" ,this.gameObject, 5);
-            Debug.Log("Fade In");
+            Debug.Log("Fade In Sound");
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             AudioManager.FadeOutSound("boom", 5);
-            Debug.Log("Fade Out");
+            Debug.Log("Fade Out Sound");
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -30,23 +30,23 @@ public class TestAudio : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            AudioManager.FadeInSound("boom", this.gameObject, 5);
-            Debug.Log("Fade In");
+            AudioManager.FadeInSoundtrack("theUltimateSounds", this.gameObject, 5);
+            Debug.Log("Fade In Soundtrack");
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            AudioManager.FadeOutSound("boom", 5);
-            Debug.Log("Fade Out");
+            AudioManager.FadeOutSoundtrack("theUltimateSounds", 5);
+            Debug.Log("Fade Out Soundtrack");
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            AudioManager.PlaySound("boom", this.gameObject);
-            Debug.Log("Play Sound");
+            AudioManager.PlaySoundtrack("theUltimateSounds", this.gameObject);
+            Debug.Log("Play Soundtrack");
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            AudioManager.StopSound("boom");
-            Debug.Log("Stop Sound");
+            AudioManager.StopSoundtrack("theUltimateSounds");
+            Debug.Log("Stop Soundtrack");
         }
     }
 }
