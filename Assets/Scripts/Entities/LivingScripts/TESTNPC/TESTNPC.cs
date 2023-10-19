@@ -15,7 +15,6 @@ public class TESTNPC : NPCs,Entity
     new void Update()
     {
         base.Update();
-        print(dialogueList.Capacity);
     }
 
     // on interaction, open the dialogue box and start writing text that is set in the inspector

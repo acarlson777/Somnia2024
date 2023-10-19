@@ -14,6 +14,7 @@ public class Player : Living, Entity
     // Update is called once per frame
     new protected void Update()
     {
+        print(brain.getCollidingCount());
         base.Update();
         if (Input.GetKeyDown(KeyCode.I))
         {

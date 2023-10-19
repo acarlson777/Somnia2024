@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &11945014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4199054853896558990, guid: 81a7bca28b8b74920bbfb0788ee18c48, type: 3}
+  m_PrefabInstance: {fileID: 165878360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &11945015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11945014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd3a461a53ba4de8a147cb8e9e6e33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplaySurface: {fileID: 1004855606}
+--- !u!135 &11945016
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11945014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5.0000014
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11945017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11945014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e297bd14dea4a7da2a4cfb19647a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 11945018}
+  interactCollider: {fileID: 11945016}
+  BoxColliderThickness: 0.39
+  health: 1
+  speed: 1
+  dialogueList:
+  - lines:
+    - adaa
+  timesInteracted: 0
+--- !u!65 &11945018 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 4444595716817000163, guid: 81a7bca28b8b74920bbfb0788ee18c48, type: 3}
+  m_PrefabInstance: {fileID: 165878360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &11945022
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11945014}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &50249959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6536796011020772090, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}
@@ -142,9 +215,11 @@ GameObject:
   - component: {fileID: 65300047}
   - component: {fileID: 65300046}
   - component: {fileID: 65300045}
+  - component: {fileID: 65300052}
+  - component: {fileID: 65300051}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +248,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -256,6 +331,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &65300051
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65300044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &65300052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65300044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437fc26d424524cf1ae01a74c3d6a4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 65300047}
+  interactCollider: {fileID: 65300051}
+  BoxColliderThickness: 1
+  health: 1
+  speed: 5
 --- !u!1001 &93262301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,6 +553,10 @@ PrefabInstance:
     - target: {fileID: 4199054853896558990, guid: 81a7bca28b8b74920bbfb0788ee18c48, type: 3}
       propertyPath: m_Name
       value: Garden Bush (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199054853896558990, guid: 81a7bca28b8b74920bbfb0788ee18c48, type: 3}
+      propertyPath: m_TagString
+      value: entity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a7bca28b8b74920bbfb0788ee18c48, type: 3}
@@ -1096,11 +1205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bcb947c4755435482ae134199f4d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBoxPrefab: {fileID: 0}
-  canvas: {fileID: 1004855606}
-  lines:
-  - Ice cream tree
-  - yumyy
 --- !u!1 &1004855603
 GameObject:
   m_ObjectHideFlags: 0

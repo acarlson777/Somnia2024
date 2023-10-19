@@ -41,7 +41,7 @@ public class Brain
         {
             if (isEntity(collider) && !isSelf(collider) ) { touching.Add(collider); }
         }
-        CollidingCount = touching.Count - 1;
+        CollidingCount = touching.Count;
 
         if (touching.Count == 0)
         {

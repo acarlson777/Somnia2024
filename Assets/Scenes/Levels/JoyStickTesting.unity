@@ -853,6 +853,12 @@ MonoBehaviour:
   BoxColliderThickness: 1.17
   health: 21
   speed: 1
+  dialogueList:
+  - lines:
+    - Hello
+  - lines:
+    - Im
+    - Cool
   timesInteracted: 0
 --- !u!135 &1742669954
 SphereCollider:
@@ -957,10 +963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bcb947c4755435482ae134199f4d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBoxPrefab: {fileID: 0}
-  canvas: {fileID: 1004855606}
-  lines:
-  - HELLO IM A THINGY
 --- !u!54 &1742669960
 Rigidbody:
   m_ObjectHideFlags: 0
