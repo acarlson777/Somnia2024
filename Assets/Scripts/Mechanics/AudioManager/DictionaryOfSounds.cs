@@ -5,5 +5,5 @@ using System.Collections.Generic;
 public static class DictionaryOfSounds
 {
     public static Dictionary<string, Sound> soundsDictionary;
-    //soundtrack dict
+    public static Dictionary<string, List<Sound>> soundtrackDictionary;
 }

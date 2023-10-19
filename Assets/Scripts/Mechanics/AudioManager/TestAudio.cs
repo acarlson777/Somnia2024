@@ -8,12 +8,12 @@ public class TestAudio : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            AudioManager.FadeIn("boom" ,this.gameObject, 5);
+            AudioManager.FadeInSound("boom" ,this.gameObject, 5);
             Debug.Log("Fade In");
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            AudioManager.FadeOut("boom", 5);
+            AudioManager.FadeOutSound("boom", 5);
             Debug.Log("Fade Out");
         }
         if (Input.GetKeyDown(KeyCode.A))
@@ -22,6 +22,28 @@ public class TestAudio : MonoBehaviour
             Debug.Log("Play Sound");
         }
         if (Input.GetKeyDown(KeyCode.D))
+        {
+            AudioManager.StopSound("boom");
+            Debug.Log("Stop Sound");
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            AudioManager.FadeInSound("boom", this.gameObject, 5);
+            Debug.Log("Fade In");
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            AudioManager.FadeOutSound("boom", 5);
+            Debug.Log("Fade Out");
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            AudioManager.PlaySound("boom", this.gameObject);
+            Debug.Log("Play Sound");
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             AudioManager.StopSound("boom");
             Debug.Log("Stop Sound");
