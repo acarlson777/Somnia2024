@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 1004855606}
   - component: {fileID: 1004855605}
   - component: {fileID: 1004855604}
+  - component: {fileID: 1004855608}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -484,6 +485,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1004855608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004855603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd3a461a53ba4de8a147cb8e9e6e33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplaySurface: {fileID: 1004855606}
 --- !u!1 &1305337981
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +853,7 @@ MonoBehaviour:
   BoxColliderThickness: 1.17
   health: 21
   speed: 1
-  futureDialogue: []
+  timesInteracted: 0
 --- !u!135 &1742669954
 SphereCollider:
   m_ObjectHideFlags: 0
