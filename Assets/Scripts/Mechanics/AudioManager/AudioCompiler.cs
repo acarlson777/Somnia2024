@@ -7,8 +7,8 @@ public class AudioCompiler : MonoBehaviour
     //Collects audios (both SFX and Songs) and sets their loopness and volumes (to the audioClip) on start while also setting AudioManagers sound list to the list of sounds afterwards
     public SoundBaseData[] soundBaseDatas;
     public List<Sound> sounds = new List<Sound>();
-    public Dictionary<string, Soundtrack> soundtrackDictionary = new Dictionary<string, Soundtrack>();
     public Dictionary<string, Sound> soundsDictionary = new Dictionary<string, Sound>();
+    public Dictionary<string, Soundtrack> soundtrackDictionary = new Dictionary<string, Soundtrack>();
 
     //TO DO IMPLEMENT SOUNDTRACK INTO THIS AUDIO COMPILER
 
@@ -39,12 +39,14 @@ public class AudioCompiler : MonoBehaviour
             }
             else
             {
+                soundtrackDictionary[sound.soundtrack] = gameObject.AddComponent<Soundtrack>();
                 soundtrackDictionary[sound.soundtrack].allSounds = new List<Sound>() { sounds[sounds.Count - 1] };
             }
 
             soundsDictionary[sound.name] = sounds[sounds.Count-1];
         }
 
+        Debug.Log(soundsDictionary);
         DictionaryOfSounds.soundsDictionary = soundsDictionary;
         DictionaryOfSounds.soundtrackDictionary = soundtrackDictionary;
     }
