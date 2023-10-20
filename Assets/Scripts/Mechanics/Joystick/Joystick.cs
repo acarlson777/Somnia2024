@@ -63,10 +63,11 @@ public class Joystick : MonoBehaviour
 
     private Vector3 RotateVector2ForVector3(Vector3 vector, float angle)
     {
+        angle *= Mathf.Deg2Rad;
         return new Vector3(
-                           Mathf.Cos(angle*Mathf.Deg2Rad)*vector.x - Mathf.Sin(angle*Mathf.Deg2Rad)*vector.y,
+                           Mathf.Cos(angle)*vector.x - Mathf.Sin(angle)*vector.y,
                            JoystickInput.joystickDirection.z,
-                           Mathf.Sin(angle*Mathf.Deg2Rad)*vector.x + Mathf.Cos(angle*Mathf.Deg2Rad)*vector.y
+                           Mathf.Sin(angle)*vector.x + Mathf.Cos(angle)*vector.y
                            );
     }
 

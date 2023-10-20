@@ -20,11 +20,11 @@ public class TESTNPC : NPCs,Entity
     // on interaction, open the dialogue box and start writing text that is set in the inspector
     new public void Interact(Entity entity)
     {
-        print(dialogueText.Length);
+        print(dialogueList.Count);
 
-        if (timesInteracted >= dialogueList.Capacity)
+        if (timesInteracted >= dialogueList.Count)
         {
-            timesInteracted = dialogueList.Capacity-1;
+            timesInteracted = dialogueList.Count-1;
         }
         DialogueManager.PopDialogue(dialogueList[timesInteracted].lines);
         timesInteracted++;
