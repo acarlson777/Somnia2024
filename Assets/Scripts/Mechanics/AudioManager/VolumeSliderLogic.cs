@@ -45,6 +45,8 @@ public class VolumeSliderLogic : MonoBehaviour
             Debug.Log("Invalid Sound Type");
         }
 
+        //Debug.Log(DictionaryOfSounds.soundsDictionary);
+
         foreach (string soundName in DictionaryOfSounds.soundsDictionary.Keys)
         {
             DictionaryOfSounds.soundsDictionary[soundName].SetVolume();
