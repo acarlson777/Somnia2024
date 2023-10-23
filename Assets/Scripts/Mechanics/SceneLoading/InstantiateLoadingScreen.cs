@@ -14,7 +14,7 @@ public class InstantiateLoadingScreen : MonoBehaviour
     [HideInInspector] public GameObject sceneLoaderPrefab;
 
     // passes what scene to change to, can be changed via inspector per entity
-    public string sceneToLoad = "SceneChange2";
+    public string sceneToLoad;
 
     Image loadingScreenImage;
     private Color originalImage;
