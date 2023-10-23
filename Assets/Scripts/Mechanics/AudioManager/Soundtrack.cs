@@ -2,34 +2,37 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Soundtrack : SoundBase, Sound
+public class Soundtrack
 {
     public List<Sound> allSounds = new List<Sound>();
     public int index;
     private bool active = false;
     public float fadeConst = 1f;
     private bool fading;
+    private GameObject lastCaller;
 
 
-    public new void Play(GameObject caller)
+    public void Play(GameObject caller)
     {
         active = true;
+        lastCaller = caller;
         allSounds[index].Play(caller);
     }
 
-    public new void Stop()
+    public void Stop()
     {
         active = false;
         allSounds[index].Stop();
     }
 
-    public new void FadeIn(float seconds, GameObject caller)
+    public void FadeIn(float seconds, GameObject caller)
     {
         active = true;
+        lastCaller = caller; 
         allSounds[index].FadeIn(seconds, caller);
     }
 
-    public new void FadeOut(float seconds)
+    public void FadeOut(float seconds)
     {
         active = false;
         allSounds[index].FadeOut(seconds);
@@ -57,18 +60,18 @@ public class Soundtrack : SoundBase, Sound
             {
                 index++;
                 fading = false;
-                allSounds[index].FadeIn(fadeConst, this.gameObject);
+                allSounds[index].FadeIn(fadeConst, lastCaller);
             }
         }
     }
 
-    public override void SetVolume()
+    public void SetVolume()
     {
         // This method does nothing
         Debug.Log("WARNING: RUNNING \"SetVolume\" METHOD ON SOUNDTRACK DOES NOTHING");
     }
 
-    public override float GetVolume()
+    public float GetVolume()
     {
         // This method does nothing
         Debug.Log("WARNING: RUNNING \"GetVolume\" METHOD ON SOUNDTRACK DOES NOTHING");

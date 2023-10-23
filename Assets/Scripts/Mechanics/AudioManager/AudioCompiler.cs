@@ -39,14 +39,23 @@ public class AudioCompiler : MonoBehaviour
             }
             else
             {
-                soundtrackDictionary[sound.soundtrack] = gameObject.AddComponent<Soundtrack>();
+                soundtrackDictionary[sound.soundtrack] = new Soundtrack();
                 soundtrackDictionary[sound.soundtrack].allSounds = new List<Sound>() { sounds[sounds.Count - 1] };
             }
 
             soundsDictionary[sound.name] = sounds[sounds.Count-1];
         }
 
-        Debug.Log(soundsDictionary);
+        /*
+        Debug.Log(soundtrackDictionary);
+        foreach (string soundtrackName in soundtrackDictionary.Keys){
+            Debug.Log(soundtrackName);
+            foreach (Sound sound in soundtrackDictionary[soundtrackName].allSounds)
+            {
+                Debug.Log(sound.soundName);
+            }
+        }
+        */
         DictionaryOfSounds.soundsDictionary = soundsDictionary;
         DictionaryOfSounds.soundtrackDictionary = soundtrackDictionary;
     }
