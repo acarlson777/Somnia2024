@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Living, Entity
 {
     // Start is called before the first frame update
+    public GameObject arrow; // :) this is the arrow to be displayed on top of then entity that is currently being focused on.
     new public void Start()
     {
         base.Start();

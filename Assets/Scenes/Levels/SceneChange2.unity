@@ -171,12 +171,7 @@ MonoBehaviour:
   BoxColliderThickness: 0.39
   health: 1
   speed: 1
-  dialogueList:
-  - lines:
-    - It's a bush.
-    - Looks like a nice bush.
-  - lines:
-    - It's still a bush.
+  tee: []
   timesInteracted: 0
 --- !u!65 &11945018 stripped
 BoxCollider:
@@ -364,6 +359,7 @@ MonoBehaviour:
   BoxColliderThickness: 1
   health: 1
   speed: 5
+  arrow: {fileID: 0}
 --- !u!1001 &93262301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -867,11 +863,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &446687968 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2820049314576399118, guid: 30c7248ae4d3c4dc58e5b75c72558805, type: 3}
-  m_PrefabInstance: {fileID: 802460909}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &469240180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,18 +1161,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 411501215446940929, guid: 30c7248ae4d3c4dc58e5b75c72558805, type: 3}
   m_PrefabInstance: {fileID: 802460909}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &930320739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446687968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20bcb947c4755435482ae134199f4d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1004855603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,6 +2438,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1004855607}
     m_Modifications:
+    - target: {fileID: 6536796011020772085, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}
+      propertyPath: joystickConstant
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6536796011020772090, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}
       propertyPath: m_RootOrder
       value: 0
