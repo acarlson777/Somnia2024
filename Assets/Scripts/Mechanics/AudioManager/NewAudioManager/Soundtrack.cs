@@ -1,21 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Soundtrack : AudioInteraction
 {
-    private GameObject audioCompiler;
-    private AudioCompiler audioCompilerScript;
     public string[] songs;
     private int index;
     private AudioSource currentlyPlayingSong = null;
-
-    public Soundtrack(GameObject caller)
-    {
-        audioCompiler = caller;
-        audioCompilerScript = audioCompiler.GetComponent<AudioCompiler>();
-    }
 
     public void Play(GameObject caller)
     {
@@ -51,13 +42,13 @@ public class Soundtrack : AudioInteraction
 
     private SongInstance FindSongOfName(string name)
     {
-        foreach (SongInstance song in audioCompilerScript.songList)
+        foreach (SongInstance song in StaticSoundLists.songList)
         {
             if (song.name == name)
             {
                 return song;
             }
         }
-        throw new Exception("No song of name \"" + name + "\"");
+        return null;
     }
 }
