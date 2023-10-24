@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+/*
 public class VolumeSliderLogic : MonoBehaviour
 {
     public string type;
@@ -53,3 +53,4 @@ public class VolumeSliderLogic : MonoBehaviour
         }
     }
 }
+*/
