@@ -19,14 +19,17 @@ public class Joystick : MonoBehaviour
     GameObject small;
 
     public float joystickConstant;
-    public int sensitivity;
     public bool debug;
+
+    private uint JoystickCircleCount; // the amount of circles that we have. be sure to change to reflect the current count.
 
     void Start()
     {
         largest = GameObject.Find("largest");
         medium = GameObject.Find("medium");
         small = GameObject.Find("small");
+        JoystickCircleCount = 3; // This number should be adjusted in any case where the number of JoystickCircles change.
+     
 
         largestCircle = largest.GetComponent<JoystickCircle>();
         mediumCircle = medium.GetComponent<JoystickCircle>();
@@ -37,14 +40,10 @@ public class Joystick : MonoBehaviour
         smallCircle.SetFamily(mediumCircle, null, small);
     }
 
-    private void Awake()
-    {
-
-    }
 
     void Update()
     {
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         if (debug)
         {
             MobileJoystickLogic();
@@ -55,10 +54,11 @@ public class Joystick : MonoBehaviour
         }
         
         return;
-#endif
-#pragma warning disable CS0162 // Unreachable code detected
+        #endif
+
+        #pragma warning disable CS0162 // Unreachable code detected
         MobileJoystickLogic();
-#pragma warning restore CS0162 // Unreachable code detected
+        #pragma warning restore CS0162 // Unreachable code detected
     }
 
     private Vector3 RotateVector2ForVector3(Vector3 vector, float angle)
@@ -75,25 +75,25 @@ public class Joystick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
+            startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
 
             this.gameObject.transform.position = startHoldPos;
         }
 
         if (Input.GetMouseButton(0))
         {
-            currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0) * sensitivity;
+            currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
 
             deltaHoldPos = currentHoldPos - startHoldPos;
 
             if (deltaHoldPos.magnitude > joystickConstant)
             {
-                deltaHoldPos = deltaHoldPos.normalized * joystickConstant;
+                deltaHoldPos = deltaHoldPos.normalized * joystickConstant; //* joystickConstant;
             }
 
-            JoystickInput.joystickDirection = deltaHoldPos / joystickConstant;
+            JoystickInput.joystickDirection = deltaHoldPos  / joystickConstant;
             JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
-            mediumCircle.MoveRelativeToParent(deltaHoldPos);
+            mediumCircle.MoveRelativeToParent(deltaHoldPos/(JoystickCircleCount-1));
         }
 
         if (!Input.GetMouseButton(0))
@@ -110,14 +110,14 @@ public class Joystick : MonoBehaviour
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                startHoldPos = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 0) * sensitivity;
+                startHoldPos = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 0);
 
                 this.gameObject.transform.position = startHoldPos;
             }
 
             if (Input.GetTouch(0).phase == TouchPhase.Moved)
             {
-                currentHoldPos = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 0) * sensitivity;
+                currentHoldPos = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 0);
 
                 deltaHoldPos = currentHoldPos - startHoldPos;
 
@@ -128,7 +128,7 @@ public class Joystick : MonoBehaviour
 
                 JoystickInput.joystickDirection = deltaHoldPos / joystickConstant;
                 JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
-                mediumCircle.MoveRelativeToParent(deltaHoldPos);
+                mediumCircle.MoveRelativeToParent(deltaHoldPos / (JoystickCircleCount - 1));
             }
         }
 
