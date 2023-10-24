@@ -9,7 +9,7 @@ public class Soundtrack : AudioInteraction
     private AudioCompiler audioCompilerScript;
     public string[] songs;
     private int index;
-    private AudioSource currentlyPlayingSong;
+    private AudioSource currentlyPlayingSong = null;
 
     public Soundtrack(GameObject caller)
     {
@@ -51,7 +51,7 @@ public class Soundtrack : AudioInteraction
 
     private SongInstance FindSongOfName(string name)
     {
-        foreach (SongInstance song in audioCompiler.listOfSongs)
+        foreach (SongInstance song in audioCompilerScript.songList)
         {
             if (song.name == name)
             {

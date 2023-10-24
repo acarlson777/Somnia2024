@@ -3,10 +3,6 @@ using UnityEngine;
 
 public interface SoundInteraction : AudioInteraction
 {
-    public void Play(GameObject caller);
-    public void Stop();
-    public void FadeIn(float seconds, GameObject caller);
-    public void FadeOut(float seconds);
     public void SetVolume();
 }
 
@@ -55,7 +51,7 @@ public class SfxInstance : SoundInstance
 {
     public override void SetVolume()
     {
-        volume = volume * PlayerPrefs.GetFloat("SfxVolume");
+        volume *= PlayerPrefs.GetFloat("SfxVolume");
     }
 }
 
@@ -63,6 +59,6 @@ public class SongInstance : SoundInstance
 {
     public override void SetVolume()
     {
-        volume = volume * PlayerPrefs.GetFloat("SongVolume");
+        volume *= PlayerPrefs.GetFloat("SongVolume");
     }
 }

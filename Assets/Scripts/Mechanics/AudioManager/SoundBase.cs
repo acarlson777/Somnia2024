@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+/*
 public interface Sound
 {
     public string soundName { get => soundName; set => soundName = value; }
@@ -42,7 +42,7 @@ public abstract class SoundBase : MonoBehaviour, Sound
     public bool loop;
     public AudioSource audioSource = null;
 
-/*
+
     public abstract void SetVolume();
     public abstract float GetVolume();
 
