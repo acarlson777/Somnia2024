@@ -25,7 +25,8 @@ public class EntityBase : MonoBehaviour,Entity
 
     private Vector3 accel;
     private Vector3 vel;
-    private float entityMaxSpeed = 4f;
+    private float entityMaxSpeed = 2.1f;
+    protected float K_friction = 5.0f; // Coefficient of Friction
     public void Initialize()
     {
         rb = GetComponent<Rigidbody>();
@@ -46,8 +47,25 @@ public class EntityBase : MonoBehaviour,Entity
         {
             vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
         }
-        vel.y = rb.velocity.y; // Overwrite the y axis since that should be taken care of by unity itself
+        // Overwrite the y axis since that should be taken care of by unity itself
+        vel.y = 0;
+        // Apply Horizontal Friction
+        if (vel.magnitude < K_friction * Time.deltaTime)
+        {
+            vel.x = 0;
+            vel.y = 0;
+            vel.z = 0;
+        }
+        else
+        {
+            Vector3 friction = vel.normalized * -K_friction * Time.deltaTime;
+            friction.y = 0;
+            vel += friction;
+        }
+        vel.y = rb.velocity.y;
         rb.velocity = vel;
+
+
     }
 
     public void Move(Vector3 accel)

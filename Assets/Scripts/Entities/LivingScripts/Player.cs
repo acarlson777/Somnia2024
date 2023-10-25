@@ -27,6 +27,7 @@ public class Player : Living, Entity
                 print("No entity to interact with!");   
             }
         }   
+        Move(JoystickInput.worldOrientedJoystickDirection * 50.0f * Time.deltaTime);
     }
     new public void Interact(Entity entity)
     { 
