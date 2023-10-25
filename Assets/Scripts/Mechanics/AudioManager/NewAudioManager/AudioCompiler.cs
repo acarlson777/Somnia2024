@@ -6,22 +6,31 @@ public class AudioCompiler : MonoBehaviour
     public SfxInstance[] sfxList;
     public SongInstance[] songList;
     public Soundtrack[] soundtrackList;
-
+    private SoundInteraction[] soundsList;
+ 
     void Start()
     {
         sfxList = StaticSoundLists.sfxList;
         songList = StaticSoundLists.songList;
         soundtrackList = StaticSoundLists.soundtrackList;
 
-        AudioInteraction[] allSounds = new AudioInteraction[StaticSoundLists.songList.Length + StaticSoundLists.sfxList.Length + StaticSoundLists.soundtrackList.Length];
-        StaticSoundLists.songList.CopyTo(allSounds, 0);
-        StaticSoundLists.sfxList.CopyTo(allSounds, StaticSoundLists.songList.Length);
-        StaticSoundLists.soundtrackList.CopyTo(allSounds, StaticSoundLists.sfxList.Length);
+
+        soundsList = new SoundInteraction[StaticSoundLists.songList.Length + StaticSoundLists.sfxList.Length];
+        StaticSoundLists.songList.CopyTo(soundsList, 0);
+        StaticSoundLists.sfxList.CopyTo(soundsList, StaticSoundLists.songList.Length);
+
+
+        AudioInteraction[] allSounds = new AudioInteraction[soundsList.Length + StaticSoundLists.soundtrackList.Length];
+        soundsList.CopyTo(allSounds, 0);
+        StaticSoundLists.soundtrackList.CopyTo(allSounds, soundsList.Length);
         StaticSoundLists.allSounds = allSounds;
     }
 
     void Update()
     {
-        //Set Volume of All Sounds Here
+        foreach (SoundInteraction soundInteraction in soundsList)
+        {
+            soundInteraction.SetVolume();
+        }
     }
 }
