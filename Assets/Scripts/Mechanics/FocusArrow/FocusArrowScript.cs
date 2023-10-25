@@ -6,16 +6,25 @@ public class FocusArrowScript : MonoBehaviour
 {
     // This is the script to be attached as a component to a physical arrow that wil bounce up and down on top of focused entities
     private GameObject focus;
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0,1.5f,0);
     private bool active = false;
+    private GameObject arrow; 
 
     // Helper varibles .. Not needed but boost performance a bit
-    private MeshRenderer meshRenderer;
+    // no helper variables
+    private void Start()
+    {
+        arrow = Instantiate(Resources.Load("FocusArrow") as GameObject); // get the Dialogue Prefab in the Resources Folder named "DialogueBox"
+        arrow.SetActive(false);
+        //meshRenderer = arrow.GetComponent<MeshRenderer>();
+
+    }
+
 
     void Update()
     {
         if (!active) return;
-        gameObject.transform.position = focus.transform.position + offset + new Vector3(0,GetBouncePosition(Time.time),0);
+        arrow.transform.position = focus.transform.position + offset + new Vector3(0,GetBouncePosition(Time.time),0);
     }
     public void SetFocus(GameObject focus)
     {
@@ -23,23 +32,28 @@ public class FocusArrowScript : MonoBehaviour
         {
             if (active)
             {
-                // set mesherenderr active to true
-                //meshRenderer = false
+                // set mesherender active to true
+                arrow.SetActive(false);
             }
             else
             {
                 // set it to false
+                arrow.SetActive(true);
             }
         }
         active = focus != null;
         if (!active) return;
         if (this.focus == focus) return;
         this.focus = focus;
-        gameObject.transform.position = focus.transform.position + offset;
+        arrow.transform.position = focus.transform.position + offset;
     }
 
     private float GetBouncePosition(float time)
     {
-        return Mathf.Abs(Mathf.Sin(time));
+        float value1 = Mathf.Sin(time * 1.22f);
+
+
+
+        return value1 *value1 * 0.7f;
     }
 }

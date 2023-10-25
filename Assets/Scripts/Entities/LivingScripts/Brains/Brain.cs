@@ -36,7 +36,7 @@ public class Brain
          List<Collider> touching = new List<Collider>();
         //Get a list of entities that the brain/entity can see
         Collider[] Colliding = Physics.OverlapSphere(SphereCenter(), SphereOfInteraction.radius);
-        // Cu ll all the other spheres of interactions
+        // Cull all the other spheres of interactions
         foreach (Collider collider in Colliding)
         {
             if (isEntity(collider) && !isSelf(collider) ) { touching.Add(collider); }
@@ -50,35 +50,43 @@ public class Brain
         }
         else
         {
-            Array.Sort<Collider>(touching.ToArray(),CompareDistances);
+            Array.Sort(touching.ToArray(),CompareDistances);
            
-            // Iterate over the list of overlapped entities and get the closest one
+            //  get the closest one
             EntityFocus = ((BoxCollider)touching[0]).gameObject;
         }
     }
-    // Should be called every frame to accelerate the entity
+    /// <summary>
+    ///     Should be called every time another entity wants to talk to this ones. Should be passed through entity
+    /// </summary>
+    /// <returns>Vector2</returns>
     public Vector2 GetDirectionAcceleration()
     {
         return Vector2.zero;
     }
-    // Should be called every time another entity wants to talk to this ones. Should be passed through entity
+
     public void Interact(EntityBase entity) // get interacted with by the entity that gets passed in 
     {
         
     }
+    /// <summary>
+    /// Returns closest Entity as the Entity Interface
+    /// </summary>
     public Entity GetClosestEntity()
     {
         if (EntityFocus == null) { return null; }
         return EntityFocus.GetComponent<Entity>();
     }
 
-
-
+    /// <returns>Closest GameObject of an Entity</returns>
+    public GameObject GetClosestEntityAsGO()
+    {
+        return EntityFocus;
+    }
 
 
 
     // Helper Functions
-
     private float Distance(Vector3 a, Vector3 b)
     {
         return (a - b).magnitude;

@@ -5,8 +5,13 @@ using UnityEngine;
 public class Player : Living, Entity
 {
     // Start is called before the first frame update
-    public GameObject arrow; // :) this is the arrow to be displayed on top of then entity that is currently being focused on.
-    new public void Start()
+    private FocusArrowScript arrowScript;
+
+    void Awake()
+    {
+        arrowScript =  gameObject.AddComponent<FocusArrowScript>();
+    }
+    new void Start()
     {
         base.Start();
         
@@ -24,11 +29,15 @@ public class Player : Living, Entity
             }
             else
             {
-                print("No entity to interact with!");   
+                print("No entity to interact with!");
             }
         }   
         Move(JoystickInput.worldOrientedJoystickDirection * 50.0f * Time.deltaTime);
+        
+        arrowScript.SetFocus(brain.GetClosestEntityAsGO());
     }
+
+
     new public void Interact(Entity entity)
     { 
         base.Interact(this);

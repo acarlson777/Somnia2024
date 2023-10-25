@@ -171,7 +171,7 @@ MonoBehaviour:
   BoxColliderThickness: 0.39
   health: 1
   speed: 1
-  tee: []
+  dialogueList: []
   timesInteracted: 0
 --- !u!65 &11945018 stripped
 BoxCollider:
@@ -359,7 +359,6 @@ MonoBehaviour:
   BoxColliderThickness: 1
   health: 1
   speed: 5
-  arrow: {fileID: 0}
 --- !u!1001 &93262301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1660,7 +1659,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCube
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2336277636670261210, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
 --- !u!4 &1695514203 stripped
 Transform:
