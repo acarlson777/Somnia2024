@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public static class StaticSoundLists
 {
-    public static SfxInstance[] sfxList;
-    public static SongInstance[] songList;
-    public static Soundtrack[] soundtrackList;
-    public static AudioInteraction[] allSounds;
+    public static List<SfxInstance> sfxList = new List<SfxInstance>();
+    public static List<SongInstance> songList = new List<SongInstance>();
+    public static List<Soundtrack> soundtrackList = new List<Soundtrack>();
+    public static List<AudioInteraction> allSounds = new List<AudioInteraction>();
 }

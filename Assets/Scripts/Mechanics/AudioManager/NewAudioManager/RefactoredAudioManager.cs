@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
-public static class AudioManager
+public static class RefactoredAudioManager
 {
     public static void Play(string name, GameObject caller)
     {
-        FindSoundOfName(name).Play(caller);
+        FindSoundOfName(name);//.Play(caller);
     }
 
 
@@ -30,6 +31,8 @@ public static class AudioManager
 
     private static AudioInteraction FindSoundOfName(string name)
     {
+        Debug.Log(StaticSoundLists.allSounds[0].name);
+        /*
         foreach (AudioInteraction sound in StaticSoundLists.allSounds)
         {
             if (sound.name == name)
@@ -37,6 +40,8 @@ public static class AudioManager
                 return sound;
             }
         }
+        return null;
+        */
         return null;
     }
 }
