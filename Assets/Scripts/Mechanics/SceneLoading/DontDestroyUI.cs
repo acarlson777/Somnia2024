@@ -12,23 +12,11 @@ public class DontDestroyUI : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(transform.parent);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
-    }
-
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        DontDestroyOnLoad(gameObject);
     }
 }

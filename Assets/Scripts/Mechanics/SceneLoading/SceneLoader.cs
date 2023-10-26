@@ -7,25 +7,31 @@ using UnityEngine.UI;
 // class to Load the next scene while calling fadescripts from FadeImage
 public class SceneLoader : MonoBehaviour
 {
+
+    private static SceneLoader instance;
+
     // cached references and script references
     public GameObject loadingScreen;
 
     Canvas loadingScreenCanvas;
 
-    FadeImage fadeImage;
-
     public string sceneToLoad;
 
     [HideInInspector] public bool fadeOut;
     [HideInInspector] public bool fadeIn = false;
-    public int loadingScreenLength = 2;
-    float fadeOutLength = 4f;
+    public int loadingScreenLength;
+
+    public bool loading = false;
+
+    private void Awake()
+    {
+
+    }
 
     // scene load the second the Scene Loader game obejct is instantiated
     void Start()
     {
         loadingScreenCanvas = GameObject.Find("LoadingScreenCanvas").GetComponent<Canvas>();
-        fadeImage = GameObject.Find("LoadingScreen").GetComponent<FadeImage>();
         SceneLoad();
     }
 
@@ -56,7 +62,7 @@ public class SceneLoader : MonoBehaviour
         fadeOut = true;
         yield return new WaitForSeconds(loadingScreenLength);
         fadeOut = false;
-        yield return new WaitForSeconds(fadeOutLength);
+        yield return new WaitForSeconds(loadingScreenLength);
         Destroy(loadingScreenCanvas.gameObject);
         Destroy(gameObject);
     }

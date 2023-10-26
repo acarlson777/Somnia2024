@@ -7,8 +7,8 @@ using UnityEngine.UI;
 // class to fade in/out the loading screen
 public class FadeImage : MonoBehaviour
 {
-    public float fadeSpeed = 0.7f;
-    public float fadeOutSpeed = 0.5f;
+    public float fadeSpeed;
+    public float fadeOutSpeed;
     
     private Image image;
     private Color originalImage;
@@ -22,6 +22,7 @@ public class FadeImage : MonoBehaviour
         // Gets the loading screen image
         image = GetComponent<Image>();
         originalImage = image.color;
+        image.color = new Color(image.color.r, image.color.b, image.color.g, 0f);
     }
 
     private void Update()
