@@ -7,7 +7,8 @@ using UnityEngine.UI;
 // class to fade in/out the loading screen
 public class FadeImage : MonoBehaviour
 {
-    public float fadeSpeed = 0.7f; 
+    public float fadeSpeed = 0.7f;
+    public float fadeOutSpeed = 0.5f;
     
     private Image image;
     private Color originalImage;
@@ -33,14 +34,15 @@ public class FadeImage : MonoBehaviour
         // start fading out on however many seconds, invoke to not fade out instantly
         if (sceneLoader.fadeOut == true)
         {
-            Invoke("FadeOutLoadingScreen", sceneLoader.loadingScreenLength);
+            //Invoke("FadeOutLoadingScreen", sceneLoader.loadingScreenLength);
+            Invoke("FadeOutLoadingScreen", 4f);
         }
     }
 
     // changes the alpha value every frame to either go to 0 for full transparency or 1 to full solid
     void FadeOutLoadingScreen()
     {
-        float transparency = Mathf.Clamp01(image.color.a - (fadeSpeed * Time.deltaTime));
+        float transparency = Mathf.Clamp01(image.color.a - (fadeOutSpeed * Time.deltaTime));
         Color fadedImage = new Color(originalImage.r, originalImage.g, originalImage.b, transparency);
         image.color = fadedImage;
     }

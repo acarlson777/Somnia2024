@@ -19,6 +19,7 @@ public class SceneLoader : MonoBehaviour
     [HideInInspector] public bool fadeOut;
     [HideInInspector] public bool fadeIn = false;
     public int loadingScreenLength = 2;
+    float fadeOutLength = 4f;
 
     // scene load the second the Scene Loader game obejct is instantiated
     void Start()
@@ -55,7 +56,7 @@ public class SceneLoader : MonoBehaviour
         fadeOut = true;
         yield return new WaitForSeconds(loadingScreenLength);
         fadeOut = false;
-        yield return new WaitForSeconds(fadeImage.fadeSpeed);
+        yield return new WaitForSeconds(fadeOutLength);
         Destroy(loadingScreenCanvas.gameObject);
         Destroy(gameObject);
     }
