@@ -11,7 +11,7 @@ public abstract class SoundInstance : SoundInteraction
     public string name;
     public float volume;
     public AudioClip audioClip;
-    public AudioSource audioSource = null;
+    [HideInInspector] public AudioSource audioSource = null;
 
     public void Play(GameObject caller)
     {
@@ -47,6 +47,8 @@ public abstract class SoundInstance : SoundInteraction
     }
 }
 
+
+[System.Serializable]
 public class SfxInstance : SoundInstance
 {
     public override void SetVolume()
@@ -55,6 +57,8 @@ public class SfxInstance : SoundInstance
     }
 }
 
+
+[System.Serializable]
 public class SongInstance : SoundInstance
 {
     public override void SetVolume()

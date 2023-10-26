@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[System.Serializable]
 public class Soundtrack : AudioInteraction
 {
+    public string name;
     public string[] songs;
     private int index;
     private AudioSource currentlyPlayingSong = null;
