@@ -8,9 +8,17 @@ public class CameraFollow : MonoBehaviour
     public float convergeConstant;
     public Vector3 offset;
     public GameObject objectToFollow;
+
     
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, objectToFollow.transform.position + offset, Time.deltaTime * convergeConstant);
+        //transform.position = Vector3.MoveTowards(transform.position, objectToFollow.transform.position + offset, Time.deltaTime * convergeConstant);
+
+        Vector3 distance = objectToFollow.transform.position - transform.position + offset;
+        distance.y = 0; 
+        transform.position += distance * Time.deltaTime * convergeConstant;
+
+            
     }
+    
 }

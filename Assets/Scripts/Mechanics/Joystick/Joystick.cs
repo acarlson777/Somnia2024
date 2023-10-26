@@ -22,6 +22,7 @@ public class Joystick : MonoBehaviour
     public bool debug;
 
     private uint JoystickCircleCount; // the amount of circles that we have. be sure to change to reflect the current count.
+    private bool HeldDown = false;
 
     void Start()
     {
@@ -75,13 +76,16 @@ public class Joystick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
 
+            startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            if (startHoldPos.x > Screen.width/2) { return; }
+            HeldDown = true; 
             this.gameObject.transform.position = startHoldPos;
         }
 
         if (Input.GetMouseButton(0))
         {
+            if (!HeldDown) { return; }
             currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
 
             deltaHoldPos = currentHoldPos - startHoldPos;
@@ -98,6 +102,7 @@ public class Joystick : MonoBehaviour
 
         if (!Input.GetMouseButton(0))
         {
+            HeldDown = false;
             JoystickInput.joystickDirection = Vector3.zero;
             JoystickInput.worldOrientedJoystickDirection = Vector3.zero;
             mediumCircle.MoveRelativeToParent(Vector3.zero);
