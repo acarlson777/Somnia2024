@@ -13,6 +13,7 @@ public class InstantiateLoadingScreen : MonoBehaviour
     [HideInInspector] public GameObject loadingScreenPrefab;
     [HideInInspector] public GameObject sceneLoaderPrefab;
 
+
     // passes what scene to change to, can be changed via inspector per entity
     public string sceneToLoad;
 
@@ -44,6 +45,7 @@ public class InstantiateLoadingScreen : MonoBehaviour
         GameObject loadingScreen = Instantiate(loadingScreenPrefab, loadingScreenCanvas.transform);
         loadingScreen.name = "LoadingScreen";
 
+        
         GameObject sceneLoader = Instantiate(sceneLoaderPrefab);
         sceneLoader.name = "Scene Loader";
         sceneLoader.GetComponent<SceneLoader>().sceneToLoad = this.sceneToLoad;
