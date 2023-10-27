@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1649,6 +1649,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2336277635821632883, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277635821632883, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277635821632883, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277635821632894, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277635821632894, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2336277636670261189, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1683,15 +1703,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2336277636670261189, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2336277636670261189, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2336277636670261189, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2336277636670261189, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1705,9 +1725,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2336277636670261189, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277636670261191, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277636670261191, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_CastShadows
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277636670261191, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277636670261191, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7d34d47bcbb44415a4ff57106ed58f5, type: 2}
+    - target: {fileID: 2336277636670261191, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7d34d47bcbb44415a4ff57106ed58f5, type: 2}
     - target: {fileID: 2336277636670261211, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
       propertyPath: m_Name
       value: PlayerCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336277636670261211, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2336277636670261210, guid: 569ea1aa55f5c437ea45674c0560c354, type: 3}
@@ -2175,7 +2223,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.8
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
