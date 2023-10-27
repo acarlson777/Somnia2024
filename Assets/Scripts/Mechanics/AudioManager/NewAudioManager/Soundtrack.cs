@@ -5,7 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class Soundtrack : AudioInteraction
 {
-    public string name;
+    public string _name;
+    public string Name
+    {
+        get => _name;
+        set => _name = value;
+    }
+
     public string[] songs;
     private int index;
     private AudioSource currentlyPlayingSong = null;
@@ -44,9 +50,9 @@ public class Soundtrack : AudioInteraction
 
     private SongInstance FindSongOfName(string name)
     {
-        foreach (SongInstance song in StaticSoundLists.songList)
+        foreach (SongInstance song in RefactoredAudioCompiler.staticSongList)
         {
-            if (song.name == name)
+            if (song.Name == name)
             {
                 return song;
             }

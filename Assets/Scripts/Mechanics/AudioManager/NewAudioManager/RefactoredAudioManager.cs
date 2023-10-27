@@ -7,7 +7,7 @@ public static class RefactoredAudioManager
 {
     public static void Play(string name, GameObject caller)
     {
-        FindSoundOfName(name);//.Play(caller);
+        FindSoundOfName(name).Play(caller);
     }
 
 
@@ -28,20 +28,16 @@ public static class RefactoredAudioManager
         FindSoundOfName(name).FadeOut(seconds);
     }
 
-
+    
     private static AudioInteraction FindSoundOfName(string name)
     {
-        Debug.Log(StaticSoundLists.allSounds[0].name);
-        /*
-        foreach (AudioInteraction sound in StaticSoundLists.allSounds)
+        for (int i = 0; i <= RefactoredAudioCompiler.allSounds.Count; i++)
         {
-            if (sound.name == name)
+            if (name == RefactoredAudioCompiler.allSounds[i].Name)
             {
-                return sound;
+                return RefactoredAudioCompiler.allSounds[i];
             }
         }
-        return null;
-        */
         return null;
     }
 }
