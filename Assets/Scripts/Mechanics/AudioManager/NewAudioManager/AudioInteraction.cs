@@ -4,7 +4,11 @@ using UnityEngine;
 
 public interface AudioInteraction
 {
-    public string name { get => name; set => name = value; }
+    string Name
+    {
+        get;
+        set;
+    }
     public void Play(GameObject caller);
     public void Stop();
     public void FadeIn(float seconds, GameObject caller);

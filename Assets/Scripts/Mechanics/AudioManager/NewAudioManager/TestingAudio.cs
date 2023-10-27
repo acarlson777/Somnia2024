@@ -14,7 +14,7 @@ public class TestingAudio : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            RefactoredAudioManager.Play("song1", gameObject);
+            RefactoredAudioManager.Play("song3", gameObject);
         }
     }
 }

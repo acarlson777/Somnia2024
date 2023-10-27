@@ -8,7 +8,13 @@ public interface SoundInteraction : AudioInteraction
 
 public abstract class SoundInstance : SoundInteraction
 {
-    public string name;
+    public string _name;
+    public string Name
+    {
+        get => _name;
+        set => _name = value;
+    }
+
     public float volume;
     public AudioClip audioClip;
     [HideInInspector] public AudioSource audioSource = null;

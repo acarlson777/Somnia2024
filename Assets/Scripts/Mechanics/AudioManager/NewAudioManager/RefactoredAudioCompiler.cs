@@ -4,24 +4,26 @@ using System.Collections.Generic;
 
 public class RefactoredAudioCompiler : MonoBehaviour
 {
-    public List<SfxInstance> sfxList = new List<SfxInstance>();
-    public List<SongInstance> songList = new List<SongInstance>();
-    public List<Soundtrack> soundtrackList = new List<Soundtrack>();
-    private List<AudioInteraction> allSounds = new List<AudioInteraction>();
+    public List<SfxInstance> sfxList;
+    public List<SongInstance> songList;
+    public List<Soundtrack> soundtrackList;
+
+    [HideInInspector] public static List<SfxInstance> staticSfxList;
+    [HideInInspector] public static List<SongInstance> staticSongList;
+    [HideInInspector] public static List<Soundtrack> staticSoundtrackList;
+    [HideInInspector] public static List<AudioInteraction> allSounds = new List<AudioInteraction>();
     private List<SoundInteraction> songsAndSfxs = new List<SoundInteraction>();
 
     void Start()
     {
-        StaticSoundLists.sfxList.AddRange(sfxList);
-        StaticSoundLists.songList.AddRange(songList); 
-        StaticSoundLists.soundtrackList.AddRange(soundtrackList); 
+        staticSfxList = sfxList;
+        staticSongList = songList;
+        staticSoundtrackList = soundtrackList;
 
-        //SOMETHING TO DO WITH ACCESSING STATIC LIST IS CRASHING UNITY
-        //MIGHT BE BECAUSE OF THE TYPECASTING GOING ON BELOW
         allSounds.AddRange(sfxList);
         allSounds.AddRange(songList);
         allSounds.AddRange(soundtrackList);
-        StaticSoundLists.allSounds = allSounds;
+
 
         songsAndSfxs.AddRange(sfxList);
         songsAndSfxs.AddRange(songList);
@@ -32,14 +34,6 @@ public class RefactoredAudioCompiler : MonoBehaviour
         foreach (SoundInteraction soundInteraction in songsAndSfxs)
         {
             soundInteraction.SetVolume();
-        }
-    }
-
-    void PrintList()
-    {
-        foreach(AudioInteraction sfxInstance in sfxList)
-        {
-            Debug.Log(sfxInstance);
         }
     }
 }
