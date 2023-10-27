@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 1130973038}
   - component: {fileID: 1130973037}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,6 +479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cdda7ec9d9be4005848c597129ec754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startText: {fileID: 1130973038}
+  fadeSpeed: 1
 --- !u!114 &1130973038
 MonoBehaviour:
   m_ObjectHideFlags: 0
