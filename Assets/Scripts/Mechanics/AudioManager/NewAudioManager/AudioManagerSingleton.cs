@@ -83,7 +83,7 @@ public class AudioManagerSingleton : MonoBehaviour
     public List<SongInstance> songList;
     public List<Soundtrack> soundtrackList;
     [HideInInspector] public List<AudioInteraction> allSounds = new List<AudioInteraction>();
-    private List<SoundInteraction> songsAndSfxs = new List<SoundInteraction>();
+    [HideInInspector] public List<SoundInteraction> songsAndSfxs = new List<SoundInteraction>();
 
     void Start()
     {

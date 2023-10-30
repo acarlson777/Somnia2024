@@ -14,69 +14,70 @@ public class Soundtrack : AudioInteraction
 
     public float fadeTime;
 
-    public string[] songs;
+    public string[] sounds;
     private int index = 0;
-    private AudioSource currentlyPlayingSong = null;
-    private Coroutine currentNextSongLogicCoroutine = null;
+    private AudioSource currentlyPlayingSound = null;
+    private Coroutine currentNextSoundLogicCoroutine = null;
     private GameObject lastCaller;
-    
+    private SoundInstance activeSound;
+
 
     public void Play(GameObject caller)
     {
-        if (currentNextSongLogicCoroutine != null) {AudioManagerSingleton.Instance.StopCoroutine(currentNextSongLogicCoroutine);}
-        if (currentlyPlayingSong != null) {currentlyPlayingSong.Stop();}
-        SongInstance activeSong = FindSongOfName(songs[index]);
-        activeSong.Play(caller);
-        currentlyPlayingSong = activeSong.audioSource;
+        if (currentNextSoundLogicCoroutine != null) {AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
+        if (currentlyPlayingSound != null) {currentlyPlayingSound.Stop();}
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.Play(caller);
+        currentlyPlayingSound = activeSound.audioSource;
         lastCaller = caller;
-        currentNextSongLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSongLogic());
-        Debug.Log("Soundtrack \"" + Name + "\" is playing" + " with song \"" + activeSong.Name + "\"");
+        currentNextSoundLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSoundLogic());
+        Debug.Log("Soundtrack \"" + Name + "\" is playing" + " with song \"" + activeSound.Name + "\"");
     }
 
     public void Stop()
     {
-        AudioManagerSingleton.Instance.StopCoroutine(currentNextSongLogicCoroutine);
-        SongInstance activeSong = FindSongOfName(songs[index]);
-        activeSong.Stop();
-        currentlyPlayingSong = null;
-        currentNextSongLogicCoroutine = null;
+        AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.Stop();
+        currentlyPlayingSound = null;
+        currentNextSoundLogicCoroutine = null;
     }
 
     public void FadeIn(float seconds, GameObject caller)
     {
-        if (currentNextSongLogicCoroutine != null) {AudioManagerSingleton.Instance.StopCoroutine(currentNextSongLogicCoroutine);}
-        if (currentlyPlayingSong != null) {currentlyPlayingSong.Stop();}
-        SongInstance activeSong = FindSongOfName(songs[index]);
-        activeSong.FadeIn(seconds, caller);
-        currentlyPlayingSong = activeSong.audioSource;
+        if (currentNextSoundLogicCoroutine != null) {AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
+        if (currentlyPlayingSound != null) {currentlyPlayingSound.Stop();}
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeIn(seconds, caller);
+        currentlyPlayingSound = activeSound.audioSource;
         lastCaller = caller;
-        currentNextSongLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSongLogic());
-        Debug.Log("Soundtrack \"" + Name + "\" is fading in" + " with song \"" + activeSong.Name + "\"");
+        currentNextSoundLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSoundLogic());
+        Debug.Log("Soundtrack \"" + Name + "\" is fading in" + " with song \"" + activeSound.Name + "\"");
     }
 
     public void FadeOut(float seconds)
     {
-        SongInstance activeSong = FindSongOfName(songs[index]);
-        activeSong.FadeOut(seconds);
-        currentlyPlayingSong = null;
-        currentNextSongLogicCoroutine = null;
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeOut(seconds);
+        currentlyPlayingSound = null;
+        currentNextSoundLogicCoroutine = null;
     }
 
     public void FadeOutAndStop(float seconds)
     {
-        AudioManagerSingleton.Instance.StopCoroutine(currentNextSongLogicCoroutine);
-        SongInstance activeSong = FindSongOfName(songs[index]);
-        activeSong.FadeOut(seconds);
-        currentlyPlayingSong = null;
-        currentNextSongLogicCoroutine = null;
+        AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeOut(seconds);
+        currentlyPlayingSound = null;
+        currentNextSoundLogicCoroutine = null;
     }
 
-    IEnumerator NextSongLogic()
+    IEnumerator NextSoundLogic()
     {
-        yield return new WaitForSeconds(currentlyPlayingSong.clip.length - fadeTime);
+        yield return new WaitForSeconds(currentlyPlayingSound.clip.length - fadeTime);
         FadeOut(fadeTime);
         index++;
-        if (index >= songs.Length)
+        if (index >= sounds.Length)
         {
             index = 0;
         }
@@ -86,16 +87,16 @@ public class Soundtrack : AudioInteraction
 
     public void SetRandomSong()
     {
-        index = UnityEngine.Random.Range(0,songs.Length-1);
+        index = UnityEngine.Random.Range(0,sounds.Length-1);
     }
 
-    private SongInstance FindSongOfName(string name)
+    private SoundInstance FindSoundOfName(string name)
     {
-        foreach (SongInstance song in AudioManagerSingleton.Instance.songList)
+        foreach (SoundInstance sound in AudioManagerSingleton.Instance.songsAndSfxs)
         {
-            if (song.Name == name)
+            if (sound.Name == name)
             {
-                return song;
+                return sound;
             }
         }
         return null;

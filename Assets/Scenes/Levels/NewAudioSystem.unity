@@ -211,7 +211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb9c8cfd39f8d346b8155199f912f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxList: []
+  sfxList:
+  - _name: song4
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 7bc5c45fe8d430a438edcb2324c3b563, type: 3}
+    audioSource: {fileID: 0}
   songList:
   - _name: song1
     _isVolumeFading: 0
@@ -228,19 +233,13 @@ MonoBehaviour:
     volume: 1
     audioClip: {fileID: 8300000, guid: 03079151aa2dfaf49a3f4be6b18c0c51, type: 3}
     audioSource: {fileID: 0}
-  - _name: song4
-    _isVolumeFading: 0
-    volume: 1
-    audioClip: {fileID: 8300000, guid: 7bc5c45fe8d430a438edcb2324c3b563, type: 3}
-    audioSource: {fileID: 0}
   soundtrackList:
   - _name: soundtrack1
     fadeTime: 3
-    songs:
+    sounds:
     - song1
-    - song2
-    - song3
     - song4
+    - song2
 --- !u!1 &1951891233
 GameObject:
   m_ObjectHideFlags: 0
