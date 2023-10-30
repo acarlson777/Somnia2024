@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class TESTNPC : NPCs,Entity
 {
-    public List<VoiceLines> dialogueList;
+    public List<Voicelines> dialogueList;
     public int timesInteracted = 0;
 
     new void Start()
@@ -29,13 +28,10 @@ public class TESTNPC : NPCs,Entity
         DialogueManager.PopDialogue(dialogueList[timesInteracted].lines);
         timesInteracted++;
     }
-    
     [System.Serializable]
-    public class VoiceLines
+    public class Voicelines
     {
         public string[] lines;
     }
-}
 
-
-
+}   
