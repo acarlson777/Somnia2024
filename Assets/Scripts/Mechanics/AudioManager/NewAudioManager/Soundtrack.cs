@@ -73,7 +73,6 @@ public class Soundtrack : AudioInteraction
 
     IEnumerator NextSongLogic()
     {
-        //Wait until length of current song has almost elapsed then fadeout current song and update index and fadeIn method from this class
         yield return new WaitForSeconds(currentlyPlayingSong.clip.length - fadeTime);
         FadeOut(fadeTime);
         index++;
