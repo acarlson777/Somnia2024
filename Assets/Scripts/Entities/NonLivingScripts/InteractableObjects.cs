@@ -16,4 +16,8 @@ public class InteractableObject : NonLiving
     {
         base.Update();
     }
+    new void Interact(Entity entity)
+    {
+
+    }
 }
