@@ -34,9 +34,31 @@ public class Soundtrack : AudioInteraction
         Debug.Log("Soundtrack \"" + Name + "\" is playing" + " with song \"" + activeSound.Name + "\"");
     }
 
+    public void PlayRandomOnce(GameObject caller)
+    {
+        if (currentNextSoundLogicCoroutine != null) { AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine); }
+        if (currentlyPlayingSound != null) { currentlyPlayingSound.Stop(); }
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.Play(caller);
+        currentlyPlayingSound = activeSound.audioSource;
+        lastCaller = caller;
+        Debug.Log("Soundtrack \"" + Name + "\" is randomly playing once" + " with song \"" + activeSound.Name + "\"");
+    }
+
+    public void FadeInRandomOnce(float seconds, GameObject caller)
+    {
+        if (currentNextSoundLogicCoroutine != null) { AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine); }
+        if (currentlyPlayingSound != null) { currentlyPlayingSound.Stop(); }
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeIn(seconds, caller);
+        currentlyPlayingSound = activeSound.audioSource;
+        lastCaller = caller;
+        Debug.Log("Soundtrack \"" + Name + "\" is randomly fading in once" + " with song \"" + activeSound.Name + "\"");
+    }
+
     public void Stop()
     {
-        AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);
+        if (currentNextSoundLogicCoroutine != null){AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
         activeSound = FindSoundOfName(sounds[index]);
         activeSound.Stop();
         currentlyPlayingSound = null;
@@ -65,7 +87,7 @@ public class Soundtrack : AudioInteraction
 
     public void FadeOutAndStop(float seconds)
     {
-        AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);
+        if (currentNextSoundLogicCoroutine != null){AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
         activeSound = FindSoundOfName(sounds[index]);
         activeSound.FadeOut(seconds);
         currentlyPlayingSound = null;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -208,38 +208,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407572360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb9c8cfd39f8d346b8155199f912f6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 460d6e8fb38c340a2a1ec90aa4e6c4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sfxList:
-  - _name: song4
+  - _name: sfx1
     _isVolumeFading: 0
-    volume: 1
-    audioClip: {fileID: 8300000, guid: 7bc5c45fe8d430a438edcb2324c3b563, type: 3}
+    volume: 0.5
+    audioClip: {fileID: 8300000, guid: 90bbebf4f89dc4d429b4e3016a431d3b, type: 3}
+    audioSource: {fileID: 0}
+  - _name: sfx2
+    _isVolumeFading: 0
+    volume: 0.75
+    audioClip: {fileID: 8300000, guid: adffaab6ae1d54a92a95ab510a37a27e, type: 3}
     audioSource: {fileID: 0}
   songList:
-  - _name: song1
-    _isVolumeFading: 0
-    volume: 1
-    audioClip: {fileID: 8300000, guid: 26a9c8bbb3f42e14aa54bb3c8ef50d46, type: 3}
-    audioSource: {fileID: 0}
-  - _name: song2
-    _isVolumeFading: 0
-    volume: 1
-    audioClip: {fileID: 8300000, guid: d33d0e4abdc342648bbfe22776c6a340, type: 3}
-    audioSource: {fileID: 0}
   - _name: song3
     _isVolumeFading: 0
     volume: 1
-    audioClip: {fileID: 8300000, guid: 03079151aa2dfaf49a3f4be6b18c0c51, type: 3}
+    audioClip: {fileID: 8300000, guid: 90bbebf4f89dc4d429b4e3016a431d3b, type: 3}
     audioSource: {fileID: 0}
   soundtrackList:
   - _name: soundtrack1
-    fadeTime: 3
+    fadeTime: 0
     sounds:
-    - song1
-    - song4
-    - song2
+    - sfx1
+    - sfx2
+    - song3
 --- !u!1 &1951891233
 GameObject:
   m_ObjectHideFlags: 0

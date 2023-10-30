@@ -3,12 +3,6 @@ using System.Collections;
 
 public class TestingAudio : MonoBehaviour
 {
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +50,14 @@ public class TestingAudio : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("soundtrack1", 5, gameObject);
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("soundtrack1", gameObject);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrackOnce("soundtrack1", 5, gameObject);
         }
     }
 }
