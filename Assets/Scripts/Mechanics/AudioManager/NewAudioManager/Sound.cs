@@ -109,12 +109,12 @@ public class SfxInstance : SoundInstance
     public override void SetVolume()
     {
         if (audioSource == null) { return; }
-        audioSource.volume = volume * PlayerPrefs.GetFloat("SfxVolume");
+        audioSource.volume = volume * PlayerPrefs.GetFloat("sfxVolume");
     }
 
     public override float GetVolume()
     {
-        return volume * PlayerPrefs.GetFloat("SfxVolume");
+        return volume * PlayerPrefs.GetFloat("sfxVolume");
     }
 }
 
@@ -125,11 +125,11 @@ public class SongInstance : SoundInstance
     public override void SetVolume()
     {
         if (audioSource == null) { return; }
-        audioSource.volume = volume * PlayerPrefs.GetFloat("SongVolume");
+        audioSource.volume = volume * PlayerPrefs.GetFloat("songVolume");
     }
 
     public override float GetVolume()
     {
-        return volume * PlayerPrefs.GetFloat("SongVolume");
+        return volume * PlayerPrefs.GetFloat("songVolume");
     }
 }

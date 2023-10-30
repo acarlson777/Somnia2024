@@ -107,9 +107,6 @@ public class AudioManagerSingleton : MonoBehaviour
 
         songsAndSfxs.AddRange(sfxList);
         songsAndSfxs.AddRange(songList);
-
-        PlayerPrefs.SetFloat("SongVolume",1f); //TEMP LINES
-        PlayerPrefs.SetFloat("SfxVolume",1f); //TEMP LINES
     }
 
     void Update()
