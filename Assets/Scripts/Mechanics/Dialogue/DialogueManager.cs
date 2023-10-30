@@ -11,6 +11,10 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         dialogueBoxPrefab = Resources.Load("DialogueBox") as GameObject; // get the Dialogue Prefab in the Resources Folder named "DialogueBox"
+        if (dialogueBoxPrefab == null)
+        {
+            print("Dialogue box not found!!!!");
+        }
         canvas = DisplaySurface;
         print("Dialogue Manager is Being Set up");
     }

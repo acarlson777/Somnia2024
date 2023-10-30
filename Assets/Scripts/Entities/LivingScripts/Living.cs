@@ -42,6 +42,7 @@ public class Living : EntityBase
     }
     public void PressInteract()
     {
+        print("interacting");
         if (brain.GetClosestEntity() != null)
         {
             brain.GetClosestEntity().Interact(this);
