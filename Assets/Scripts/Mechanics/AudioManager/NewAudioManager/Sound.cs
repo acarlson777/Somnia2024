@@ -1,9 +1,16 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public interface SoundInteraction : AudioInteraction
 {
     public void SetVolume();
+    public float GetVolume();
+    public bool IsVolumeFading 
+    {
+        get;
+        set;
+    }
 }
 
 public abstract class SoundInstance : SoundInteraction
@@ -14,6 +21,16 @@ public abstract class SoundInstance : SoundInteraction
         get => _name;
         set => _name = value;
     }
+
+    [HideInInspector]
+    public bool _isVolumeFading = false;
+    [HideInInspector]
+    public bool IsVolumeFading 
+    {
+        get => _isVolumeFading;
+        set => _isVolumeFading = value;
+    }
+
 
     public float volume;
     public AudioClip audioClip;
@@ -34,16 +51,48 @@ public abstract class SoundInstance : SoundInteraction
     public void FadeIn(float seconds, GameObject caller)
     {
         if (audioSource == null) { CreateSoundInstance(caller); }
-        //FadeIn Coroutine
+        audioSource.Play();
+        AudioManagerSingleton.Instance.StartCoroutine(FadeInRoutine(seconds));
+    }
+
+    public IEnumerator FadeInRoutine(float seconds)
+    {
+        IsVolumeFading = true;
+        float totalTime = 0;
+        while (totalTime < seconds)
+        {
+            audioSource.volume = GetVolume() * totalTime / seconds;
+
+            totalTime += Time.deltaTime;
+            yield return null;
+        }
+        IsVolumeFading = false;
     }
 
     public void FadeOut(float seconds)
     {
         if (audioSource == null) { throw new Exception("Attempt to fade out audio that was never played"); }
-        //FadeOut Coroutine
+        AudioManagerSingleton.Instance.StartCoroutine(FadeOutRoutine(seconds));
+    }
+
+    
+    public IEnumerator FadeOutRoutine(float seconds)
+    {
+        IsVolumeFading = true;
+        float totalTime = 0;
+        while (totalTime < seconds)
+        {
+            audioSource.volume = GetVolume() - GetVolume() * totalTime / seconds;
+
+            totalTime += Time.deltaTime;
+            yield return null;
+        }
+        IsVolumeFading = false;
+        Stop();
     }
 
     public abstract void SetVolume();
+    public abstract float GetVolume();
 
     private void CreateSoundInstance(GameObject caller)
     {
@@ -59,7 +108,13 @@ public class SfxInstance : SoundInstance
 {
     public override void SetVolume()
     {
-        volume *= PlayerPrefs.GetFloat("SfxVolume");
+        if (audioSource == null) { return; }
+        audioSource.volume = volume * PlayerPrefs.GetFloat("SfxVolume");
+    }
+
+    public override float GetVolume()
+    {
+        return volume * PlayerPrefs.GetFloat("SfxVolume");
     }
 }
 
@@ -69,6 +124,12 @@ public class SongInstance : SoundInstance
 {
     public override void SetVolume()
     {
-        volume *= PlayerPrefs.GetFloat("SongVolume");
+        if (audioSource == null) { return; }
+        audioSource.volume = volume * PlayerPrefs.GetFloat("SongVolume");
+    }
+
+    public override float GetVolume()
+    {
+        return volume * PlayerPrefs.GetFloat("SongVolume");
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 1407572361}
   - component: {fileID: 1407572362}
   m_Layer: 0
-  m_Name: AudioCompiler
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,23 +208,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407572360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40df72c72bf64e68b5ab7d08fb87581, type: 3}
+  m_Script: {fileID: 11500000, guid: abb9c8cfd39f8d346b8155199f912f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxList:
-  - name: song1
-    volume: 1
-    audioClip: {fileID: 8300000, guid: 1a1a1b58ce9ea449d8d944752f6e2a75, type: 3}
-    audioSource: {fileID: 0}
+  sfxList: []
   songList:
-  - name: song3
+  - _name: song1
+    _isVolumeFading: 0
     volume: 1
-    audioClip: {fileID: 8300000, guid: a67e51e733ab1432684596067e777e0a, type: 3}
+    audioClip: {fileID: 8300000, guid: 26a9c8bbb3f42e14aa54bb3c8ef50d46, type: 3}
+    audioSource: {fileID: 0}
+  - _name: song2
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: d33d0e4abdc342648bbfe22776c6a340, type: 3}
+    audioSource: {fileID: 0}
+  - _name: song3
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 03079151aa2dfaf49a3f4be6b18c0c51, type: 3}
+    audioSource: {fileID: 0}
+  - _name: song4
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 7bc5c45fe8d430a438edcb2324c3b563, type: 3}
     audioSource: {fileID: 0}
   soundtrackList:
-  - name: song2List
+  - _name: soundtrack1
+    fadeTime: 3
     songs:
+    - song1
+    - song2
     - song3
+    - song4
 --- !u!1 &1951891233
 GameObject:
   m_ObjectHideFlags: 0

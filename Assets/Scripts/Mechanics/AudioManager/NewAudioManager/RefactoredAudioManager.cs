@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
-
+/*
 public static class RefactoredAudioManager
 {
     public static void Play(string name, GameObject caller)
@@ -31,13 +31,14 @@ public static class RefactoredAudioManager
     
     private static AudioInteraction FindSoundOfName(string name)
     {
-        for (int i = 0; i <= RefactoredAudioCompiler.allSounds.Count; i++)
+        foreach (AudioInteraction song in RefactoredAudioCompiler.allSounds)
         {
-            if (name == RefactoredAudioCompiler.allSounds[i].Name)
+            if (name == song.Name)
             {
-                return RefactoredAudioCompiler.allSounds[i];
+                return song;
             }
         }
         return null;
     }
 }
+*/
