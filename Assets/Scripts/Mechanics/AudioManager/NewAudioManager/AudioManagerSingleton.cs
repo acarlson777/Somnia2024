@@ -32,6 +32,13 @@ public class AudioManagerSingleton : MonoBehaviour
         soundtrack.Play(caller);
     }
 
+    public void PlayRandomSongFromSoundtrackOnce(string name, GameObject caller)
+    {
+        Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
+        soundtrack.SetRandomSong();
+        soundtrack.PlayRandomOnce(caller);
+    }
+
     public void Stop(string name)
     {
         Debug.Log("Stopping " + name);
@@ -49,6 +56,13 @@ public class AudioManagerSingleton : MonoBehaviour
         Soundtrack soundtrack = (Soundtrack) FindSoundOfName(name);
         soundtrack.SetRandomSong();
         soundtrack.FadeIn(seconds, caller);
+    }
+
+    public void FadeInRandomSongFromSoundtrackOnce(string name, float seconds, GameObject caller)
+    {
+        Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
+        soundtrack.SetRandomSong();
+        soundtrack.FadeInRandomOnce(seconds, caller);
     }
 
     public void FadeOut(string name, float seconds)
@@ -93,9 +107,6 @@ public class AudioManagerSingleton : MonoBehaviour
 
         songsAndSfxs.AddRange(sfxList);
         songsAndSfxs.AddRange(songList);
-
-        PlayerPrefs.SetFloat("SongVolume",1f); //TEMP LINES
-        PlayerPrefs.SetFloat("SfxVolume",1f); //TEMP LINES
     }
 
     void Update()
