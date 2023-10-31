@@ -14,6 +14,7 @@ public class AudioManagerSingleton : MonoBehaviour
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
 

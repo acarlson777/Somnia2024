@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TestingAudio : MonoBehaviour
 {
@@ -58,6 +59,10 @@ public class TestingAudio : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrackOnce("soundtrack1", 5, gameObject);
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            SceneManager.LoadScene("NewAudioSystemOtherScene");
         }
     }
 }
