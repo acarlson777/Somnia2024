@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,6 +294,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &574429678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4224572262200498698, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
+  m_PrefabInstance: {fileID: 3727640773461499132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &574429679
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574429678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5.0000014
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &574429680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574429678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd706340c526e2a45bac94f703ba15d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 574429682}
+  interactCollider: {fileID: 574429679}
+  BoxColliderThickness: 0
+  lines:
+  - lines:
+    - It's your closet.
+--- !u!65 &574429682 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8285425634787532047, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
+  m_PrefabInstance: {fileID: 3727640773461499132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &585357420
 GameObject:
   m_ObjectHideFlags: 0
