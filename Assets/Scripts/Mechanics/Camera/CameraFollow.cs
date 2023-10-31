@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     public GameObject objectToFollow;
 
     
-    void Update()
+    void FixedUpdate()
     {
         //transform.position = Vector3.MoveTowards(transform.position, objectToFollow.transform.position + offset, Time.deltaTime * convergeConstant);
 
