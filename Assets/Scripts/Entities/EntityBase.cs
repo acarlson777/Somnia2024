@@ -27,7 +27,6 @@ public class EntityBase : MonoBehaviour,Entity
     private Vector3 vel;
     private float entityMaxSpeed = 2.1f;
     protected float K_friction = 5.0f; // Coefficient of Friction
-    protected List<Entity> entitiesSeen;
     public void Initialize()
     {
         rb = GetComponent<Rigidbody>();
@@ -88,12 +87,5 @@ public class EntityBase : MonoBehaviour,Entity
     {
         print(entity.GetName() + " interacted with me... a " + GetName());
     }
-    void OnTriggerEnter(Collider col)
-    {
-        entitiesSeen.Add(col.gameObject.GetComponent<Entity>()) ;
-    }
-    void OnTriggerExit(Collider col)
-    {
-        entitiesSeen.Remove(col.gameObject.GetComponent<Entity>());
-    }
+
 }

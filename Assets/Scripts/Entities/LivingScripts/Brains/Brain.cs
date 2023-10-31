@@ -32,32 +32,13 @@ public class Brain
     }
     
 
-
-    public void Update()
+    public void SetSeen(List<GameObject> seen)
     {
-         List<Collider> touching = new List<Collider>();
-        //Get a list of entities that the brain/entity can see
-        Collider[] Colliding = Physics.OverlapSphere(SphereCenter(), SphereOfInteraction.radius);
-        // Cull all the other spheres of interactions
-        foreach (Collider collider in Colliding)
-        {
-            if (isEntity(collider) && !isSelf(collider) ) { touching.Add(collider); }
-        }
-        CollidingCount = touching.Count;
-
-        if (touching.Count == 0)
-        {
-            // If we are only detecting ourselves and our spherecollider
-            EntityFocus = null;
-        }
-        else
-        {
-            Array.Sort(touching.ToArray(),CompareDistances);
-           
-            //  get the closest one
-            EntityFocus = ((BoxCollider)touching[0]).gameObject;
-        }
+        GameObject[] seenArr = seen.ToArray();
+        Array.Sort(seenArr, CompareDistances);
+        EntityFocus = seenArr.Length == 0 ? null : seenArr[0];
     }
+
     /// <summary>
     ///     Should be called every time another entity wants to talk to this ones. Should be passed through entity
     /// </summary>
@@ -99,13 +80,10 @@ public class Brain
         return col is BoxCollider && col.gameObject.tag == "entity";
     }
 
-    private bool isSelf(Collider col)
+
+    Int32 CompareDistances(GameObject x, GameObject y)
     {
-        return ReferenceEquals(col.gameObject.GetComponent<Entity>(), entity);
-    }
-    Int32 CompareDistances(Collider x, Collider y)
-    {
-        return Mathf.RoundToInt(Distance(x.gameObject.transform.position, SphereOfInteraction.center) - Distance(y.gameObject.transform.position, SphereOfInteraction.center));
+        return Mathf.RoundToInt(Distance(x.transform.position, SphereOfInteraction.center) - Distance(y.transform.position, SphereOfInteraction.center));
     }
 
 }

@@ -14,6 +14,8 @@ public class Living : EntityBase
 
     public int health;
     public float speed = 1.0f;
+    public List<GameObject> gameobjectsTouching = new List<GameObject>();
+    //public HashSet<GameObject> gameobjectsTouching = new HashSet<GameObject>();
 
     new public void Start()
     {
@@ -30,10 +32,10 @@ public class Living : EntityBase
     // Update is called once per frame
     new protected void Update()
     {
-        base.Update(); // Update normal entity stuff like physics and other stuff???
+        base.Update(); // Update normal entity stuff like physics and other stuff???    
 
         // update things that are specific to living entities like brain
-        brain.Update();
+        brain.SetSeen(gameobjectsTouching);
 
     }
     new public void Interact(Entity other)
@@ -46,6 +48,20 @@ public class Living : EntityBase
         if (brain.GetClosestEntity() != null)
         {
             brain.GetClosestEntity().Interact(this);
+        }
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col is BoxCollider)
+        {
+            gameobjectsTouching.Add(col.gameObject);
+        }
+    }
+    void OnTriggerExit(Collider col)
+    {
+        if (col is BoxCollider)
+        {
+            gameobjectsTouching.Remove(col.gameObject);
         }
     }
 }
