@@ -1,81 +1,126 @@
-﻿using UnityEngine;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-/*
-public class Soundtrack
+using UnityEngine;
+
+[System.Serializable]
+public class Soundtrack : AudioInteraction
 {
-    public List<Sound> allSounds = new List<Sound>();
-    public int index;
-    private bool active = false;
-    public float fadeConst = 1f;
-    private bool fading;
+    public string _name;
+    public string Name
+    {
+        get => _name;
+        set => _name = value;
+    }
+
+    public float fadeTime;
+
+    public string[] sounds;
+    private int index = 0;
+    private AudioSource currentlyPlayingSound = null;
+    private Coroutine currentNextSoundLogicCoroutine = null;
     private GameObject lastCaller;
+    private SoundInstance activeSound;
 
 
     public void Play(GameObject caller)
     {
-        active = true;
+        if (currentNextSoundLogicCoroutine != null) {AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
+        if (currentlyPlayingSound != null) {currentlyPlayingSound.Stop();}
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.Play(caller);
+        currentlyPlayingSound = activeSound.audioSource;
         lastCaller = caller;
-        allSounds[index].Play(caller);
+        currentNextSoundLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSoundLogic());
+        Debug.Log("Soundtrack \"" + Name + "\" is playing" + " with song \"" + activeSound.Name + "\"");
+    }
+
+    public void PlayRandomOnce(GameObject caller)
+    {
+        if (currentNextSoundLogicCoroutine != null) { AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine); }
+        if (currentlyPlayingSound != null) { currentlyPlayingSound.Stop(); }
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.Play(caller);
+        currentlyPlayingSound = activeSound.audioSource;
+        lastCaller = caller;
+        Debug.Log("Soundtrack \"" + Name + "\" is randomly playing once" + " with song \"" + activeSound.Name + "\"");
+    }
+
+    public void FadeInRandomOnce(float seconds, GameObject caller)
+    {
+        if (currentNextSoundLogicCoroutine != null) { AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine); }
+        if (currentlyPlayingSound != null) { currentlyPlayingSound.Stop(); }
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeIn(seconds, caller);
+        currentlyPlayingSound = activeSound.audioSource;
+        lastCaller = caller;
+        Debug.Log("Soundtrack \"" + Name + "\" is randomly fading in once" + " with song \"" + activeSound.Name + "\"");
     }
 
     public void Stop()
     {
-        active = false;
-        allSounds[index].Stop();
+        if (currentNextSoundLogicCoroutine != null){AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.Stop();
+        currentlyPlayingSound = null;
+        currentNextSoundLogicCoroutine = null;
     }
 
     public void FadeIn(float seconds, GameObject caller)
     {
-        active = true;
-        lastCaller = caller; 
-        allSounds[index].FadeIn(seconds, caller);
+        if (currentNextSoundLogicCoroutine != null) {AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
+        if (currentlyPlayingSound != null) {currentlyPlayingSound.Stop();}
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeIn(seconds, caller);
+        currentlyPlayingSound = activeSound.audioSource;
+        lastCaller = caller;
+        currentNextSoundLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSoundLogic());
+        Debug.Log("Soundtrack \"" + Name + "\" is fading in" + " with song \"" + activeSound.Name + "\"");
     }
 
     public void FadeOut(float seconds)
     {
-        active = false;
-        allSounds[index].FadeOut(seconds);
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeOut(seconds);
+        currentlyPlayingSound = null;
+        currentNextSoundLogicCoroutine = null;
     }
 
-    void Update()
+    public void FadeOutAndStop(float seconds)
     {
-        if (active)
+        if (currentNextSoundLogicCoroutine != null){AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine);}
+        activeSound = FindSoundOfName(sounds[index]);
+        activeSound.FadeOut(seconds);
+        currentlyPlayingSound = null;
+        currentNextSoundLogicCoroutine = null;
+    }
+
+    IEnumerator NextSoundLogic()
+    {
+        yield return new WaitForSeconds(currentlyPlayingSound.clip.length - fadeTime);
+        FadeOut(fadeTime);
+        index++;
+        if (index >= sounds.Length)
         {
-            if (allSounds[index].IsPlaying())
+            index = 0;
+        }
+        yield return new WaitForSeconds(fadeTime);
+        FadeIn(fadeTime, lastCaller);
+    }
+
+    public void SetRandomSong()
+    {
+        index = UnityEngine.Random.Range(0,sounds.Length-1);
+    }
+
+    private SoundInstance FindSoundOfName(string name)
+    {
+        foreach (SoundInstance sound in AudioManagerSingleton.Instance.songsAndSfxs)
+        {
+            if (sound.Name == name)
             {
-                //Check if allSounds[index] is fadeConst seconds from reaching end. if so, begin fadeout
-                if (allSounds[index].audioClip.length - allSounds[index].audioSource.time <= fadeConst && fading == false)
-                {
-                    fading = true;
-                    allSounds[index].FadeOut(fadeConst);
-                }
-                return;
-            }
-            if (index >= allSounds.Count - 1)
-            {
-                index = -1;
-            }
-            else
-            {
-                index++;
-                fading = false;
-                allSounds[index].FadeIn(fadeConst, lastCaller);
+                return sound;
             }
         }
-    }
-
-    public void SetVolume()
-    {
-        // This method does nothing
-        Debug.Log("WARNING: RUNNING \"SetVolume\" METHOD ON SOUNDTRACK DOES NOTHING");
-    }
-
-    public float GetVolume()
-    {
-        // This method does nothing
-        Debug.Log("WARNING: RUNNING \"GetVolume\" METHOD ON SOUNDTRACK DOES NOTHING");
-        return -1;
+        return null;
     }
 }
-*/
