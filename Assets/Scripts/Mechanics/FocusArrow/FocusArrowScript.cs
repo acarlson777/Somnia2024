@@ -52,8 +52,6 @@ public class FocusArrowScript : MonoBehaviour
     {
         float value1 = Mathf.Sin(time * 1.22f);
 
-
-
         return value1 *value1 * 0.7f;
     }
 }

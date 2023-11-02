@@ -63,7 +63,7 @@ public class DialogueScript : MonoBehaviour
     // progresses text box on click / autofills text on click
     void TextOnClick()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)) //MAKE IT WORK WITH MOBILE TOO THANKS - CAI
         {
             if (dialogueText.text != numberOfLines[lineNumber])
             {
