@@ -10,6 +10,8 @@ public class Player : Living, Entity
     void Awake()
     {
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
+        entityMaxSpeed = 4;
+        K_friction = 7f;
     }
     new void Start()
     {
@@ -32,7 +34,7 @@ public class Player : Living, Entity
                 print("No entity to interact with!");
             }
         }   
-        Move(JoystickInput.worldOrientedJoystickDirection * 50.0f * Time.deltaTime);
+        Move(JoystickInput.worldOrientedJoystickDirection * speed * Time.deltaTime);
         
         arrowScript.SetFocus(brain.GetClosestEntityAsGO());
     }

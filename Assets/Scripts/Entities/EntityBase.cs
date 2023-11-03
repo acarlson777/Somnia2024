@@ -25,7 +25,7 @@ public class EntityBase : MonoBehaviour,Entity
 
     private Vector3 accel;
     private Vector3 vel;
-    private float entityMaxSpeed = 2.1f;
+    public float entityMaxSpeed = 2.1f;
     protected float K_friction = 5.0f; // Coefficient of Friction
     public void Initialize()
     {
