@@ -52,14 +52,14 @@ public class Living : EntityBase
     }
     void OnTriggerEnter(Collider col)
     {
-        if (col is BoxCollider)
+        if (col is BoxCollider  && col.gameObject.tag == "entity")
         {
             gameobjectsTouching.Add(col.gameObject);
         }
     }
     void OnTriggerExit(Collider col)
     {
-        if (col is BoxCollider)
+        if (col is BoxCollider && col.gameObject.tag == "entity") 
         {
             gameobjectsTouching.Remove(col.gameObject);
         }
