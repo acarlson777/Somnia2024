@@ -198,6 +198,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2605367484095423002, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4224572262200498698, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
       propertyPath: m_Name
       value: DiageticObject
@@ -216,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7631110863345032697, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.11
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 7631110863345032697, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -262,7 +266,8 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 5.14
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2605367484095423002, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
 --- !u!1001 &499761995
 PrefabInstance:
@@ -271,6 +276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5631316416746892960, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: speed
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 5631316416746892961, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_Name
       value: Bea
@@ -478,6 +487,7 @@ MonoBehaviour:
   entityCollider: {fileID: 574429682}
   interactCollider: {fileID: 574429679}
   BoxColliderThickness: 0
+  entityMaxSpeed: 2.1
   lines:
   - lines:
     - It's your closet.
@@ -1894,6 +1904,7 @@ MonoBehaviour:
   entityCollider: {fileID: 2077116084}
   interactCollider: {fileID: 2077116089}
   BoxColliderThickness: 0.78
+  entityMaxSpeed: 2.1
   lines:
   - lines:
     - WASSUP IMMA DREEEM JURNL
