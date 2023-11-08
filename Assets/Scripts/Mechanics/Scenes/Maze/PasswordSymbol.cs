@@ -5,6 +5,7 @@ public class PasswordSymbol : InteractableObject, Entity
 {
 
     [SerializeField] private bool lit = false;
+    public string symbol = "";
     public new void Start()
     {
         base.Start();

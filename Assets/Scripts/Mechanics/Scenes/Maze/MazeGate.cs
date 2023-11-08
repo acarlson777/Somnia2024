@@ -39,4 +39,8 @@ public class MazeGate : InteractableObject, Entity
     {
         open = true;
     }
+    public void CloseGate()
+    {
+        open = false;
+    }
 }
