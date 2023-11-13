@@ -13,6 +13,10 @@ public class DreamJournalEntityScript : InteractableObject , Entity
     {
         if (entity is Player)
         {
+            if (timesInteracted == lines.Count)
+            {
+                PopupManager.CreatePopUp("DreamJournalPopup");
+            }
             if (timesInteracted >= lines.Count)
             {
                 timesInteracted = lines.Count-1;
