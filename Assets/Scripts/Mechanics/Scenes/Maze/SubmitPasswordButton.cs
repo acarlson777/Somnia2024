@@ -8,12 +8,12 @@ public class SubmitPasswordButton : InteractableObject, Entity
     public GateSymbol[] gateSymbols;
     public PasswordSymbol[] passwordSymbols;
     public MazeGate gateScript;
-
+    public List<string> password = new List<string>();
 
     public new void Start()
     {
         base.Start();
-        gateScript.CloseGate();
+        //gateScript.CloseGate();
     }
 
     public new void Update()
@@ -23,7 +23,7 @@ public class SubmitPasswordButton : InteractableObject, Entity
 
     public new void Interact(Entity entity)
     {
-        List<string> password = new List<string>();
+        //List<string> password = new List<string>();
         foreach (PasswordSymbol passwordSymbol in passwordSymbols)
         {
             if (passwordSymbol.getLit())
