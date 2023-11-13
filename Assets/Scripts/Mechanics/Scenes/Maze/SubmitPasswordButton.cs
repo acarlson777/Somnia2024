@@ -23,22 +23,44 @@ public class SubmitPasswordButton : InteractableObject, Entity
 
     public new void Interact(Entity entity)
     {
-        //List<string> password = new List<string>();
-        foreach (PasswordSymbol passwordSymbol in passwordSymbols)
-        {
-            if (passwordSymbol.getLit())
-            {
-                password.Add(passwordSymbol.symbol);
-            }
-        }
 
-            if (entity is Player)
+        if (entity is Player)
+        {
+            List<string> password = new List<string>();
+            foreach (PasswordSymbol passwordSymbol in passwordSymbols)
             {
-                foreach (GateSymbol gateSymbol in gateSymbols)
+                if (passwordSymbol.getLit())
                 {
-                    bool passwordWorked = gateSymbol.submitPassword(password.ToArray());
-                    
+                    password.Add(passwordSymbol.symbol);
                 }
             }
+            bool passwordWorked = false;
+            foreach (GateSymbol gateSymbol in gateSymbols)
+            {
+                if(gateSymbol.submitPassword(password.ToArray()))
+                {
+                    passwordWorked = true;
+                }
+           
+
+            }
+            bool ALLACTIVE_uArerVeryEffective = true;
+            if (!passwordWorked) { return; }
+            foreach (GateSymbol gate in gateSymbols)
+            {
+                if (!gate.glowy)
+                {
+                    ALLACTIVE_uArerVeryEffective = false;
+                    break;
+                }
+            }
+            if (ALLACTIVE_uArerVeryEffective)
+            {
+                // we turn on ga-tae
+                gateScript.OpenGate();
+            }
+        }
+        // we celebrate >>> CELEBRATE GOOD TIMES COME ON!!!!!!!!!!!!!!!!!!
+
     }
 }

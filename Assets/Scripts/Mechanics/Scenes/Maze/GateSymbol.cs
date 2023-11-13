@@ -4,6 +4,7 @@ using System.Collections;
 public class GateSymbol : InteractableObject, Entity
 {
     public string[] password; // this will hold an array of string which must be true and nothing else must be true for this symbol to be turned on.
+    public bool glowy = false;
 
     public new void Start()
     {
@@ -25,9 +26,12 @@ public class GateSymbol : InteractableObject, Entity
 
         for (int i = 0; i < password.Length; i++)
         {
-          
+          if (password[i] != passwordSubmitted[i])
+            {
+                return false;
+            }
         }
         // become glowy
-        return false;
+        return true;
     }
 }
