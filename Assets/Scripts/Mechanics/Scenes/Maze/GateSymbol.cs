@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GateSymbol : InteractableObject, Entity
 {
     public string[] password; // this will hold an array of string which must be true and nothing else must be true for this symbol to be turned on.
+    public bool glowy = false;
 
     public new void Start()
     {
@@ -23,11 +25,13 @@ public class GateSymbol : InteractableObject, Entity
     {
         if (password.Length != passwordSubmitted.Length) return false;
 
-        for (int i = 0; i < password.Length; i++)
+        HashSet<string> actualPassword = new HashSet<string>(password);
+        HashSet<string> userPassword = new HashSet<string>(passwordSubmitted);
+        if (actualPassword.SetEquals(userPassword))
         {
-          
+            glowy = true;
+            return true;
         }
-        // become glowy
-        return false;
+        else return false;
     }
 }

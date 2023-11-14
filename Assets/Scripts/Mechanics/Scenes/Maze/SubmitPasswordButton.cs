@@ -9,7 +9,6 @@ public class SubmitPasswordButton : InteractableObject, Entity
     public PasswordSymbol[] passwordSymbols;
     public MazeGate gateScript;
 
-
     public new void Start()
     {
         base.Start();
@@ -23,22 +22,52 @@ public class SubmitPasswordButton : InteractableObject, Entity
 
     public new void Interact(Entity entity)
     {
-        List<string> password = new List<string>();
-        foreach (PasswordSymbol passwordSymbol in passwordSymbols)
-        {
-            if (passwordSymbol.getLit())
-            {
-                password.Add(passwordSymbol.symbol);
-            }
-        }
 
-            if (entity is Player)
+        if (entity is Player)
+        {
+            List<string> password = new List<string>();
+            // goes through the correct password symbols in hierarchy
+            foreach (PasswordSymbol passwordSymbol in passwordSymbols)
             {
-                foreach (GateSymbol gateSymbol in gateSymbols)
+                // if its lit, add it to the players password submission
+                if (passwordSymbol.getLit())
                 {
-                    bool passwordWorked = gateSymbol.submitPassword(password.ToArray());
-                    
+                    password.Add(passwordSymbol.symbol);
                 }
             }
+            bool passwordWorked = false;
+            foreach (GateSymbol gateSymbol in gateSymbols)
+            {
+                if(gateSymbol.submitPassword(password.ToArray()))
+                {
+                    passwordWorked = true;
+                }
+                else
+                {
+                    Debug.Log("wrong pass");
+                    password = new List<string>();
+                }
+           
+
+            }
+            bool correctSymbolsActivated = true;
+            if (!passwordWorked) { return; }
+            foreach (GateSymbol gate in gateSymbols)
+            {
+                if (!gate.glowy)
+                {
+                    correctSymbolsActivated = false;
+                    Debug.Log("hello");
+                    break;
+                }
+            }
+            if (correctSymbolsActivated)
+            {
+                // we turn on ga-tae
+                gateScript.OpenGate();
+            }
+        }
+        // we celebrate >>> CELEBRATE GOOD TIMES COME ON!!!!!!!!!!!!!!!!!!
+
     }
 }
