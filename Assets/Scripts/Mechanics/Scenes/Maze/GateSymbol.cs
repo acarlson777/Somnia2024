@@ -25,14 +25,6 @@ public class GateSymbol : InteractableObject, Entity
     {
         if (password.Length != passwordSubmitted.Length) return false;
 
-        /*for (int i = 0; i < password.Length; i++)
-        {
-          if (password[i] != passwordSubmitted[i])
-            {
-
-                return false;
-            }
-        }*/
         HashSet<string> actualPassword = new HashSet<string>(password);
         HashSet<string> userPassword = new HashSet<string>(passwordSubmitted);
         if (actualPassword.SetEquals(userPassword))
@@ -41,8 +33,5 @@ public class GateSymbol : InteractableObject, Entity
             return true;
         }
         else return false;
-        // become glowy
-        //glowy = true;
-        //return true;
     }
 }
