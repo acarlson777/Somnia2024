@@ -45,7 +45,7 @@ public class SubmitPasswordButton : InteractableObject, Entity
                 else
                 {
                     Debug.Log("wrong pass");
-                    password = new List<string>();
+                    //password = new List<string>();
                 }
            
 
