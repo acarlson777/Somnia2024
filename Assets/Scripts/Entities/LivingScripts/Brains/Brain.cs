@@ -12,7 +12,6 @@ public class Brain
     private Entity entity = null;
     //Should return a (x,y) within a unit circle which can be used by the Living Entities to accelerate
     private int CollidingCount = 0;
-    private Entity self = null;
 
     public Brain(Entity entity, SphereCollider interactCollider)
     {

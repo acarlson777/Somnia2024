@@ -10,6 +10,7 @@ public class DialogueScript : MonoBehaviour
     // cached references
     public TextMeshProUGUI dialogueText;
     GameObject joystick;
+    GameObject interact_button;
 
     // variables for dialogue functionality
     public string[] numberOfLines;
@@ -21,9 +22,15 @@ public class DialogueScript : MonoBehaviour
     // finds a joystick caches it
     private void Awake()
     {
-        if (GameObject.Find("Joystick") != null)
+        GameObject js = GameObject.Find("Joystick");
+        if (js != null)
         {
-            joystick = GameObject.Find("Joystick");
+            joystick = js;
+        }
+        js = GameObject.Find("InteractButton");
+        if (js != null)
+        {
+            interact_button = js;
         }
     }
 
@@ -33,6 +40,10 @@ public class DialogueScript : MonoBehaviour
         if (joystick != null)
         {
             joystick.SetActive(false);
+        }
+        if (interact_button != null)
+        {
+            interact_button.SetActive(false);
         }
         isActive = true;
         dialogueText.text = "";
@@ -98,7 +109,11 @@ public class DialogueScript : MonoBehaviour
             {
                 joystick.SetActive(true);
             }
-           isActive = false;
+            if (interact_button != null)
+            {
+                interact_button.SetActive(true);
+            }
+            isActive = false;
            Destroy(gameObject);
         }
         // otherwise, continue printing next line

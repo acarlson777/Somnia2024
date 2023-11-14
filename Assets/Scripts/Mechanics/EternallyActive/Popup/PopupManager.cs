@@ -33,6 +33,11 @@ public class PopupManager : MonoBehaviour
             }
         }
         GameObject popupObjectPrefab = Resources.Load(resourceName) as GameObject;
+        if (popupObjectPrefab == null)
+        {
+            print("Tried to create a Popup that doesn't exist" + resourceName);
+            return false;
+        }
         GameObject popupObject = Instantiate(popupObjectPrefab, Canvas.transform);
         currentPopup = popupObject;
         return true;

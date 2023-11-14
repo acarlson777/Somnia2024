@@ -16,6 +16,7 @@ public class DreamJournalEntityScript : InteractableObject , Entity
             if (timesInteracted == lines.Count)
             {
                 PopupManager.CreatePopUp("DreamJournalPopup");
+                return;
             }
             if (timesInteracted >= lines.Count)
             {
