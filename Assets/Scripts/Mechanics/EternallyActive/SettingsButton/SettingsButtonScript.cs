@@ -13,7 +13,7 @@ public class SettingsButtonScript : MonoBehaviour
     {
         settingsScreen = GameObject.Find("SettingsButtonScreen");
         joystick = GameObject.Find("Joystick");
-        interactableButton = GameObject.Find("InteractableButton");
+        interactableButton = GameObject.Find("InteractButton");
         Toggle();
         //Use settingsScreen gameObject to get the sliders and any other things (might not be necessary because the volume sliders handle themselves
     }
