@@ -8,12 +8,11 @@ public class SubmitPasswordButton : InteractableObject, Entity
     public GateSymbol[] gateSymbols;
     public PasswordSymbol[] passwordSymbols;
     public MazeGate gateScript;
-    public List<string> password = new List<string>();
 
     public new void Start()
     {
         base.Start();
-        //gateScript.CloseGate();
+        gateScript.CloseGate();
     }
 
     public new void Update()
@@ -27,8 +26,10 @@ public class SubmitPasswordButton : InteractableObject, Entity
         if (entity is Player)
         {
             List<string> password = new List<string>();
+            // goes through the correct password symbols in hierarchy
             foreach (PasswordSymbol passwordSymbol in passwordSymbols)
             {
+                // if its lit, add it to the players password submission
                 if (passwordSymbol.getLit())
                 {
                     password.Add(passwordSymbol.symbol);
@@ -41,20 +42,26 @@ public class SubmitPasswordButton : InteractableObject, Entity
                 {
                     passwordWorked = true;
                 }
+                else
+                {
+                    Debug.Log("wrong pass");
+                    password = new List<string>();
+                }
            
 
             }
-            bool ALLACTIVE_uArerVeryEffective = true;
+            bool correctSymbolsActivated = true;
             if (!passwordWorked) { return; }
             foreach (GateSymbol gate in gateSymbols)
             {
                 if (!gate.glowy)
                 {
-                    ALLACTIVE_uArerVeryEffective = false;
+                    correctSymbolsActivated = false;
+                    Debug.Log("hello");
                     break;
                 }
             }
-            if (ALLACTIVE_uArerVeryEffective)
+            if (correctSymbolsActivated)
             {
                 // we turn on ga-tae
                 gateScript.OpenGate();

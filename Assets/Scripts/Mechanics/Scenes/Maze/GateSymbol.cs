@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GateSymbol : InteractableObject, Entity
 {
@@ -24,14 +25,24 @@ public class GateSymbol : InteractableObject, Entity
     {
         if (password.Length != passwordSubmitted.Length) return false;
 
-        for (int i = 0; i < password.Length; i++)
+        /*for (int i = 0; i < password.Length; i++)
         {
           if (password[i] != passwordSubmitted[i])
             {
+
                 return false;
             }
+        }*/
+        HashSet<string> actualPassword = new HashSet<string>(password);
+        HashSet<string> userPassword = new HashSet<string>(passwordSubmitted);
+        if (actualPassword.SetEquals(userPassword))
+        {
+            glowy = true;
+            return true;
         }
+        else return false;
         // become glowy
-        return true;
+        //glowy = true;
+        //return true;
     }
 }
