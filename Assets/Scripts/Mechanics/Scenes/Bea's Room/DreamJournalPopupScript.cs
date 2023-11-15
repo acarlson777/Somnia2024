@@ -5,7 +5,7 @@ using UnityEngine;
 public class DreamJournalPopupScript : MonoBehaviour
 {
     public GameObject[] bookPages;
-    private uint currPage; // NOT TECHNICALY A PAGE
+    private int currPage; // NOT TECHNICALY A PAGE
     GameObject joystick;
     GameObject interact_button;
     // Start is called before the first frame update
@@ -19,19 +19,22 @@ public class DreamJournalPopupScript : MonoBehaviour
     void Start()
     {
         print("Created the Dream Journal PopUp");
+        RecalculatePages();
 
     }
     private void RecalculatePages()
     {
         for (int i = 0; i < bookPages.Length;i++)
         {
+            
             if (i / 2 == currPage)
             {
                 bookPages[i].SetActive(true);
             }
             else
             {
-                bookPages[i].SetActive(true);
+                bookPages[i].SetActive(false);
+
             }
         }
     }
