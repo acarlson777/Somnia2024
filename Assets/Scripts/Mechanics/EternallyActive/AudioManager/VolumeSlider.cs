@@ -37,6 +37,6 @@ public class VolumeSlider : MonoBehaviour
         else if (type == "song")
         {
             PlayerPrefs.SetFloat("songVolume", slider.value);
-        }
+        }  
     }
 }
