@@ -470,33 +470,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5631316416746892960, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
-      propertyPath: speed
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 5631316416746892961, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_Name
       value: Bea
       objectReference: {fileID: 0}
-    - target: {fileID: 5631316416746892961, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
-      propertyPath: m_TagString
-      value: entity
+    - target: {fileID: 5631316416746892965, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_Size.y
+      value: 1.52792
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746892965, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
-      propertyPath: m_Size.z
-      value: 2.0408163
+      propertyPath: m_Center.y
+      value: -0.56395996
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -538,12 +526,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5631316416746893018, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-    m_RemovedComponents:
-    - {fileID: 5631316416746892964, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
 --- !u!1 &571698089
 GameObject:
@@ -1809,6 +1792,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 571698093}
     m_Modifications:
+    - target: {fileID: 6536796011020772085, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}
+      propertyPath: joystickConstant
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6536796011020772090, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}
       propertyPath: m_RootOrder
       value: 0
