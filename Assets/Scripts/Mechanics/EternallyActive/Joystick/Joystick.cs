@@ -85,7 +85,7 @@ public class Joystick : MonoBehaviour
             if (startHoldPos.x > Screen.width/2) { return; }
             HeldDown = true;
             startHoldPos.z = 0;
-            rectTransform.anchoredPosition = new Vector2(startHoldPos.x - Screen.width / 2, startHoldPos.y - Screen.height / 2);
+            rectTransform.anchoredPosition = new Vector2(startHoldPos.x, startHoldPos.y);
         }
 
         if (Input.GetMouseButton(0))
