@@ -23,6 +23,7 @@ public class Joystick : MonoBehaviour
 
     private uint JoystickCircleCount; // the amount of circles that we have. be sure to change to reflect the current count.
     private bool HeldDown = false;
+    private RectTransform rectTransform;
 
     void Start()
     {
@@ -39,6 +40,8 @@ public class Joystick : MonoBehaviour
         largestCircle.SetFamily(null, mediumCircle, largest);
         mediumCircle.SetFamily(largestCircle, smallCircle, medium);
         smallCircle.SetFamily(mediumCircle, null, small);
+
+        rectTransform = GetComponent<RectTransform>();
     }
 
 
@@ -74,13 +77,15 @@ public class Joystick : MonoBehaviour
 
     private void UnityEditorJoystickLogic()
     {
+        //transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (Input.GetMouseButtonDown(0))
         {
 
-            startHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            startHoldPos = new Vector3(Input.mousePosition.x , Input.mousePosition.y, 0);
             if (startHoldPos.x > Screen.width/2) { return; }
-            HeldDown = true; 
-            this.gameObject.transform.position = startHoldPos;
+            HeldDown = true;
+            startHoldPos.z = 0;
+            rectTransform.anchoredPosition = new Vector2(startHoldPos.x - Screen.width / 2, startHoldPos.y - Screen.height / 2);
         }
 
         if (Input.GetMouseButton(0))
@@ -89,7 +94,7 @@ public class Joystick : MonoBehaviour
             currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
 
             deltaHoldPos = currentHoldPos - startHoldPos;
-
+                
             if (deltaHoldPos.magnitude > joystickConstant)
             {
                 deltaHoldPos = deltaHoldPos.normalized * joystickConstant; //* joystickConstant;

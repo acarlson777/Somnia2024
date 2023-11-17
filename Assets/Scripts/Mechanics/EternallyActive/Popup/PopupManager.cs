@@ -8,10 +8,12 @@ public class PopupManager : MonoBehaviour
     static GameObject currentPopup = null;
     public static GameObject Canvas = null;
     public GameObject DisplaySurface = null;
+
     // Start is called before the first frame update
     void Start()
     {
         Canvas = DisplaySurface;
+
     }
 
     public static bool CreatePopUp(string resourceName)
