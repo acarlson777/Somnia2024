@@ -62,9 +62,10 @@ public class DreamJournalPopupScript : MonoBehaviour
     {
         
     }
-    void kms()
+    private void OnDestroy()
     {
-        joystick?.SetActive(false);
-        interact_button?.SetActive(false);
+        joystick?.SetActive(true);
+        interact_button?.SetActive(true);
     }
+
 }

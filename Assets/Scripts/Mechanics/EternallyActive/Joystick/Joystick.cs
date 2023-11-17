@@ -74,25 +74,34 @@ public class Joystick : MonoBehaviour
                            Mathf.Sin(angle)*vector.x + Mathf.Cos(angle)*vector.y
                            );
     }
+    private Vector2 PhysicalToVirtual(Vector2 screenPosition)
 
+    {
+        Vector2 physicalScreenSize = new Vector2(Screen.width, Screen.height);
+        Vector2 virtualScreenSize = new Vector2(1920, 1080);
+        Vector2 scalingFactors = virtualScreenSize / physicalScreenSize;
+        return screenPosition * scalingFactors; 
+    }
     private void UnityEditorJoystickLogic()
     {
         //transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if (Input.GetMouseButtonDown(0))
         {
 
-            startHoldPos = new Vector3(Input.mousePosition.x , Input.mousePosition.y, 0);
+            startHoldPos = Input.mousePosition; // This is a physical Position
+            Vector2 startHoldPhysical = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
             if (startHoldPos.x > Screen.width/2) { return; }
             HeldDown = true;
-            startHoldPos.z = 0;
-            rectTransform.anchoredPosition = new Vector2(startHoldPos.x - Screen.width / 2, startHoldPos.y - Screen.height / 2);
+           
+            
+            rectTransform.anchoredPosition = PhysicalToVirtual(startHoldPhysical);
         }
 
         if (Input.GetMouseButton(0))
         {
             if (!HeldDown) { return; }
-            currentHoldPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-
+            currentHoldPos = Input.mousePosition;
             deltaHoldPos = currentHoldPos - startHoldPos;
                 
             if (deltaHoldPos.magnitude > joystickConstant)
