@@ -103,15 +103,16 @@ public class Joystick : MonoBehaviour
             if (!HeldDown) { return; }
             currentHoldPos = Input.mousePosition;
             deltaHoldPos = currentHoldPos - startHoldPos;
-                
+            
             if (deltaHoldPos.magnitude > joystickConstant)
             {
-                deltaHoldPos = deltaHoldPos.normalized * joystickConstant; //* joystickConstant;
+                deltaHoldPos = deltaHoldPos.normalized * joystickConstant;
             }
 
-            JoystickInput.joystickDirection = deltaHoldPos  / joystickConstant;
+
+            JoystickInput.joystickDirection = deltaHoldPos;  /// joystickConstant;
             JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
-            mediumCircle.MoveRelativeToParent(deltaHoldPos/(JoystickCircleCount-1));
+            mediumCircle.MoveRelativeToParent(deltaHoldPos);///(JoystickCircleCount-1));
         }
 
         if (!Input.GetMouseButton(0))
