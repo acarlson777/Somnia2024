@@ -17,14 +17,11 @@ public class Living : EntityBase
     public List<GameObject> gameobjectsTouching = new List<GameObject>();
     //public HashSet<GameObject> gameobjectsTouching = new HashSet<GameObject>();
 
-    new public void Start()
+    protected new void Start()
     {
-        print("Starting from Living");
-
-
+        print("Starting at Living");
+        base.Start();
         brain = new Brain(this,interactCollider);
-        print("Made Brain");
-        Initialize();
 
 
     }
