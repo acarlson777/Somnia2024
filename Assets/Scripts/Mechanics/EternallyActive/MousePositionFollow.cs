@@ -17,7 +17,6 @@ public class MousePositionFollow : MonoBehaviour
         rt = GetComponent<RectTransform>();
         canvasSize = new Vector2(canvas.GetComponent<RectTransform>().rect.width, canvas.GetComponent<RectTransform>().rect.height);
     }
-
     // Update is called once per frame
     void Update()
     {

@@ -36,6 +36,7 @@ public class EntityBase : MonoBehaviour,Entity
 
     public void Start()
     {
+        print("Starting at EntityBase!");
         tag = "entity"; 
         Initialize();
     }

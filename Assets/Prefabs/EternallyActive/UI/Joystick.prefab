@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6536796010821085161}
   - component: {fileID: 6536796010821085163}
   - component: {fileID: 6536796010821085160}
-  - component: {fileID: 6536796010821085162}
+  - component: {fileID: 6137362834137881725}
   m_Layer: 5
   m_Name: largest
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6536796010821085162
+--- !u!114 &6137362834137881725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,13 +86,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6536796010821085166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91050611fc7259d499cb253a6015b122, type: 3}
+  m_Script: {fileID: 11500000, guid: 90e8478083c146c4ba93ce14d195f41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentCircle: {fileID: 0}
   childCircle: {fileID: 0}
-  gameObject: {fileID: 0}
-  joystickDirection: {x: 0, y: 0, z: 0}
+  rt: {fileID: 0}
 --- !u!1 &6536796010845824231
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +103,7 @@ GameObject:
   - component: {fileID: 6536796010845824230}
   - component: {fileID: 6536796010845824224}
   - component: {fileID: 6536796010845824225}
-  - component: {fileID: 6536796010845824227}
+  - component: {fileID: 9058487764410324895}
   m_Layer: 5
   m_Name: small
   m_TagString: Untagged
@@ -170,7 +169,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6536796010845824227
+--- !u!114 &9058487764410324895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,13 +178,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6536796010845824231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91050611fc7259d499cb253a6015b122, type: 3}
+  m_Script: {fileID: 11500000, guid: 90e8478083c146c4ba93ce14d195f41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentCircle: {fileID: 0}
   childCircle: {fileID: 0}
-  gameObject: {fileID: 0}
-  joystickDirection: {x: 0, y: 0, z: 0}
+  rt: {fileID: 0}
 --- !u!1 &6536796011020772091
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7534485631917070707}
-  - component: {fileID: 6536796011020772085}
+  - component: {fileID: 1653767758266701162}
   m_Layer: 0
   m_Name: Joystick
   m_TagString: Untagged
@@ -221,12 +219,12 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -736.8, y: -237.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 806, y: 226}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6536796011020772085
+--- !u!114 &1653767758266701162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,11 +233,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6536796011020772091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f1ab70a37b9dc4ea5e2adda9697c8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 731735cf5efbef24ea814689a32b6c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickConstant: 340.01
-  debug: 0
+  canvas: {fileID: 0}
+  joystickSize: 17.56
 --- !u!1 &6536796011226964832
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +249,7 @@ GameObject:
   - component: {fileID: 6536796011226964835}
   - component: {fileID: 6536796011226964893}
   - component: {fileID: 6536796011226964834}
-  - component: {fileID: 6536796011226964892}
+  - component: {fileID: 1039841631210755734}
   m_Layer: 5
   m_Name: medium
   m_TagString: Untagged
@@ -317,7 +315,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6536796011226964892
+--- !u!114 &1039841631210755734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,10 +324,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6536796011226964832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91050611fc7259d499cb253a6015b122, type: 3}
+  m_Script: {fileID: 11500000, guid: 90e8478083c146c4ba93ce14d195f41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentCircle: {fileID: 0}
   childCircle: {fileID: 0}
-  gameObject: {fileID: 0}
-  joystickDirection: {x: 0, y: 0, z: 0}
+  rt: {fileID: 0}
