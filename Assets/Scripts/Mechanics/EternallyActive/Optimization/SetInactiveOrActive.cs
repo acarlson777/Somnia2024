@@ -8,15 +8,15 @@ public class SetInactiveOrActive : MonoBehaviour
     [HideInInspector] public List<GameObject> optimizableObjects;
     public Transform player;
     public float optimizeDistance = 20f;
-
+    public bool optimizerActive = true;
     private float timer = 0f;
-    private float activateTime = 1f;
+    public float activateTime = 1f;
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > activateTime)
+        if (timer > activateTime && optimizerActive)
         {
             foreach (GameObject optimizable in optimizableObjects)
             {
