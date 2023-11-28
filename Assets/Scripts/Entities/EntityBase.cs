@@ -22,6 +22,7 @@ public class EntityBase : MonoBehaviour,Entity
     public BoxCollider entityCollider;
     public SphereCollider interactCollider;
     public float BoxColliderThickness;
+    protected bool debug = false;
 
     private Vector3 accel;
     private Vector3 vel;
@@ -36,7 +37,7 @@ public class EntityBase : MonoBehaviour,Entity
 
     public void Start()
     {
-        print("Starting at EntityBase!");
+        if (debug) print("Starting at EntityBase!");
         tag = "entity"; 
         Initialize();
     }

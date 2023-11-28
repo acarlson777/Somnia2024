@@ -15,10 +15,9 @@ public class Player : Living, Entity
     }
     new void Start()
     {
-        print("Starting at Player");
+        if (debug) print("Starting at Player");
 
         base.Start();
-        print(brain);
         
     }
 

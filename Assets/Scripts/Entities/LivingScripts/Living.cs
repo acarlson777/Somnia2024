@@ -19,7 +19,7 @@ public class Living : EntityBase
 
     protected new void Start()
     {
-        print("Starting at Living");
+        if (debug) print("Starting at Living");
         base.Start();
         brain = new Brain(this,interactCollider);
 
