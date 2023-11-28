@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Joystick : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Joystick : MonoBehaviour
     JoystickCircle largestCircle, mediumCircle, smallCircle;
     GameObject largest, medium, small;
 
+    CanvasScaler canvasScaler;
+
     RectTransform rt;
 
     private bool HeldDown = false;
@@ -25,6 +28,7 @@ public class Joystick : MonoBehaviour
     private void Start()
     {
         rt = GetComponent<RectTransform>();
+
         canvasSize = new Vector2(canvas.GetComponent<RectTransform>().rect.width, canvas.GetComponent<RectTransform>().rect.height);
 
         largest = GameObject.Find("largest");
@@ -47,6 +51,8 @@ public class Joystick : MonoBehaviour
 
     private void EditorJoystickLogic()
     {
+        screenSize.x = Screen.width;
+        screenSize.y = Screen.height;
         if (Input.GetMouseButtonDown(0))
         {
             startHoldPos = GetMousePosAsVec2();
@@ -71,7 +77,6 @@ public class Joystick : MonoBehaviour
             mediumCircle.MoveRelativeToParent(deltaHoldPos);
 
             JoystickInput.joystickDirection = deltaHoldPos / joystickSize;
-            print(JoystickInput.joystickDirection);
             JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
         }
 

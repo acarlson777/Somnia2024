@@ -27,7 +27,7 @@ public class DreamJournalPopupScript : MonoBehaviour
         for (int i = 0; i < bookPages.Length;i++)
         {
             
-            if (i / 2 == currPage)
+            if (i == currPage)
             {
                 bookPages[i].SetActive(true);
             }
@@ -60,7 +60,18 @@ public class DreamJournalPopupScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Input.mousePosition.x > Screen.width/2)
+            {
+                NextPage();
+            }
+            else
+            {
+                PriorPage();
+            }
+        }
     }
     private void OnDestroy()
     {
