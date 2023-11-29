@@ -6,7 +6,8 @@ public class PasswordSymbol : InteractableObject, Entity
 
     [SerializeField] private bool lit = false;
     public string symbol = "";
-    Material startingMat;
+    public Material startingMat;
+    public Material onMat;
     public new void Start()
     {
         base.Start();
@@ -28,7 +29,6 @@ public class PasswordSymbol : InteractableObject, Entity
         lit = !lit;
         if (lit)
         {
-            Material onMat = GameObject.Find("Gate").GetComponent<Renderer>().material;
             gameObject.GetComponent<Renderer>().material = onMat;
         }
         else
