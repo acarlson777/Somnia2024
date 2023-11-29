@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class DreamJournalPopupScript : MonoBehaviour
 {
+
     public GameObject[] bookPages;
     private int currPage; // NOT TECHNICALY A PAGE
     GameObject joystick;
     GameObject interact_button;
+    GameObject settings_button;
+    public bool debug = false;
     // Start is called before the first frame update
     private void Awake()
     {
         joystick = GameObject.Find("Joystick");
         interact_button = GameObject.Find("InteractButton");
+        settings_button = GameObject.Find("SettingsButton");
         joystick?.SetActive(false);
         interact_button?.SetActive(false);
+        settings_button?.SetActive(false);
+
     }
     void Start()
     {
@@ -60,10 +66,38 @@ public class DreamJournalPopupScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+#if UNITY_EDITOR
+        if (debug)
+        {
+            MobileLogic();
+        }
+        else
+        {
+            UnityEditorUpdate();
+        }
+#else
+        MobileLogic();
+#endif 
+    }
+    private void UnityEditorUpdate() { 
         if (Input.GetMouseButtonDown(0))
         {
             if (Input.mousePosition.x > Screen.width/2)
+            {
+                NextPage();
+            }
+            else
+            {
+                PriorPage();
+            }
+        }
+            
+    }
+    private void MobileLogic()
+    {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            if (Input.GetTouch(0).position.x > Screen.width / 2)
             {
                 NextPage();
             }
@@ -77,6 +111,7 @@ public class DreamJournalPopupScript : MonoBehaviour
     {
         joystick?.SetActive(true);
         interact_button?.SetActive(true);
+        settings_button?.SetActive(true);
     }
 
 }

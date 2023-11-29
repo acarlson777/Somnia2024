@@ -47,7 +47,7 @@ public class JoystickLegacy : MonoBehaviour
 
     void Update()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         if (debug)
         {
             MobileJoystickLogic();
@@ -56,13 +56,13 @@ public class JoystickLegacy : MonoBehaviour
         {
             UnityEditorJoystickLogic();
         }
-        
-        return;
-        #endif
 
-        #pragma warning disable CS0162 // Unreachable code detected
+        return;
+#endif
+
+#pragma warning disable CS0162 // Unreachable code detected
         MobileJoystickLogic();
-        #pragma warning restore CS0162 // Unreachable code detected
+#pragma warning restore CS0162 // Unreachable code detected
     }
 
     private Vector3 RotateVector2ForVector3(Vector3 vector, float angle)

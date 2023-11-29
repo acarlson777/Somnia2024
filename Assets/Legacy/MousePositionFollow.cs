@@ -25,7 +25,7 @@ public class MousePositionFollow : MonoBehaviour
 
     private Vector2 FindMousePercentOfScreenTraveled()
     {
-        float x, y, z;
+        float x, y;
         x = Input.mousePosition.x;
         y = Input.mousePosition.y;
         Vector2 mousePosVec2 = new Vector2(x, y);
