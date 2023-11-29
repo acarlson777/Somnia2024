@@ -9,6 +9,7 @@ public class SpriteRotationHandling : MonoBehaviour
     private Animator animator;
     public float accelerationConstant;
     private Vector3 acceleration;
+    private bool prev_was_zero;
 
 
     void Start()
@@ -20,10 +21,12 @@ public class SpriteRotationHandling : MonoBehaviour
     void Update()
     {
         acceleration = JoystickInput.joystickDirection;
-        if (JoystickInput.joystickDirection != Vector3.zero)
+
+        if ((JoystickInput.joystickDirection != Vector3.zero) || (JoystickInput.joystickDirection == Vector3.zero && prev_was_zero))
         {
             animator.SetFloat("accelerationX", acceleration.x * accelerationConstant);
             animator.SetFloat("accelerationZ", acceleration.y * accelerationConstant);
         }
+        prev_was_zero = JoystickInput.joystickDirection == Vector3.zero;
     }
 }
