@@ -809,7 +809,7 @@ SphereCollider:
   m_GameObject: {fileID: 574429678}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 5.0000014
   m_Center: {x: 0, y: 0, z: 0}
@@ -825,19 +825,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd706340c526e2a45bac94f703ba15d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityCollider: {fileID: 574429682}
-  interactCollider: {fileID: 574429679}
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
   BoxColliderThickness: 0
   entityMaxSpeed: 2.1
   lines:
   - lines:
     - It's your closet.
     - Get in there...
---- !u!65 &574429682 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8285425634787532047, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
-  m_PrefabInstance: {fileID: 3727640773461499132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &860463469
 GameObject:
   m_ObjectHideFlags: 0

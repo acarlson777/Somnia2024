@@ -4,7 +4,6 @@ using System.Collections;
 public class InfiniteCorridorHandler : MonoBehaviour
 {
 
-
     void Start()
     {
 
