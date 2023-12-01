@@ -6,6 +6,13 @@ public class PointHandlingLight : MonoBehaviour
     public Light pointLight1;
     public Light pointLight2;
 
+    public float outsideRange = 5.18f;
+    public float bigSpaceRange = 10f;
+
+    private Coroutine currentCoRoutine1;
+    private Coroutine currentCoRoutine2;
+
+
     void Start()
     {
         
@@ -21,8 +28,14 @@ public class PointHandlingLight : MonoBehaviour
     {
         if (other.CompareTag("LightUpZone"))
         {
-            pointLight1.intensity = 3.24f*2;
-            pointLight2.intensity = 3.24f*2;
+            if (currentCoRoutine1 != null)
+            {
+                StopCoroutine(currentCoRoutine1);
+                StopCoroutine(currentCoRoutine2);
+            }
+
+            currentCoRoutine1 = StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight1, bigSpaceRange, 2f));
+            currentCoRoutine2 = StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight2, bigSpaceRange, 2f));
         }
     }
 
@@ -30,19 +43,27 @@ public class PointHandlingLight : MonoBehaviour
     {
         if (other.CompareTag("LightUpZone"))
         {
-            pointLight1.intensity = 3.24f;
-            pointLight2.intensity = 3.24f;
+            if (currentCoRoutine1 != null)
+            {
+                StopCoroutine(currentCoRoutine1);
+                StopCoroutine(currentCoRoutine2);
+            }
+
+            StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight1, outsideRange, 2f));
+            StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight2, outsideRange, 2f));
         }
     }
 
-    IEnumerator GradientFloatMoveCoRoutine(float num, float expectedNum, float secs) //Make it pass the variable by reference somehow
+    IEnumerator GradientLightRangeMoveCoRoutine(Light light, float expectedNum, float secs) 
     {
-        float startTime = 0;
-        float startNum = num;
-        while (startTime < secs)
+        float time = 0;
+        float startNum = light.range;
+        while (time <= secs)
         {
-            num = Mathf.Lerp(startNum, expectedNum, startTime / secs);
+            light.range = Mathf.Lerp(startNum, expectedNum, time / secs);
+            time += Time.deltaTime;
             yield return null;
         }
+        light.range = expectedNum;
     }
 }
