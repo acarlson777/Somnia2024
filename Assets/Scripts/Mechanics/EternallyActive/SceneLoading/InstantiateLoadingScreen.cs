@@ -29,11 +29,18 @@ public class InstantiateLoadingScreen : MonoBehaviour
     }
     void Update()
     {
+        /*
+hehehehaw
+        asdf;klajsdf
+                askl;jdf
+
+         * 
+         * */
         //temporary condition, in the future, if player interacts with like a door or smth
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            LoadANewScene();
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    LoadANewScene();
+       //}
     }
 
     // Instantiates the loadingScreenCanvas, the loading screen, and the sceneloader which passes the sceneName to change to
