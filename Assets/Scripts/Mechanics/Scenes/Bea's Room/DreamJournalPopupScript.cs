@@ -11,6 +11,7 @@ public class DreamJournalPopupScript : MonoBehaviour
     GameObject interact_button;
     GameObject settings_button;
     public bool debug = false;
+    
     // Start is called before the first frame update
     private void Awake()
     {
@@ -48,6 +49,12 @@ public class DreamJournalPopupScript : MonoBehaviour
     public void NextPage()
     {
         currPage++;
+
+        if (currPage == bookPages.Length - 1)
+        {
+            BeasBedScript.noHostileMobsAround = true;
+        }
+
         if (currPage == bookPages.Length) {
             currPage--;
             return;

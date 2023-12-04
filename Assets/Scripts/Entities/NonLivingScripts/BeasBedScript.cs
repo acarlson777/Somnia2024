@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class BeasBedScript : InteractableObject, Entity
 {
-    public static bool readyForDreaming = false;
+    public static bool noHostileMobsAround = false;
+    public bool inspectorBed = false;
+    InstantiateLoadingScreen loadingScreen;
     new void Start()
     {
         base.Start();
-
+        loadingScreen = GetComponent<InstantiateLoadingScreen>();
     }
 
     new void Update()   
     {
         base.Update();
+        inspectorBed = noHostileMobsAround;
     }
-    new void Interact(Entity other)
+    new public void Interact(Entity other)
     {
+        Debug.Log("hi");
         if (other is Player)
         {
-            if (readyForDreaming)
+            Debug.Log("yooooooo");
+            if (noHostileMobsAround)
             {
-                // add the screen transition here
-                // move to the next scene
+                loadingScreen.LoadANewScene();
             }
                 
         }
