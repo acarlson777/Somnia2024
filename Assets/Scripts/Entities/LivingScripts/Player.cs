@@ -10,7 +10,7 @@ public class Player : Living, Entity
     void Awake()
     {
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
-        entityMaxSpeed = 3.5f;
+        entityMaxSpeed = 4.2f;
         K_friction = 8f;
     }
     new void Start()
