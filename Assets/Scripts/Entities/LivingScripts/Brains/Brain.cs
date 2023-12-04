@@ -6,17 +6,17 @@ using System.Collections.Generic;
 public class Brain
 {
     // The Entities should be responsible for sending the data to the brain.
-    private SphereCollider SphereOfInteraction;
+    public SphereCollider SphereOfInteraction;
     public ArrayList EntitiesSeen = new ArrayList();
     private GameObject EntityFocus = null;
     private Entity entity = null;
     //Should return a (x,y) within a unit circle which can be used by the Living Entities to accelerate
     private int CollidingCount = 0;
 
-    public Brain(Entity entity, SphereCollider interactCollider)
+    public Brain(Living entity)
     {
         this.entity = entity;
-        this.SphereOfInteraction = interactCollider;
+        this.SphereOfInteraction = entity.interactCollider;
 
     }
 
@@ -34,8 +34,20 @@ public class Brain
     public void SetSeen(List<GameObject> seen)
     {
         GameObject[] seenArr = seen.ToArray();
-        Array.Sort(seenArr, CompareDistances);
-        EntityFocus = seenArr.Length == 0 ? null : seenArr[0];
+        
+        Transform closest = null;
+        float dist_to_closest = float.MaxValue;
+        for (int i = 0; i < seenArr.Length; i++)
+      
+        {
+            float DEEE = DistToOwner(seenArr[i].transform);
+            if (DEEE < dist_to_closest) {
+                closest = seenArr[i].transform;
+                dist_to_closest = DEEE;
+            }
+        }
+
+        EntityFocus = closest == null ? null : closest.gameObject ;
     }
 
     /// <summary>
@@ -83,6 +95,10 @@ public class Brain
     Int32 CompareDistances(GameObject x, GameObject y)
     {
         return Mathf.RoundToInt(Distance(x.transform.position, SphereOfInteraction.center) - Distance(y.transform.position, SphereOfInteraction.center));
+    }
+    float DistToOwner(Transform transform)
+    {
+        return Distance(transform.position, this.entity.position);
     }
 
 }

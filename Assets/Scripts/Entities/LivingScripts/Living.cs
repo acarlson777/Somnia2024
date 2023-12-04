@@ -21,8 +21,7 @@ public class Living : EntityBase
     {
         if (debug) print("Starting at Living");
         base.Start();
-        brain = new Brain(this,interactCollider);
-
+        brain = new Brain(this);
 
     }
 
@@ -33,6 +32,7 @@ public class Living : EntityBase
 
         // update things that are specific to living entities like brain
         brain.SetSeen(gameobjectsTouching);
+        print(brain.SphereOfInteraction.center);
 
     }
     new public void Interact(Entity other)
@@ -49,14 +49,14 @@ public class Living : EntityBase
     }
     void OnTriggerEnter(Collider col)
     {
-        if (col is BoxCollider  && col.gameObject.tag == "entity")
+        if (col is BoxCollider  && col.gameObject.CompareTag("entity"))
         {
             gameobjectsTouching.Add(col.gameObject);
         }
     }
     void OnTriggerExit(Collider col)
     {
-        if (col is BoxCollider && col.gameObject.tag == "entity") 
+        if (col is BoxCollider && col.gameObject.CompareTag("entity")) 
         {
             gameobjectsTouching.Remove(col.gameObject);
         }

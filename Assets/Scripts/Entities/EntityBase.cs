@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface Entity 
 {
+    Vector3 position { get; }
     void Start();
     void Update();
     void Move(Vector3 accel);
@@ -22,12 +23,15 @@ public class EntityBase : MonoBehaviour,Entity
     public BoxCollider entityCollider;
     public SphereCollider interactCollider;
     public float BoxColliderThickness;
-    protected bool debug = false;
+    protected bool debug = true;
 
     private Vector3 accel;
     private Vector3 vel;
     public float entityMaxSpeed = 2.1f;
     protected float K_friction = 5.0f; // Coefficient of Friction
+
+    public Vector3 position => transform.position;
+
     public void Initialize()
     {
         rb = GetComponent<Rigidbody>();
