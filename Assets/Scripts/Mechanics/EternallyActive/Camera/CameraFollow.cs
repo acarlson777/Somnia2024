@@ -15,7 +15,8 @@ public class CameraFollow : MonoBehaviour
         //transform.position = Vector3.MoveTowards(transform.position, objectToFollow.transform.position + offset, Time.deltaTime * convergeConstant);
 
         Vector3 distance = objectToFollow.transform.position - transform.position + offset;
-        distance.y = 0; 
+        distance.y = 0;
+        transform.position = new Vector3(transform.position.x, offset.y, transform.position.z);
         transform.position += distance * Time.deltaTime * convergeConstant;
 
             
