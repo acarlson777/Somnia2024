@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
+
 public class Brain
 {
     // The Entities should be responsible for sending the data to the brain.
@@ -17,19 +18,12 @@ public class Brain
     {
         this.entity = entity;
         this.SphereOfInteraction = entity.interactCollider;
-
     }
 
 
-    public int getCollidingCount()
-    {
-        return CollidingCount;
-    }
-    public Vector3 SphereCenter()
-    {
-        return SphereOfInteraction.transform.position;
-    }
-    
+    public int getCollidingCount(){return CollidingCount;}
+    public Vector3 SphereCenter() { return SphereOfInteraction.transform.position; }
+  
 
     public void SetSeen(List<GameObject> seen)
     {

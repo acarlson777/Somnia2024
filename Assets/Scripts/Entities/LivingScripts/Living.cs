@@ -17,11 +17,13 @@ public class Living : EntityBase
     public List<GameObject> gameobjectsTouching = new List<GameObject>();
     //public HashSet<GameObject> gameobjectsTouching = new HashSet<GameObject>();
 
+
     protected new void Start()
     {
         if (debug) print("Starting at Living");
         base.Start();
         brain = new Brain(this);
+
 
     }
 
@@ -31,8 +33,13 @@ public class Living : EntityBase
         base.Update(); // Update normal entity stuff like physics and other stuff???    
 
         // update things that are specific to living entities like brain
+#if UNITY_EDITOR /// if we are in the editor then check if we have reloaded a script and made brain == null
+        if (brain == null) {
+            brain = new Brain(this);
+        }
+#endif
+
         brain.SetSeen(gameobjectsTouching);
-        print(brain.SphereOfInteraction.center);
 
     }
     new public void Interact(Entity other)

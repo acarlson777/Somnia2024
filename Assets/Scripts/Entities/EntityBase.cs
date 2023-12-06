@@ -53,19 +53,17 @@ public class EntityBase : MonoBehaviour,Entity
         {
             vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
         }
-        // Overwrite the y axis since that should be taken care of by unity itself
+        // Overwrite the y axis so it doesn't count towards the magnitude
         vel.y = 0;
         // Apply Horizontal Friction
         if (vel.magnitude < K_friction * Time.deltaTime)
         {
             vel.x = 0;
-            vel.y = 0;
             vel.z = 0;
         }
         else
         {
             Vector3 friction = vel.normalized * -K_friction * Time.deltaTime;
-            friction.y = 0;
             vel += friction;
         }
         vel.y = rb.velocity.y;

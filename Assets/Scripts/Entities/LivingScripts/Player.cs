@@ -11,7 +11,7 @@ public class Player : Living, Entity
     {
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
         entityMaxSpeed = 4.2f;
-        K_friction = 8f;
+        K_friction = 20f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
     }
     new void Start()
     {

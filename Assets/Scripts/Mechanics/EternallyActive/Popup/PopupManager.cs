@@ -13,7 +13,6 @@ public class PopupManager : MonoBehaviour
     void Start()
     {
         Canvas = DisplaySurface;
-
     }
 
     public static bool CreatePopUp(string resourceName)
@@ -22,6 +21,13 @@ public class PopupManager : MonoBehaviour
     }
     public static bool CreatePopUp(string resourceName,bool priority)
     {
+#if UNITY_EDITOR
+        if (Canvas == null) {
+            print("Cannot Display PopUP in reloaded Scene, please manually stop and restart it.");
+            print("However, this and the prior line are from PopupManager which DID end up being called.");
+            return false;
+        }
+#endif
         if (currentPopup != null)
         {
             if (priority)
