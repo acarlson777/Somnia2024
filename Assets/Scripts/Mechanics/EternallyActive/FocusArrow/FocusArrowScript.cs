@@ -6,7 +6,7 @@ public class FocusArrowScript : MonoBehaviour
 {
     // This is the script to be attached as a component to a physical arrow that wil bounce up and down on top of focused entities
     private GameObject focus;
-    public Vector3 offset = new Vector3(0,3f,0);
+    public Vector3 offset = new Vector3(0,1f,0);
     private bool active = false;
     private GameObject arrow;
     private Vector3 closetOffset;
@@ -25,7 +25,7 @@ public class FocusArrowScript : MonoBehaviour
         {
             camera = GameObject.Find("Main Camera");
         }
-        distToCamera = (transform.position - camera.transform.position).magnitude;
+        distToCamera = 1;
         
         closetOffset = new Vector3(0, 0, 0)
         {
