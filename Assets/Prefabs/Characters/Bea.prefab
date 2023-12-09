@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5631316416746892966}
   - component: {fileID: 5631316416746892967}
   - component: {fileID: 5631316416746892960}
+  - component: {fileID: -6629098994612949998}
   m_Layer: 0
   m_Name: Bea
   m_TagString: entity
@@ -96,7 +97,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5631316416746892961}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4973814, z: 2.0408163}
@@ -149,6 +150,20 @@ MonoBehaviour:
   health: 1
   speed: 70
   gameobjectsTouching: []
+--- !u!136 &-6629098994612949998
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5631316416746892961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.50000006
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5631316416927084938
 GameObject:
   m_ObjectHideFlags: 0
