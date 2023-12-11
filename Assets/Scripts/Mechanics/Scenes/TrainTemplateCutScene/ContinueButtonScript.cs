@@ -9,6 +9,7 @@ public class ContinueButtonScript : MonoBehaviour
     public float fadeTime;
     private Image image;
     InstantiateLoadingScreen loadingScreen;
+    bool tapped = false;
 
     void Start()
     {
@@ -50,6 +51,10 @@ public class ContinueButtonScript : MonoBehaviour
 
     public void OnClick()
     {
-        loadingScreen.LoadANewScene();
+        if (tapped == false)
+        {
+            loadingScreen.LoadANewScene();
+            tapped = true;
+        }
     }
 }
