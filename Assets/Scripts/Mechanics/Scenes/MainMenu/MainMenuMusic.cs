@@ -6,6 +6,12 @@ public class MainMenuMusic : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        AudioManagerSingleton.Instance.Play("BeasTheme", gameObject);
+        StartCoroutine(DelayedMusicPlay());
+    }
+
+    IEnumerator DelayedMusicPlay()
+    {
+        yield return new WaitForSeconds(1);
+        AudioManagerSingleton.Instance.FadeIn("BeasTheme", 2f, gameObject);
     }
 }
