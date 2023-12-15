@@ -44,11 +44,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46148158f9a55464dba4e7c6af81e6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxList:
-  - _name: song3
+  sfxList: []
+  songList:
+  - _name: BeasTheme
     _isVolumeFading: 0
     volume: 1
-    audioClip: {fileID: 8300000, guid: e8f08754c81734a83afb8c83c7c8b538, type: 3}
+    audioClip: {fileID: 8300000, guid: 8d140e88a6de84bd093f86687d295d8e, type: 3}
     audioSource: {fileID: 0}
-  songList: []
-  soundtrackList: []
+  - _name: BeasRoom1
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: a840d6a741ce44e089405c093ca9ce20, type: 3}
+    audioSource: {fileID: 0}
+  - _name: BeasRoom2
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: cd919604442e4419ead3959bad6643d0, type: 3}
+    audioSource: {fileID: 0}
+  - _name: Maze
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 8cff03607a2134d739e10c0d429cb873, type: 3}
+    audioSource: {fileID: 0}
+  soundtrackList:
+  - _name: BeaRoom
+    fadeTime: 1
+    sounds:
+    - BeasRoom1
+    - BeasRoom2

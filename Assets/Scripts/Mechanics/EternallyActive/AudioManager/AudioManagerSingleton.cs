@@ -6,6 +6,7 @@ public class AudioManagerSingleton : MonoBehaviour
 {
     //SINGLETON CODE
     public static AudioManagerSingleton Instance { get; private set; }
+    public static string currentSong { get; private set; }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -22,12 +23,14 @@ public class AudioManagerSingleton : MonoBehaviour
     //AUDIO MANAGER CODE
     public void Play(string name, GameObject caller)
     {
+        currentSong = name;
         Debug.Log("Playing " + name);
         FindSoundOfName(name).Play(caller);
     }
 
     public void PlayRandomSongFromSoundtrack(string name, GameObject caller)
     {
+        currentSong = name;
         Soundtrack soundtrack = (Soundtrack) FindSoundOfName(name);
         soundtrack.SetRandomSong();
         soundtrack.Play(caller);
@@ -35,6 +38,7 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void PlayRandomSongFromSoundtrackOnce(string name, GameObject caller)
     {
+        currentSong = name;
         Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
         soundtrack.SetRandomSong();
         soundtrack.PlayRandomOnce(caller);
@@ -42,18 +46,21 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void Stop(string name)
     {
+        currentSong = null;
         Debug.Log("Stopping " + name);
         FindSoundOfName(name).Stop();
     }
 
     public void FadeIn(string name, float seconds, GameObject caller)
     {
+        currentSong = name;
         Debug.Log("Fading in " + name);
         FindSoundOfName(name).FadeIn(seconds, caller);
     }
 
     public void FadeInRandomSongFromSoundtrack(string name, float seconds, GameObject caller)
     {
+        currentSong = name;
         Soundtrack soundtrack = (Soundtrack) FindSoundOfName(name);
         soundtrack.SetRandomSong();
         soundtrack.FadeIn(seconds, caller);
@@ -61,6 +68,7 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void FadeInRandomSongFromSoundtrackOnce(string name, float seconds, GameObject caller)
     {
+        currentSong = name;
         Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
         soundtrack.SetRandomSong();
         soundtrack.FadeInRandomOnce(seconds, caller);
@@ -68,12 +76,14 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void FadeOut(string name, float seconds)
     {
+        currentSong = null;
         Debug.Log("Fading out " + name);
         FindSoundOfName(name).FadeOut(seconds);
     }
 
     public void FadeOutAndStopSoundtrack(string name, float seconds)
     {
+        currentSong = null;
         Debug.Log("Fading out and stopping " + name);
         Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
         soundtrack.FadeOutAndStop(seconds);

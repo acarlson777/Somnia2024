@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BeasRoomMusic : MonoBehaviour
+public class MazeMusic : MonoBehaviour
 {
     // Use this for initialization
     void Start()
@@ -12,6 +12,6 @@ public class BeasRoomMusic : MonoBehaviour
     IEnumerator DelayedMusicPlay()
     {
         yield return new WaitForSeconds(1);
-        AudioManagerSingleton.Instance.FadeIn("BeasRoom", 2f, gameObject);
+        AudioManagerSingleton.Instance.FadeIn("Maze", 2f, gameObject);
     }
 }

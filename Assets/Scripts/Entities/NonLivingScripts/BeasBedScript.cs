@@ -26,6 +26,7 @@ public class BeasBedScript : InteractableObject, Entity
             if (noHostileMobsAround)
             {
                 loadingScreen.LoadANewScene();
+                AudioManagerSingleton.Instance.FadeOut("BeasRoom", 1);
             } else
             {
                 DialogueManager.PopDialogue(not_ready_dialogue);
