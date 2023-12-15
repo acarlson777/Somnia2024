@@ -12,6 +12,6 @@ public class MainMenuMusic : MonoBehaviour
     IEnumerator DelayedMusicPlay()
     {
         yield return new WaitForSeconds(1);
-        AudioManagerSingleton.Instance.FadeIn("BeasTheme", 2f, gameObject);
+        AudioManagerSingleton.Instance.FadeIn("BeaRoom", 2f, gameObject);
     }
 }
