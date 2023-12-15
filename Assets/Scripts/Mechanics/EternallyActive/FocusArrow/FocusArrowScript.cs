@@ -25,7 +25,7 @@ public class FocusArrowScript : MonoBehaviour
         {
             camera = GameObject.Find("Main Camera");
         }
-        distToCamera = 1;
+        distToCamera = 10;
         
         closetOffset = new Vector3(0, 0, 0)
         {

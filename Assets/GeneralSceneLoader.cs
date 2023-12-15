@@ -7,14 +7,14 @@ public class GeneralSceneLoader : InteractableObject, Entity
 {
     InstantiateLoadingScreen sceneLoader;
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         base.Start();
         sceneLoader = GetComponent<InstantiateLoadingScreen>();
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         base.Update();
     }
