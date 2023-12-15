@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SettingsButtonScript : MonoBehaviour
 {
-    private bool isOn = true;
+    [HideInInspector] public bool isOn = true;
     private GameObject settingsScreen;
     private GameObject joystick;
     private GameObject interactableButton;
