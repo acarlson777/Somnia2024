@@ -17,6 +17,7 @@ public class StartGameOnTap : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && !tapped)
         {
+            AudioManagerSingleton.Instance.FadeOut("BeasTheme",1f);
             loadingScreen.LoadANewScene();
             tapped = true;
         }
