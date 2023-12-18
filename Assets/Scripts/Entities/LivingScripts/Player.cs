@@ -24,7 +24,39 @@ public class Player : Living, Entity
     // Update is called once per frame
     new protected void Update()
     {
-        base.Update();
+        if (!JoystickInput.atRest())
+        {
+            vel = JoystickInput.worldOrientedJoystickDirection * speed * Time.deltaTime * entityMaxSpeed;
+        }
+        if (vel.magnitude > entityMaxSpeed) // Can be optimized
+        {
+            vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
+        }
+        // Overwrite the y axis so it doesn't count towards the magnitude
+        vel.y = 0;
+        // Apply Horizontal Friction
+        if (JoystickInput.joystickDirection.sqrMagnitude < 0.00000001)
+        {
+            if (vel.magnitude < K_friction * Time.deltaTime)
+            {
+                vel.x = 0;
+                vel.z = 0;
+            }
+            else
+            {
+                Vector3 friction = vel.normalized * -K_friction * Time.deltaTime;
+                vel += friction;
+            }
+        }
+        vel.y = rb.velocity.y;
+        rb.velocity = vel;
+#if UNITY_EDITOR
+        if( brain == null)
+        {
+            brain = new(this);
+        }
+#endif
+        brain.SetSeen(gameobjectsTouching);
         if (Input.GetKeyDown(KeyCode.I))
         {
             if (brain.GetClosestEntity() != null)
@@ -36,7 +68,6 @@ public class Player : Living, Entity
                 print("No entity to interact with!");
             }
         }   
-        Move(JoystickInput.worldOrientedJoystickDirection * speed * Time.deltaTime);
         
         arrowScript.SetFocus(brain.GetClosestEntityAsGO());
     }
