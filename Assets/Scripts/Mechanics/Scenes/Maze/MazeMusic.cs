@@ -11,7 +11,7 @@ public class MazeMusic : MonoBehaviour
 
     IEnumerator DelayedMusicPlay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.001f);
         AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("MazeSoundtrack", 1f, gameObject);
     }
 }
