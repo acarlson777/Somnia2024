@@ -20,7 +20,7 @@ public class MazeMusicFadeOutHandler : InteractableObject, Entity
     {
         if (other is Player)
         {
-            AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("Maze", 1);
+            AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("MazeSoundtrack", 1f);
             sceneLoader.LoadANewScene();
         }
     }
