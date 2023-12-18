@@ -32,7 +32,7 @@ public class StartGameOnTap : MonoBehaviour
     {
         if (!tapped && !settingsButton.isOn)
         {
-            AudioManagerSingleton.Instance.FadeOut("BeasTheme", 1f);
+            AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
             loadingScreen.LoadANewScene();
             tapped = true;
         }
