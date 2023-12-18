@@ -19,14 +19,14 @@ public class EntityBase : MonoBehaviour,Entity
     //    - World Collidable(aka. collider
     //    - Interactable via Interact button
     //    - Questions: how big should the interact collider be????
-    private Rigidbody rb;
+    protected Rigidbody rb;
     public BoxCollider entityCollider;
     public SphereCollider interactCollider;
     public float BoxColliderThickness;
     protected bool debug = true;
 
-    private Vector3 accel;
-    private Vector3 vel;
+    protected Vector3 accel;
+    protected Vector3 vel;
     public float entityMaxSpeed = 2.1f;
     protected float K_friction = 5.0f; // Coefficient of Friction
 

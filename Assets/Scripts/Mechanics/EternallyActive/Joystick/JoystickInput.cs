@@ -8,4 +8,9 @@ public static class JoystickInput
 
     public static Vector3 joystickDirection;
     public static Vector3 worldOrientedJoystickDirection;
+
+    public static bool atRest()
+    {
+        return joystickDirection.sqrMagnitude == 0;
+    }
 }
