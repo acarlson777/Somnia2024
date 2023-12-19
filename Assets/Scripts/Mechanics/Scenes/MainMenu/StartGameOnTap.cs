@@ -7,10 +7,13 @@ public class StartGameOnTap : MonoBehaviour
     InstantiateLoadingScreen loadingScreen;
     SettingsButtonScript settingsButton;
     bool tapped = false;
-    
+    //public bool fading = false;
+    SceneLoader sceneLoader;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         loadingScreen = GetComponent<InstantiateLoadingScreen>();
         settingsButton = GameObject.Find("SettingsButtonButton").GetComponent<SettingsButtonScript>();
     }
@@ -30,7 +33,7 @@ public class StartGameOnTap : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!tapped && !settingsButton.isOn)
+        if (!tapped && !settingsButton.isOn && !SceneLoader.fading)
         {
             AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
             loadingScreen.LoadANewScene();
