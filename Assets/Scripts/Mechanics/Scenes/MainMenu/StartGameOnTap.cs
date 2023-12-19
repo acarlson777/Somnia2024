@@ -7,8 +7,6 @@ public class StartGameOnTap : MonoBehaviour
     InstantiateLoadingScreen loadingScreen;
     SettingsButtonScript settingsButton;
     bool tapped = false;
-    //public bool fading = false;
-    SceneLoader sceneLoader;
 
     // Start is called before the first frame update
     void Start()

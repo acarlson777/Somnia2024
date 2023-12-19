@@ -21,6 +21,7 @@ public class InfiniteCorridorHandler : MonoBehaviour
             print("Next Transform should be " + newTransformRight);
 
             GameObject next =  Instantiate(gameObject);
+            next.transform.parent = gameObject.transform.parent;
             next.transform.localPosition = newTransformRight;
             
             InfiniteCorridorHandler handler = next.GetComponent<InfiniteCorridorHandler>();
