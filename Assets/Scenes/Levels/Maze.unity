@@ -11206,6 +11206,38 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3781391319134499183, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781391319134499183, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781391319134499183, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1345863374}
+    - target: {fileID: 3781391319134499183, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781391319134499183, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781391319134499183, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781391319134499183, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287050260684467966, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackToStop
+      value: MazeSoundtrack
+      objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218962, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_Name
       value: SettingsButton
@@ -11280,7 +11312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30.834534
+      value: 30.834473
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -49972,6 +50004,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4819210757787562018, guid: 8c19e94e6a7a94c4cb133bf5ebbd1326, type: 3}
   m_PrefabInstance: {fileID: 427751667}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1345863374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4287050260684467966, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+  m_PrefabInstance: {fileID: 303439736}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315f52927fb5347f3bbf1c00617080cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1346121297
 PrefabInstance:
   m_ObjectHideFlags: 0
