@@ -8,7 +8,7 @@ public class MazeMusicFadeOutHandler : InteractableObject, Entity
     void Start()
     {
         base.Start();
-        sceneLoader = GetComponent<InstantiateLoadingScreen>();
+        sceneLoader = FindObjectOfType<InstantiateLoadingScreen>();
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class MazeMusicFadeOutHandler : InteractableObject, Entity
         if (other is Player)
         {
             AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("MazeSoundtrack", 1f);
-            sceneLoader.LoadANewScene();
+            sceneLoader.LoadNewScene("Bea's Room");
         }
     }
 }

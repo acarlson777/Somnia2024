@@ -22,7 +22,7 @@ public class GeneralSceneLoader : InteractableObject, Entity
     {
         if (other is Player)
         {
-            sceneLoader.LoadANewScene();
+            sceneLoader.LoadNewScene("");
         }
     }
 }

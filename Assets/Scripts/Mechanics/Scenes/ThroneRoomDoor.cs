@@ -23,7 +23,7 @@ public class ThroneRoomDoor : InteractableObject, Entity
         {
             if (ready)
             {
-                loadingScreen.LoadANewScene();
+                loadingScreen.LoadNewScene("Dungeon");
             }
             else
             {

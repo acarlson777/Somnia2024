@@ -11,7 +11,7 @@ public class BeasBedScript : InteractableObject, Entity
     new void Start()
     {
         base.Start();
-        loadingScreen = GetComponent<InstantiateLoadingScreen>();
+        loadingScreen = FindObjectOfType<InstantiateLoadingScreen>();
     }
 
     new void Update()   
@@ -25,7 +25,7 @@ public class BeasBedScript : InteractableObject, Entity
         {
             if (noHostileMobsAround)
             {
-                loadingScreen.LoadANewScene();
+                loadingScreen.LoadNewScene("Maze");
                 AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasRoom", 1);
             } else
             {

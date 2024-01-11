@@ -18,7 +18,7 @@ public class TapToStart : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) == true)
         {
-            loadingScreen.LoadANewScene();
+            loadingScreen.LoadNewScene("Bea's Room");
         }
     }
 }
