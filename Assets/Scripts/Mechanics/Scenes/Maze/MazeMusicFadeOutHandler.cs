@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MazeMusicFadeOutHandler : InteractableObject, Entity
 {
-    InstantiateLoadingScreen sceneLoader;
     // Start is called before the first frame update
     void Start()
     {
