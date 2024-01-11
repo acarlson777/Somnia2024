@@ -12,7 +12,6 @@ public class StartGameOnTap : MonoBehaviour
     void Start()
     {
 
-        loadingScreen = FindObjectOfType<InstantiateLoadingScreen>();
         settingsButton = GameObject.Find("SettingsButtonButton").GetComponent<SettingsButtonScript>();
     }
 
@@ -34,7 +33,7 @@ public class StartGameOnTap : MonoBehaviour
         if (!tapped && !settingsButton.isOn && !SceneLoader.fading)
         {
             AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
-            loadingScreen.LoadNewScene("Bea's Room");
+            InstantiateLoadingScreen.Instance.LoadNewScene("Bea's Room");
             tapped = true;
         }
     }

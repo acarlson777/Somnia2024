@@ -8,6 +8,22 @@ using UnityEditor;
 // class to instantiate all loadingScreen prefabs and load the scene
 public class InstantiateLoadingScreen : MonoBehaviour
 {
+
+    public static InstantiateLoadingScreen Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
+        sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
+        loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
+    }
+
     // Cached references
     [HideInInspector] public GameObject loadingScreenCanvasPrefab;
     [HideInInspector] public GameObject loadingScreenPrefab;
@@ -20,13 +36,13 @@ public class InstantiateLoadingScreen : MonoBehaviour
     Image loadingScreenImage;
     private Color originalImage;
 
-    private void Awake()
+    /*private void Awake()
     {
         // cache references from assets folder
         loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
         sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
         loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
-    }
+    }*/
     void Update()
     {
         /*
