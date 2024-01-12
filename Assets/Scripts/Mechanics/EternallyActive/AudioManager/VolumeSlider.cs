@@ -8,16 +8,18 @@ public class VolumeSlider : MonoBehaviour
     public string type;
     private Slider slider;
     private bool defaultRun;
+    private int sliderCount;
 
     void Start()
     {
         slider = GetComponent<Slider>();
         defaultRun = PlayerPrefs.GetInt("DefaultRun", 0) == 0;
+        slider.value = 0;
 
         if (defaultRun)
         {
             slider.value = 1;
-            PlayerPrefs.SetInt("DefaultRun", 1);
+            PlayerPrefs.SetInt("DefaultRun", 0);
         }
 
         else
