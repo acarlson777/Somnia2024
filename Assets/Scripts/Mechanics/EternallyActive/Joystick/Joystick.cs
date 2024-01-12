@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Joystick : MonoBehaviour
 {
     private Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+    private Vector2 startingPosition; // fall back in case the snapToPosition is unset (0,0)
     private Vector2 canvasSize;
+    public Vector2 snapToPosition;
     public Canvas canvas;
 
     Vector2 startHoldPos;
@@ -28,7 +30,7 @@ public class Joystick : MonoBehaviour
     private void Start()
     {
         rt = GetComponent<RectTransform>();
-
+        startingPosition = rt.anchoredPosition;
         canvasSize = new Vector2(canvas.GetComponent<RectTransform>().rect.width, canvas.GetComponent<RectTransform>().rect.height);
 
         largest = GameObject.Find("largest");
@@ -86,6 +88,15 @@ public class Joystick : MonoBehaviour
             JoystickInput.joystickDirection = Vector3.zero;
             JoystickInput.worldOrientedJoystickDirection = Vector3.zero;
             mediumCircle.MoveRelativeToParent(Vector3.zero);
+            // The following code is to snap the Joystick back to the snapToPosition when its not doing anything
+            if (snapToPosition.x == 0 && snapToPosition.y == 0)
+            {
+                rt.anchoredPosition = startingPosition;
+            }
+            else
+            {
+                rt.anchoredPosition = NormalizeMousePosToCanvasSize(snapToPosition);
+            }
         }
     }
 
