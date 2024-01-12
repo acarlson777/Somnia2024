@@ -31,7 +31,7 @@ public class Soundtrack : AudioInteraction
         currentlyPlayingSound = activeSound.audioSource;
         lastCaller = caller;
         currentNextSoundLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSoundLogic());
-        Debug.Log("Soundtrack \"" + Name + "\" is playing" + " with song \"" + activeSound.Name + "\"");
+        Debug.Log("Soundtrack \"" + Name + "\" is playing" + " with sonzg \"" + activeSound.Name + "\"");
     }
 
     public void PlayRandomOnce(GameObject caller)

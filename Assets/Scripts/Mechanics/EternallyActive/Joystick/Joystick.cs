@@ -9,6 +9,7 @@ public class Joystick : MonoBehaviour
     private Vector2 startingPosition; // fall back in case the snapToPosition is unset (0,0)
     private Vector2 canvasSize;
     private Touch currTouch;
+    private Vector2 snapToPosition;
     private enum JoystickStatus
     {
         IDLE,
