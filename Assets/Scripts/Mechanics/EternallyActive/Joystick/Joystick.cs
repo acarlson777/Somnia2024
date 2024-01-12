@@ -8,7 +8,13 @@ public class Joystick : MonoBehaviour
     private Vector2 screenSize = new Vector2(Screen.width, Screen.height);
     private Vector2 startingPosition; // fall back in case the snapToPosition is unset (0,0)
     private Vector2 canvasSize;
-    public Vector2 snapToPosition;
+    private Touch currTouch;
+    private enum JoystickStatus
+    {
+        IDLE,
+        DOWN
+    }
+    private JoystickStatus status = JoystickStatus.IDLE;
     public Canvas canvas;
 
     Vector2 startHoldPos;
@@ -48,9 +54,71 @@ public class Joystick : MonoBehaviour
 
     private void Update()
     {
-        EditorJoystickLogic();
-    }
+#if UNITY_EDITOR
 
+        EditorJoystickLogic();
+#else
+        MobileJoystickLogic();
+#endif
+    }
+    private void MobileJoystickLogic()
+    {
+        switch (status)
+        {
+            case JoystickStatus.IDLE:
+                for (int i = 0; i < Input.touchCount; i++)
+                {
+                    Touch touch = Input.GetTouch(i);
+                    if (touch.position.x > Screen.width/2)
+                    {
+                        // here this is the first touch that we get where it is on the left side of the screen
+                        // therefore we must now activate ourselves and begine to do joystick stuffs
+                        currTouch = touch;
+                        status = JoystickStatus.DOWN;
+                    }
+                }
+                break;
+            case JoystickStatus.DOWN:
+                break;
+        }
+        screenSize.x = Screen.width;
+        screenSize.y = Screen.height;
+        if (Input.GetMouseButtonDown(0))
+        {
+            startHoldPos = GetMousePosAsVec2();
+
+            if (startHoldPos.x > Screen.width / 2) { return; }
+            HeldDown = true;
+            startHoldPos = NormalizeMousePosToCanvasSize(startHoldPos);
+
+            rt.anchoredPosition = startHoldPos;
+        }
+
+        if (HeldDown)
+        {
+            currentHoldPos = GetMousePosAsVec2();
+            currentHoldPos = NormalizeMousePosToCanvasSize(currentHoldPos);
+            deltaHoldPos = currentHoldPos - startHoldPos;
+            deltaHoldPos /= 10.0f;
+
+            if (deltaHoldPos.magnitude > joystickSize)
+            {
+                deltaHoldPos = deltaHoldPos.normalized * joystickSize;
+            }
+            mediumCircle.MoveRelativeToParent(deltaHoldPos);
+
+            JoystickInput.joystickDirection = deltaHoldPos / joystickSize;
+            JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            HeldDown = false;
+            JoystickInput.joystickDirection = Vector3.zero;
+            JoystickInput.worldOrientedJoystickDirection = Vector3.zero;
+            mediumCircle.MoveRelativeToParent(Vector3.zero);
+        }
+    }
     private void EditorJoystickLogic()
     {
         screenSize.x = Screen.width;
@@ -117,7 +185,7 @@ public class Joystick : MonoBehaviour
     }
 
     private Vector2 NormalizeMousePosToCanvasSize(Vector2 mousePosVec2)
-    {
+    {           
         return MultiplyVector2s(DivideVector2s(mousePosVec2, screenSize), canvasSize);
     }
 
