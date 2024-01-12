@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Joystick2 : MonoBehaviour
 {
     private Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+    private Vector2 startingPosition; // fall back in case the snapToPosition is unset (0,0)
     private Vector2 canvasSize;
     public Canvas canvas;
     public Vector2 snapToPosition;
@@ -49,6 +50,21 @@ public class Joystick2 : MonoBehaviour
         mediumCircle.SetFamily(largestCircle, smallCircle);
         smallCircle.SetFamily(mediumCircle, null);
     }
+    private void onJoystickUp()
+    {
+        state = JoystickState.IDLE;
+        currentHoldPos = startHoldPos;
+
+        // The following code is to snap the Joystick back to the snapToPosition when its not doing anything
+        if (snapToPosition.x == 0 && snapToPosition.y == 0)
+        {
+            rt.anchoredPosition = startingPosition;
+        }
+        else
+        {
+            rt.anchoredPosition = NormalizeMousePosToCanvasSize(snapToPosition);
+        }
+    }
 
     private void Update()
     {
@@ -90,7 +106,7 @@ public class Joystick2 : MonoBehaviour
                 }
                 else
                 {
-                    state = JoystickState.IDLE;
+                    onJoystickUp();
                  
                 }
                 break;
