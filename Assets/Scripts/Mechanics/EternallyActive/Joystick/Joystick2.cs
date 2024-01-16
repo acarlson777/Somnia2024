@@ -35,7 +35,7 @@ public class Joystick2 : MonoBehaviour
     private void Start()
     {
         rt = GetComponent<RectTransform>();
-
+        startingPosition = rt.anchoredPosition;
         canvasSize = new Vector2(canvas.GetComponent<RectTransform>().rect.width, canvas.GetComponent<RectTransform>().rect.height);
 
         largest = GameObject.Find("largest");
@@ -52,9 +52,14 @@ public class Joystick2 : MonoBehaviour
     }
     private void onJoystickUp()
     {
+        print("Joystick UP");
         state = JoystickState.IDLE;
         currentHoldPos = startHoldPos;
+        deltaHoldPos = Vector2.zero;
+        mediumCircle.MoveRelativeToParent(deltaHoldPos);
 
+        JoystickInput.joystickDirection = deltaHoldPos / joystickSize;
+        JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
         // The following code is to snap the Joystick back to the snapToPosition when its not doing anything
         if (snapToPosition.x == 0 && snapToPosition.y == 0)
         {
@@ -78,7 +83,8 @@ public class Joystick2 : MonoBehaviour
                     if (touch.position.x < Screen.width/2) {
                         // add extra conditon to check for touchphase == began
                         ourID = touch.fingerId;
-                        startHoldPos = touch.position;
+                        startHoldPos = NormalizeMousePosToCanvasSize(touch.position);
+                        rt.anchoredPosition = startHoldPos;
                         state = JoystickState.DOWN;
                         break;
                     }

@@ -24,18 +24,20 @@ public class Player : Living, Entity
     // Update is called once per frame
     new protected void Update()
     {
+        print(rb.velocity.magnitude);   
+        //print(JoystickInput.joystickDirection);
         if (!JoystickInput.atRest())
         {
-            vel = JoystickInput.worldOrientedJoystickDirection * speed * Time.deltaTime * entityMaxSpeed;
+            vel = JoystickInput.worldOrientedJoystickDirection * speed * Time.deltaTime;
         }
-        if (vel.magnitude > entityMaxSpeed) // Can be optimized
+        if (vel.sqrMagnitude > entityMaxSpeed*entityMaxSpeed) // Can be optimized
         {
             vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
         }
         // Overwrite the y axis so it doesn't count towards the magnitude
         vel.y = 0;
         // Apply Horizontal Friction
-        if (JoystickInput.joystickDirection.sqrMagnitude < 0.00000001)
+        if (JoystickInput.atRest())
         {
             if (vel.magnitude < K_friction * Time.deltaTime)
             {
@@ -44,7 +46,9 @@ public class Player : Living, Entity
             }
             else
             {
-                Vector3 friction = vel.normalized * -K_friction * Time.deltaTime;
+                Vector3 friction = cappedVec(vel) * -K_friction * Time.deltaTime;
+                print(friction);
+
                 vel += friction;
             }
         }
@@ -72,6 +76,14 @@ public class Player : Living, Entity
         arrowScript.SetFocus(brain.GetClosestEntityAsGO());
     }
 
+    private Vector2 cappedVec(Vector3 a)
+    {
+        if (a.sqrMagnitude > 1)
+        {
+            return a.normalized;
+        }
+        return a;
+    }
 
     new public void Interact(Entity entity)
     { 

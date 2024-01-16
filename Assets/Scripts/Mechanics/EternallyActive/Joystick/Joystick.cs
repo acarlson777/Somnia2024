@@ -8,15 +8,16 @@ public class Joystick : MonoBehaviour
     private Vector2 screenSize = new Vector2(Screen.width, Screen.height);
     private Vector2 startingPosition; // fall back in case the snapToPosition is unset (0,0)
     private Vector2 canvasSize;
-    private Touch currTouch;
-    private Vector2 snapToPosition;
-    private enum JoystickStatus
+    public Canvas canvas;
+    public Vector2 snapToPosition;
+    private int ourID;
+    private bool HeldDown;
+    JoystickState state = JoystickState.IDLE;
+    private enum JoystickState
     {
         IDLE,
         DOWN
     }
-    private JoystickStatus status = JoystickStatus.IDLE;
-    public Canvas canvas;
 
     Vector2 startHoldPos;
     Vector2 currentHoldPos;
@@ -29,7 +30,6 @@ public class Joystick : MonoBehaviour
 
     RectTransform rt;
 
-    private bool HeldDown = false;
 
     [Range(10f, 30f)]
     public float joystickSize = 17.56f;
@@ -52,6 +52,26 @@ public class Joystick : MonoBehaviour
         mediumCircle.SetFamily(largestCircle, smallCircle);
         smallCircle.SetFamily(mediumCircle, null);
     }
+    private void onJoystickUp()
+    {
+        print("Joystick UP");
+        state = JoystickState.IDLE;
+        currentHoldPos = startHoldPos;
+        deltaHoldPos = Vector2.zero;
+        mediumCircle.MoveRelativeToParent(deltaHoldPos);
+
+        JoystickInput.joystickDirection = deltaHoldPos / joystickSize;
+        JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
+        // The following code is to snap the Joystick back to the snapToPosition when its not doing anything
+        if (snapToPosition.x == 0 && snapToPosition.y == 0)
+        {
+            rt.anchoredPosition = startingPosition;
+        }
+        else
+        {
+            rt.anchoredPosition = NormalizeMousePosToCanvasSize(snapToPosition);
+        }
+    }
 
     private void Update()
     {
@@ -64,61 +84,63 @@ public class Joystick : MonoBehaviour
     }
     private void MobileJoystickLogic()
     {
-        switch (status)
+        switch (state)
         {
-            case JoystickStatus.IDLE:
+            case JoystickState.IDLE:
                 for (int i = 0; i < Input.touchCount; i++)
                 {
                     Touch touch = Input.GetTouch(i);
-                    if (touch.position.x > Screen.width/2)
+                    if (touch.position.x < Screen.width / 2)
                     {
-                        // here this is the first touch that we get where it is on the left side of the screen
-                        // therefore we must now activate ourselves and begine to do joystick stuffs
-                        currTouch = touch;
-                        status = JoystickStatus.DOWN;
+                        // add extra conditon to check for touchphase == began
+                        ourID = touch.fingerId;
+                        startHoldPos = NormalizeMousePosToCanvasSize(touch.position);
+                        rt.anchoredPosition = startHoldPos;
+                        state = JoystickState.DOWN;
+                        break;
                     }
                 }
                 break;
-            case JoystickStatus.DOWN:
+            case JoystickState.DOWN:
+                Touch? touche = getTouched();
+                if (touche != null)
+                {
+
+                    currentHoldPos = ((Touch)touche).position;
+                    currentHoldPos = NormalizeMousePosToCanvasSize(currentHoldPos);
+                    deltaHoldPos = currentHoldPos - startHoldPos;
+                    deltaHoldPos /= 10.0f;
+
+                    if (deltaHoldPos.magnitude > joystickSize)
+                    {
+                        deltaHoldPos = deltaHoldPos.normalized * joystickSize;
+                    }
+                    mediumCircle.MoveRelativeToParent(deltaHoldPos);
+
+                    JoystickInput.joystickDirection = deltaHoldPos / joystickSize;
+                    JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
+
+                }
+                else
+                {
+                    onJoystickUp();
+
+                }
                 break;
         }
-        screenSize.x = Screen.width;
-        screenSize.y = Screen.height;
-        if (Input.GetMouseButtonDown(0))
+    }
+    private Touch? getTouched()
+    { // get the touch that we care about, its almost like appleCare+
+
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            startHoldPos = GetMousePosAsVec2();
-
-            if (startHoldPos.x > Screen.width / 2) { return; }
-            HeldDown = true;
-            startHoldPos = NormalizeMousePosToCanvasSize(startHoldPos);
-
-            rt.anchoredPosition = startHoldPos;
-        }
-
-        if (HeldDown)
-        {
-            currentHoldPos = GetMousePosAsVec2();
-            currentHoldPos = NormalizeMousePosToCanvasSize(currentHoldPos);
-            deltaHoldPos = currentHoldPos - startHoldPos;
-            deltaHoldPos /= 10.0f;
-
-            if (deltaHoldPos.magnitude > joystickSize)
+            Touch touch = Input.GetTouch(i);
+            if (touch.fingerId == ourID)
             {
-                deltaHoldPos = deltaHoldPos.normalized * joystickSize;
+                return touch;
             }
-            mediumCircle.MoveRelativeToParent(deltaHoldPos);
-
-            JoystickInput.joystickDirection = deltaHoldPos / joystickSize;
-            JoystickInput.worldOrientedJoystickDirection = RotateVector2ForVector3(JoystickInput.joystickDirection, -Camera.main.transform.rotation.eulerAngles.y);
         }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            HeldDown = false;
-            JoystickInput.joystickDirection = Vector3.zero;
-            JoystickInput.worldOrientedJoystickDirection = Vector3.zero;
-            mediumCircle.MoveRelativeToParent(Vector3.zero);
-        }
+        return null;
     }
     private void EditorJoystickLogic()
     {
