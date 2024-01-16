@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainMenuMusic : MonoBehaviour
+public class BeasRoomMusic : MonoBehaviour
 {
     // Use this for initialization
     void Start()
