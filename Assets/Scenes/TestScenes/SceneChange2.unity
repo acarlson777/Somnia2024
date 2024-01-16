@@ -1242,6 +1242,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 411501215446940929, guid: 30c7248ae4d3c4dc58e5b75c72558805, type: 3}
   m_PrefabInstance: {fileID: 802460909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &935534802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935534803}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &935534803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935534802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3847654, y: -2.6661048, z: 3.3244476}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004855603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,11 +1890,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4199054853896558990, guid: 81a7bca28b8b74920bbfb0788ee18c48, type: 3}
   m_PrefabInstance: {fileID: 849571856}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1751626368 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 4444595716817000163, guid: 81a7bca28b8b74920bbfb0788ee18c48, type: 3}
-  m_PrefabInstance: {fileID: 849571856}
-  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1751626372
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1902,18 +1928,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751626367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd706340c526e2a45bac94f703ba15d1, type: 3}
+  m_Script: {fileID: 11500000, guid: ff702171cdf107540867e0c104eb2136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityCollider: {fileID: 1751626368}
-  interactCollider: {fileID: 1751626373}
-  BoxColliderThickness: 0
-  entityMaxSpeed: 2.1
-  lines:
-  - lines:
-    - Hi bits buhs
-  - lines:
-    - aaaa
+  loadingScreenCanvasPrefab: {fileID: 0}
+  loadingScreenPrefab: {fileID: 0}
+  sceneLoaderPrefab: {fileID: 0}
+  sceneToLoad: Bea's Room
 --- !u!1001 &1771610612
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class FadeImage : MonoBehaviour
     private void Start()
     {
         sceneLoader = GameObject.Find("Scene Loader").GetComponent<SceneLoader>();
+        
 
         // Gets the loading screen image
         image = GetComponent<Image>();

@@ -8,18 +8,16 @@ public class VolumeSlider : MonoBehaviour
     public string type;
     private Slider slider;
 
-    // Use this for initialization
     void Start()
     {
         slider = GetComponent<Slider>();
-
         if (type == "sfx")
         {
-            slider.value = PlayerPrefs.GetFloat("sfxVolume");
+            slider.value = PlayerPrefs.GetFloat("sfxVolume",1);
         }
         else if (type == "song")
         {
-            slider.value = PlayerPrefs.GetFloat("songVolume");
+            slider.value = PlayerPrefs.GetFloat("songVolume",1);
         }
         else
         {
@@ -27,7 +25,6 @@ public class VolumeSlider : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (type == "sfx")
@@ -37,6 +34,6 @@ public class VolumeSlider : MonoBehaviour
         else if (type == "song")
         {
             PlayerPrefs.SetFloat("songVolume", slider.value);
-        }  
+        }
     }
 }

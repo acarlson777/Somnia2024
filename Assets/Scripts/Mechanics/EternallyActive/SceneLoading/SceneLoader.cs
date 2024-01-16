@@ -17,6 +17,7 @@ public class SceneLoader : MonoBehaviour
     [HideInInspector] public bool fadeOut;
     [HideInInspector] public bool fadeIn = false;
     public int loadingScreenLength;
+    public static bool fading;
 
     // scene load the second the Scene Loader game obejct is instantiated
     void Start()
@@ -49,11 +50,13 @@ public class SceneLoader : MonoBehaviour
     // after waiting a few seconds on black screen, fade back out and destroy gameobjects
     IEnumerator FadeOutLoading()
     {
+        fading = true;
         fadeOut = true;
         yield return new WaitForSeconds(loadingScreenLength);
         fadeOut = false;
         yield return new WaitForSeconds(loadingScreenLength);
         Destroy(loadingScreenCanvas.gameObject);
+        fading = false;
         Destroy(gameObject);
     }
 }

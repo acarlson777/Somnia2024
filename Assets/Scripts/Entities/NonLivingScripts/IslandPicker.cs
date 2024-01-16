@@ -17,7 +17,7 @@ public class IslandPicker : NonLiving, Entity
     {
         if (entity is Player)
         {
-            loadingScreen.LoadANewScene();
+            loadingScreen.LoadNewScene("TrainTemplateCutScene");
         }
     }
 }

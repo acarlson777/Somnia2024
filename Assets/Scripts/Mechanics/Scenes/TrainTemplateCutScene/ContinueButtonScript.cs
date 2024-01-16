@@ -53,7 +53,7 @@ public class ContinueButtonScript : MonoBehaviour
     {
         if (tapped == false)
         {
-            loadingScreen.LoadANewScene();
+            loadingScreen.LoadNewScene("Maze");
             tapped = true;
         }
     }

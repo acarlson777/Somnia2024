@@ -1,50 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
 
 // class to instantiate all loadingScreen prefabs and load the scene
 public class InstantiateLoadingScreen : MonoBehaviour
 {
+
+    public static InstantiateLoadingScreen Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
+        sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
+        loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
+    }
+
     // Cached references
     [HideInInspector] public GameObject loadingScreenCanvasPrefab;
     [HideInInspector] public GameObject loadingScreenPrefab;
     [HideInInspector] public GameObject sceneLoaderPrefab;
 
-
-    // passes what scene to change to, can be changed via inspector per entity
-    public string sceneToLoad;
-
     Image loadingScreenImage;
     private Color originalImage;
 
-    private void Awake()
-    {
-        // cache references from assets folder
-        loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
-        sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
-        loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
-    }
-    void Update()
-    {
-        /*
-hehehehaw
-        asdf;klajsdf
-                askl;jdf
-
-         * 
-         * */
-        //temporary condition, in the future, if player interacts with like a door or smth
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    LoadANewScene();
-       //}
-    }
-
-    // Instantiates the loadingScreenCanvas, the loading screen, and the sceneloader which passes the sceneName to change to
-    public void LoadANewScene()
+    public void LoadNewScene(string newScene)
     {
         GameObject loadingScreenCanvas = Instantiate(loadingScreenCanvasPrefab);
         loadingScreenCanvas.name = "LoadingScreenCanvas";
@@ -52,10 +39,10 @@ hehehehaw
         GameObject loadingScreen = Instantiate(loadingScreenPrefab, loadingScreenCanvas.transform);
         loadingScreen.name = "LoadingScreen";
 
-        
+
         GameObject sceneLoader = Instantiate(sceneLoaderPrefab);
         sceneLoader.name = "Scene Loader";
-        sceneLoader.GetComponent<SceneLoader>().sceneToLoad = this.sceneToLoad;
+        sceneLoader.GetComponent<SceneLoader>().sceneToLoad = newScene;
 
         loadingScreenImage = GameObject.Find("LoadingScreen").GetComponent<Image>();
         originalImage = loadingScreenImage.color;
