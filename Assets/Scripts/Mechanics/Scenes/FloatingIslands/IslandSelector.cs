@@ -5,39 +5,30 @@ using UnityEngine;
 public class IslandSelector : NonLiving, Entity
 {
     // Start is called before the first frame update
-    IslandSelector[] otherSelectors; // Will contain a reference to all other selectors in the scene, populated during Start
+    IslandSelector[] otherSelectors; // Will contain a reference to all selectors (including us) in the scene, populated during Start
     [SerializeField] Material offMaterial;
     [SerializeField] Material onMaterial;
 
-    bool isOn = true;
+    public bool isOn = true;
 
     void Awake()
     {
         GameObject[] others =  GameObject.FindGameObjectsWithTag("TrainSelector");
-        TurnOff();
-        otherSelectors = new IslandSelector[others.Length-1];
-        for (int i = 0, othersIndex = 0; i < otherSelectors.Length; i++,othersIndex++)
+        otherSelectors = new IslandSelector[others.Length];
+        for (int i = 0; i < others.Length;i++) // does contain a reference to ourselves
         {
-            if (others[othersIndex] == this)
-            {
-                othersIndex++;
-            }
-            try
-            {
-                otherSelectors[i] = others[othersIndex].GetComponent<IslandSelector>();
-            } catch
-            {
-                Debug.Log("Train Selector doesn't have the component IslandSelector");
-            }
+            otherSelectors[i] = others[i].GetComponent<IslandSelector>();
         }
+        TurnOff();
     }
 
     public void TurnOff()
     {
         if (isOn)
-            gameObject.GetComponent<Renderer>().material = offMaterial;
-        isOn = false;    
-        // unlights itself 
+        {
+            gameObject.GetComponent<Renderer>().material = offMaterial;        // unlights itself 
+            isOn = false;
+        }
     }
 
     new public void Interact(Entity entity)
