@@ -54,7 +54,7 @@ public class SceneLoader : MonoBehaviour
         fadeOut = true;
         yield return new WaitForSeconds(loadingScreenLength);
         fadeOut = false;
-        yield return new WaitForSeconds(loadingScreenLength);
+        yield return new WaitForSeconds(2);
         Destroy(loadingScreenCanvas.gameObject);
         fading = false;
         Destroy(gameObject);
