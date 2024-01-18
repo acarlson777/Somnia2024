@@ -8,6 +8,7 @@ public class IslandSelector : NonLiving, Entity
     IslandSelector[] otherSelectors; // Will contain a reference to all selectors (including us) in the scene, populated during Start
     [SerializeField] Material offMaterial;
     [SerializeField] Material onMaterial;
+    public string IslandName = "Unnamed";
 
     public bool isOn = true;
 

@@ -13,6 +13,7 @@ public class InstantiateLoadingScreen : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            print("Destroying!");
             Destroy(this);
             return;
         }
@@ -21,10 +22,11 @@ public class InstantiateLoadingScreen : MonoBehaviour
         loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
         sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
         loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
+        print(loadingScreenCanvasPrefab);
     }
 
     // Cached references
-    [HideInInspector] public GameObject loadingScreenCanvasPrefab;
+    public GameObject loadingScreenCanvasPrefab;
     [HideInInspector] public GameObject loadingScreenPrefab;
     [HideInInspector] public GameObject sceneLoaderPrefab;
 
@@ -33,9 +35,11 @@ public class InstantiateLoadingScreen : MonoBehaviour
 
     public void LoadNewScene(string newScene)
     {
+        print(loadingScreenCanvasPrefab);
         GameObject loadingScreenCanvas = Instantiate(loadingScreenCanvasPrefab);
         loadingScreenCanvas.name = "LoadingScreenCanvas";
 
+        print(loadingScreenPrefab);
         GameObject loadingScreen = Instantiate(loadingScreenPrefab, loadingScreenCanvas.transform);
         loadingScreen.name = "LoadingScreen";
 
