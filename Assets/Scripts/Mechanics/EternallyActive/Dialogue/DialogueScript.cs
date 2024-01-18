@@ -40,6 +40,7 @@ public class DialogueScript : MonoBehaviour
         if (FindObjectOfType<CharacterDialogueClickthrough>() != null)
         {
             charDialogue = FindObjectOfType<CharacterDialogueClickthrough>();
+            characterDialogue = true;
         }
         
     }
@@ -133,6 +134,7 @@ public class DialogueScript : MonoBehaviour
         // otherwise, continue printing next line
         else
         {
+            if (characterDialogue)
             charDialogue.lineNumber++;
             StartCoroutine(WriteLine());
         }
