@@ -3,14 +3,17 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueScript : MonoBehaviour
 {
 
     // cached references
     public TextMeshProUGUI dialogueText;
+    public Image portrait;
     GameObject joystick;
     GameObject interact_button;
+    CharacterDialogueClickthrough charDialogue;
 
     // variables for dialogue functionality
     public string[] numberOfLines;
@@ -18,10 +21,12 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] int lineNumber;
 
     public bool isActive;
+    [HideInInspector] bool characterDialogue = false;
 
     // finds a joystick caches it
     private void Awake()
     {
+        portrait.gameObject.SetActive(false);
         GameObject js = GameObject.Find("Joystick");
         if (js != null)
         {
@@ -32,11 +37,20 @@ public class DialogueScript : MonoBehaviour
         {
             interact_button = js;
         }
+        if (FindObjectOfType<CharacterDialogueClickthrough>() != null)
+        {
+            charDialogue = FindObjectOfType<CharacterDialogueClickthrough>();
+        }
+        
     }
 
     // sets joystick inactive and then starts writing text
     void Start()
     {
+        if (FindObjectOfType<CharacterDialogueClickthrough>() != null)
+        {
+            portrait.gameObject.SetActive(true);
+        }
         if (joystick != null)
         {
             joystick.SetActive(false);
@@ -119,6 +133,7 @@ public class DialogueScript : MonoBehaviour
         // otherwise, continue printing next line
         else
         {
+            charDialogue.lineNumber++;
             StartCoroutine(WriteLine());
         }
     }
