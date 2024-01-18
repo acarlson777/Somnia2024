@@ -42,6 +42,10 @@ public class DialogueScript : MonoBehaviour
             charDialogue = FindObjectOfType<CharacterDialogueClickthrough>();
             characterDialogue = true;
         }
+        if (!characterDialogue)
+        {
+            GameObject.Find("NameText").gameObject.SetActive(false);
+        }
         
     }
 

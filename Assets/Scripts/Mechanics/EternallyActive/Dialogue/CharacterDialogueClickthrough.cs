@@ -16,6 +16,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     [SerializeField] string[] names;
     //public TextMeshProUGUI nameText;
     [HideInInspector] public int lineNumber = 0;
+    [HideInInspector] TextMeshProUGUI nameText;
 
 
 
@@ -32,12 +33,13 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     private void Update()
     {
-        //nameText.text = names[lineNumber];
         if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
         portrait.sprite = portraits[lineNumber];
+        if (nameText != null) nameText.text = names[lineNumber];
         if (GameObject.Find("DialogueBox") == null && !sceneChanged && startedDialogue)
         {
             portrait.gameObject.SetActive(false);
+            
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             sceneChanged = true;
         }
@@ -54,6 +56,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
         }
         print("putting a dialogue" + timesInteracted);
         DialogueManager.PopDialogue(lines[timesInteracted].lines);
+        nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
         timesInteracted++;
 
     }
