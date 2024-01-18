@@ -5,6 +5,7 @@ using UnityEngine;
 public interface Entity 
 {
     Vector3 position { get; }
+    GameObject gameObject { get; }
     void Start();
     void Update();
     void Move(Vector3 accel);
