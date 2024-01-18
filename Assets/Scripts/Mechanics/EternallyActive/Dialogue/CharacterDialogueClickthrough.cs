@@ -6,14 +6,13 @@ using TMPro;
 
 public class CharacterDialogueClickthrough : MonoBehaviour
 {
-    public List<Voicelines> lines;
-    private int timesInteracted = 0;
     bool sceneChanged = false;
     bool startedDialogue = false;
 
     [SerializeField] Image portrait;
     [SerializeField] Sprite[] portraits;
     [SerializeField] string[] names;
+    [SerializeField] string[] Text;
     //public TextMeshProUGUI nameText;
     [HideInInspector] public int lineNumber = 0;
 
@@ -48,19 +47,9 @@ public class CharacterDialogueClickthrough : MonoBehaviour
         yield return new WaitForSeconds(2f);
         portrait.gameObject.SetActive(true);
         startedDialogue = true;
-        if (timesInteracted >= lines.Count)
-        {
-            timesInteracted = lines.Count - 1;
-        }
-        print("putting a dialogue" + timesInteracted);
-        DialogueManager.PopDialogue(lines[timesInteracted].lines);
-        timesInteracted++;
+        print("POP: " + Text[0]);
+        DialogueManager.PopDialogue(Text);
 
     }
 
-    [System.Serializable]
-    public class Voicelines
-    {
-        public string[] lines;
-    }
 }
