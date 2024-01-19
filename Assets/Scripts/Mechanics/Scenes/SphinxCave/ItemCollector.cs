@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ItemCollector : MonoBehaviour
 {
-    [SerializeField] private static List<string> collectedItems;
+    [SerializeField] private static List<string> collectedItems = new List<string>();
 
     public void CollectItem(string itemName)
     {
@@ -13,5 +13,10 @@ public class ItemCollector : MonoBehaviour
 
     public List<string> GetCollectedItems() { 
         return collectedItems;
+    }
+
+    public void EmptyCollectedItems()
+    {
+        collectedItems.Clear();
     }
 }
