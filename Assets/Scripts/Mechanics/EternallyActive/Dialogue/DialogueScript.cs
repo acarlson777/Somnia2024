@@ -40,6 +40,11 @@ public class DialogueScript : MonoBehaviour
         if (FindObjectOfType<CharacterDialogueClickthrough>() != null)
         {
             charDialogue = FindObjectOfType<CharacterDialogueClickthrough>();
+            characterDialogue = true;
+        }
+        if (!characterDialogue)
+        {
+            GameObject.Find("NameText").gameObject.SetActive(false);
         }
         
     }
@@ -133,6 +138,7 @@ public class DialogueScript : MonoBehaviour
         // otherwise, continue printing next line
         else
         {
+            if (characterDialogue)
             charDialogue.lineNumber++;
             StartCoroutine(WriteLine());
         }
