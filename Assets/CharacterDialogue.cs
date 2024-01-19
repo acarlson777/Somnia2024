@@ -4,56 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CharacterDialogue : MonoBehaviour
+public class CharacterDialogue : InteractableObject, Entity
 {
     public List<Voicelines> lines;
     private int timesInteracted = 0;
     bool sceneChanged = false;
     bool startedDialogue = false;
 
-    [SerializeField] Image portrait;
-    [SerializeField] Sprite[] portraits;
+    Image portrait;
+    [SerializeField] Sprite characterPortrait;
     [SerializeField] string name;
     [HideInInspector] TextMeshProUGUI nameText;
 
-
-
-    public string sceneName;
-
-    private void Awake()
+    new protected void Start()
     {
-        portrait.gameObject.SetActive(false);
-    }
-    private void Start()
-    {
-        StartCoroutine(StartClickThrough());
+        base.Start();
     }
 
-    private void Update()
+    new public void Interact(Entity entity)
     {
-        nameText.text = name;
-        if (GameObject.Find("DialogueBox") == null && startedDialogue)
+        if (entity is Player)
         {
-            portrait.gameObject.SetActive(false);
+            if (timesInteracted >= lines.Count)
+            {
+                timesInteracted = lines.Count - 1;
+            }
+            print("putting a dialogue" + timesInteracted);
+            DialogueManager.PopDialogue(lines[timesInteracted].lines);
+            portrait = GameObject.Find("Portraits").GetComponent<Image>();
+            portrait.sprite = characterPortrait;
+            timesInteracted++;
+
         }
     }
-
-    IEnumerator StartClickThrough()
-    {
-        yield return new WaitForSeconds(2f);
-        portrait.gameObject.SetActive(true);
-        startedDialogue = true;
-        if (timesInteracted >= lines.Count)
-        {
-            timesInteracted = lines.Count - 1;
-        }
-        print("putting a dialogue" + timesInteracted);
-        DialogueManager.PopDialogue(lines[timesInteracted].lines);
-        nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
-        timesInteracted++;
-
-    }
-
     [System.Serializable]
     public class Voicelines
     {

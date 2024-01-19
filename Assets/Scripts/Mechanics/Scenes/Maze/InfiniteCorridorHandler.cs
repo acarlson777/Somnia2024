@@ -22,6 +22,7 @@ public class InfiniteCorridorHandler : MonoBehaviour
 
             GameObject next =  Instantiate(gameObject);
             next.transform.parent = gameObject.transform.parent;
+            next.transform.rotation = new Quaternion(0,0,0,0);
             next.transform.localPosition = newTransformRight;
             
             InfiniteCorridorHandler handler = next.GetComponent<InfiniteCorridorHandler>();
