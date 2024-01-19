@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,16 +6,31 @@ using UnityEngine.UI;
 using TMPro;
 
 public class CharacterDialogueClickthrough : MonoBehaviour
+
 {
     bool sceneChanged = false;
     bool startedDialogue = false;
 
+    // Sore in an object to acceess throu Unitu Inspector -> convert to string[]
+    [SerializeField]
+    private List<TableRow> table = new List<TableRow>();
+
     [SerializeField] Image portrait;
-    [SerializeField] Sprite[] portraits;
-    [SerializeField] string[] names;
-    [SerializeField] string[] Text;
     //public TextMeshProUGUI nameText;
     [HideInInspector] public int lineNumber = 0;
+
+    // Method to convert the list property to an array
+    public T[] ConvertListToArray<T>(Func<TableRow, T> getProperty)
+    {
+        List<T> result = new List<T>();
+
+        foreach (TableRow row in table)
+        {
+            result.Add(getProperty(row));
+        }
+
+        return result.ToArray();
+    }
 
 
 
@@ -31,6 +47,8 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     private void Update()
     {
+
+        Sprite[] portraits = ConvertListToArray(row => row.portrait);
         //nameText.text = names[lineNumber];
         if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
         portrait.sprite = portraits[lineNumber];
@@ -44,6 +62,8 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     IEnumerator StartClickThrough()
     {
+
+        string[] Text = ConvertListToArray(row => row.text);
         yield return new WaitForSeconds(2f);
         portrait.gameObject.SetActive(true);
         startedDialogue = true;
@@ -52,4 +72,14 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     }
 
+
+}
+
+
+[System.Serializable]
+public class TableRow {
+
+  public Sprite portrait;
+  public string name;
+  public string text;
 }
