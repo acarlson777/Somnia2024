@@ -14,18 +14,11 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     [SerializeField] Image portrait;
     [SerializeField] Sprite[] portraits;
     [SerializeField] string[] names;
-    //public TextMeshProUGUI nameText;
     [HideInInspector] public int lineNumber = 0;
     [HideInInspector] TextMeshProUGUI nameText;
 
-
-
     public string sceneName;
 
-    private void Awake()
-    {
-        portrait.gameObject.SetActive(false);
-    }
     private void Start()
     {
         StartCoroutine(StartClickThrough());
@@ -33,13 +26,10 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     private void Update()
     {
-        if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
         portrait.sprite = portraits[lineNumber];
         if (nameText != null) nameText.text = names[lineNumber];
-        if (GameObject.Find("DialogueBox") == null && !sceneChanged && startedDialogue)
-        {
-            portrait.gameObject.SetActive(false);
-            
+        if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
+        {            
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             sceneChanged = true;
         }
@@ -48,15 +38,16 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     IEnumerator StartClickThrough()
     {
         yield return new WaitForSeconds(2f);
-        portrait.gameObject.SetActive(true);
+
         startedDialogue = true;
         if (timesInteracted >= lines.Count)
         {
             timesInteracted = lines.Count - 1;
         }
         print("putting a dialogue" + timesInteracted);
-        DialogueManager.PopDialogue(lines[timesInteracted].lines);
+        CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
         nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
+        portrait = GameObject.Find("Portraits").GetComponent<Image>();
         timesInteracted++;
 
     }
