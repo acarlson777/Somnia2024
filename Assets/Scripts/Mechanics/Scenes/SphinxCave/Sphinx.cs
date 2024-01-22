@@ -4,10 +4,17 @@ using System.Collections.Generic;
 
 public class Sphinx : InteractableObject, Entity
 {
-    public List<string> itemsToCollect;
+    public List<string> itemsToCollectList;
+    private HashSet<string> itemsToCollect;
     public SphinxDoor sphinxDoor;
-    private int count = 0;
+    private static int count = 0; //Remember to reset Sphinx.count upon entering the orig town center (not the riddle minigame towncenter)
     public List<DialogueLines> lines;
+
+    private void Start()
+    {
+        base.Start();
+        itemsToCollect = new HashSet<string>(itemsToCollectList);
+    }
 
     public void Interact(Entity other)
     {
@@ -29,7 +36,7 @@ public class Sphinx : InteractableObject, Entity
             {
                 Debug.Log("yoooooooo");
                 ItemCollector itemCollector = other.gameObject.GetComponent<ItemCollector>();
-                if (itemCollector.GetCollectedItems().Equals(itemsToCollect)) //Sort both lists prior to checking equality
+                if (itemCollector.GetCollectedItems().SetEquals(itemsToCollect)) //Sort both lists prior to checking equality
                 {
                     sphinxDoor.OpenDoor();
                     DialogueManager.PopDialogue(new string[] {"success"});

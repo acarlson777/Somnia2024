@@ -36,7 +36,6 @@ public class EntityBase : MonoBehaviour,Entity
     public void Initialize()
     {
         rb = GetComponent<Rigidbody>();
-
     }
 
 
