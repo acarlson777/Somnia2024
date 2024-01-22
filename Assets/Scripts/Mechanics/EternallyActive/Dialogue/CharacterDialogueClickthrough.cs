@@ -26,6 +26,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     private void Update()
     {
+        if (portrait != null)
         portrait.sprite = portraits[lineNumber];
         if (nameText != null) nameText.text = names[lineNumber];
         if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
