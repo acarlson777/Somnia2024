@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class ItemCollector : MonoBehaviour
 {
-    [SerializeField] private static List<string> collectedItems = new List<string>();
+    [SerializeField] private static HashSet<string> collectedItems = new HashSet<string>();
 
     public void CollectItem(string itemName)
     {
         collectedItems.Add(itemName);
     }
 
-    public List<string> GetCollectedItems() { 
+    public HashSet<string> GetCollectedItems() { 
         return collectedItems;
     }
 
