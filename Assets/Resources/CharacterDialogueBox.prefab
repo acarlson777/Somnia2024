@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2847731777391034159
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4187134415724287798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7412423722271981533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -298,9 +298,9 @@ GameObject:
   - component: {fileID: 7094074221377383454}
   - component: {fileID: 7094074221377383453}
   - component: {fileID: 7094074221377383452}
-  - component: {fileID: 7094074221377383455}
+  - component: {fileID: -1982164914159322057}
   m_Layer: 5
-  m_Name: DialogueBox
+  m_Name: CharacterDialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7094074221377383455
+--- !u!114 &-1982164914159322057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -377,11 +377,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7094074221377383441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851b3e49c30094662b755a71c686300c, type: 3}
+  m_Script: {fileID: 11500000, guid: 305f1c20c2198ba4f900bc25a8af5a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 7094074222941518850}
-  portrait: {fileID: 8816271820814314323}
+  portrait: {fileID: 0}
   numberOfLines: []
   textSpeed: 0.05
   lineNumber: 0

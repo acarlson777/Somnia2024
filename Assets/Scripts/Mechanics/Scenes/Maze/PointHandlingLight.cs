@@ -9,33 +9,23 @@ public class PointHandlingLight : MonoBehaviour
     public float outsideRange = 5.18f;
     public float bigSpaceRange = 10f;
 
-    private Coroutine currentCoRoutine1;
-    private Coroutine currentCoRoutine2;
+    private Coroutine currentCoRoutine;
 
 
-    void Start()
-    {
-        
-    }
 
-    void Update()
-    {
-
-    }
 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LightUpZone"))
         {
-            if (currentCoRoutine1 != null)
-            {
-                StopCoroutine(currentCoRoutine1);
-                StopCoroutine(currentCoRoutine2);
-            }
 
-            currentCoRoutine1 = StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight1, bigSpaceRange, 2f));
-            currentCoRoutine2 = StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight2, bigSpaceRange, 2f));
+            if (currentCoRoutine != null)
+            {
+                StopCoroutine(currentCoRoutine);
+
+            }
+            currentCoRoutine = StartCoroutine(GradientLightRangeMoveCoRoutine( bigSpaceRange, 4f));
         }
     }
 
@@ -43,27 +33,31 @@ public class PointHandlingLight : MonoBehaviour
     {
         if (other.CompareTag("LightUpZone"))
         {
-            if (currentCoRoutine1 != null)
+            if (currentCoRoutine != null)
             {
-                StopCoroutine(currentCoRoutine1);
-                StopCoroutine(currentCoRoutine2);
+                StopCoroutine(currentCoRoutine);
             }
 
-            StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight1, outsideRange, 2f));
-            StartCoroutine(GradientLightRangeMoveCoRoutine(pointLight2, outsideRange, 2f));
+            currentCoRoutine = StartCoroutine(GradientLightRangeMoveCoRoutine(outsideRange, 2f));
         }
     }
 
-    IEnumerator GradientLightRangeMoveCoRoutine(Light light, float expectedNum, float secs) 
+    IEnumerator GradientLightRangeMoveCoRoutine(float expectedNum, float secs) 
     {
         float time = 0;
-        float startNum = light.range;
+        float startNum = pointLight1.range;
+        yield return null; // when the coroutine is started it should not immideatly change the value of light and instead wait for the next frame
         while (time <= secs)
         {
-            light.range = Mathf.Lerp(startNum, expectedNum, time / secs);
+            float range = Mathf.Lerp(startNum, expectedNum, time / secs);
+            pointLight1.range = range;
+            pointLight2.range = range;
             time += Time.deltaTime;
             yield return null;
         }
-        light.range = expectedNum;
+        pointLight1.range = expectedNum;
+        pointLight2.range = expectedNum;
+        currentCoRoutine = null; //when we are done we just lose the reference
+
     }
 }

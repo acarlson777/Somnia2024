@@ -5,14 +5,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class DialogueScript : MonoBehaviour
+public class CharacterDialogueScript : MonoBehaviour
 {
 
     // cached references
     public TextMeshProUGUI dialogueText;
-    public Image portrait;
     GameObject joystick;
     GameObject interact_button;
+    CharacterDialogueClickthrough charDialogue;
 
     // variables for dialogue functionality
     public string[] numberOfLines;
@@ -20,11 +20,11 @@ public class DialogueScript : MonoBehaviour
     [SerializeField] int lineNumber;
 
     public bool isActive;
+    [HideInInspector] public bool characterDialogue = false;
 
     // finds a joystick caches it
     private void Awake()
     {
-        portrait.gameObject.SetActive(false);
         GameObject js = GameObject.Find("Joystick");
         if (js != null)
         {
@@ -34,6 +34,11 @@ public class DialogueScript : MonoBehaviour
         if (js != null)
         {
             interact_button = js;
+        }
+        if (FindObjectOfType<CharacterDialogueClickthrough>() != null)
+        {
+            charDialogue = FindObjectOfType<CharacterDialogueClickthrough>();
+            characterDialogue = true;
         }
     }
 
@@ -94,7 +99,7 @@ public class DialogueScript : MonoBehaviour
     // for every char in the line, add it to the text with delay
     IEnumerator WriteLine()
     {
-        foreach (char letter  in numberOfLines[lineNumber])
+        foreach (char letter in numberOfLines[lineNumber])
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
@@ -117,11 +122,13 @@ public class DialogueScript : MonoBehaviour
                 interact_button.SetActive(true);
             }
             isActive = false;
-           Destroy(gameObject);
+            Destroy(gameObject);
         }
         // otherwise, continue printing next line
         else
         {
+            if (characterDialogue)
+                charDialogue.lineNumber++;
             StartCoroutine(WriteLine());
         }
     }

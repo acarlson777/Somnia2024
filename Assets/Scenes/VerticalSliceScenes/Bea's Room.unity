@@ -1105,6 +1105,7 @@ GameObject:
   - component: {fileID: 574359610}
   - component: {fileID: 574359609}
   - component: {fileID: 574359608}
+  - component: {fileID: 574359611}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1154,6 +1155,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &574359611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574359607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec541209cb560924aa96822798262718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplaySurface: {fileID: 571698092}
 --- !u!1 &574429678 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4224572262200498698, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
@@ -1204,55 +1218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261f714d022f60044874c7faa4ad4fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &584285817
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 584285819}
-  - component: {fileID: 584285818}
-  m_Layer: 0
-  m_Name: clickthrough
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &584285818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584285817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef70fd16d2204c048f0e13410716e80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lines:
-  - lines:
-    - Hello
-    - ZBlah
-  sceneName: Maze
---- !u!4 &584285819
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584285817}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.322195, y: 19.139763, z: 42.247284}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &718371958
 PrefabInstance:
   m_ObjectHideFlags: 0
