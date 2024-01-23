@@ -480,8 +480,7 @@ GameObject:
   - component: {fileID: 431683260}
   - component: {fileID: 431683259}
   - component: {fileID: 431683258}
-  - component: {fileID: 431683257}
-  - component: {fileID: 431683256}
+  - component: {fileID: 431683263}
   m_Layer: 0
   m_Name: Choo Choo Train
   m_TagString: Untagged
@@ -489,38 +488,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &431683256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431683255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff702171cdf107540867e0c104eb2136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreenCanvasPrefab: {fileID: 0}
-  loadingScreenPrefab: {fileID: 0}
-  sceneLoaderPrefab: {fileID: 0}
---- !u!114 &431683257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431683255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc7d8414b7aa48028b2395b539cee13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 0}
-  sceneToLoad: S8 - At the Town Center asking citizens for a key 1
-  fadeOut: 0
-  fadeIn: 0
-  loadingScreenLength: 0
 --- !u!54 &431683258
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -608,13 +575,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431683255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.495, y: 2.32, z: -6.871}
+  m_LocalPosition: {x: -6.24, y: 1.63, z: -6.42}
   m_LocalScale: {x: 0.62, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &431683263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431683255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1534684e6451e4fdb8d7f2472f3700cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 431683259}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  entityMaxSpeed: 2.1
+  lines:
+  - lines:
+    - Kep Interacting with this object to go to next scene loL
+    - See Ya
+  SceneToSwitchTo: S8 - At the Town Center asking citizens for a key 1
 --- !u!1001 &499761995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1166,7 +1154,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438457354
 GameObject:
@@ -1564,6 +1552,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
   m_PrefabInstance: {fileID: 1887380052}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2001706600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5963847293144142420, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_Name
+      value: LoadingScreenManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963847293144142421, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c3089f8fdf0a42468bd945f68d15c20, type: 3}
 --- !u!1 &2030609687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5631316416746892961, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
@@ -2068,7 +2113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchoredPosition.y
