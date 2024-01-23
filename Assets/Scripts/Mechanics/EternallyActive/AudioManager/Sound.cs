@@ -38,7 +38,8 @@ public abstract class SoundInstance : SoundInteraction
 
     public void Play(GameObject caller)
     {
-        if (audioSource == null) { CreateSoundInstance(caller); }
+        if (audioSource == null) { CreateSoundInstance(caller); } //Instead, check if the caller gameobject has the audioSource Attached to it already | if gameObject already has the audioSource, set the current audioSource to that source
+
         audioSource.Play();
     }
 

@@ -18,6 +18,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     [SerializeField] Image portrait;
     //public TextMeshProUGUI nameText;
     [HideInInspector] public int lineNumber = 0;
+    [HideInInspector] TextMeshProUGUI nameText;
 
     // Method to convert the list property to an array
     public T[] ConvertListToArray<T>(Func<TableRow, T> getProperty)
@@ -36,10 +37,6 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     public string sceneName;
 
-    private void Awake()
-    {
-        portrait.gameObject.SetActive(false);
-    }
     private void Start()
     {
         StartCoroutine(StartClickThrough());
@@ -52,9 +49,9 @@ public class CharacterDialogueClickthrough : MonoBehaviour
         //nameText.text = names[lineNumber];
         if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
         portrait.sprite = portraits[lineNumber];
-        if (GameObject.Find("DialogueBox") == null && !sceneChanged && startedDialogue)
-        {
-            portrait.gameObject.SetActive(false);
+        if (nameText != null) nameText.text = names[lineNumber];
+        if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
+        {            
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             sceneChanged = true;
         }
@@ -65,7 +62,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
         string[] Text = ConvertListToArray(row => row.text);
         yield return new WaitForSeconds(2f);
-        portrait.gameObject.SetActive(true);
+
         startedDialogue = true;
         print("POP: " + Text[0]);
         DialogueManager.PopDialogue(Text);

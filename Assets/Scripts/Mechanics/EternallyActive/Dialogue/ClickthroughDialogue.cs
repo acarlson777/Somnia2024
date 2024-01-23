@@ -9,7 +9,6 @@ public class ClickthroughDialogue : MonoBehaviour
     bool sceneChanged = false;
     bool startedDialogue = false;
 
-
     public string sceneName;
 
     private void Start()
