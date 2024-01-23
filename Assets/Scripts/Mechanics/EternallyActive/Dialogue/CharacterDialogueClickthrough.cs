@@ -15,7 +15,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     [SerializeField]
     private List<TableRow> table = new List<TableRow>();
 
-    [SerializeField] Image portrait;
+    Image portrait;
     //public TextMeshProUGUI nameText;
     [HideInInspector] public int lineNumber = 0;
     [HideInInspector] TextMeshProUGUI nameText;
@@ -46,12 +46,13 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     {
 
         Sprite[] portraits = ConvertListToArray(row => row.portrait);
-        //nameText.text = names[lineNumber];
-        if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
+        string[] names = ConvertListToArray(row => row.name);
+
+        // if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
         portrait.sprite = portraits[lineNumber];
         if (nameText != null) nameText.text = names[lineNumber];
         if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
-        {            
+        {
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             sceneChanged = true;
         }
@@ -65,7 +66,9 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
         startedDialogue = true;
         print("POP: " + Text[0]);
-        DialogueManager.PopDialogue(Text);
+        CharacterDialogueManager.PopCharacterDialogue(Text);
+        nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
+        portrait = GameObject.Find("Portraits").GetComponent<Image>();
 
     }
 
