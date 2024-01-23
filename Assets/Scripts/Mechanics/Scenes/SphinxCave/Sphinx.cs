@@ -7,7 +7,7 @@ public class Sphinx : InteractableObject, Entity
     public List<string> itemsToCollectList;
     private HashSet<string> itemsToCollect;
     public SphinxDoor sphinxDoor;
-    private static int count = 0; //Remember to reset Sphinx.count upon entering the orig town center (not the riddle minigame towncenter)
+    public static int count = 0; //Remember to reset Sphinx.count upon entering the orig town center (not the riddle minigame towncenter)
     public List<DialogueLines> lines;
 
     private void Start()
