@@ -49,6 +49,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
         string[] names = ConvertListToArray(row => row.name);
 
         // if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
+        if (portrait != null)
         portrait.sprite = portraits[lineNumber];
         if (nameText != null) nameText.text = names[lineNumber];
         if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
