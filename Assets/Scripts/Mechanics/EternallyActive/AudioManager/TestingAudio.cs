@@ -9,56 +9,56 @@ public class TestingAudio : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            AudioManagerSingleton.Instance.Play("song3", gameObject);
+            AudioManagerSingleton.Instance.Play("BeasTheme", gameObject);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            AudioManagerSingleton.Instance.Stop("song3");
+            AudioManagerSingleton.Instance.Stop("BeasTheme");
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            AudioManagerSingleton.Instance.FadeIn("song3", 5, gameObject);
+            AudioManagerSingleton.Instance.FadeIn("BeasTheme", 5, gameObject);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            AudioManagerSingleton.Instance.FadeOut("song3", 5);
+            AudioManagerSingleton.Instance.FadeOut("BeasTheme", 5);
         }
 
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            AudioManagerSingleton.Instance.Play("soundtrack1", gameObject);
+            AudioManagerSingleton.Instance.Play("BeasRoom", gameObject);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            AudioManagerSingleton.Instance.Stop("soundtrack1");
+            AudioManagerSingleton.Instance.Stop("BeasRoom");
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            AudioManagerSingleton.Instance.FadeIn("soundtrack1", 5, gameObject);
+            AudioManagerSingleton.Instance.FadeIn("BeasRoom", 5, gameObject);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("soundtrack1", 5);
+            AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasRoom", 5);
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrack("soundtrack1", gameObject);
+            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrack("BeasRoom", gameObject);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("soundtrack1", 5, gameObject);
+            AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("BeasRoom", 5, gameObject);
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("soundtrack1", gameObject);
+            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("BeasRoom", gameObject);
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrackOnce("soundtrack1", 5, gameObject);
+            AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrackOnce("BeasRoom", 5, gameObject);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
