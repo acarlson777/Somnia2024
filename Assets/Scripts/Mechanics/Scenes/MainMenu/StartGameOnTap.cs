@@ -6,12 +6,14 @@ public class StartGameOnTap : MonoBehaviour
 {
     InstantiateLoadingScreen loadingScreen;
     SettingsButtonScript settingsButton;
+    string sceneToLoad = null;
+    
     bool tapped = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        sceneToLoad = PlayerPrefs.GetString("LastScene","Bea's Room");
         settingsButton = GameObject.Find("SettingsButtonButton").GetComponent<SettingsButtonScript>();
     }
 
@@ -33,7 +35,7 @@ public class StartGameOnTap : MonoBehaviour
         if (!tapped && !settingsButton.isOn && !SceneLoader.fading)
         {
             AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
-            InstantiateLoadingScreen.Instance.LoadNewScene("Bea's Room");
+            InstantiateLoadingScreen.Instance.LoadNewScene(sceneToLoad);
             tapped = true;
         }
     }
