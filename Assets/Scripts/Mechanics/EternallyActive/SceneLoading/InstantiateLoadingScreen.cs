@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 // class to instantiate all loadingScreen prefabs and load the scene
 public class InstantiateLoadingScreen : MonoBehaviour
@@ -19,6 +20,10 @@ public class InstantiateLoadingScreen : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        if (SceneManager.GetSceneAt(0).name != "Main Menu")
+        {
+            throw new System.Exception("Scene at index 0 must be main menu");
+        }
         loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
         sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
         loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
@@ -35,6 +40,12 @@ public class InstantiateLoadingScreen : MonoBehaviour
 
     public void LoadNewScene(string newScene)
     {
+        
+        if (newScene == "Main Menu" && GetActiveSceneName() != newScene)
+        {
+            // we are loading from a random scene to the main menu
+            SaveAndLoadManager.SaveCurrentScene();
+        }
         print(loadingScreenCanvasPrefab);
         GameObject loadingScreenCanvas = Instantiate(loadingScreenCanvasPrefab);
         loadingScreenCanvas.name = "LoadingScreenCanvas";
@@ -52,5 +63,9 @@ public class InstantiateLoadingScreen : MonoBehaviour
         originalImage = loadingScreenImage.color;
         // sets loadingscreen opacity to zero to be able to fade in later
         loadingScreenImage.color = new Color(originalImage.r, originalImage.g, originalImage.b, 0);
+    }
+    public static string GetActiveSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
     }
 }

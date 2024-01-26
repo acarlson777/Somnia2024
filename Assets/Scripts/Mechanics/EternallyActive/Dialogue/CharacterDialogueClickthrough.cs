@@ -47,8 +47,8 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
         Sprite[] portraits = ConvertListToArray(row => row.portrait);
         string[] names = ConvertListToArray(row => row.name);
-
-        // if (portraits[lineNumber] == null) portrait.gameObject.SetActive(false);
+        if (portraits[lineNumber] == null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 0);
+        if (portrait != null && portraits[lineNumber] != null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 1);
         if (portrait != null)
         portrait.sprite = portraits[lineNumber];
         if (nameText != null) nameText.text = names[lineNumber];
@@ -61,7 +61,6 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     IEnumerator StartClickThrough()
     {
-
         string[] Text = ConvertListToArray(row => row.text);
         yield return new WaitForSeconds(2f);
 
