@@ -6,7 +6,8 @@ public class SaveAndLoadManager : MonoBehaviour
 {
     private void OnApplicationQuit()
     {
-        SaveCurrentScene();
+        if (InstantiateLoadingScreen.GetActiveSceneName() != InstantiateLoadingScreen.mainMenuName)
+            SaveCurrentScene();
     }
 
     public static void SaveCurrentScene()
@@ -15,6 +16,6 @@ public class SaveAndLoadManager : MonoBehaviour
     }
     public static void LoadSavedScene()
     {
-        InstantiateLoadingScreen.Instance.LoadNewScene(PlayerPrefs.GetString("Last Scene",SceneManager.GetSceneAt(0).name)); // will default to the 0th scene
+        InstantiateLoadingScreen.Instance.LoadNewScene(PlayerPrefs.GetString("Last Scene",SceneManager.GetSceneAt(0).name)); // will default to the 0th scene               
     }
 }

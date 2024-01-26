@@ -7,6 +7,7 @@ public class BeasBedScript : InteractableObject, Entity
     public static bool noHostileMobsAround = false;
     public bool inspectorBed = false;
     public string[] not_ready_dialogue;
+    public string sceneToLoad;
     new void Start()
     {
         base.Start();
@@ -24,7 +25,7 @@ public class BeasBedScript : InteractableObject, Entity
         {
             if (noHostileMobsAround)
             {
-                InstantiateLoadingScreen.Instance.LoadNewScene("Maze");
+                InstantiateLoadingScreen.Instance.LoadNewScene(sceneToLoad);
                 AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasRoom", 1);
             } else
             {

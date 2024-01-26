@@ -10,13 +10,13 @@ public class Sphinx : InteractableObject, Entity
     public static int count = 0; //Remember to reset Sphinx.count upon entering the orig town center (not the riddle minigame towncenter)
     public List<DialogueLines> lines;
 
-    private void Start()
+    new private void Start()
     {
         base.Start();
         itemsToCollect = new HashSet<string>(itemsToCollectList);
     }
 
-    public void Interact(Entity other)
+    new public void Interact(Entity other)
     {
         if (other is Player)
         {
