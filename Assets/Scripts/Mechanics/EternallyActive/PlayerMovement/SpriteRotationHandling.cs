@@ -11,6 +11,7 @@ public class SpriteRotationHandling : MonoBehaviour
     private Vector3 acceleration;
     private bool prev_was_zero;
 
+    public float runningThreshold;
 
     void Start()
     {
@@ -28,5 +29,14 @@ public class SpriteRotationHandling : MonoBehaviour
             animator.SetFloat("accelerationZ", acceleration.y * accelerationConstant);
         }
         prev_was_zero = JoystickInput.joystickDirection == Vector3.zero;
+
+        if (acceleration.magnitude > runningThreshold)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 }
