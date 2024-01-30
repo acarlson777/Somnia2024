@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ThroneRoomWallOpacity : MonoBehaviour
+public class RoomWallOpacity : MonoBehaviour
 {
     public GameObject[] gameObjectsToMakeTransparent;
     private Coroutine currentCoroutine;
     public float transparencyTime;
+    public float endTransparency;
     
     void Start()
     {
@@ -48,36 +49,40 @@ public class ThroneRoomWallOpacity : MonoBehaviour
     IEnumerator MakeTransparent(float secs)
     {
         float time = 0;
+        yield return null;
         while (time <= secs)
         {
             foreach (GameObject gameObject in gameObjectsToMakeTransparent)
             {
                 Renderer gameObjectRenderer = gameObject.GetComponent<Renderer>();
                 Color materialColor = gameObjectRenderer.material.color;
-                materialColor.a = Mathf.Lerp(1, .5f, time / secs);
+                materialColor.a = Mathf.Lerp(1, endTransparency, time / secs);
                 gameObjectRenderer.material.color = materialColor;
             }
              
             time += Time.deltaTime;
             yield return null;
         }
+        currentCoroutine = null;
     }
 
     IEnumerator MakeOpaque(float secs)
     {
         float time = 0;
+        yield return null;
         while (time <= secs)
         {
             foreach (GameObject gameObject in gameObjectsToMakeTransparent)
             {
                 Renderer gameObjectRenderer = gameObject.GetComponent<Renderer>();
                 Color materialColor = gameObjectRenderer.material.color;
-                materialColor.a = Mathf.Lerp(.5f, 1, time / secs);
+                materialColor.a = Mathf.Lerp(endTransparency, 1, time / secs);
                 gameObjectRenderer.material.color = materialColor;
             }
 
             time += Time.deltaTime;
             yield return null;
         }
+        currentCoroutine = null;
     }
 }
