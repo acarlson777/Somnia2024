@@ -23,7 +23,7 @@ public class FadeText : MonoBehaviour
     void Update()
     {
         startText.alpha = 2.5f * Mathf.Max(Mathf.Abs(Mathf.Sin(Mathf.PI * (Time.time - startTime) / 90f))- .41f, 0f);
-        print(Time.time - startTime);
+        //print(Time.time - startTime);
 
     }
 
