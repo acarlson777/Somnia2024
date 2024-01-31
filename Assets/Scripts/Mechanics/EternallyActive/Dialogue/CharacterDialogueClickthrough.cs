@@ -20,6 +20,9 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     [HideInInspector] public int lineNumber = 0;
     [HideInInspector] TextMeshProUGUI nameText;
 
+    private AudioSource audioSource;
+
+
     // Method to convert the list property to an array
     public T[] ConvertListToArray<T>(Func<TableRow, T> getProperty)
     {
@@ -40,6 +43,8 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartClickThrough());
+        audioSource = gameObject.AddComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -47,15 +52,24 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
         Sprite[] portraits = ConvertListToArray(row => row.portrait);
         string[] names = ConvertListToArray(row => row.name);
+        AudioClip[] voiceAudio = ConvertListToArray(row => row.voiceLine);
         if (portraits[lineNumber] == null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 0);
         if (portrait != null && portraits[lineNumber] != null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 1);
         if (portrait != null)
         portrait.sprite = portraits[lineNumber];
         if (nameText != null) nameText.text = names[lineNumber];
+
+
         if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
         {
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             sceneChanged = true;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            audioSource.clip = voiceAudio[lineNumber];
+            audioSource.Play();
         }
     }
 
@@ -82,4 +96,5 @@ public class TableRow {
   public Sprite portrait;
   public string name;
   public string text;
+  public AudioClip voiceLine;
 }
