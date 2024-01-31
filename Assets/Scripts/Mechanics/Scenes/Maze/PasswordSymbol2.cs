@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PasswordSymbol: InteractableObject, Entity
+public class PasswordSymbol2 : InteractableObject, Entity
 {
 
     [SerializeField] private bool lit = false;
     public string symbol = "";
+    public GameObject lightUpObject;
     public Material startingMat;
     public Material onMat;
     public new void Start()
     {
         base.Start();
-        startingMat = gameObject.GetComponent<Renderer>().material;
     }
 
     public new void Update()
@@ -29,13 +29,13 @@ public class PasswordSymbol: InteractableObject, Entity
         lit = !lit;
         if (lit)
         {
-            gameObject.GetComponent<Renderer>().material = onMat;
+            lightUpObject.GetComponent<Renderer>().material = onMat;
             //Move down so that half is showing
         }
         else
         {
             // unlights itself after second interaction
-            gameObject.GetComponent<Renderer>().material = startingMat;
+            lightUpObject.GetComponent<Renderer>().material = startingMat;
             //move back up so that all is showing
         }
     }       
