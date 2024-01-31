@@ -29,7 +29,7 @@ public class StartGameOnTap : MonoBehaviour
         */
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         if (!tapped && !settingsButton.isOn && !SceneLoader.fading)
         {
