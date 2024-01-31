@@ -13,6 +13,7 @@ public class CharacterDialogue : InteractableObject, Entity
     [SerializeField] Sprite characterPortrait;
     [SerializeField] string name;
     [HideInInspector] TextMeshProUGUI nameText;
+    public AudioClip[] voiceLines;
     bool portraitSet = false;
     bool interactedWith = false;
 

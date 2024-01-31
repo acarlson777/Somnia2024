@@ -22,6 +22,8 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [HideInInspector] public AudioClip[] voiceAudio;
+
 
     // Method to convert the list property to an array
     public T[] ConvertListToArray<T>(Func<TableRow, T> getProperty)
@@ -52,7 +54,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
         Sprite[] portraits = ConvertListToArray(row => row.portrait);
         string[] names = ConvertListToArray(row => row.name);
-        AudioClip[] voiceAudio = ConvertListToArray(row => row.voiceLine);
+        voiceAudio = ConvertListToArray(row => row.voiceLine);
         if (portraits[lineNumber] == null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 0);
         if (portrait != null && portraits[lineNumber] != null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 1);
         if (portrait != null)
@@ -66,11 +68,11 @@ public class CharacterDialogueClickthrough : MonoBehaviour
             sceneChanged = true;
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            audioSource.clip = voiceAudio[lineNumber];
-            audioSource.Play();
-        }
+        //if (Input.GetMouseButtonDown(0))
+      //  {
+          //  audioSource.clip = voiceAudio[lineNumber];
+         //   audioSource.Play();
+       /// }
     }
 
     IEnumerator StartClickThrough()
@@ -79,6 +81,8 @@ public class CharacterDialogueClickthrough : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         startedDialogue = true;
+        audioSource.clip = voiceAudio[0];
+        audioSource.Play();
         print("POP: " + Text[0]);
         CharacterDialogueManager.PopCharacterDialogue(Text);
         nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
