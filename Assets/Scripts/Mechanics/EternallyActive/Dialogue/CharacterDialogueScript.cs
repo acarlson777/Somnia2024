@@ -128,7 +128,11 @@ public class CharacterDialogueScript : MonoBehaviour
         else
         {
             if (characterDialogue)
+            {
                 charDialogue.lineNumber++;
+                charDialogue.GetComponent<AudioSource>().clip = charDialogue.voiceAudio[lineNumber];
+                charDialogue.GetComponent<AudioSource>().Play();
+            }
             StartCoroutine(WriteLine());
         }
     }
