@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 // class to instantiate all loadingScreen prefabs and load the scene
 public class InstantiateLoadingScreen : MonoBehaviour
 {
-
+    public const string mainMenuName = "Main Menu";
     public static InstantiateLoadingScreen Instance { get; private set; }
     private void Awake()
     {
@@ -20,14 +20,25 @@ public class InstantiateLoadingScreen : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        if (SceneManager.GetSceneAt(0).name != "Main Menu")
-        {
-            throw new System.Exception("Scene at index 0 must be main menu");
-        }
+        
         loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
         sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
         loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
         print(loadingScreenCanvasPrefab);
+    }
+    private void Start()
+    {
+        if (SceneManager.GetSceneByBuildIndex(0).name != mainMenuName)
+        {
+            if (!SceneManager.GetSceneByBuildIndex(0).IsValid())
+            {
+                throw new System.Exception("Scene index 0 is not valid");
+            }
+            else
+            {
+                throw new System.Exception("Scene at index 0 must be main menu instead it is: " + SceneManager.GetSceneByBuildIndex(0).name);
+            }
+        }
     }
 
     // Cached references
@@ -41,7 +52,7 @@ public class InstantiateLoadingScreen : MonoBehaviour
     public void LoadNewScene(string newScene)
     {
         
-        if (newScene == "Main Menu" && GetActiveSceneName() != newScene)
+        if (newScene == mainMenuName && GetActiveSceneName() != newScene)
         {
             // we are loading from a random scene to the main menu
             SaveAndLoadManager.SaveCurrentScene();

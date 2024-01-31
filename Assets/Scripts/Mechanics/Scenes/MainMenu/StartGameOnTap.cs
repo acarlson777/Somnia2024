@@ -13,7 +13,6 @@ public class StartGameOnTap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sceneToLoad = PlayerPrefs.GetString("LastScene","Bea's Room");
         settingsButton = GameObject.Find("SettingsButtonButton").GetComponent<SettingsButtonScript>();
     }
 
@@ -35,7 +34,7 @@ public class StartGameOnTap : MonoBehaviour
         if (!tapped && !settingsButton.isOn && !SceneLoader.fading)
         {
             AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
-            InstantiateLoadingScreen.Instance.LoadNewScene(sceneToLoad);
+            SaveAndLoadManager.LoadSavedScene(); // if there is no saved scene then it defaults to main menu (build index 0)
             tapped = true;
         }
     }

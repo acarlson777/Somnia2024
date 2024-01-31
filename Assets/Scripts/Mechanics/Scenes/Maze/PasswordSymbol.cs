@@ -30,11 +30,13 @@ public class PasswordSymbol : InteractableObject, Entity
         if (lit)
         {
             gameObject.GetComponent<Renderer>().material = onMat;
+            //Move down so that half is showing
         }
         else
         {
             // unlights itself after second interaction
             gameObject.GetComponent<Renderer>().material = startingMat;
+            //move back up so that all is showing
         }
     }       
 }

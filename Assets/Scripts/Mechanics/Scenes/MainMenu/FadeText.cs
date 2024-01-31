@@ -9,17 +9,22 @@ public class FadeText : MonoBehaviour
     public TextMeshProUGUI startText;
     public float fadeSpeed = 1f;
     float waitSpeed = 12.5f;
+    public float startTime;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FadeTextIn());
+        startTime = Time.time;
+        //StartCoroutine(FadeTextIn());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        startText.alpha = 2.5f * Mathf.Max(Mathf.Abs(Mathf.Sin(Mathf.PI * (Time.time - startTime) / 90f))- .41f, 0f);
+        print(Time.time - startTime);
+
     }
 
     IEnumerator FadeTextIn()

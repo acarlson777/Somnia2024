@@ -11,7 +11,7 @@ public class MainMenuMusic : MonoBehaviour
 
     IEnumerator DelayedMusicPlay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.8f );
         AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("BeasThemeSoundtrack", 1f, gameObject);
     }
 }
