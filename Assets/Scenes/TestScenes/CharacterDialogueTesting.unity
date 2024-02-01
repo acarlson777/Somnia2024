@@ -910,6 +910,7 @@ MonoBehaviour:
   not_ready_dialogue:
   - This is my bed, so nice and comfy.
   - However, I dont feel like sleeping right now. Maybe first I should read a little?
+  sceneToLoad: 
 --- !u!54 &433303089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1565,9 +1566,16 @@ MonoBehaviour:
   lines:
   - lines:
     - Hello
+    - Hi
+    - die now!!!!!!!!!!
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
   name: Bea
+  voiceLines:
+  - {fileID: 8300000, guid: c92dd1a45b80c4fc08266ee15672551c, type: 3}
+  - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
+  - {fileID: 8300000, guid: 810a4a723d0c0441f834e7a331fcb9ce, type: 3}
+  voiceAudio: []
 --- !u!1 &860463469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,6 +2893,8 @@ MonoBehaviour:
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
   name: Riggs
+  voiceLines: []
+  voiceAudio: []
 --- !u!54 &1456426570
 Rigidbody:
   m_ObjectHideFlags: 0

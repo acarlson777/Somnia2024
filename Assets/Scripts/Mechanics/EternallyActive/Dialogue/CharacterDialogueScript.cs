@@ -13,6 +13,8 @@ public class CharacterDialogueScript : MonoBehaviour
     GameObject joystick;
     GameObject interact_button;
     CharacterDialogueClickthrough charDialogue;
+    CharacterDialogue character;
+    [HideInInspector] public int index = -1;
 
     // variables for dialogue functionality
     public string[] numberOfLines;
@@ -20,6 +22,7 @@ public class CharacterDialogueScript : MonoBehaviour
     [SerializeField] int lineNumber;
 
     public bool isActive;
+    [HideInInspector] public bool characterClickthroughDialogue = false;
     [HideInInspector] public bool characterDialogue = false;
 
     // finds a joystick caches it
@@ -38,6 +41,11 @@ public class CharacterDialogueScript : MonoBehaviour
         if (FindObjectOfType<CharacterDialogueClickthrough>() != null)
         {
             charDialogue = FindObjectOfType<CharacterDialogueClickthrough>();
+            characterClickthroughDialogue = true;
+        }
+        if (FindObjectOfType<CharacterDialogue>() != null)
+        {
+            character = FindObjectOfType<CharacterDialogue>();
             characterDialogue = true;
         }
     }
@@ -122,12 +130,16 @@ public class CharacterDialogueScript : MonoBehaviour
                 interact_button.SetActive(true);
             }
             isActive = false;
+            if (character)
+            {
+                character.GetComponent<AudioSource>().Stop();
+            }
             Destroy(gameObject);
         }
         // otherwise, continue printing next line
         else
         {
-            if (characterDialogue)
+            if (characterClickthroughDialogue)
             {
                 charDialogue.lineNumber++;
                 charDialogue.GetComponent<AudioSource>().clip = charDialogue.voiceAudio[lineNumber];

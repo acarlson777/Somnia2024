@@ -67,12 +67,6 @@ public class CharacterDialogueClickthrough : MonoBehaviour
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             sceneChanged = true;
         }
-
-        //if (Input.GetMouseButtonDown(0))
-      //  {
-          //  audioSource.clip = voiceAudio[lineNumber];
-         //   audioSource.Play();
-       /// }
     }
 
     IEnumerator StartClickThrough()
