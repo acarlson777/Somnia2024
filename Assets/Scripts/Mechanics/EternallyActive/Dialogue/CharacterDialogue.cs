@@ -16,9 +16,17 @@ public class CharacterDialogue : InteractableObject, Entity
     public AudioClip[] voiceLines;
     bool portraitSet = false;
     bool interactedWith = false;
+    [HideInInspector] public bool audioPlayed = false;
 
     private AudioSource audioSource;
-    //[HideInInspector] public AudioClip[] voiceAudio;
+    CharacterDialogueScript character;
+    GameObject dialogueBox;
+
+    private void Awake()
+    {
+        dialogueBox = Resources.Load("CharacterDialogueBox") as GameObject;
+        character = dialogueBox.GetComponent<CharacterDialogueScript>();
+    }
 
     new protected void Start()
     {
@@ -38,13 +46,10 @@ public class CharacterDialogue : InteractableObject, Entity
             }
             print("putting a dialogue" + timesInteracted);
             CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
+
             timesInteracted++;
 
         }
-    }
-
-    private void Update()
-    {
         if (GameObject.Find("CharacterDialogueBox") != null && !portraitSet && interactedWith)
         {
             portrait = GameObject.Find("Portraits").GetComponent<Image>();
@@ -53,6 +58,18 @@ public class CharacterDialogue : InteractableObject, Entity
             portrait.sprite = characterPortrait;
             portraitSet = true;
             interactedWith = false;
+        }
+    }
+
+    private void Update()
+    {
+
+        if (!audioPlayed && dialogueBox.activeInHierarchy && this.voiceLines.Length > 0)
+        {
+            //if (audioSource.clip == null) throw new System.Exception("A character in the scene does not have any voicelines");
+            audioSource.clip = voiceLines[character.lineNumber];
+            audioSource.Play();
+            audioPlayed = true;
         }
     }
 

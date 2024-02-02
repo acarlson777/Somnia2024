@@ -19,7 +19,7 @@ public class CharacterDialogueScript : MonoBehaviour
     // variables for dialogue functionality
     public string[] numberOfLines;
     public float textSpeed;
-    [SerializeField] int lineNumber;
+    [SerializeField] public int lineNumber = 0;
 
     public bool isActive;
     [HideInInspector] public bool characterClickthroughDialogue = false;
@@ -118,6 +118,7 @@ public class CharacterDialogueScript : MonoBehaviour
     void WriteNextLine()
     {
         lineNumber++;
+        character.audioPlayed = false;
         dialogueText.text = string.Empty;
         if (lineNumber > numberOfLines.Length - 1)
         {
