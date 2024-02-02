@@ -17,9 +17,13 @@ public class CharacterDialogue : InteractableObject, Entity
     bool portraitSet = false;
     bool interactedWith = false;
 
+    private AudioSource audioSource;
+    //[HideInInspector] public AudioClip[] voiceAudio;
+
     new protected void Start()
     {
         base.Start();
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     new public void Interact(Entity entity)
