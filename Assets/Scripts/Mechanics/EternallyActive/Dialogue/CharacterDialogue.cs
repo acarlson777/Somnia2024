@@ -7,26 +7,20 @@ using TMPro;
 public class CharacterDialogue : InteractableObject, Entity
 {
     public List<Voicelines> lines;
+    public List<AudioLines> audioLines;
     private int timesInteracted = 0;
 
     [SerializeField] Image portrait;
     [SerializeField] Sprite characterPortrait;
-    [SerializeField] string name;
+    [SerializeField] public string name;
     [HideInInspector] TextMeshProUGUI nameText;
     public AudioClip[] voiceLines;
     bool portraitSet = false;
     bool interactedWith = false;
-    [HideInInspector] public bool audioPlayed = false;
 
     private AudioSource audioSource;
     CharacterDialogueScript character;
-    GameObject dialogueBox;
-
-    private void Awake()
-    {
-        dialogueBox = Resources.Load("CharacterDialogueBox") as GameObject;
-        character = dialogueBox.GetComponent<CharacterDialogueScript>();
-    }
+    public int prevLineNumber;
 
     new protected void Start()
     {
@@ -46,7 +40,9 @@ public class CharacterDialogue : InteractableObject, Entity
             }
             print("putting a dialogue" + timesInteracted);
             CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
-
+            audioSource.clip = audioLines[timesInteracted].audioLines[0];
+            audioSource.Play();
+            character = FindObjectOfType<CharacterDialogueScript>();
             timesInteracted++;
 
         }
@@ -63,13 +59,18 @@ public class CharacterDialogue : InteractableObject, Entity
 
     private void Update()
     {
-
-        if (!audioPlayed && dialogueBox.activeInHierarchy && this.voiceLines.Length > 0)
+        if (character != null)
         {
-            //if (audioSource.clip == null) throw new System.Exception("A character in the scene does not have any voicelines");
-            audioSource.clip = voiceLines[character.lineNumber];
-            audioSource.Play();
-            audioPlayed = true;
+            if (prevLineNumber != character.lineNumber)
+            {
+                audioSource.clip = audioLines[timesInteracted-1].audioLines[character.lineNumber];
+                audioSource.Play();
+                prevLineNumber = character.lineNumber;
+            }
+        }
+        if (character == null)
+        {
+           audioSource.Stop();
         }
     }
 
@@ -77,5 +78,10 @@ public class CharacterDialogue : InteractableObject, Entity
     public class Voicelines
     {
         public string[] lines;
+    }
+    [System.Serializable]
+    public class AudioLines
+    {
+        public AudioClip[] audioLines;
     }
 }

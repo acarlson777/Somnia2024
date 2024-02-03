@@ -13,7 +13,6 @@ public class CharacterDialogueScript : MonoBehaviour
     GameObject joystick;
     GameObject interact_button;
     CharacterDialogueClickthrough charDialogue;
-    CharacterDialogue character;
     [HideInInspector] public int index = -1;
 
     // variables for dialogue functionality
@@ -23,11 +22,12 @@ public class CharacterDialogueScript : MonoBehaviour
 
     public bool isActive;
     [HideInInspector] public bool characterClickthroughDialogue = false;
-    [HideInInspector] public bool characterDialogue = false;
 
     // finds a joystick caches it
     private void Awake()
     {
+        isActive = true;
+
         GameObject js = GameObject.Find("Joystick");
         if (js != null)
         {
@@ -43,11 +43,6 @@ public class CharacterDialogueScript : MonoBehaviour
             charDialogue = FindObjectOfType<CharacterDialogueClickthrough>();
             characterClickthroughDialogue = true;
         }
-        if (FindObjectOfType<CharacterDialogue>() != null)
-        {
-            character = FindObjectOfType<CharacterDialogue>();
-            characterDialogue = true;
-        }
     }
 
     // sets joystick inactive and then starts writing text
@@ -61,7 +56,6 @@ public class CharacterDialogueScript : MonoBehaviour
         {
             interact_button.SetActive(false);
         }
-        isActive = true;
         dialogueText.text = "";
         StartText();
     }
@@ -118,7 +112,6 @@ public class CharacterDialogueScript : MonoBehaviour
     void WriteNextLine()
     {
         lineNumber++;
-        character.audioPlayed = false;
         dialogueText.text = string.Empty;
         if (lineNumber > numberOfLines.Length - 1)
         {
@@ -131,10 +124,6 @@ public class CharacterDialogueScript : MonoBehaviour
                 interact_button.SetActive(true);
             }
             isActive = false;
-            if (character)
-            {
-                character.GetComponent<AudioSource>().Stop();
-            }
             Destroy(gameObject);
         }
         // otherwise, continue printing next line
