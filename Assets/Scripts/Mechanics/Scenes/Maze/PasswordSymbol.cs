@@ -49,7 +49,7 @@ public class PasswordSymbol: InteractableObject, Entity
         {
 
           print("LIT");
-            gameObject.GetComponent<Renderer>().material = onMat;
+            //gameObject.GetComponent<Renderer>().material = onMat;
             //Move down so that half is showing
             // transform.position = Vector3.MoveTowards(transform.position, endPos, Time.deltaTime * symbolSpeed);
 
@@ -60,7 +60,7 @@ public class PasswordSymbol: InteractableObject, Entity
 
           print("NOT LIT");
             // unlights itself after second interaction
-            gameObject.GetComponent<Renderer>().material = startingMat;
+            //gameObject.GetComponent<Renderer>().material = startingMat;
             //move back up so that all is showing
             // transform.position = Vector3.MoveTowards(transform.position, startPos, Time.deltaTime * symbolSpeed);
             print(endPos.x + " " + endPos.y + " " + endPos.z);
