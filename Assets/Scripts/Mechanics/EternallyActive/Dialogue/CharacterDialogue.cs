@@ -10,7 +10,7 @@ public class CharacterDialogue : InteractableObject, Entity
     public List<AudioLines> audioLines;
     private int timesInteracted = 0;
 
-    [SerializeField] Image portrait;
+    [HideInInspector] public Image portrait;
     [SerializeField] Sprite characterPortrait;
     [SerializeField] public string name;
     [HideInInspector] TextMeshProUGUI nameText;
