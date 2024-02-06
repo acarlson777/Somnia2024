@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028416, g: 0.22571386, b: 0.3069211, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1568,6 +1568,17 @@ MonoBehaviour:
     - Hello
     - Hi
     - die now!!!!!!!!!!
+  - lines:
+    - MURDER
+    - RAHHH
+  audioLines:
+  - audioLines:
+    - {fileID: 8300000, guid: d6e9b4953cc0241ffa4692582710c38f, type: 3}
+    - {fileID: 0}
+    - {fileID: 8300000, guid: e5dac74675eb940a3b012ac4ab181b35, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: e97bd9dc16811403d99d6a97dcba9a27, type: 3}
+    - {fileID: 8300000, guid: e5dac74675eb940a3b012ac4ab181b35, type: 3}
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
   name: Bea
@@ -1575,7 +1586,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c92dd1a45b80c4fc08266ee15672551c, type: 3}
   - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
   - {fileID: 8300000, guid: 810a4a723d0c0441f834e7a331fcb9ce, type: 3}
-  voiceAudio: []
+  prevLineNumber: 0
 --- !u!1 &860463469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,11 +2901,23 @@ MonoBehaviour:
   - lines:
     - You will never beat me in chess
     - loser
+  - lines:
+    - i eat
+    - you up
+  audioLines:
+  - audioLines:
+    - {fileID: 8300000, guid: e97bd9dc16811403d99d6a97dcba9a27, type: 3}
+    - {fileID: 8300000, guid: b3fff3579819b4ddfaab34e045dc3289, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: d6e9b4953cc0241ffa4692582710c38f, type: 3}
+    - {fileID: 8300000, guid: 3b9055c1e0a7248618c77cf95ff9fe39, type: 3}
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
   name: Riggs
-  voiceLines: []
-  voiceAudio: []
+  voiceLines:
+  - {fileID: 8300000, guid: 6ca3ef16f9eb24f379d9eeb6d11cff59, type: 3}
+  - {fileID: 8300000, guid: d6e9b4953cc0241ffa4692582710c38f, type: 3}
+  prevLineNumber: 0
 --- !u!54 &1456426570
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4246,7 +4269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchoredPosition.y
