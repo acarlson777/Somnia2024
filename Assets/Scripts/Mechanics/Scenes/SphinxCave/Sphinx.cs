@@ -38,8 +38,9 @@ public class Sphinx : InteractableObject, Entity
                 ItemCollector itemCollector = other.gameObject.GetComponent<ItemCollector>();
                 if (itemCollector.GetCollectedItems().SetEquals(itemsToCollect)) //Sort both lists prior to checking equality
                 {
-                    sphinxDoor.OpenDoor();
+                    //sphinxDoor.OpenDoor();
                     DialogueManager.PopDialogue(new string[] {"success"});
+                    InstantiateLoadingScreen.Instance.LoadNewScene("Main Menu");
                 } else
                 {
                     DialogueManager.PopDialogue(new string[] { "failure" });
