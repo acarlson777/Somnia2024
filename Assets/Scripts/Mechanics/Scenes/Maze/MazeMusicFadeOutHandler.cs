@@ -8,7 +8,7 @@ public class MazeMusicFadeOutHandler : InteractableObject, Entity
         if (other is Player)
         {
             AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("MazeSoundtrack", 1f);
-            InstantiateLoadingScreen.Instance.LoadNewScene("S1 - Bea's Room 2");
+            InstantiateLoadingScreen.Instance.LoadNewScene("CT6 - Confront Fish Queen");
         }
     }
 }
