@@ -19,4 +19,9 @@ public class ItemCollector : MonoBehaviour
     {
         collectedItems.Clear();
     }
+
+    public void Update()
+    {
+        Debug.Log(Sphinx.count);
+    }
 }
