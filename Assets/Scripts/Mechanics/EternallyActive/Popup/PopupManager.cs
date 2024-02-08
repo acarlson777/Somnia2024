@@ -9,6 +9,8 @@ public class PopupManager : MonoBehaviour
     public static GameObject Canvas = null;
     public GameObject DisplaySurface = null;
 
+    public static int index = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class PopupManager : MonoBehaviour
             return false;
         }
         GameObject popupObject = Instantiate(popupObjectPrefab, Canvas.transform);
+        index++;
         currentPopup = popupObject;
         return true;
     }

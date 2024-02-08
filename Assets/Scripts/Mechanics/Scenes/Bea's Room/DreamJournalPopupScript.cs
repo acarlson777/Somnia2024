@@ -56,7 +56,8 @@ public class DreamJournalPopupScript : MonoBehaviour
         }
 
         if (currPage == bookPages.Length) {
-            currPage--;
+            //currPage--;
+            Destroy(gameObject);
             return;
         }
         RecalculatePages();
