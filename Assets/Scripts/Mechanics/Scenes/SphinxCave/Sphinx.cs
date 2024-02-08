@@ -41,6 +41,7 @@ public class Sphinx : InteractableObject, Entity
                     //sphinxDoor.OpenDoor();
                     DialogueManager.PopDialogue(new string[] {"success"});
                     InstantiateLoadingScreen.Instance.LoadNewScene("Main Menu");
+                    PlayerPrefs.SetString("Last Scene", "Bea's Room");
                 } else
                 {
                     DialogueManager.PopDialogue(new string[] { "failure" });
