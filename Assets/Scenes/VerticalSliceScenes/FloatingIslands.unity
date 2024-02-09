@@ -656,9 +656,9 @@ MonoBehaviour:
   lockedDialogue: []
   offMaterial: {fileID: 2100000, guid: 5c20c071961404e5dbb5968722007e5a, type: 2}
   onMaterial: {fileID: 2100000, guid: bc3a57da31a274a8fb32f2d714a71f25, type: 2}
-  locked: 0
+  locked: 1
   IslandName: Bed, Bath & Beyond
-  isOn: 1
+  isOn: 0
 --- !u!54 &121442354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -708,7 +708,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
+  - {fileID: 2100000, guid: 218b5c94d83b24c5bbd63be6d64566ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3285,9 +3285,9 @@ MonoBehaviour:
   lockedDialogue: []
   offMaterial: {fileID: 2100000, guid: 5c20c071961404e5dbb5968722007e5a, type: 2}
   onMaterial: {fileID: 2100000, guid: bc3a57da31a274a8fb32f2d714a71f25, type: 2}
-  locked: 0
+  locked: 1
   IslandName: candyland place from xandras powerpoint
-  isOn: 1
+  isOn: 0
 --- !u!54 &913850391
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3337,7 +3337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
+  - {fileID: 2100000, guid: 218b5c94d83b24c5bbd63be6d64566ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5109,7 +5109,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: 5c20c071961404e5dbb5968722007e5a, type: 2}
   onMaterial: {fileID: 2100000, guid: bc3a57da31a274a8fb32f2d714a71f25, type: 2}
   locked: 0
-  IslandName: whosville
+  IslandName: CS5 - Bea talking with Wolfgang
   isOn: 1
 --- !u!1 &1613886315
 GameObject:
@@ -7113,6 +7113,10 @@ PrefabInstance:
     - target: {fileID: 2004147973, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287050260684467966, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackToStop
+      value: BeasTheme
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218962, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_Name
