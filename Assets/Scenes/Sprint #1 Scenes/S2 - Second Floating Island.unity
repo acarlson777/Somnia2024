@@ -477,15 +477,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c37554b0dfc4a8f857caabaa79c2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityCollider: {fileID: 0}
+  entityCollider: {fileID: 173913624}
   interactCollider: {fileID: 0}
-  BoxColliderThickness: 0
+  BoxColliderThickness: 0.1
   entityMaxSpeed: 2.1
   health: 0
   speed: 1
   gameobjectsTouching: []
+  lines: []
+  audioLines: []
   selectors: []
   firstTime: 1
+  firstTimeDialogue: []
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 0}
+  name: 
+  nameText: {fileID: 0}
+  prevLineNumber: 0
 --- !u!54 &173913626
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2232,7 +2240,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1592068524934279598, guid: 6bbfb081847f545938b8312bc7e11ee0, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1592068524934279598, guid: 6bbfb081847f545938b8312bc7e11ee0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3462,6 +3470,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2052948475}
     m_Modifications:
     - target: {fileID: 5994002057372446933, guid: c518592ab794b4f6fa70e745dfcf1652, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994002057372446933, guid: c518592ab794b4f6fa70e745dfcf1652, type: 3}
       propertyPath: IslandName
       value: S7 - Town Entrance 1
       objectReference: {fileID: 0}
@@ -3513,6 +3525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island Selector (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5994002057372446954, guid: c518592ab794b4f6fa70e745dfcf1652, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c518592ab794b4f6fa70e745dfcf1652, type: 3}
 --- !u!4 &1247489466 stripped
@@ -3532,6 +3548,7 @@ GameObject:
   - component: {fileID: 1283058958}
   - component: {fileID: 1283058957}
   - component: {fileID: 1283058960}
+  - component: {fileID: 1283058961}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -3592,6 +3609,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6987f30723342bea6a38732b760824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1283058961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283058956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec541209cb560924aa96822798262718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplaySurface: {fileID: 1913886386}
 --- !u!1 &1284671043
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,7 +6945,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5994002057372446933, guid: c518592ab794b4f6fa70e745dfcf1652, type: 3}
       propertyPath: IslandName
-      value: 'Dream 1: The Precarious Palace'
+      value: CS5 - Bea talking with Wolfgang
       objectReference: {fileID: 0}
     - target: {fileID: 5994002057372446934, guid: c518592ab794b4f6fa70e745dfcf1652, type: 3}
       propertyPath: m_RootOrder
