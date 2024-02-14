@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialogueAndMagic : GeneralInteractable, Entity
 {
+    [SerializeField] List<GameObject> imps = new();
     private List<GameObject> previouslyDeaded = new();
     private bool done = false;
     // Start is called before the first frame update
@@ -43,7 +44,7 @@ public class DialogueAndMagic : GeneralInteractable, Entity
     /// </summary>
     /// <param name="text"></param>
     /// <returns>Talkable Text</returns>
-    private string[] ParseTalks(string[] lines)
+    protected string[] ParseTalks(string[] lines)
     {
         string[] parsed = new string[lines.Length];
         for (int i = 0; i < lines.Length; i++)
@@ -62,7 +63,7 @@ public class DialogueAndMagic : GeneralInteractable, Entity
                     string[] splits = code.Split(':');
                     Debug.Log("Parsed: " + splits[0] +" -> " + splits[1]);
                     string name = splits[0];
-                    bool activity = splits[1].ToLower().Substring(0, 1).Equals("T");
+                    bool activity = splits[1].ToLower().Substring(0, 1).Equals("t");
 
                     GameObject obj = GameObject.Find(name);
                     if (obj == null)
@@ -75,6 +76,17 @@ public class DialogueAndMagic : GeneralInteractable, Entity
                             }
                         }
                     }
+                    if (obj == null)
+                    {
+                        foreach (GameObject g in imps)
+                        {
+                            if (name.Equals(g.name))
+                            {
+                                obj = g;
+                            }
+                        }
+                    }
+
                     if (obj != null)
                     {
                         print("Could find object of name: " + name);
@@ -83,6 +95,7 @@ public class DialogueAndMagic : GeneralInteractable, Entity
                         {
                             previouslyDeaded.Add(obj);
                         }
+                        print("Settings it to " + activity);
                         obj.SetActive(activity);
                     }
                     else
