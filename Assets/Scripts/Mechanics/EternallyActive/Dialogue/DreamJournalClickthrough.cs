@@ -7,7 +7,7 @@ public class DreamJournalClickthrough : MonoBehaviour
 {
     bool sceneChanged = true;
     public string sceneName;
-    GameObject dreamJournalPopup;
+    public string journalPopup;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class DreamJournalClickthrough : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("ClickthroughDreamJournal(Clone)") == null && !sceneChanged)
+        if (GameObject.Find(journalPopup) == null && !sceneChanged)
         {
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             sceneChanged = true;
