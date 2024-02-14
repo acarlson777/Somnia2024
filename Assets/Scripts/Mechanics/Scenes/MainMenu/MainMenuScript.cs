@@ -14,6 +14,6 @@ public class MainMenuScript : MonoBehaviour
     public void GoToMainMenu()
     {
         AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack(soundtrackToStop, 1f);
-        sceneLoader.LoadNewScene("Main Menu");
+        InstantiateLoadingScreen.Instance.LoadNewScene("Main Menu");
     }
 }

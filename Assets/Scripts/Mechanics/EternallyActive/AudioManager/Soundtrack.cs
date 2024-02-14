@@ -109,7 +109,7 @@ public class Soundtrack : AudioInteraction
 
     public void SetRandomSong()
     {
-        index = UnityEngine.Random.Range(0,sounds.Length-1);
+        index = UnityEngine.Random.Range(0,sounds.Length);
     }
 
     private SoundInstance FindSoundOfName(string name)

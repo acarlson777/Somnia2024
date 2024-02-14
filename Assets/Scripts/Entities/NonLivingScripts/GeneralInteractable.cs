@@ -5,11 +5,11 @@ using UnityEngine;
 public class GeneralInteractable : InteractableObject, Entity
 {
     public List<Voicelines> lines;
-    private int timesInteracted = 0;
+    protected int timesInteracted = 0;
     InstantiateLoadingScreen loadingScreen;
 
     new protected void Start()
-    {
+    {  
         base.Start();
         loadingScreen = FindObjectOfType<InstantiateLoadingScreen>();
     }

@@ -824,7 +824,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.4398907}
-  m_Center: {x: 0, y: 0, z: 0.10363185}
+  m_Center: {x: 0, y: 0, z: 0.3}
 --- !u!23 &433303084
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -883,7 +883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433303082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3419285, y: -3.7472527, z: -1.6613922}
+  m_LocalPosition: {x: 5.3419285, y: -3.7472527, z: -1.74}
   m_LocalScale: {x: 5, y: 1.08, z: 2.19}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -910,6 +910,7 @@ MonoBehaviour:
   not_ready_dialogue:
   - This is my bed, so nice and comfy.
   - However, I dont feel like sleeping right now. Maybe first I should read a little?
+  sceneToLoad: 
 --- !u!54 &433303089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1565,9 +1566,23 @@ MonoBehaviour:
   lines:
   - lines:
     - Hello
+    - Hi
+    - die now!!!!!!!!!!
+  - lines:
+    - MURDER
+    - RAHHH
+  audioLines:
+  - audioLines:
+    - {fileID: 8300000, guid: d6e9b4953cc0241ffa4692582710c38f, type: 3}
+    - {fileID: 8300000, guid: e97bd9dc16811403d99d6a97dcba9a27, type: 3}
+    - {fileID: 8300000, guid: e5dac74675eb940a3b012ac4ab181b35, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: e97bd9dc16811403d99d6a97dcba9a27, type: 3}
+    - {fileID: 8300000, guid: e5dac74675eb940a3b012ac4ab181b35, type: 3}
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
   name: Bea
+  prevLineNumber: 0
 --- !u!1 &860463469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,8 +1610,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860463469}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 9.33, y: -0.65, z: 4.55}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 9.33, y: -0.65, z: 4.82}
+  m_LocalScale: {x: 0.45, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1813532259}
@@ -1698,8 +1713,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983530391}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 2.13, y: -0.65, z: 7.07}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 3.44, y: -0.65, z: 7.07}
+  m_LocalScale: {x: 0.42, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1813532259}
@@ -2185,7 +2200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193811851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.770928, y: 5.2172527, z: -7.221608}
+  m_LocalPosition: {x: -8.770928, y: 5.2172527, z: -6.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2224,8 +2239,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219037440}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 7.05, y: -0.65, z: 7.08}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 7.25, y: -0.65, z: 7.08}
+  m_LocalScale: {x: 0.42, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1813532259}
@@ -2568,7 +2583,7 @@ GameObject:
   - component: {fileID: 1391680874}
   - component: {fileID: 1391680873}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DreamJournalSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2634,7 +2649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391680872}
   m_LocalRotation: {x: 0, y: 0.42680547, z: 0, w: 0.9043434}
-  m_LocalPosition: {x: -3.587, y: 2.294, z: -4.91}
+  m_LocalPosition: {x: -3.669, y: 2.294, z: -3.9339998}
   m_LocalScale: {x: 0.075, y: 0.075, z: 0.075}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2882,9 +2897,20 @@ MonoBehaviour:
   - lines:
     - You will never beat me in chess
     - loser
+  - lines:
+    - i eat
+    - you up
+  audioLines:
+  - audioLines:
+    - {fileID: 8300000, guid: e97bd9dc16811403d99d6a97dcba9a27, type: 3}
+    - {fileID: 8300000, guid: b3fff3579819b4ddfaab34e045dc3289, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: d6e9b4953cc0241ffa4692582710c38f, type: 3}
+    - {fileID: 8300000, guid: 3b9055c1e0a7248618c77cf95ff9fe39, type: 3}
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
   name: Riggs
+  prevLineNumber: 0
 --- !u!54 &1456426570
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3037,12 +3063,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 0ff62d22146f34a7e8f56adb01e2854e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4074bb4efc3ec41e6b33e28277586d3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 33, y: 25.507326}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3056,7 +3082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495933618}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.85, y: 1.01, z: -3.56}
+  m_LocalPosition: {x: -7.75, y: 1.01, z: -3.56}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3101,7 +3127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501182844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.675, y: 1.516, z: -4.938}
+  m_LocalPosition: {x: -3.757, y: 1.516, z: -3.9620001}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3203,8 +3229,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595963316}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 9.33, y: -0.65, z: -0.37484026}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 9.33, y: -0.65, z: 0.33}
+  m_LocalScale: {x: 0.45, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1813532259}
@@ -3644,7 +3670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077116082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.758, y: 2.37, z: -4.946}
+  m_LocalPosition: {x: -3.84, y: 2.37, z: -3.97}
   m_LocalScale: {x: 0.7, y: 0.16, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3876,8 +3902,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113808386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.487438, y: 0.9758779, z: -5.291016}
-  m_LocalScale: {x: 0.97, y: 1, z: 1}
+  m_LocalPosition: {x: -6.65, y: 0.9758779, z: -4.83}
+  m_LocalScale: {x: 0.8, y: 1, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4236,7 +4262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -7,16 +7,16 @@ public class Sphinx : InteractableObject, Entity
     public List<string> itemsToCollectList;
     private HashSet<string> itemsToCollect;
     public SphinxDoor sphinxDoor;
-    private static int count = 0; //Remember to reset Sphinx.count upon entering the orig town center (not the riddle minigame towncenter)
+    public static int count = 0; //Remember to reset Sphinx.count upon entering the orig town center (not the riddle minigame towncenter)
     public List<DialogueLines> lines;
 
-    private void Start()
+    new private void Start()
     {
         base.Start();
         itemsToCollect = new HashSet<string>(itemsToCollectList);
     }
 
-    public void Interact(Entity other)
+    new public void Interact(Entity other)
     {
         if (other is Player)
         {
@@ -38,8 +38,10 @@ public class Sphinx : InteractableObject, Entity
                 ItemCollector itemCollector = other.gameObject.GetComponent<ItemCollector>();
                 if (itemCollector.GetCollectedItems().SetEquals(itemsToCollect)) //Sort both lists prior to checking equality
                 {
-                    sphinxDoor.OpenDoor();
+                    //sphinxDoor.OpenDoor();
                     DialogueManager.PopDialogue(new string[] {"success"});
+                    InstantiateLoadingScreen.Instance.LoadNewScene("Main Menu");
+                    PlayerPrefs.SetString("Last Scene", "Bea's Room");
                 } else
                 {
                     DialogueManager.PopDialogue(new string[] { "failure" });

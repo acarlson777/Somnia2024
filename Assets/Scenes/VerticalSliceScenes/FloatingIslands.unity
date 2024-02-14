@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -375,8 +375,27 @@ MonoBehaviour:
   health: 0
   speed: 1
   gameobjectsTouching: []
+  lines: []
+  audioLines:
+  - audioLines:
+    - {fileID: 8300000, guid: 5a072d2dd873d44088d653a52c5256ec, type: 3}
+    - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: a37083bea75924afdbb40464a1e81049, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: e97bd9dc16811403d99d6a97dcba9a27, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
   selectors: []
   firstTime: 1
+  firstTimeDialogue:
+  - Welcome Bea, my name is Wolfgang.
+  - To start the train, go ahead and hit one of the levers.
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 21300000, guid: b685daf488dcf4df296fb715d5a310cf, type: 3}
+  name: Wolfgang
+  nameText: {fileID: 0}
+  prevLineNumber: 0
 --- !u!136 &34545167
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -634,10 +653,12 @@ MonoBehaviour:
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
   entityMaxSpeed: 0
+  lockedDialogue: []
   offMaterial: {fileID: 2100000, guid: 5c20c071961404e5dbb5968722007e5a, type: 2}
   onMaterial: {fileID: 2100000, guid: bc3a57da31a274a8fb32f2d714a71f25, type: 2}
+  locked: 1
   IslandName: Bed, Bath & Beyond
-  isOn: 1
+  isOn: 0
 --- !u!54 &121442354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -687,7 +708,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
+  - {fileID: 2100000, guid: 218b5c94d83b24c5bbd63be6d64566ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2575,6 +2596,7 @@ GameObject:
   - component: {fileID: 574359610}
   - component: {fileID: 574359609}
   - component: {fileID: 574359608}
+  - component: {fileID: 574359611}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2623,6 +2645,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &574359611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574359607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec541209cb560924aa96822798262718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplaySurface: {fileID: 571698092}
 --- !u!1 &623926097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,10 +3282,12 @@ MonoBehaviour:
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
   entityMaxSpeed: 0
+  lockedDialogue: []
   offMaterial: {fileID: 2100000, guid: 5c20c071961404e5dbb5968722007e5a, type: 2}
   onMaterial: {fileID: 2100000, guid: bc3a57da31a274a8fb32f2d714a71f25, type: 2}
+  locked: 1
   IslandName: candyland place from xandras powerpoint
-  isOn: 1
+  isOn: 0
 --- !u!54 &913850391
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3300,7 +3337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
+  - {fileID: 2100000, guid: 218b5c94d83b24c5bbd63be6d64566ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5068,9 +5105,11 @@ MonoBehaviour:
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
   entityMaxSpeed: 0
+  lockedDialogue: []
   offMaterial: {fileID: 2100000, guid: 5c20c071961404e5dbb5968722007e5a, type: 2}
   onMaterial: {fileID: 2100000, guid: bc3a57da31a274a8fb32f2d714a71f25, type: 2}
-  IslandName: whosville
+  locked: 0
+  IslandName: CS5 - Bea talking with Wolfgang
   isOn: 1
 --- !u!1 &1613886315
 GameObject:
@@ -7074,6 +7113,10 @@ PrefabInstance:
     - target: {fileID: 2004147973, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287050260684467966, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackToStop
+      value: BeasTheme
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218962, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_Name

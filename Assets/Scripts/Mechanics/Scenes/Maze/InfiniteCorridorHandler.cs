@@ -24,7 +24,8 @@ public class InfiniteCorridorHandler : MonoBehaviour
             next.transform.parent = gameObject.transform.parent;
             next.transform.rotation = new Quaternion(0,0,0,0);
             next.transform.localPosition = newTransformRight;
-            
+            next.transform.localScale = transform.localScale;
+
             InfiniteCorridorHandler handler = next.GetComponent<InfiniteCorridorHandler>();
             //handler.parent = parent
         }
