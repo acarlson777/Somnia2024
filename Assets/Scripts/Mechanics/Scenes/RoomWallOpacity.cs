@@ -48,15 +48,16 @@ public class RoomWallOpacity : MonoBehaviour
 
     IEnumerator MakeTransparent(float secs)
     {
+        Renderer gameObjectRenderer = gameObject.GetComponent<Renderer>();
         float time = 0;
         yield return null;
+        float currentTransparency = gameObjectRenderer.material.color.a;
         while (time <= secs)
         {
             foreach (GameObject gameObject in gameObjectsToMakeTransparent)
             {
-                Renderer gameObjectRenderer = gameObject.GetComponent<Renderer>();
                 Color materialColor = gameObjectRenderer.material.color;
-                materialColor.a = Mathf.Lerp(1, endTransparency, time / secs);
+                materialColor.a = Mathf.Lerp(currentTransparency, endTransparency, time / secs);
                 gameObjectRenderer.material.color = materialColor;
             }
              
@@ -68,15 +69,16 @@ public class RoomWallOpacity : MonoBehaviour
 
     IEnumerator MakeOpaque(float secs)
     {
+        Renderer gameObjectRenderer = gameObject.GetComponent<Renderer>();
         float time = 0;
         yield return null;
+        float currentTransparency = gameObjectRenderer.material.color.a;
         while (time <= secs)
         {
             foreach (GameObject gameObject in gameObjectsToMakeTransparent)
             {
-                Renderer gameObjectRenderer = gameObject.GetComponent<Renderer>();
                 Color materialColor = gameObjectRenderer.material.color;
-                materialColor.a = Mathf.Lerp(endTransparency, 1, time / secs);
+                materialColor.a = Mathf.Lerp(currentTransparency, 1, time / secs);
                 gameObjectRenderer.material.color = materialColor;
             }
 
