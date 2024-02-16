@@ -11,7 +11,6 @@ public class GeneralInteractable : InteractableObject, Entity
     new protected void Start()
     {  
         base.Start();
-        loadingScreen = FindObjectOfType<InstantiateLoadingScreen>();
     }
     new public void Interact(Entity entity)
     {
@@ -25,7 +24,6 @@ public class GeneralInteractable : InteractableObject, Entity
             DialogueManager.PopDialogue(lines[timesInteracted].lines);
             timesInteracted++;
             
-            //loadingScreen.LoadNewScene("Bea's Room");
         }
     }
     [System.Serializable]
