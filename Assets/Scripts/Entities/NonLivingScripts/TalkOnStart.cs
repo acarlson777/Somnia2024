@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalkOnStart : GeneralInteractable, Entity
+public class TalkOnStart : DialogueAndMagic, Entity
 {
     // Start is called before the first frame update
     new void Start()

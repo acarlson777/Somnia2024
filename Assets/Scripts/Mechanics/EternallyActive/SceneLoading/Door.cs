@@ -5,7 +5,7 @@ public class Door : InteractableObject, Entity
 {
     public string sceneName;
 
-    public void Interact(Entity other)
+    new public void Interact(Entity other)
     {
         if (other is Player)
         {

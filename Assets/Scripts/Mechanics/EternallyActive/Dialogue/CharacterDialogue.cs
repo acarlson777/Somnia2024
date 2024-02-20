@@ -12,7 +12,7 @@ public class CharacterDialogue : InteractableObject, Entity
 
     [HideInInspector] public Image portrait;
     [SerializeField] Sprite characterPortrait;
-    [SerializeField] public string name;
+    [SerializeField] new public string name;
     [HideInInspector] TextMeshProUGUI nameText;
     bool portraitSet = false;
     bool interactedWith = false;
@@ -56,7 +56,7 @@ public class CharacterDialogue : InteractableObject, Entity
         }
     }
 
-    private void Update()
+    new private void Update()
     {
         if (character != null)
         {

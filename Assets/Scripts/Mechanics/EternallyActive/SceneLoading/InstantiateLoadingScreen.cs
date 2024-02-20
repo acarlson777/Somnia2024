@@ -28,17 +28,19 @@ public class InstantiateLoadingScreen : MonoBehaviour
     }
     private void Start()
     {
+#if false
         if (SceneManager.GetSceneByBuildIndex(0).name != mainMenuName)
         {
             if (!SceneManager.GetSceneByBuildIndex(0).IsValid())
             {
-                throw new System.Exception("Scene index 0 is not valid");
+                Debug.Log("Scene index 0 is not valid");
             }
             else
             {
-                throw new System.Exception("Scene at index 0 must be main menu instead it is: " + SceneManager.GetSceneByBuildIndex(0).name);
+                Debug.Log("Scene at index 0 must be main menu instead it is: " + SceneManager.GetSceneByBuildIndex(0).name);
             }
         }
+#endif
     }
 
     // Cached references

@@ -94,7 +94,9 @@ public class DialogueScript : MonoBehaviour
     // for every char in the line, add it to the text with delay
     IEnumerator WriteLine()
     {
-        foreach (char letter  in numberOfLines[lineNumber])
+        //current line to draw is numberOfLines[lineNumber] which holds a string
+        string text = DialogueAndMagic.ParseSceneGoto(numberOfLines[lineNumber]);
+        foreach (char letter  in text)
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
@@ -108,14 +110,8 @@ public class DialogueScript : MonoBehaviour
         dialogueText.text = string.Empty;
         if (lineNumber > numberOfLines.Length - 1)
         {
-            if (joystick != null)
-            {
-                joystick.SetActive(true);
-            }
-            if (interact_button != null)
-            {
-                interact_button.SetActive(true);
-            }
+            joystick?.SetActive(true);
+            interact_button?.SetActive(true);
             isActive = false;
            Destroy(gameObject);
         }

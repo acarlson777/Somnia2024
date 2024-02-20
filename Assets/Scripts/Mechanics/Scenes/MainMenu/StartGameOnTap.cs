@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class StartGameOnTap : MonoBehaviour
 {
-    InstantiateLoadingScreen loadingScreen;
     SettingsButtonScript settingsButton;
-    string sceneToLoad = null;
+    string sceneToLoad;
     
     bool tapped = false;
 
@@ -31,10 +30,12 @@ public class StartGameOnTap : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (!tapped && !settingsButton.isOn && !SceneLoader.fading)
+        if (tapped || settingsButton.isOn) return;
+        
+        if (!SceneLoader.fading)
         {
             AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
-            SaveAndLoadManager.LoadSavedScene(); // if there is no saved scene then it defaults to main menu (build index 0)
+            SaveAndLoadManager.LoadSavedScene(); // if there is no saved scene then it defaults to tutorial menu (build index 0)
             tapped = true;
         }
     }

@@ -56,6 +56,7 @@ public class DialogueAndMagic : GeneralInteractable, Entity
                 int second = text.IndexOf('^', first + 1);
                 if (second != -1)
                 {
+
                     string code = text.Substring(first + 1, second - first - 1);
                     text = text.Substring(0, first) + text.Substring(second + 1);
                     // this is the code taht will set objects to a active or inactive state
@@ -63,6 +64,7 @@ public class DialogueAndMagic : GeneralInteractable, Entity
                     string[] splits = code.Split(':');
                     Debug.Log("Parsed: " + splits[0] +" -> " + splits[1]);
                     string name = splits[0];
+
                     bool activity = splits[1].ToLower().Substring(0, 1).Equals("t");
 
                     GameObject obj = GameObject.Find(name);
@@ -108,6 +110,26 @@ public class DialogueAndMagic : GeneralInteractable, Entity
             parsed[i] = text;
         }
         return parsed;
+    }
+
+    public static string ParseSceneGoto(string str)
+    {
+
+        int index;
+        string sceneGoto;
+        index = str.IndexOf('{');
+        if (index != -1)
+        {
+            int endex = str.IndexOf('}');
+            if (endex != -1)
+            {
+                sceneGoto = str.Substring(index+1,endex-index-1);
+                str = str.Substring(0, index) + str.Substring(endex + 1);
+                Debug.Log("Going to Scene: \"" + sceneGoto + "\"");
+                InstantiateLoadingScreen.Instance.LoadNewScene(sceneGoto);
+            }
+        } 
+        return str;
     }
 
 }

@@ -9,7 +9,7 @@ public class CollectItemEntity : InteractableObject, Entity
     private int count = 0;
     public List<DialogueLines> lines;
 
-    public void Interact(Entity other)
+    new public void Interact(Entity other)
     {
         if (other is Player)
         {

@@ -14,7 +14,7 @@ public class DinnerBell : InteractableObject, Entity
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         if (rung) symbol.gameObject.SetActive(true);
     }

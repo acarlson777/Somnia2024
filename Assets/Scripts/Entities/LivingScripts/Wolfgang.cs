@@ -91,7 +91,7 @@ public class Wolfgang : Living, Entity
 
     [HideInInspector] public Image portrait;
     [SerializeField] Sprite characterPortrait;
-    [SerializeField] public string name;
+    [SerializeField] new public string name;
     [SerializeField] TextMeshProUGUI nameText;
     bool portraitSet = false;
     bool interactedWith = false;
@@ -180,7 +180,7 @@ public class Wolfgang : Living, Entity
         }
     }
 
-    private void Update()
+    new private void Update()
     {
         /*if (character != null)
         {
