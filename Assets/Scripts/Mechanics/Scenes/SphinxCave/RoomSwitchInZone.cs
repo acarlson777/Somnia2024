@@ -3,16 +3,18 @@ using System.Collections;
 
 public class RoomSwitchInZone : MonoBehaviour
 {
-    private string sceneName;
-    private int switchCount = 0;
+    public string sceneName;
+    private bool switched;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("SceneSwapZone") && switchCount == 0)
-        {
-            sceneName = other.gameObject.GetComponent<NextSceneName>().nextSceneName;
-            InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
-            switchCount++;
-        }
+        if (switched) return;
+        if (other.gameObject.tag != "entity") return;
+        Player script = other.gameObject.GetComponent<Player>();
+        if (script == null) return;
+
+        InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
+        switched=true;
+        
     }
 }
