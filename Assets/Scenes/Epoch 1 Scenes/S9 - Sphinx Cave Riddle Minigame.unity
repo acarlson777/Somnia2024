@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 1042458962}
   - component: {fileID: 1042458961}
   - component: {fileID: 1042458960}
-  - component: {fileID: 1042458959}
+  - component: {fileID: 1042458964}
   m_Layer: 0
   m_Name: exit raaaa
   m_TagString: SceneSwapZone
@@ -1174,19 +1174,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1042458959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042458958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6475dcb9c764844b5a996d51134d4bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: S8 pt2 - At the Town Center asking citizens for a key 3
 --- !u!65 &1042458960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1264,6 +1251,19 @@ Transform:
   m_Father: {fileID: 270866824}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1042458964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042458958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a7ab842e254e3e8d0a1f78abf2564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: S8 pt2 - At the Town Center asking citizens for a key 3
 --- !u!1 &1043715465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,18 +3074,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 437fc26d424524cf1ae01a74c3d6a4e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2030609689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030609687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5a7ab842e254e3e8d0a1f78abf2564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2030609690
