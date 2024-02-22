@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 334921398}
   - component: {fileID: 334921397}
   - component: {fileID: 334921396}
+  - component: {fileID: 334921400}
   m_Layer: 0
   m_Name: ExitScene
   m_TagString: Untagged
@@ -254,6 +255,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &334921400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334921395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528d0256819004e04a733e500e32575c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  entityMaxSpeed: 2.1
+  sceneName: CT3 Bea + Riggs enter Kitchen, get stuck)
 --- !u!1 &394648148
 GameObject:
   m_ObjectHideFlags: 0
