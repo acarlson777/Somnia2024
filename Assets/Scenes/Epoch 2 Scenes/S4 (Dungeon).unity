@@ -5581,6 +5581,7 @@ GameObject:
   - component: {fileID: 1980839145}
   - component: {fileID: 1980839144}
   - component: {fileID: 1980839148}
+  - component: {fileID: 1980839149}
   m_Layer: 0
   m_Name: exitScene
   m_TagString: Untagged
@@ -5682,7 +5683,23 @@ MonoBehaviour:
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
   entityMaxSpeed: 2.1
-  sceneName: 
+  sceneName: S6 - Maze Minigame
+--- !u!54 &1980839149
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980839143}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1991070325
 GameObject:
   m_ObjectHideFlags: 0
