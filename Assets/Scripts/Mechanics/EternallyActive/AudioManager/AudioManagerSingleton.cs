@@ -1,6 +1,5 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class AudioManagerSingleton : MonoBehaviour
 {
@@ -68,6 +67,7 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void FadeInRandomSongFromSoundtrackOnce(string name, float seconds, GameObject caller)
     {
+        if (name.Equals("")) return;
         currentSong = name;
         Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
         soundtrack.SetRandomSong();
@@ -83,6 +83,7 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void FadeOutAndStopSoundtrack(string name, float seconds)
     {
+        if (name == null || name.Equals("")) return;
         currentSong = null;
         Debug.Log("Fading out and stopping " + name);
         Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
