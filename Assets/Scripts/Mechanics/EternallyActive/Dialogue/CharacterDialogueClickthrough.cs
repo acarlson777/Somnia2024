@@ -72,7 +72,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
     IEnumerator StartClickThrough()
     {
         string[] Text = ConvertListToArray(row => row.text);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         startedDialogue = true;
         audioSource.clip = voiceAudio[0];
