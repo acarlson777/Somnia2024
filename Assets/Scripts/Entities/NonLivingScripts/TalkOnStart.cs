@@ -14,4 +14,4 @@ public class TalkOnStart : DialogueAndMagic, Entity
 
     // Update is called once per frame
    
-}
+}   
