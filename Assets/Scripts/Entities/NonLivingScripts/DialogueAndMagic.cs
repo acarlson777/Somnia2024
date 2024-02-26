@@ -128,8 +128,26 @@ public class DialogueAndMagic : GeneralInteractable, Entity
                 Debug.Log("Going to Scene: \"" + sceneGoto + "\"");
                 InstantiateLoadingScreen.Instance.LoadNewScene(sceneGoto);
             }
-        } 
+        }
         return str;
     }
+
+    public static string ParseSceneGotoNoMagic(string str)
+    {
+
+        int index;
+        string sceneGoto;
+        index = str.IndexOf('{');
+        if (index != -1)
+        {
+            int endex = str.IndexOf('}');
+            if (endex != -1)
+            {
+                str = str.Substring(0, index) + str.Substring(endex + 1);
+            }
+        }
+        return str;
+    }
+
 
 }

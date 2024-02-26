@@ -68,6 +68,7 @@ public class DialogueScript : MonoBehaviour
     public void SetText(string[] text)
     {
         numberOfLines = new string[text.Length];
+
         for (int line = 0; line < numberOfLines.Length; line++)
         {
             numberOfLines[line] = text[line];
@@ -82,7 +83,7 @@ public class DialogueScript : MonoBehaviour
             if (dialogueText.text != numberOfLines[lineNumber])
             {
                 StopAllCoroutines();
-                dialogueText.text = numberOfLines[lineNumber];
+                dialogueText.text = DialogueAndMagic.ParseSceneGotoNoMagic(numberOfLines[lineNumber]); 
             }
             else
             {
