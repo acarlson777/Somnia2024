@@ -8,7 +8,7 @@ public class CharacterDialogue : InteractableObject, Entity
 {
     public List<Voicelines> lines;
     public List<AudioLines> audioLines;
-    private int timesInteracted = 0;
+    [HideInInspector] public int timesInteracted = 0;
 
     [HideInInspector] public Image portrait;
     [SerializeField] Sprite characterPortrait;
