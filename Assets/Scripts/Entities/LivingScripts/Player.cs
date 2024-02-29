@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : Living, Entity
 {
-    // Start is called before the first frame update
     private FocusArrowScript arrowScript;
 
     void Awake()
@@ -73,7 +72,7 @@ public class Player : Living, Entity
 
 
     new public void Interact(Entity entity)
-    { 
+    {
         base.Interact(this);
     }
 }
