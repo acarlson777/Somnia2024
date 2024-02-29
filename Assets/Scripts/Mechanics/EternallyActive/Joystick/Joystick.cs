@@ -75,6 +75,7 @@ public class Joystick : MonoBehaviour
 
     private void Update()
     {
+         
 #if UNITY_EDITOR
 
         EditorJoystickLogic();
