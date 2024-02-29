@@ -40,6 +40,7 @@ public class DialogueScript : MonoBehaviour
     // sets joystick inactive and then starts writing text
     void Start()
     {
+        JoystickInput.worldOrientedJoystickDirection = new Vector3(0, 0, 0);
         if (joystick != null)
         {
             joystick.SetActive(false);
