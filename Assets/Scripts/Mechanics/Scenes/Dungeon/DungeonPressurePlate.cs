@@ -4,45 +4,34 @@ using UnityEngine;
 
 public class DungeonPressurePlate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
     [SerializeField]
-    private int correctBlockID; // ID of the correct block for this pressure plate
-
     public bool isOccupied = false; // To track whether a block with correct ID is on the pressure plate
+    public DungeonBlock correctBlock;
+    public Material glowOff;
+    public Material glowOn;
 
-    void OnTriggerEnter(Collider other)
-    {
-        DungeonBlock block = other.GetComponent<DungeonBlock>();
 
-        if (block != null && block.BlockID == correctBlockID)
-        {
+    void OnTriggerEnter(Collider other){
+
+      DungeonBlock dungeonBlock = other.GetComponent<DungeonBlock>();
+
+        if (dungeonBlock != null && dungeonBlock == correctBlock){
             isOccupied = true;
+            gameObject.GetComponent<Renderer>().material = glowOn;
+            dungeonBlock.startGlow();
         }
-
-        print("TRIGET ENTER");
     }
 
-    void OnTriggerExit(Collider other)
-    {
+    void OnTriggerExit(Collider other){
+        DungeonBlock dungeonBlock = other.GetComponent<DungeonBlock>();
 
-      print("TRIGET EXIT");
-        DungeonBlock block = other.GetComponent<DungeonBlock>();
-
-        if (block != null && block.BlockID == correctBlockID)
-        {
+        if (dungeonBlock != null && dungeonBlock == correctBlock){
             isOccupied = false;
+            gameObject.GetComponent<Renderer>().material = glowOff;
+            dungeonBlock.stopGlow();
+
         }
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

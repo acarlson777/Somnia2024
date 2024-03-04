@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class DungeonBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
     [SerializeField]
-    public int blockID; // ID of the block
+    public Material glowOff;
+    public Material glowOn;
 
-    public int BlockID
-    {
-        get { return blockID; }
-        set { blockID = value; }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void startGlow(){
+
+      gameObject.GetComponent<Renderer>().material = glowOn;
 
     }
+
+    public void stopGlow(){
+
+      gameObject.GetComponent<Renderer>().material = glowOff;
+
+    }
+
+
+
 }
