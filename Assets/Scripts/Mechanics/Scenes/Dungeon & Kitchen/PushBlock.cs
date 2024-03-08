@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DungeonBlock : MonoBehaviour
+public class PushBlock : MonoBehaviour
 {
 
 

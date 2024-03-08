@@ -2,34 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DungeonPressurePlate : MonoBehaviour
+public class PressurePlate : MonoBehaviour
 {
 
     [SerializeField]
     public bool isOccupied = false; // To track whether a block with correct ID is on the pressure plate
-    public DungeonBlock correctBlock;
+    public PushBlock correctBlock;
     public Material glowOff;
     public Material glowOn;
 
 
     void OnTriggerEnter(Collider other){
 
-      DungeonBlock dungeonBlock = other.GetComponent<DungeonBlock>();
+      PushBlock pushBlock = other.GetComponent<PushBlock>();
 
-        if (dungeonBlock != null && dungeonBlock == correctBlock){
+        if (pushBlock != null && pushBlock == correctBlock){
             isOccupied = true;
             gameObject.GetComponent<Renderer>().material = glowOn;
-            dungeonBlock.startGlow();
+            pushBlock.startGlow();
         }
     }
 
     void OnTriggerExit(Collider other){
-        DungeonBlock dungeonBlock = other.GetComponent<DungeonBlock>();
+        PushBlock pushBlock = other.GetComponent<PushBlock>();
 
-        if (dungeonBlock != null && dungeonBlock == correctBlock){
+        if (pushBlock != null && pushBlock == correctBlock){
             isOccupied = false;
             gameObject.GetComponent<Renderer>().material = glowOff;
-            dungeonBlock.stopGlow();
+            pushBlock.stopGlow();
 
         }
     }
