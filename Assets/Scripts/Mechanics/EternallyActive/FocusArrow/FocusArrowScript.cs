@@ -12,6 +12,7 @@ public class FocusArrowScript : MonoBehaviour
     private Vector3 closetOffset;
     private Vector3 bounceOffset = Vector3.zero;
     new public GameObject camera;
+    private Vector3 gameObjectOffset;
     float distToCamera;
 
     // Helper varibles .. Not needed but boost performance a bit
@@ -40,7 +41,7 @@ public class FocusArrowScript : MonoBehaviour
     {
         if (!active) return;
         bounceOffset.y = GetBouncePosition(Time.time);
-        arrow.transform.position = focus.transform.position + offset + bounceOffset+ closetOffset;
+        arrow.transform.position = focus.transform.position + offset + bounceOffset+ closetOffset + gameObjectOffset;
     }
 
     public void SetFocus(GameObject focus)
@@ -62,6 +63,7 @@ public class FocusArrowScript : MonoBehaviour
         if (!active) return;
         if (this.focus == focus) return;
         this.focus = focus;
+        gameObjectOffset = focus.GetComponent<Entity>().focusArrowOffset;
         arrow.transform.position = focus.transform.position + offset;
     }
 
