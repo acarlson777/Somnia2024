@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6033601508985598104}
-  m_LocalRotation: {x: 0.23911768, y: 0.3696438, z: -0.09904578, w: 0.89239913}
+  m_LocalRotation: {x: 0.23911765, y: 0.36964378, z: -0.09904577, w: 0.8923991}
   m_LocalPosition: {x: -19, y: 10, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -61,7 +61,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 4.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -90,15 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convergeConstant: 4.5
-
-  offset: {x: -20, y: 17, z: -20}
-  objectToFollow: {fileID: 0}
-  yDistanceThreshold: 2
-
   offset: {x: -20, y: 18, z: -20}
   objectToFollow: {fileID: 0}
-  yDistanceThreshold: 0.9
-
+  yDistanceThreshold: 0
+  pauseYChangeTime: 0
 --- !u!114 &3726680808527053590
 MonoBehaviour:
   m_ObjectHideFlags: 0

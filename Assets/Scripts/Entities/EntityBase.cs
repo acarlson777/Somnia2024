@@ -6,6 +6,7 @@ public interface Entity
 {
     Vector3 position { get; }
     GameObject gameObject { get; }
+    Vector3 focusArrowOffset { get; }
     void Start();
     void Update();
     void Move(Vector3 accel);
@@ -25,6 +26,8 @@ public class EntityBase : MonoBehaviour,Entity
     public SphereCollider interactCollider;
     public float BoxColliderThickness;
     protected bool debug = true;
+    public Vector3 arrowOffset;
+    public Vector3 focusArrowOffset => arrowOffset;
 
     protected Vector3 accel;
     protected Vector3 vel;
