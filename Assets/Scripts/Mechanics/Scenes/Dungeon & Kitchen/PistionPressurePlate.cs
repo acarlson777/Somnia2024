@@ -9,19 +9,49 @@ public class PistionPressurePlate : MonoBehaviour
     public Pistion pistion;
     public Material glowOff;
     public Material glowOn;
+    public float requredDistance;
+    private Vector3 selfPosition;
+    public PushBlock pb;
+    public bool isOccupied = false;
+
+    private void Start(){
+      selfPosition = transform.position;
+      print(selfPosition);
+    }
+
+    private void Update(){
+
+      if(isOccupied){
+        float distance = Mathf.Sqrt(Mathf.Pow(selfPosition.x - pb.transform.position.x, 2) + Mathf.Pow(selfPosition.z - pb.transform.position.z, 2));
+        // print(distance);
+        if(distance < requredDistance){
+          pistion.activate();
+        }
+      }
+
+    }
 
 
     void OnTriggerEnter(Collider collider){
 
-      PushBlock pb = collider.gameObject.GetComponent<PushBlock>();
+      PushBlock pushBlock = collider.gameObject.GetComponent<PushBlock>();
 
-
-      if(pb != null){
-        print("ACTIVATE PISTON!");
-        pistion.activate();
+      if(pushBlock != null){
+        pb = pushBlock;
+        isOccupied = true;
       }
 
-        // Disable for 2s
+    }
+
+    void OnTriggerExit(Collider collider){
+        PushBlock pushBlock = collider.GetComponent<PushBlock>();
+
+
+        if (pushBlock != null){
+
+            pb = null;
+            isOccupied = false;
+        }
     }
 
 }
