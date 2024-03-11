@@ -28,10 +28,10 @@ public class VolumeSlider : MonoBehaviour
         }
 
         // Subscribe to the OnValueChanged event of the slider
-        slider.onValueChanged.AddListener(UpdateHandleImage);
+        //slider.onValueChanged.AddListener(UpdateHandleImage);
 
         // Set the initial image based on the starting value of the slider
-        UpdateHandleImage(slider.value);
+        //UpdateHandleImage(slider.value);
     }
 
     void Update()
