@@ -10,7 +10,7 @@ public class Pistion : MonoBehaviour
   private Vector3 startPos;
   private Vector3 endPos;
   public float speed;
-  public float endDistance = -0.5f;
+  public Vector3 endDistance = new Vector3(0.0f, 0.0f, 0.0f);
   private float timer = 0;
   private bool timerReached = false;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class Pistion : MonoBehaviour
     {
 
       startPos = transform.position;
-      endPos = new Vector3(startPos.x + endDistance, startPos.y, startPos.z);
+      endPos = startPos + endDistance;
 
     }
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Axis { X, Z };
+
 public class PistionPressurePlate : MonoBehaviour
 {
 
@@ -14,6 +16,9 @@ public class PistionPressurePlate : MonoBehaviour
     public PushBlock pb;
     public bool isOccupied = false;
 
+
+    public Axis axis;
+
     private void Start(){
       selfPosition = transform.position;
       print(selfPosition);
@@ -22,7 +27,22 @@ public class PistionPressurePlate : MonoBehaviour
     private void Update(){
 
       if(isOccupied){
-        float distance = Mathf.Sqrt(Mathf.Pow(selfPosition.x - pb.transform.position.x, 2) + Mathf.Pow(selfPosition.z - pb.transform.position.z, 2));
+
+        float distance = 0;
+
+        switch(axis){
+
+          case Axis.X:
+            distance = Mathf.Abs(selfPosition.x - pb.transform.position.x);
+            break;
+
+          case Axis.Z:
+            distance = Mathf.Abs(selfPosition.z - pb.transform.position.z);
+            break;
+
+
+        }
+
         // print(distance);
         if(distance < requredDistance){
           pistion.activate();
