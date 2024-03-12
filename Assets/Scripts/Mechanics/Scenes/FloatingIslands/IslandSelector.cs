@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class IslandSelector : NonLiving, Entity
 {
-    [SerializeField] public  string[] lockedDialogue;
+    [SerializeField] public string[] lockedDialogue;
     // Start is called before the first frame update
     IslandSelector[] otherSelectors; // Will contain a reference to all selectors (including us) in the scene, populated during Start
     [SerializeField] Material offMaterial;
     [SerializeField] Material onMaterial;
     [SerializeField] private bool locked = false;
-    
+
     public string IslandName = "Unnamed";
 
     public bool isOn = true;
@@ -18,9 +18,9 @@ public class IslandSelector : NonLiving, Entity
     void Awake()
     {
         if (locked) return;
-        GameObject[] others =  GameObject.FindGameObjectsWithTag("TrainSelector");
+        GameObject[] others = GameObject.FindGameObjectsWithTag("TrainSelector");
         otherSelectors = new IslandSelector[others.Length];
-        for (int i = 0; i < others.Length;i++) // does contain a reference to ourselves
+        for (int i = 0; i < others.Length; i++) // does contain a reference to ourselves
         {
             otherSelectors[i] = others[i].GetComponent<IslandSelector>();
         }
@@ -54,7 +54,7 @@ public class IslandSelector : NonLiving, Entity
         }
         isOn = !isOn;
 
-        gameObject.GetComponent<Renderer>().material = isOn? onMaterial : offMaterial;
+        gameObject.GetComponent<Renderer>().material = isOn ? onMaterial : offMaterial;
     }
-  
+
 }
