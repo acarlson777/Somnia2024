@@ -17,6 +17,6 @@ public class Door : InteractableObject, Entity
         {
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
         }
-        else DialogueManager.PopDialogue(new string[] { "It's locked." });
+        else DialogueManager.PopDialogue(new string[] { "I should talk to the others first." });
     }
 }
