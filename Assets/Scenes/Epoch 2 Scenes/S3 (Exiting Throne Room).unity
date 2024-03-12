@@ -13701,14 +13701,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779331483}
-  m_LocalRotation: {x: 0, y: 0.7343225, z: 0, w: 0.67880076}
-  m_LocalPosition: {x: 3.49, y: -59.15, z: -31.21}
+  m_LocalRotation: {x: 0, y: 0.83180887, z: 0, w: 0.55506223}
+  m_LocalPosition: {x: -4.45, y: -59.15, z: -41.67}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1997845343}
   m_RootOrder: 179
-  m_LocalEulerAnglesHint: {x: 0, y: 94.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 112.57, z: 0}
 --- !u!212 &779331485
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15608,6 +15608,7 @@ GameObject:
   - component: {fileID: 876030848}
   - component: {fileID: 876030849}
   - component: {fileID: 876030850}
+  - component: {fileID: 876030851}
   m_Layer: 0
   m_Name: Chess
   m_TagString: Untagged
@@ -15622,14 +15623,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876030847}
-  m_LocalRotation: {x: 0, y: 0.99611056, z: 0, w: 0.08811205}
-  m_LocalPosition: {x: -9.02, y: -59.15, z: -45.53}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -8.75, y: -59.15, z: -47.03}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1997845343}
   m_RootOrder: 178
-  m_LocalEulerAnglesHint: {x: 0, y: 169.89, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &876030849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15695,6 +15696,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.3800015, y: 7.29, z: 0.20000008}
   m_Center: {x: 0.0000076293945, y: 0, z: 0.000015258789}
+--- !u!114 &876030851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876030847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd706340c526e2a45bac94f703ba15d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines:
+  - lines:
+    - The guard nods his head and smiles warmly at you.
+    - He turns his head back straight and seemingly forgets of your existence.
 --- !u!1 &888709867
 GameObject:
   m_ObjectHideFlags: 0
@@ -33098,7 +33120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757066902}
   m_LocalRotation: {x: 0, y: 0.7040147, z: 0, w: 0.71018535}
-  m_LocalPosition: {x: 3.09, y: -59.15, z: -40.5}
+  m_LocalPosition: {x: -4.26, y: -59.15, z: -39.88}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
