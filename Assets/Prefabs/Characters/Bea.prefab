@@ -130,7 +130,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &5631316416746892960
 MonoBehaviour:
@@ -147,6 +147,7 @@ MonoBehaviour:
   entityCollider: {fileID: 5631316416746892965}
   interactCollider: {fileID: 5631316416746892966}
   BoxColliderThickness: 1
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   health: 1
   speed: 1000
@@ -185,6 +186,7 @@ GameObject:
   - component: {fileID: 5631316416927084936}
   - component: {fileID: 5631316416927084943}
   - component: {fileID: 5631316416927084942}
+  - component: {fileID: 6187456804036898450}
   m_Layer: 0
   m_Name: Bea
   m_TagString: Untagged
@@ -293,3 +295,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6187456804036898450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5631316416927084938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d9519d9922c4eaaac18326c8244230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
