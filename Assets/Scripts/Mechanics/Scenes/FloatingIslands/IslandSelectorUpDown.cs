@@ -11,7 +11,7 @@ public class IslandSelectorUpDown : NonLiving, Entity
     public float symbolSpeed = 1.0f;
     [SerializeField] public float symbolEndDistance = -0.5f;
 
-    IslandSelector[] otherSelectors; // Will contain a reference to all selectors (including us) in the scene, populated during Start
+    IslandSelectorUpDown[] otherSelectors; // Will contain a reference to all selectors (including us) in the scene, populated during Start
 
     [SerializeField] private bool locked = false;
     
@@ -21,18 +21,22 @@ public class IslandSelectorUpDown : NonLiving, Entity
 
     void Awake()
     {
-        base.Start();
         startPos = transform.position;
         endPos = new Vector3(startPos.x, startPos.y + symbolEndDistance, startPos.z);
 
         if (locked) return;
         GameObject[] others =  GameObject.FindGameObjectsWithTag("TrainSelector");
-        otherSelectors = new IslandSelector[others.Length];
+        otherSelectors = new IslandSelectorUpDown[others.Length];
         for (int i = 0; i < others.Length;i++) // does contain a reference to ourselves
         {
-            otherSelectors[i] = others[i].GetComponent<IslandSelector>();
+            otherSelectors[i] = others[i].GetComponent<IslandSelectorUpDown>();
         }
         TurnOff();
+    }
+
+    void Start()
+    {
+        base.Start();
     }
 
     public void TurnOff()
@@ -46,6 +50,7 @@ public class IslandSelectorUpDown : NonLiving, Entity
 
     new public void Interact(Entity entity)
     {
+        
         if (locked)
         {
             DialogueManager.PopDialogue(lockedDialogue);
@@ -54,7 +59,7 @@ public class IslandSelectorUpDown : NonLiving, Entity
         if (!isOn) // if we are switchin' it on
         {
             // we make all other ones become off
-            foreach (IslandSelector i in otherSelectors)
+            foreach (IslandSelectorUpDown i in otherSelectors)
             {
                 i.TurnOff();
             }
