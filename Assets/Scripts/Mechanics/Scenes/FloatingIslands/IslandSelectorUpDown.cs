@@ -34,7 +34,7 @@ public class IslandSelectorUpDown : NonLiving, Entity
         TurnOff();
     }
 
-    void Start()
+    new void Start()
     {
         base.Start();
     }

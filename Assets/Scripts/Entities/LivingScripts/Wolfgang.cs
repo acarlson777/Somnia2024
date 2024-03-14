@@ -84,7 +84,7 @@ public class Wolfgang : Living, Entity
     public List<AudioLines> audioLines;
     private int timesInteracted = 0;
 
-    public IslandSelector[] selectors;
+    public IslandSelectorUpDown[] selectors;
     public bool firstTime = true;
 
     public string[] firstTimeDialogue;
@@ -104,10 +104,10 @@ public class Wolfgang : Living, Entity
 
     {
         GameObject[] others = GameObject.FindGameObjectsWithTag("TrainSelector");
-        selectors = new IslandSelector[others.Length];
+        selectors = new IslandSelectorUpDown[others.Length];
         for (int i = 0; i < others.Length; i++)
         {
-            selectors[i] = others[i].GetComponent<IslandSelector>();
+            selectors[i] = others[i].GetComponent<IslandSelectorUpDown>();
         }
     }
 

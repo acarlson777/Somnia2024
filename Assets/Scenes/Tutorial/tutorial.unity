@@ -665,6 +665,7 @@ MonoBehaviour:
   entityCollider: {fileID: 433303083}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 1
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   inspectorBed: 0
   not_ready_dialogue:
@@ -694,6 +695,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5631316416746892960, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: entityMaxSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5631316416746892961, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_Name
       value: Bea
@@ -1280,6 +1285,7 @@ MonoBehaviour:
   entityCollider: {fileID: 0}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   lines:
   - lines:
@@ -1305,6 +1311,7 @@ MonoBehaviour:
   entityCollider: {fileID: 0}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   lines:
   - lines:
