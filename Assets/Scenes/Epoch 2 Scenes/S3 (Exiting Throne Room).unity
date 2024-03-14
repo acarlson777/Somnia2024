@@ -11318,15 +11318,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.98
+      value: 47.279
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.02
+      value: 26.89
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.12
+      value: -12.599
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18079,6 +18079,7 @@ GameObject:
   - component: {fileID: 1036523185}
   - component: {fileID: 1036523187}
   - component: {fileID: 1036523186}
+  - component: {fileID: 1036523188}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -18183,6 +18184,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1036523188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036523184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e470f8cb5a524d37a1902e7c7613167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1036523187}
+  minIntensity: 1
+  maxIntensity: 5
+  smoothing: 38
 --- !u!1 &1037672734
 GameObject:
   m_ObjectHideFlags: 0
@@ -30406,6 +30423,7 @@ GameObject:
   - component: {fileID: 1621640859}
   - component: {fileID: 1621640861}
   - component: {fileID: 1621640860}
+  - component: {fileID: 1621640862}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -30510,6 +30528,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1621640862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621640858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e470f8cb5a524d37a1902e7c7613167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1621640861}
+  minIntensity: 1
+  maxIntensity: 5
+  smoothing: 38
 --- !u!1 &1626303358
 GameObject:
   m_ObjectHideFlags: 0
