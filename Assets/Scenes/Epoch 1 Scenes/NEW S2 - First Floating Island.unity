@@ -7689,7 +7689,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 249780237553440007, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 249780237322979887, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
 --- !u!1 &392403264
 GameObject:
@@ -18464,16 +18469,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902247446}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 42.061}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.4798217, y: 25.217892, z: -1.0584373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5994002057709427739}
   - {fileID: 1679826266}
   - {fileID: 1141747338}
-  m_Father: {fileID: 1452667970}
-  m_RootOrder: 10
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &903187959
 GameObject:
@@ -20071,7 +20076,10 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  selectors: []
+  selectors:
+  - {fileID: 2068389818}
+  - {fileID: 1679826267}
+  - {fileID: 1141747339}
 --- !u!54 &958121191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23288,14 +23296,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141747337}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 1.49, y: 0.5, z: 0.3024745}
+  m_LocalRotation: {x: -0.0034929893, y: 0.9999619, z: -0.00799831, w: -0.000009748194}
+  m_LocalPosition: {x: 1.489964, y: 0.51045036, z: 0.30236053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 902247447}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.917, y: 179.998, z: -0.4}
 --- !u!114 &1141747339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23317,9 +23325,9 @@ MonoBehaviour:
   - LOCKED
   symbolSpeed: 1
   symbolEndDistance: -0.5
-  locked: 0
+  locked: 1
   IslandName: Unnamed
-  isOn: 1
+  isOn: 0
 --- !u!54 &1141747340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26834,7 +26842,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1316468291
 GameObject:
@@ -28950,9 +28958,8 @@ Transform:
   - {fileID: 1943084101}
   - {fileID: 1266332807}
   - {fileID: 1030777939}
-  - {fileID: 902247447}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453291919
 GameObject:
@@ -32489,9 +32496,9 @@ MonoBehaviour:
   - LOCKED
   symbolSpeed: 1
   symbolEndDistance: -0.5
-  locked: 0
+  locked: 1
   IslandName: Unnamed
-  isOn: 1
+  isOn: 0
 --- !u!54 &1679826268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32684,6 +32691,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bea
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746892965, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746892965, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -32694,15 +32709,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.23
+      value: -13.46
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.25
+      value: 26.84
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.88
+      value: 5.28
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38143,6 +38158,55 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 8, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1972415359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 249780237322979886, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+  m_PrefabInstance: {fileID: 387959042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1972415360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972415359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c37554b0dfc4a8f857caabaa79c2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 2, z: 0}
+  entityMaxSpeed: 2.1
+  health: 0
+  speed: 1
+  gameobjectsTouching: []
+  lines: []
+  audioLines:
+  - audioLines:
+    - {fileID: 8300000, guid: 5a072d2dd873d44088d653a52c5256ec, type: 3}
+    - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: a37083bea75924afdbb40464a1e81049, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: e97bd9dc16811403d99d6a97dcba9a27, type: 3}
+  - audioLines:
+    - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
+  selectors:
+  - {fileID: 2068389818}
+  - {fileID: 1679826267}
+  - {fileID: 1141747339}
+  firstTime: 1
+  firstTimeDialogue:
+  - Welcome Bea, my name is Wolfgang.
+  - To start the train, go ahead and hit one of the levers.
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 21300000, guid: b685daf488dcf4df296fb715d5a310cf, type: 3}
+  name: Wolfgang
+  nameText: {fileID: 0}
+  prevLineNumber: 0
 --- !u!1 &1979982780
 GameObject:
   m_ObjectHideFlags: 0
@@ -39724,7 +39788,7 @@ MonoBehaviour:
   symbolSpeed: 1
   symbolEndDistance: -0.5
   locked: 0
-  IslandName: Unnamed
+  IslandName: CS3 (Bea talking with Wolfgang waiting for train)
   isOn: 1
 --- !u!1 &2068935999
 GameObject:
@@ -41355,14 +41419,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5994002057709427738}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.5020413, y: 0.5, z: 0.3024745}
+  m_LocalRotation: {x: -0.0034929893, y: 0.9999619, z: -0.00799831, w: -0.000009748194}
+  m_LocalPosition: {x: -1.5020051, y: 0.48954964, z: 0.30258942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 902247447}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.917, y: 179.998, z: -0.4}
 --- !u!33 &5994002057709427748
 MeshFilter:
   m_ObjectHideFlags: 0

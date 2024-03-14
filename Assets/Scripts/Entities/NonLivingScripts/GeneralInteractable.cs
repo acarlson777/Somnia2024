@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class GeneralInteractable : InteractableObject, Entity
 {
+    public AudioClip audio;
     public List<Voicelines> lines;
     protected int timesInteracted = 0;
     InstantiateLoadingScreen loadingScreen;
 
     new protected void Start()
-    {  
+    {
         base.Start();
     }
     new public void Interact(Entity entity)
     {
+    
         if (entity is Player)
         {
             if (timesInteracted >= lines.Count)
@@ -23,7 +25,7 @@ public class GeneralInteractable : InteractableObject, Entity
             print("putting a dialogue" + timesInteracted);
             DialogueManager.PopDialogue(lines[timesInteracted].lines);
             timesInteracted++;
-            
+
         }
     }
     [System.Serializable]

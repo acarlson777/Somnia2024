@@ -22,6 +22,8 @@ public class AntiSpin : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        print("heheheh");
         transform.rotation = startRot;
     }
 }

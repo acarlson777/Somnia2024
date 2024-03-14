@@ -9277,6 +9277,7 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  audio: {fileID: 0}
   lines:
   - lines:
     - Hello, this room is slightly under construction, please proceed to the exit
@@ -15713,6 +15714,7 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  audio: {fileID: 0}
   lines:
   - lines:
     - The guard nods his head and smiles warmly at you.
@@ -18079,6 +18081,7 @@ GameObject:
   - component: {fileID: 1036523185}
   - component: {fileID: 1036523187}
   - component: {fileID: 1036523186}
+  - component: {fileID: 1036523188}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -18183,6 +18186,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1036523188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036523184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e470f8cb5a524d37a1902e7c7613167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1036523187}
+  minIntensity: 1
+  maxIntensity: 5
+  smoothing: 38
 --- !u!1 &1037672734
 GameObject:
   m_ObjectHideFlags: 0
@@ -23091,6 +23110,7 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  audio: {fileID: 0}
   lines:
   - lines:
     - I'm not going back in there again.
@@ -30406,6 +30426,7 @@ GameObject:
   - component: {fileID: 1621640859}
   - component: {fileID: 1621640861}
   - component: {fileID: 1621640860}
+  - component: {fileID: 1621640862}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -30510,6 +30531,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1621640862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621640858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e470f8cb5a524d37a1902e7c7613167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1621640861}
+  minIntensity: 1
+  maxIntensity: 5
+  smoothing: 38
 --- !u!1 &1626303358
 GameObject:
   m_ObjectHideFlags: 0
