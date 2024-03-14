@@ -665,6 +665,7 @@ MonoBehaviour:
   entityCollider: {fileID: 433303083}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 1
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   inspectorBed: 0
   not_ready_dialogue:
@@ -1280,6 +1281,7 @@ MonoBehaviour:
   entityCollider: {fileID: 0}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   lines:
   - lines:
@@ -1305,6 +1307,7 @@ MonoBehaviour:
   entityCollider: {fileID: 0}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   lines:
   - lines:
@@ -3648,32 +3651,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6033601508985598084, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
-      propertyPath: offset.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6033601508985598084, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
-      propertyPath: offset.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6033601508985598084, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
-      propertyPath: offset.z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6033601508985598084, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 2030609687}
     - target: {fileID: 6033601508985598104, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 6033601508985598106, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
-      propertyPath: near clip plane
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 6033601508985598106, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
-      propertyPath: orthographic size
-      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 6033601508985598107, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
       propertyPath: m_RootOrder
