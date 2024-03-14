@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GeneralInteractable : InteractableObject, Entity
 {
+    public AudioClip audio;
     public List<Voicelines> lines;
     protected int timesInteracted = 0;
     InstantiateLoadingScreen loadingScreen;
@@ -14,6 +15,7 @@ public class GeneralInteractable : InteractableObject, Entity
     }
     new public void Interact(Entity entity)
     {
+    
         if (entity is Player)
         {
             if (timesInteracted >= lines.Count)
