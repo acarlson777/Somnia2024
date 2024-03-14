@@ -9,7 +9,7 @@ public class GeneralInteractable : InteractableObject, Entity
     InstantiateLoadingScreen loadingScreen;
 
     new protected void Start()
-    {  
+    {
         base.Start();
     }
     new public void Interact(Entity entity)
@@ -23,7 +23,7 @@ public class GeneralInteractable : InteractableObject, Entity
             print("putting a dialogue" + timesInteracted);
             DialogueManager.PopDialogue(lines[timesInteracted].lines);
             timesInteracted++;
-            
+
         }
     }
     [System.Serializable]
