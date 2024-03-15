@@ -976,7 +976,6 @@ GameObject:
   - component: {fileID: 37231983}
   - component: {fileID: 37231982}
   - component: {fileID: 37231981}
-  - component: {fileID: 37231980}
   m_Layer: 0
   m_Name: Pumpkid
   m_TagString: entity
@@ -984,18 +983,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &37231980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37231979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a2b667938e2f494996ea0d08864685a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &37231981
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1044,20 +1031,17 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lines:
   - lines:
-    - 'I''m a guard!! '
-    - Even though I look plumpykid
-  - lines:
-    - The evil queen is outside Bea! Open the door and win
+    - Hello!
+    - Thank you kindly for helping my kind.
   audioLines:
   - audioLines:
     - {fileID: 0}
-    - {fileID: 0}
-  - audioLines:
     - {fileID: 0}
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
   name: Pumpkid
+  disabled: 0
   prevLineNumber: 0
 --- !u!136 &37231984
 CapsuleCollider:
@@ -10660,6 +10644,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
   name: Woebegone
+  disabled: 0
   prevLineNumber: 0
 --- !u!4 &633908187
 Transform:
