@@ -16,7 +16,9 @@ public class PumpkidThroneRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (character.timesInteracted >= character.lines.Count)
+        if (!Woebegone.talkedWith) { character.disabled = true; }
+        else character.disabled = false;
+        if (character.timesInteracted >= character.lines.Count && Woebegone.talkedWith)
         {
             talkedWith = true;
         }

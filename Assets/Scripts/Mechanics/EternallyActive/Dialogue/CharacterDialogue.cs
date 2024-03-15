@@ -8,7 +8,7 @@ public class CharacterDialogue : InteractableObject, Entity
 {
     public List<Voicelines> lines;
     public List<AudioLines> audioLines;
-    [HideInInspector] public int timesInteracted = 0;
+     public int timesInteracted = 0;
 
     [HideInInspector] public Image portrait;
     [SerializeField] Sprite characterPortrait;
@@ -16,6 +16,7 @@ public class CharacterDialogue : InteractableObject, Entity
     [HideInInspector] TextMeshProUGUI nameText;
     bool portraitSet = false;
     bool interactedWith = false;
+    public bool disabled = false;
 
     private AudioSource audioSource;
     CharacterDialogueScript character;
@@ -29,6 +30,10 @@ public class CharacterDialogue : InteractableObject, Entity
 
     new public void Interact(Entity entity)
     {
+        if (disabled) {
+            CharacterDialogueManager.PopCharacterDialogue(new string[] { "..." });
+            timesInteracted = 0;
+        }
         if (entity is Player)
         {
             portraitSet = false;
@@ -42,7 +47,7 @@ public class CharacterDialogue : InteractableObject, Entity
             audioSource.clip = audioLines[timesInteracted].audioLines[0];
             audioSource.Play();
             character = FindObjectOfType<CharacterDialogueScript>();
-            timesInteracted++;
+            if (!disabled) timesInteracted++;
 
         }
         if (GameObject.Find("CharacterDialogueBox") != null && !portraitSet && interactedWith)
