@@ -44,9 +44,10 @@ public class PressurePlate : MonoBehaviour
         Vector3 pressurePlatePos = transform.position;
         pressurePlatePos.y += 1;
         float timeTaken = 0;
+        Vector3 startingPos = correctBlock.gameObject.transform.position;
         while (timeTaken < lockInTime)
         {
-            correctBlock.gameObject.transform.position = Vector3.Lerp(correctBlock.gameObject.transform.position, pressurePlatePos, timeTaken/lockInTime);
+            correctBlock.gameObject.transform.position = Vector3.Lerp(startingPos, pressurePlatePos, timeTaken/lockInTime);
             timeTaken += Time.deltaTime;
             yield return null;
         }
