@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
@@ -10,6 +11,8 @@ public class PressurePlate : MonoBehaviour
     public PushBlock correctBlock;
     public Material glowOff;
     public Material glowOn;
+    public bool lockIn;
+    public float lockInTime;
 
 
     void OnTriggerEnter(Collider other){
@@ -19,6 +22,7 @@ public class PressurePlate : MonoBehaviour
         if (pushBlock != null && pushBlock == correctBlock){
             isOccupied = true;
             gameObject.GetComponent<Renderer>().material = glowOn;
+            if (lockIn) { StartCoroutine(LockIn()); }
             pushBlock.startGlow();
         }
     }
@@ -34,4 +38,20 @@ public class PressurePlate : MonoBehaviour
         }
     }
 
+    IEnumerator LockIn()
+    {
+        print("Locking in");
+        Vector3 pressurePlatePos = transform.position;
+        pressurePlatePos.y += 1;
+        float timeTaken = 0;
+        while (timeTaken < lockInTime)
+        {
+            correctBlock.gameObject.transform.position = Vector3.Lerp(correctBlock.gameObject.transform.position, pressurePlatePos, timeTaken/lockInTime);
+            timeTaken += Time.deltaTime;
+            yield return null;
+        }
+        correctBlock.gameObject.transform.position = pressurePlatePos;
+        correctBlock.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        correctBlock.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+    }
 }

@@ -637,6 +637,7 @@ GameObject:
   - component: {fileID: 300376775}
   - component: {fileID: 300376774}
   - component: {fileID: 300376778}
+  - component: {fileID: 300376779}
   m_Layer: 0
   m_Name: Block 3
   m_TagString: Untagged
@@ -684,7 +685,7 @@ BoxCollider:
   m_GameObject: {fileID: 300376772}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -752,6 +753,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glowOff: {fileID: 2100000, guid: 01ff1af13ea8b47a79fdc327994cd7e7, type: 2}
   glowOn: {fileID: 2100000, guid: 6d4f58811d4ed4b0bb2495c688da2bba, type: 2}
+--- !u!135 &300376779
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300376772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!1 &386068771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1121,7 @@ GameObject:
   - component: {fileID: 651189301}
   - component: {fileID: 651189300}
   - component: {fileID: 651189304}
+  - component: {fileID: 651189305}
   m_Layer: 0
   m_Name: Block 2
   m_TagString: Untagged
@@ -1154,7 +1169,7 @@ BoxCollider:
   m_GameObject: {fileID: 651189298}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1222,6 +1237,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glowOff: {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
   glowOn: {fileID: 2100000, guid: d28ba83c43e74441fb57297d5e253395, type: 2}
+--- !u!135 &651189305
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651189298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!1 &690734535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1499,7 @@ GameObject:
   - component: {fileID: 824830299}
   - component: {fileID: 824830298}
   - component: {fileID: 824830302}
+  - component: {fileID: 824830303}
   m_Layer: 0
   m_Name: Block 1
   m_TagString: Untagged
@@ -1518,7 +1547,7 @@ BoxCollider:
   m_GameObject: {fileID: 824830296}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1586,6 +1615,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glowOff: {fileID: 2100000, guid: 00a2079ae76914bbf83cda53a45561f8, type: 2}
   glowOn: {fileID: 2100000, guid: 491735a7fceb34c76a6e70ece5a80572, type: 2}
+--- !u!135 &824830303
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824830296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!224 &836767029 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7534485631917070707, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}

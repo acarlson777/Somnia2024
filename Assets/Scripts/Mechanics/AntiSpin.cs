@@ -23,7 +23,7 @@ public class AntiSpin : MonoBehaviour
     void FixedUpdate()
     {
 
-        print("heheheh");
+        //print("heheheh");
         transform.rotation = startRot;
     }
 }
