@@ -35,7 +35,7 @@ public class Cutscene : MonoBehaviour
 
     IEnumerator StartCutscene()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.9f);
         image.gameObject.SetActive(true);
         video.Play();
 
