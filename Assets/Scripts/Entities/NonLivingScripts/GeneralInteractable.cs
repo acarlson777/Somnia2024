@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GeneralInteractable : InteractableObject, Entity
 {
-    public AudioClip audio;
+    new public AudioClip audio;
     public List<Voicelines> lines;
     protected int timesInteracted = 0;
     InstantiateLoadingScreen loadingScreen;

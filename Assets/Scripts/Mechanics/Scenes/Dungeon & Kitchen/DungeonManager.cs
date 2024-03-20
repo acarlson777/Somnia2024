@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DungeonManager : MonoBehaviour
 {
-
-    [SerializeField]
     public PushBlock block1, block2, block3;
     public PressurePlate plate1, plate2, plate3;
     public DungeonGate gate;
@@ -22,7 +20,6 @@ public class DungeonManager : MonoBehaviour
       } else {
           // Close the gate if any block is not on its pressure plate
           gate.CloseGate();
-
       }
 
     }
