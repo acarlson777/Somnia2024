@@ -2462,6 +2462,7 @@ GameObject:
   - component: {fileID: 890254469}
   - component: {fileID: 890254468}
   - component: {fileID: 890254467}
+  - component: {fileID: 890254471}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2524,6 +2525,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890254471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890254466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b625bbba75ad8405eac5bcbc6e7b206c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplaySurface: {fileID: 0}
 --- !u!1 &902443321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,8 +2738,9 @@ GameObject:
   - component: {fileID: 1002995257}
   - component: {fileID: 1002995256}
   - component: {fileID: 1002995255}
-  - component: {fileID: 1002995254}
   - component: {fileID: 1002995253}
+  - component: {fileID: 1002995260}
+  - component: {fileID: 1002995261}
   m_Layer: 0
   m_Name: Dream Journal
   m_TagString: Untagged
@@ -2746,33 +2761,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.59
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1002995254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002995252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1de94d84748432c99f27ed185bed5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityCollider: {fileID: 1002995256}
-  interactCollider: {fileID: 1002995253}
-  BoxColliderThickness: 0.78
-  arrowOffset: {x: 0, y: 0, z: 0}
-  entityMaxSpeed: 2.1
-  lines:
-  - lines:
-    - This is your second time reading this journal although it seems like the first
-  - lines:
-    - The following journal will look the same as the previous jounral you read
-    - Perhaps due to some secret idea hidden in the lore...
-    - Or perhaps because the creators of this game ran out of time for this build
-    - Who knows...
-  - lines:
-    - readme.md (click again to read)
 --- !u!54 &1002995255
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2867,6 +2855,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002995260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002995252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b1d8b7265db456bb87b65b75303005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines: []
+--- !u!114 &1002995261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002995252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c50305710d94604928c1cbea56a5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines: []
+  audioLines: []
+  timesInteracted: 0
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 0}
+  name: 
+  disabled: 0
+  prevLineNumber: 0
 --- !u!1001 &1067272732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4783,7 +4814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2004147973, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4287050260684467966, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackToStop
