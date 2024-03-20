@@ -822,7 +822,9 @@ MonoBehaviour:
   entityCollider: {fileID: 0}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  audio: {fileID: 0}
   lines:
   - lines:
     - this is a diallogue
@@ -901,14 +903,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41646331}
-  m_LocalRotation: {x: -0, y: -0.048560888, z: -0, w: 0.9988203}
-  m_LocalPosition: {x: 65.54729, y: 16.843794, z: -13.330137}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -84.7, y: 1.28, z: -28.17}
   m_LocalScale: {x: 0.31547004, y: 2.7431002, z: 2.2906904}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1023257535}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 51.84, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &41646337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1265,7 +1267,6 @@ GameObject:
   - component: {fileID: 77979537}
   - component: {fileID: 77979540}
   - component: {fileID: 77979539}
-  - component: {fileID: 77979538}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -1288,20 +1289,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &77979538
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77979536}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &77979539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1755,6 +1742,7 @@ GameObject:
   - component: {fileID: 93148323}
   - component: {fileID: 93148325}
   - component: {fileID: 93148324}
+  - component: {fileID: 93148326}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1961,6 +1949,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!65 &93148326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93148322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.97676, y: 0.73268795, z: 170.92435}
+  m_Center: {x: -60.159546, y: -0.16020536, z: 69.830505}
 --- !u!1 &94318498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +2071,6 @@ GameObject:
   - component: {fileID: 97791424}
   - component: {fileID: 97791427}
   - component: {fileID: 97791426}
-  - component: {fileID: 97791425}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -2093,20 +2093,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &97791425
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97791423}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &97791426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3240,7 +3226,6 @@ GameObject:
   - component: {fileID: 135537183}
   - component: {fileID: 135537186}
   - component: {fileID: 135537185}
-  - component: {fileID: 135537184}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -3263,20 +3248,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 84
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &135537184
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135537182}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &135537185
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3338,7 +3309,6 @@ GameObject:
   - component: {fileID: 136473345}
   - component: {fileID: 136473348}
   - component: {fileID: 136473347}
-  - component: {fileID: 136473346}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -3361,20 +3331,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &136473346
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136473344}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &136473347
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4378,7 +4334,6 @@ GameObject:
   - component: {fileID: 187228984}
   - component: {fileID: 187228987}
   - component: {fileID: 187228986}
-  - component: {fileID: 187228985}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -4401,20 +4356,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &187228985
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187228983}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &187228986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4574,7 +4515,6 @@ GameObject:
   - component: {fileID: 193895974}
   - component: {fileID: 193895977}
   - component: {fileID: 193895976}
-  - component: {fileID: 193895975}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -4597,20 +4537,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &193895975
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193895973}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &193895976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4813,7 +4739,6 @@ GameObject:
   - component: {fileID: 201557099}
   - component: {fileID: 201557102}
   - component: {fileID: 201557101}
-  - component: {fileID: 201557100}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -4836,20 +4761,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &201557100
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201557098}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &201557101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4911,7 +4822,6 @@ GameObject:
   - component: {fileID: 204033067}
   - component: {fileID: 204033070}
   - component: {fileID: 204033069}
-  - component: {fileID: 204033068}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -4934,20 +4844,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &204033068
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204033066}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &204033069
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5975,7 +5871,6 @@ GameObject:
   - component: {fileID: 258408082}
   - component: {fileID: 258408085}
   - component: {fileID: 258408084}
-  - component: {fileID: 258408083}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -5998,20 +5893,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &258408083
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258408081}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &258408084
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6650,7 +6531,6 @@ GameObject:
   - component: {fileID: 285051877}
   - component: {fileID: 285051880}
   - component: {fileID: 285051879}
-  - component: {fileID: 285051878}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -6673,20 +6553,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &285051878
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285051876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &285051879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7870,7 +7736,6 @@ GameObject:
   - component: {fileID: 313734175}
   - component: {fileID: 313734178}
   - component: {fileID: 313734177}
-  - component: {fileID: 313734176}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -7893,20 +7758,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &313734176
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313734174}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &313734177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8140,7 +7991,6 @@ GameObject:
   - component: {fileID: 320243341}
   - component: {fileID: 320243344}
   - component: {fileID: 320243343}
-  - component: {fileID: 320243342}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -8163,20 +8013,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 83
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &320243342
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320243340}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &320243343
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8238,7 +8074,6 @@ GameObject:
   - component: {fileID: 340078793}
   - component: {fileID: 340078796}
   - component: {fileID: 340078795}
-  - component: {fileID: 340078794}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -8261,20 +8096,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &340078794
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340078792}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &340078795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9558,7 +9379,6 @@ GameObject:
   - component: {fileID: 382349184}
   - component: {fileID: 382349187}
   - component: {fileID: 382349186}
-  - component: {fileID: 382349185}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -9581,20 +9401,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &382349185
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382349183}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &382349186
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9950,7 +9756,6 @@ GameObject:
   - component: {fileID: 406941179}
   - component: {fileID: 406941182}
   - component: {fileID: 406941181}
-  - component: {fileID: 406941180}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -9973,20 +9778,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &406941180
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406941178}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &406941181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12002,7 +11793,6 @@ GameObject:
   - component: {fileID: 465468395}
   - component: {fileID: 465468398}
   - component: {fileID: 465468397}
-  - component: {fileID: 465468396}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -12025,20 +11815,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &465468396
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465468394}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &465468397
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13008,13 +12784,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bea
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746892967, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_Constraints
+      value: 96
+      objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -114.57
+      value: -114.52
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13022,7 +12806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.65
+      value: -24.01
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13089,7 +12873,6 @@ GameObject:
   - component: {fileID: 506682389}
   - component: {fileID: 506682392}
   - component: {fileID: 506682391}
-  - component: {fileID: 506682390}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -13112,20 +12895,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &506682390
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506682388}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &506682391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13463,7 +13232,6 @@ GameObject:
   - component: {fileID: 515199928}
   - component: {fileID: 515199931}
   - component: {fileID: 515199930}
-  - component: {fileID: 515199929}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -13486,20 +13254,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &515199929
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515199927}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &515199930
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14204,7 +13958,6 @@ GameObject:
   - component: {fileID: 547189166}
   - component: {fileID: 547189169}
   - component: {fileID: 547189168}
-  - component: {fileID: 547189167}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -14227,20 +13980,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 71
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &547189167
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547189165}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &547189168
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14587,7 +14326,6 @@ GameObject:
   - component: {fileID: 562250478}
   - component: {fileID: 562250481}
   - component: {fileID: 562250480}
-  - component: {fileID: 562250479}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -14610,20 +14348,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &562250479
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562250477}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &562250480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15401,7 +15125,6 @@ GameObject:
   - component: {fileID: 571732841}
   - component: {fileID: 571732844}
   - component: {fileID: 571732843}
-  - component: {fileID: 571732842}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -15424,20 +15147,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &571732842
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571732840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &571732843
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16145,7 +15854,6 @@ GameObject:
   - component: {fileID: 599706943}
   - component: {fileID: 599706946}
   - component: {fileID: 599706945}
-  - component: {fileID: 599706944}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -16168,20 +15876,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &599706944
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599706942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &599706945
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16611,7 +16305,6 @@ GameObject:
   - component: {fileID: 617288490}
   - component: {fileID: 617288493}
   - component: {fileID: 617288492}
-  - component: {fileID: 617288491}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -16634,20 +16327,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &617288491
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617288489}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &617288492
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17871,7 +17550,6 @@ GameObject:
   - component: {fileID: 675772323}
   - component: {fileID: 675772326}
   - component: {fileID: 675772325}
-  - component: {fileID: 675772324}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -17894,20 +17572,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &675772324
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675772322}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &675772325
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17969,7 +17633,6 @@ GameObject:
   - component: {fileID: 679691173}
   - component: {fileID: 679691176}
   - component: {fileID: 679691175}
-  - component: {fileID: 679691174}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -17992,20 +17655,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &679691174
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679691172}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &679691175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18406,7 +18055,6 @@ GameObject:
   - component: {fileID: 693700007}
   - component: {fileID: 693700010}
   - component: {fileID: 693700009}
-  - component: {fileID: 693700008}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -18429,20 +18077,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &693700008
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693700006}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &693700009
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19456,7 +19090,6 @@ GameObject:
   - component: {fileID: 744591860}
   - component: {fileID: 744591863}
   - component: {fileID: 744591862}
-  - component: {fileID: 744591861}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -19479,20 +19112,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &744591861
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744591859}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &744591862
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19554,7 +19173,6 @@ GameObject:
   - component: {fileID: 751945462}
   - component: {fileID: 751945465}
   - component: {fileID: 751945464}
-  - component: {fileID: 751945463}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -19577,20 +19195,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &751945463
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751945461}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &751945464
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20482,7 +20086,6 @@ GameObject:
   - component: {fileID: 794565817}
   - component: {fileID: 794565820}
   - component: {fileID: 794565819}
-  - component: {fileID: 794565818}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -20505,20 +20108,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &794565818
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794565816}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &794565819
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20678,7 +20267,6 @@ GameObject:
   - component: {fileID: 807483111}
   - component: {fileID: 807483114}
   - component: {fileID: 807483113}
-  - component: {fileID: 807483112}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -20701,20 +20289,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &807483112
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807483110}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &807483113
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21544,7 +21118,6 @@ GameObject:
   - component: {fileID: 819179481}
   - component: {fileID: 819179484}
   - component: {fileID: 819179483}
-  - component: {fileID: 819179482}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -21567,20 +21140,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &819179482
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819179480}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &819179483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23479,7 +23038,6 @@ GameObject:
   - component: {fileID: 924124052}
   - component: {fileID: 924124055}
   - component: {fileID: 924124054}
-  - component: {fileID: 924124053}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -23502,20 +23060,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &924124053
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924124051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &924124054
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24403,7 +23947,6 @@ GameObject:
   - component: {fileID: 974035563}
   - component: {fileID: 974035566}
   - component: {fileID: 974035565}
-  - component: {fileID: 974035564}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -24426,20 +23969,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &974035564
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974035562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &974035565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24795,7 +24324,6 @@ GameObject:
   - component: {fileID: 983849855}
   - component: {fileID: 983849858}
   - component: {fileID: 983849857}
-  - component: {fileID: 983849856}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -24818,20 +24346,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &983849856
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983849854}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &983849857
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25261,7 +24775,6 @@ GameObject:
   - component: {fileID: 1004080785}
   - component: {fileID: 1004080788}
   - component: {fileID: 1004080787}
-  - component: {fileID: 1004080786}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -25284,20 +24797,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1004080786
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004080784}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1004080787
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25359,7 +24858,6 @@ GameObject:
   - component: {fileID: 1006529044}
   - component: {fileID: 1006529047}
   - component: {fileID: 1006529046}
-  - component: {fileID: 1006529045}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -25382,20 +24880,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1006529045
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006529043}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1006529046
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26355,7 +25839,6 @@ GameObject:
   - component: {fileID: 1036302393}
   - component: {fileID: 1036302396}
   - component: {fileID: 1036302395}
-  - component: {fileID: 1036302394}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -26378,20 +25861,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1036302394
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036302392}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1036302395
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26453,7 +25922,6 @@ GameObject:
   - component: {fileID: 1038028241}
   - component: {fileID: 1038028244}
   - component: {fileID: 1038028243}
-  - component: {fileID: 1038028242}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -26476,20 +25944,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1038028242
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038028240}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1038028243
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26621,7 +26075,6 @@ GameObject:
   - component: {fileID: 1050007352}
   - component: {fileID: 1050007355}
   - component: {fileID: 1050007354}
-  - component: {fileID: 1050007353}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -26644,20 +26097,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 74
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1050007353
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050007351}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1050007354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26817,7 +26256,6 @@ GameObject:
   - component: {fileID: 1052921346}
   - component: {fileID: 1052921349}
   - component: {fileID: 1052921348}
-  - component: {fileID: 1052921347}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -26840,20 +26278,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 75
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1052921347
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052921345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1052921348
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29135,7 +28559,6 @@ GameObject:
   - component: {fileID: 1125028638}
   - component: {fileID: 1125028641}
   - component: {fileID: 1125028640}
-  - component: {fileID: 1125028639}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -29158,20 +28581,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1125028639
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125028637}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1125028640
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30766,7 +30175,6 @@ GameObject:
   - component: {fileID: 1195970069}
   - component: {fileID: 1195970072}
   - component: {fileID: 1195970071}
-  - component: {fileID: 1195970070}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -30789,20 +30197,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1195970070
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195970068}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1195970071
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32348,7 +31742,6 @@ GameObject:
   - component: {fileID: 1254586376}
   - component: {fileID: 1254586379}
   - component: {fileID: 1254586378}
-  - component: {fileID: 1254586377}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -32371,20 +31764,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1254586377
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254586375}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1254586378
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32516,7 +31895,6 @@ GameObject:
   - component: {fileID: 1262286840}
   - component: {fileID: 1262286843}
   - component: {fileID: 1262286842}
-  - component: {fileID: 1262286841}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -32539,20 +31917,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1262286841
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262286839}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1262286842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34918,7 +34282,6 @@ GameObject:
   - component: {fileID: 1348821290}
   - component: {fileID: 1348821293}
   - component: {fileID: 1348821292}
-  - component: {fileID: 1348821291}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -34941,20 +34304,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1348821291
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348821289}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1348821292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35380,7 +34729,6 @@ GameObject:
   - component: {fileID: 1370629929}
   - component: {fileID: 1370629932}
   - component: {fileID: 1370629931}
-  - component: {fileID: 1370629930}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -35403,20 +34751,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 81
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1370629930
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370629928}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1370629931
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36001,7 +35335,6 @@ GameObject:
   - component: {fileID: 1382072212}
   - component: {fileID: 1382072215}
   - component: {fileID: 1382072214}
-  - component: {fileID: 1382072213}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -36024,20 +35357,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1382072213
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382072211}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1382072214
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36295,7 +35614,6 @@ GameObject:
   - component: {fileID: 1389061751}
   - component: {fileID: 1389061754}
   - component: {fileID: 1389061753}
-  - component: {fileID: 1389061752}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -36318,20 +35636,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1389061752
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389061750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1389061753
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36491,7 +35795,6 @@ GameObject:
   - component: {fileID: 1393353680}
   - component: {fileID: 1393353683}
   - component: {fileID: 1393353682}
-  - component: {fileID: 1393353681}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -36514,20 +35817,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1393353681
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393353679}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1393353682
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36659,7 +35948,6 @@ GameObject:
   - component: {fileID: 1402749993}
   - component: {fileID: 1402749996}
   - component: {fileID: 1402749995}
-  - component: {fileID: 1402749994}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -36682,20 +35970,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1402749994
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402749992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1402749995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37307,7 +36581,6 @@ GameObject:
   - component: {fileID: 1423794172}
   - component: {fileID: 1423794175}
   - component: {fileID: 1423794174}
-  - component: {fileID: 1423794173}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -37330,20 +36603,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1423794173
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423794171}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1423794174
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37489,7 +36748,6 @@ GameObject:
   - component: {fileID: 1444125146}
   - component: {fileID: 1444125149}
   - component: {fileID: 1444125148}
-  - component: {fileID: 1444125147}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -37512,20 +36770,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1444125147
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444125145}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1444125148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37731,7 +36975,6 @@ GameObject:
   - component: {fileID: 1450233796}
   - component: {fileID: 1450233799}
   - component: {fileID: 1450233798}
-  - component: {fileID: 1450233797}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -37754,20 +36997,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1450233797
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450233795}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1450233798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39132,7 +38361,6 @@ GameObject:
   - component: {fileID: 1507044342}
   - component: {fileID: 1507044345}
   - component: {fileID: 1507044344}
-  - component: {fileID: 1507044343}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -39155,20 +38383,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1507044343
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507044341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1507044344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39328,7 +38542,6 @@ GameObject:
   - component: {fileID: 1518192399}
   - component: {fileID: 1518192402}
   - component: {fileID: 1518192401}
-  - component: {fileID: 1518192400}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -39351,20 +38564,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1518192400
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518192398}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1518192401
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39818,7 +39017,6 @@ GameObject:
   - component: {fileID: 1529178218}
   - component: {fileID: 1529178221}
   - component: {fileID: 1529178220}
-  - component: {fileID: 1529178219}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -39841,20 +39039,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1529178219
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529178217}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1529178220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40186,7 +39370,6 @@ GameObject:
   - component: {fileID: 1552032823}
   - component: {fileID: 1552032826}
   - component: {fileID: 1552032825}
-  - component: {fileID: 1552032824}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -40209,20 +39392,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1552032824
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552032822}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1552032825
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41379,7 +40548,6 @@ GameObject:
   - component: {fileID: 1595551916}
   - component: {fileID: 1595551919}
   - component: {fileID: 1595551918}
-  - component: {fileID: 1595551917}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -41402,20 +40570,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 79
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1595551917
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595551915}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1595551918
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42736,7 +41890,6 @@ GameObject:
   - component: {fileID: 1639968097}
   - component: {fileID: 1639968100}
   - component: {fileID: 1639968099}
-  - component: {fileID: 1639968098}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -42759,20 +41912,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1639968098
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639968096}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1639968099
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43030,7 +42169,6 @@ GameObject:
   - component: {fileID: 1644246965}
   - component: {fileID: 1644246968}
   - component: {fileID: 1644246967}
-  - component: {fileID: 1644246966}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -43053,20 +42191,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1644246966
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644246964}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1644246967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43128,7 +42252,6 @@ GameObject:
   - component: {fileID: 1649822430}
   - component: {fileID: 1649822433}
   - component: {fileID: 1649822432}
-  - component: {fileID: 1649822431}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -43151,20 +42274,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1649822431
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649822429}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1649822432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43392,7 +42501,6 @@ GameObject:
   - component: {fileID: 1663542796}
   - component: {fileID: 1663542799}
   - component: {fileID: 1663542798}
-  - component: {fileID: 1663542797}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -43415,20 +42523,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1663542797
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663542795}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1663542798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44022,7 +43116,6 @@ GameObject:
   - component: {fileID: 1679418829}
   - component: {fileID: 1679418832}
   - component: {fileID: 1679418831}
-  - component: {fileID: 1679418830}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -44045,20 +43138,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1679418830
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679418828}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1679418831
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44218,7 +43297,6 @@ GameObject:
   - component: {fileID: 1695996787}
   - component: {fileID: 1695996790}
   - component: {fileID: 1695996789}
-  - component: {fileID: 1695996788}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -44241,20 +43319,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1695996788
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695996786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1695996789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44565,7 +43629,6 @@ GameObject:
   - component: {fileID: 1697665362}
   - component: {fileID: 1697665365}
   - component: {fileID: 1697665364}
-  - component: {fileID: 1697665363}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -44588,20 +43651,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1697665363
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697665361}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1697665364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45140,7 +44189,6 @@ GameObject:
   - component: {fileID: 1715587297}
   - component: {fileID: 1715587300}
   - component: {fileID: 1715587299}
-  - component: {fileID: 1715587298}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -45163,20 +44211,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1715587298
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715587296}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1715587299
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45308,7 +44342,6 @@ GameObject:
   - component: {fileID: 1720735959}
   - component: {fileID: 1720735962}
   - component: {fileID: 1720735961}
-  - component: {fileID: 1720735960}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -45331,20 +44364,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1720735960
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720735958}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1720735961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45920,7 +44939,6 @@ GameObject:
   - component: {fileID: 1745122017}
   - component: {fileID: 1745122020}
   - component: {fileID: 1745122019}
-  - component: {fileID: 1745122018}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -45943,20 +44961,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1745122018
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745122016}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1745122019
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46582,7 +45586,6 @@ GameObject:
   - component: {fileID: 1766521798}
   - component: {fileID: 1766521801}
   - component: {fileID: 1766521800}
-  - component: {fileID: 1766521799}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -46605,20 +45608,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1766521799
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766521797}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1766521800
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46778,7 +45767,6 @@ GameObject:
   - component: {fileID: 1771413661}
   - component: {fileID: 1771413664}
   - component: {fileID: 1771413663}
-  - component: {fileID: 1771413662}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -46801,20 +45789,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1771413662
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771413660}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1771413663
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47534,7 +46508,6 @@ GameObject:
   - component: {fileID: 1798748861}
   - component: {fileID: 1798748864}
   - component: {fileID: 1798748863}
-  - component: {fileID: 1798748862}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -47557,20 +46530,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1798748862
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798748860}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1798748863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49149,7 +48108,6 @@ GameObject:
   - component: {fileID: 1861094749}
   - component: {fileID: 1861094752}
   - component: {fileID: 1861094751}
-  - component: {fileID: 1861094750}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -49172,20 +48130,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1861094750
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861094748}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1861094751
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49247,7 +48191,6 @@ GameObject:
   - component: {fileID: 1861377450}
   - component: {fileID: 1861377453}
   - component: {fileID: 1861377452}
-  - component: {fileID: 1861377451}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -49270,20 +48213,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1861377451
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861377449}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1861377452
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49345,7 +48274,6 @@ GameObject:
   - component: {fileID: 1861467887}
   - component: {fileID: 1861467890}
   - component: {fileID: 1861467889}
-  - component: {fileID: 1861467888}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -49368,20 +48296,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1861467888
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861467886}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1861467889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49933,7 +48847,6 @@ GameObject:
   - component: {fileID: 1881422093}
   - component: {fileID: 1881422096}
   - component: {fileID: 1881422095}
-  - component: {fileID: 1881422094}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -49956,20 +48869,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1881422094
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881422092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1881422095
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51246,7 +50145,6 @@ GameObject:
   - component: {fileID: 1941051873}
   - component: {fileID: 1941051876}
   - component: {fileID: 1941051875}
-  - component: {fileID: 1941051874}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -51269,20 +50167,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1941051874
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941051872}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1941051875
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53037,7 +51921,6 @@ GameObject:
   - component: {fileID: 2007267849}
   - component: {fileID: 2007267852}
   - component: {fileID: 2007267851}
-  - component: {fileID: 2007267850}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -53060,20 +51943,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2007267850
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007267848}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2007267851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53427,7 +52296,6 @@ GameObject:
   - component: {fileID: 2011099432}
   - component: {fileID: 2011099435}
   - component: {fileID: 2011099434}
-  - component: {fileID: 2011099433}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -53450,20 +52318,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 78
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2011099433
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011099431}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2011099434
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53721,7 +52575,6 @@ GameObject:
   - component: {fileID: 2023746515}
   - component: {fileID: 2023746518}
   - component: {fileID: 2023746517}
-  - component: {fileID: 2023746516}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -53744,20 +52597,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2023746516
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023746514}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2023746517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54950,7 +53789,6 @@ GameObject:
   - component: {fileID: 2059896501}
   - component: {fileID: 2059896504}
   - component: {fileID: 2059896503}
-  - component: {fileID: 2059896502}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -54973,20 +53811,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2059896502
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059896500}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2059896503
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55146,7 +53970,6 @@ GameObject:
   - component: {fileID: 2061427537}
   - component: {fileID: 2061427540}
   - component: {fileID: 2061427539}
-  - component: {fileID: 2061427538}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -55169,20 +53992,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2061427538
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061427536}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2061427539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55780,7 +54589,6 @@ GameObject:
   - component: {fileID: 2080906181}
   - component: {fileID: 2080906184}
   - component: {fileID: 2080906183}
-  - component: {fileID: 2080906182}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -55803,20 +54611,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2080906182
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080906180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2080906183
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56826,7 +55620,6 @@ GameObject:
   - component: {fileID: 2123408901}
   - component: {fileID: 2123408904}
   - component: {fileID: 2123408903}
-  - component: {fileID: 2123408902}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -56849,20 +55642,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2123408902
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123408900}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2123408903
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56924,7 +55703,6 @@ GameObject:
   - component: {fileID: 2126735208}
   - component: {fileID: 2126735211}
   - component: {fileID: 2126735210}
-  - component: {fileID: 2126735209}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -56947,20 +55725,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2126735209
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126735207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2126735210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57372,7 +56136,6 @@ GameObject:
   - component: {fileID: 2132471498}
   - component: {fileID: 2132471501}
   - component: {fileID: 2132471500}
-  - component: {fileID: 2132471499}
   m_Layer: 0
   m_Name: candypath
   m_TagString: Untagged
@@ -57395,20 +56158,6 @@ Transform:
   m_Father: {fileID: 93148323}
   m_RootOrder: 82
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &2132471499
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132471497}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2132471500
 MeshRenderer:
   m_ObjectHideFlags: 0
