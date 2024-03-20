@@ -6,7 +6,7 @@ public class ThroneRoomDoorForReal : InteractableObject, Entity
     public string sceneName;
     bool locked = true;
 
-    private void Update()
+    new private void Update()
     {
         if (Woebegone.talkedWith)
         {

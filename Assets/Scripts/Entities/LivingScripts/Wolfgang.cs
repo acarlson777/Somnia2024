@@ -168,10 +168,11 @@ public class Wolfgang : Living, Entity
             else
             {
                 string island = getSelectedName();
+                string show = getSelectedShowName();
                 if (island == null)
                     CharacterDialogueManager.PopCharacterDialogue(new string[] { "You should probably interact with the boxes" });
                 else
-                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Destination: " + island, "Please board the train..." });
+                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Destination: " + show, "Please board the train..." });
             }
 
             print("putting a dialogue" + timesInteracted);
