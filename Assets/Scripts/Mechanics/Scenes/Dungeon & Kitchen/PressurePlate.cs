@@ -42,11 +42,12 @@ public class PressurePlate : MonoBehaviour
     {
         print("Locking in");
         Vector3 pressurePlatePos = transform.position;
-        pressurePlatePos.y += 1;
+        pressurePlatePos.y += 0.5f;
         float timeTaken = 0;
+        Vector3 startingPos = correctBlock.gameObject.transform.position;
         while (timeTaken < lockInTime)
         {
-            correctBlock.gameObject.transform.position = Vector3.Lerp(correctBlock.gameObject.transform.position, pressurePlatePos, timeTaken/lockInTime);
+            correctBlock.gameObject.transform.position = Vector3.Lerp(startingPos, pressurePlatePos, timeTaken/lockInTime);
             timeTaken += Time.deltaTime;
             yield return null;
         }

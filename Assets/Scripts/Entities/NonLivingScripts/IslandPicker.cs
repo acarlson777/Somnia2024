@@ -28,7 +28,7 @@ public class IslandPicker : NonLiving, Entity
             {
                 if (selectors[i].isOn)
                 {
-                    DialogueManager.PopDialogue(new string[] { "Toot Toot, we are going to -> "+ selectors[i].IslandName, "idk what sound trains make sowy :(" });
+                    DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo Train! We are going to -> "+ selectors[i].showName });
                     InstantiateLoadingScreen.Instance.LoadNewScene(selectors[i].IslandName);
                 }
             }

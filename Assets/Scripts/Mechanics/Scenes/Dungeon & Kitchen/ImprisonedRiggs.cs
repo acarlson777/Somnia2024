@@ -17,19 +17,19 @@ public class ImprisonedRiggs : InteractableObject, Entity
     {
         if (other is Player)
         {
-            if (count >= lines.Count)
-            {
-                count = lines.Count - 1;
-            }
-            
             if (count == 0)
             {
                 exitIsActive = true;
             }
 
             DialogueManager.PopDialogue(lines[count].lines);
-
             count++;
+            if (count > lines.Count)
+            {
+                count = lines.Count - 1;
+            }
+
+
         }
     }
 

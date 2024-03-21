@@ -1047,10 +1047,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lines:
   - lines:
-    - 'Pumpkid: Quick! Thee she is!'
-  - lines:
-    - 'Queen: Make haste courtier Bea!'
-    - 'Bea: She went to the dungeons! Go through that door.'
+    - Quick! Find the fish!
   audioLines:
   - audioLines:
     - {fileID: 0}
@@ -1061,6 +1058,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
   name: Pumpkid
+  disabled: 0
   prevLineNumber: 0
 --- !u!136 &37231984
 CapsuleCollider:
@@ -9581,8 +9579,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545529674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.82, y: -60.36, z: -24.08}
-  m_LocalScale: {x: 14, y: 1, z: 1}
+  m_LocalPosition: {x: -2.02, y: -60.36, z: -24.08}
+  m_LocalScale: {x: 28.94, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1997845343}
@@ -10774,28 +10772,16 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lines:
   - lines:
-    - What might you be?
-    - 'Bea: A human-- I think? My name is Bea.'
-    - 'Woebegone: Courtier Bea, are you the one who is destined to help me?'
-    - 'Bea: Maybe--?'
-    - Woebegone:I am troubled. A fish would like to usurp my throne. Do not laugh,
-      I jest not.
-    - 'Bea: A fish wants to take your throne?'
-    - "Woebegone: Queen Aegea believes  she is a better queen than I. She poses a
-      threat to the stability of my kingdom. I am young yet; my throne is uncertain.
-      She\u2019s plotting something. I know it. You must find her for me."
-    - 'Bea: I dont know where she is! Or what she looks like.'
-    - 'Woebegone: She looks like a fish. She''s somewhere in the palace. Please.
-      Help me.'
-    - 'Bea: Okay...'
-  - lines:
-    - Courtier Bea, I have been informed of your arrival.
-    - Are you the one who is destined to help me?
+    - Courtier Bea, are you the one who is destined to help me?
+    - I am troubled. A fish would like to usurp my throne. Do not laugh, I jest not.
+    - Queen Aegea believes  she is a better queen than I.
+    - 'She poses a threat to the stability of my kingdom. I am young yet; my throne
+      is uncertain. '
+    - "She\u2019s plotting something. I know it. You must find her for me."
+    - She looks like a fish. She's somewhere in the palace. Please. Help me.
   audioLines:
   - audioLines:
     - {fileID: 0}
-    - {fileID: 0}
-  - audioLines:
     - {fileID: 0}
   - audioLines:
     - {fileID: 0}
@@ -10803,6 +10789,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   characterPortrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
   name: Woebegone
+  disabled: 0
   prevLineNumber: 0
 --- !u!4 &633908187
 Transform:
@@ -18103,6 +18090,7 @@ GameObject:
   - component: {fileID: 1036523185}
   - component: {fileID: 1036523187}
   - component: {fileID: 1036523186}
+  - component: {fileID: 1036523188}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -18207,6 +18195,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1036523188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036523184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e470f8cb5a524d37a1902e7c7613167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1621640861}
+  minIntensity: 1
+  maxIntensity: 5
+  smoothing: 38
 --- !u!1 &1037672734
 GameObject:
   m_ObjectHideFlags: 0
@@ -30424,6 +30428,7 @@ GameObject:
   - component: {fileID: 1621640859}
   - component: {fileID: 1621640861}
   - component: {fileID: 1621640860}
+  - component: {fileID: 1621640862}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -30528,6 +30533,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1621640862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621640858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e470f8cb5a524d37a1902e7c7613167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1621640861}
+  minIntensity: 1
+  maxIntensity: 5
+  smoothing: 38
 --- !u!1 &1626303358
 GameObject:
   m_ObjectHideFlags: 0

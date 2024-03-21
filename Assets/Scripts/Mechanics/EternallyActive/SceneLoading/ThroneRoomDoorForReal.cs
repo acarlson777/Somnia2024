@@ -6,9 +6,12 @@ public class ThroneRoomDoorForReal : InteractableObject, Entity
     public string sceneName;
     bool locked = true;
 
-    private void Update()
+    new private void Update()
     {
-        if (Woebegone.talkedWith && PumpkidThroneRoom.talkedWith) locked = false;
+        if (Woebegone.talkedWith)
+        {
+            if (PumpkidThroneRoom.talkedWith) locked = false;
+        } 
     }
 
     new public void Interact(Entity other)

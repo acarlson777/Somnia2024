@@ -5,6 +5,7 @@ using UnityEngine;
 public class IslandSelectorUpDown : NonLiving, Entity
 {
     [SerializeField] public  string[] lockedDialogue;
+    public string showName;
     //PUT VARS HERE
     private Vector3 startPos;
     private Vector3 endPos;

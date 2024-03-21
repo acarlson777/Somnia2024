@@ -708,6 +708,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.03
       objectReference: {fileID: 0}
@@ -1287,14 +1291,15 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  audio: {fileID: 0}
   lines:
   - lines:
     - Hello (tap to cont.)
-    - WELCOME TU TUTORIAL
-    - Walks to Closet
+    - Welcome, this is the tutorial.
+    - Try walking to the closet.
   - lines:
-    - You interacted via the interact button (TM)
-    - '{Bea''s Room}'
+    - You interacted via the interact button.
+    - '{Bea''s Room} Congratulations.'
   imps: []
 --- !u!114 &574429701
 MonoBehaviour:
@@ -1313,13 +1318,14 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  audio: {fileID: 0}
   lines:
   - lines:
     - You have interacted with me!
   imps:
   - {fileID: 1264368399}
   onEnterLines:
-  - INTERACT ^InteractButton:true^WITH ME!!!
+  - Click on the ^InteractButton:true^hand button!
   entered: 0
 --- !u!1 &645086676
 GameObject:

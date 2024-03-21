@@ -128,6 +128,17 @@ public class Wolfgang : Living, Entity
         }
         return null;
     }
+    private string getSelectedShowName()
+    {
+        for (int i = 0; i < selectors.Length; i++)
+        {
+            if (selectors[i].isOn)
+            {
+                return selectors[i].showName;
+            }
+        }
+        return null;
+    }
 
     new public void Interact(Entity entity)
     {
@@ -143,23 +154,25 @@ public class Wolfgang : Living, Entity
             {
                 firstTime = false;
                 string island = getSelectedName();
+                string show = getSelectedShowName();
                 if (island == null)
                 {
                     CharacterDialogueManager.PopCharacterDialogue(firstTimeDialogue);
                 }
                 else
                 {
-                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Hello", "My name is Wolfgang (im a not a wolf in a gang)", "You seem to want to go to " + island, "please proceed onto the train!" });
+                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Hello", "My name is Wolfgang", "You seem to want to go to " + show, "please proceed onto the train!" });
 
                 }
             }
             else
             {
                 string island = getSelectedName();
+                string show = getSelectedShowName();
                 if (island == null)
-                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "You should probably interact with the emmas" });
+                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "You should probably interact with the boxes" });
                 else
-                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Destination: " + island, "Please board the train...", "OR ELSE!!!! >;)" });
+                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Destination: " + show, "Please board the train..." });
             }
 
             print("putting a dialogue" + timesInteracted);

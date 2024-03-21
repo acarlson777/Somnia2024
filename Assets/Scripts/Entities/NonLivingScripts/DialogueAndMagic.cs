@@ -136,7 +136,6 @@ public class DialogueAndMagic : GeneralInteractable, Entity
     {
 
         int index;
-        string sceneGoto;
         index = str.IndexOf('{');
         if (index != -1)
         {
