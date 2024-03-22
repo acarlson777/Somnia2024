@@ -14,6 +14,11 @@ public class WaitForRiggsToExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        exit.SetActive(imprisonedRiggs.exitIsActive);
+        if (imprisonedRiggs.exitIsActive)
+        {
+            exit.SetActive(true);
+            enabled = false;
+        }
+        
     }
 }

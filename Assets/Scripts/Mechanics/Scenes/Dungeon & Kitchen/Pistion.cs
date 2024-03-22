@@ -13,13 +13,12 @@ public class Pistion : MonoBehaviour
   public Vector3 endDistance = new Vector3(0.0f, 0.0f, 0.0f);
   private float timer = 0;
   private bool timerReached = false;
+    public PressurePlate correspondingPlate;
     // Start is called before the first frame update
     void Start()
     {
-
       startPos = transform.position;
       endPos = startPos + endDistance;
-
     }
 
     // Update is called once per frame
@@ -62,7 +61,9 @@ public class Pistion : MonoBehaviour
     public void activate(){
       //Wait for 5 seconds
       print("TURNED ON");
+      if (correspondingPlate != null && correspondingPlate.isOccupied) { return; }
       activated = true;
+
       // timerReached = false;
 
     }
