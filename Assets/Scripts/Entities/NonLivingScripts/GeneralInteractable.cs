@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GeneralInteractable : InteractableObject, Entity
 {
-    new public AudioClip audio;
+    public string soundsToPlay;
     public List<Voicelines> lines;
     protected int timesInteracted = 0;
     InstantiateLoadingScreen loadingScreen;
@@ -25,6 +25,9 @@ public class GeneralInteractable : InteractableObject, Entity
             print("putting a dialogue" + timesInteracted);
             DialogueManager.PopDialogue(lines[timesInteracted].lines);
             timesInteracted++;
+            //AudioManagerSingleton.PlayRandomOnce(this.gameObject);
+            //Find soundtrack using string name then play random once
+            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(soundsToPlay, this.gameObject);
 
         }
     }
