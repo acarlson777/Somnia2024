@@ -1802,6 +1802,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.75
       objectReference: {fileID: 0}
@@ -1845,13 +1849,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746893018, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: 8b58ccfc7167d4462bf5960c35cd3119, type: 3}
     - target: {fileID: 5631316416927084936, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416927084936, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416927084936, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_SortingLayerID
@@ -4305,7 +4313,7 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  audio: {fileID: 0}
+  soundsToPlay: 
   lines:
   - lines:
     - It's your closet. AHUISDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
