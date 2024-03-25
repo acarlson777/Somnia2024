@@ -23,6 +23,7 @@ public class Player : Living, Entity
     // Update is called once per frame
     new protected void Update()
     {
+        base.Update();
         if (!JoystickInput.atRest())
         {
             vel = JoystickInput.worldOrientedJoystickDirection * speed * Time.deltaTime;
