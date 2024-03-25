@@ -38,7 +38,7 @@ public class Living : EntityBase
             brain = new Brain(this);
         }
 #endif
-
+        gameobjectsTouching.RemoveAll((GameObject obj) => !obj.activeSelf);
         brain.SetSeen(gameobjectsTouching);
 
     }

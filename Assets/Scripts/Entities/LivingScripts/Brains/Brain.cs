@@ -34,7 +34,7 @@ public class Brain
         for (int i = 0; i < seenArr.Length; i++)
       
         {
-            if (seenArr[i] == null) continue;
+            if (seenArr[i] == null) continue; 
             float DEEE = DistToOwner(seenArr[i].transform);
             if (DEEE < dist_to_closest) {
                 closest = seenArr[i].transform;
