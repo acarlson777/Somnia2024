@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BeasBedScript : InteractableObject, Entity
 {
+    public GameObject[] itemsToSleep;
+    int itemCount;
     public static bool noHostileMobsAround = false;
     public bool inspectorBed = false;
     public string[] not_ready_dialogue;
@@ -11,19 +13,26 @@ public class BeasBedScript : InteractableObject, Entity
     new void Start()
     {
         base.Start();
-        //loadingScreen = FindObjectOfType<InstantiateLoadingScreen>();
+        itemCount = itemsToSleep.Length;
+ 
     }
 
     new void Update()   
     {
         base.Update();
-        inspectorBed = noHostileMobsAround;
+ 
     }
     new public void Interact(Entity other)
     {
+        int temp = 0;
+        foreach (GameObject item in itemsToSleep)
+        {
+            if (item.GetComponent<InteractToSleep>().interacted) temp++;
+        }
+        if (temp == itemCount) inspectorBed = true;
         if (other is Player)
         {
-            if (noHostileMobsAround)
+            if (noHostileMobsAround && inspectorBed)
             {
                 InstantiateLoadingScreen.Instance.LoadNewScene(sceneToLoad);
                 AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasRoom", 1);

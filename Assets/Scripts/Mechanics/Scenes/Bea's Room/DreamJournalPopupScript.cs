@@ -53,6 +53,7 @@ public class DreamJournalPopupScript : MonoBehaviour
         if (currPage == bookPages.Length - 1)
         {
             BeasBedScript.noHostileMobsAround = true;
+            
         }
 
         if (currPage == bookPages.Length) {
