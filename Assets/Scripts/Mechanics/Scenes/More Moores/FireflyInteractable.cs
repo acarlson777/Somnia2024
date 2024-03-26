@@ -4,10 +4,10 @@ using UnityEngine;
 
 
 
-public class FireFlyInteractable : InteractableObject, Entity{
+public class FireflyInteractable : InteractableObject, Entity{
 
   [SerializeField]
-  public bool isCollected = false;
+  MoreMooreManager manager;
 
     new protected void Start()
     {
@@ -18,6 +18,9 @@ public class FireFlyInteractable : InteractableObject, Entity{
 
         if (entity is Player)
         {
+
+          manager.collect();
+          gameObject.active = false;
 
         }
     }
