@@ -44,7 +44,6 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(StartClickThrough());
         audioSource = gameObject.AddComponent<AudioSource>();
 
     }
@@ -64,8 +63,12 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
         if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
         {
-            InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
-            sceneChanged = true;
+            if (sceneName != null)
+            {
+                InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
+                sceneChanged = true;
+            }
+            else return;
         }
     }
 
