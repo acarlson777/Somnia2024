@@ -18,7 +18,7 @@ public class ThroneRoomDoorForReal : InteractableObject, Entity
     {
         if (other is Player && !locked)
         {
-            InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
+            gameObject.GetComponent<SceneClickThrough>().StartClickThrough();
         }
         else DialogueManager.PopDialogue(new string[] { "I should talk to the others first." });
     }

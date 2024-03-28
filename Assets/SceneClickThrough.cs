@@ -13,7 +13,7 @@ public class SceneClickThrough : MonoBehaviour
 
     // Sore in an object to acceess throu Unitu Inspector -> convert to string[]
     [SerializeField]
-    private List<TableRow> table = new List<TableRow>();
+    private List<CharTableRow> table = new List<CharTableRow>();
 
     Image portrait;
     //public TextMeshProUGUI nameText;
@@ -26,11 +26,11 @@ public class SceneClickThrough : MonoBehaviour
 
 
     // Method to convert the list property to an array
-    public T[] ConvertListToArray<T>(Func<TableRow, T> getProperty)
+    public T[] ConvertListToArray<T>(Func<CharTableRow, T> getProperty)
     {
         List<T> result = new List<T>();
 
-        foreach (TableRow row in table)
+        foreach (CharTableRow row in table)
         {
             result.Add(getProperty(row));
         }
@@ -44,7 +44,7 @@ public class SceneClickThrough : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(StartClickThrough());
+        //StartCoroutine(StartClickThrough());
         audioSource = gameObject.AddComponent<AudioSource>();
 
     }
@@ -52,9 +52,9 @@ public class SceneClickThrough : MonoBehaviour
     private void Update()
     {
 
-        Sprite[] portraits = ConvertListToArray(row => row.portrait);
-        string[] names = ConvertListToArray(row => row.name);
-        voiceAudio = ConvertListToArray(row => row.voiceLine);
+        Sprite[] portraits = ConvertListToArray(row => row.charPortrait);
+        string[] names = ConvertListToArray(row => row.charName);
+        voiceAudio = ConvertListToArray(row => row.charVoiceLine);
         if (portraits[lineNumber] == null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 0);
         if (portrait != null && portraits[lineNumber] != null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 1);
         if (portrait != null)
@@ -69,11 +69,9 @@ public class SceneClickThrough : MonoBehaviour
         }
     }
 
-    IEnumerator StartClickThrough()
+    public void StartClickThrough()
     {
-        string[] Text = ConvertListToArray(row => row.text);
-        yield return new WaitForSeconds(1f);
-
+        string[] Text = ConvertListToArray(row => row.charText);
         startedDialogue = true;
         audioSource.clip = voiceAudio[0];
         audioSource.Play();
@@ -92,8 +90,8 @@ public class SceneClickThrough : MonoBehaviour
 public class CharTableRow
 {
 
-    public Sprite portrait;
-    public string name;
-    public string text;
-    public AudioClip voiceLine;
+    public Sprite charPortrait;
+    public string charName;
+    public string charText;
+    public AudioClip charVoiceLine;
 }

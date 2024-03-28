@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClickthroughStarter : MonoBehaviour
 {
+    SceneClickThrough sceneClickThrough;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +16,10 @@ public class ClickthroughStarter : MonoBehaviour
     {
         
     }
+
+    public void StartSceneClickThrough()
+    {
+        sceneClickThrough.StartClickThrough();
+    }
+
 }
