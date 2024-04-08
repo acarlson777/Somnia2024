@@ -6406,6 +6406,7 @@ GameObject:
   - component: {fileID: 478214254}
   - component: {fileID: 478214253}
   - component: {fileID: 478214257}
+  - component: {fileID: 478214258}
   m_Layer: 0
   m_Name: ExitScene
   m_TagString: entity
@@ -6526,6 +6527,26 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  sceneName: CT4 (Pumpkids are saved, back to Throne Room)
+--- !u!114 &478214258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478214251}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f9ab060cc6145b29b6e6629f485dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table:
+  - charPortrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    charName: Pumpkid
+    charText: Thanks for saving us Bea!!! We will lead you back to the throne room.
+    charVoiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
   sceneName: CT4 (Pumpkids are saved, back to Throne Room)
 --- !u!1 &482235417
 GameObject:

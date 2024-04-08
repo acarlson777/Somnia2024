@@ -9,7 +9,9 @@ public class Door : InteractableObject, Entity
     {
         if (other is Player)
         {
+            if (gameObject.GetComponent<SceneClickThrough>() == null)
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
+            else { gameObject.GetComponent<SceneClickThrough>().StartClickThrough(); }
         }
     }
 }
