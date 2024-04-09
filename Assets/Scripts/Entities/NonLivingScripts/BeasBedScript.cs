@@ -34,7 +34,8 @@ public class BeasBedScript : InteractableObject, Entity
         {
             if (noHostileMobsAround && inspectorBed)
             {
-                InstantiateLoadingScreen.Instance.LoadNewScene(sceneToLoad);
+                gameObject.GetComponent<SceneClickThrough>().StartClickThrough();
+                //InstantiateLoadingScreen.Instance.LoadNewScene(sceneToLoad);
                 AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasRoom", 1);
             } else
             {
