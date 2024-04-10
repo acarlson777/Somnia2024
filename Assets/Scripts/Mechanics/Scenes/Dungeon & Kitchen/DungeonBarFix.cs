@@ -15,4 +15,13 @@ public class DungeonBarFix : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = -2;
+        Debug.Log("sorting");
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        other.gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = 0;
+    }
 }
