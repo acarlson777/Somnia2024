@@ -5,12 +5,21 @@ using UnityEngine;
 public class Player : Living, Entity
 {
     private FocusArrowScript arrowScript;
+    public enum SoundState
+    {
+        WALKING,
+        STOPPED,
+        STARTING,
+        STOPPING,
+    }
+    public SoundState currentState;
 
     void Awake()
     {
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
         entityMaxSpeed = 4.2f;
         K_friction = 20f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
+
     }
     new void Start()
     {
@@ -19,7 +28,28 @@ public class Player : Living, Entity
         base.Start();
         
     }
+    /*
+    private IEnumerator Walking()
+    {
+        switch (currentState) {
+            case SoundState.WALKING: 
+                if (rb.velocity.x == 0 && rb.velocity.y == 0)
+                {
+                    currentState = SoundState.STOPPING;
+                }
+                break;
+            case SoundState.STOPPED:
+                if (rb.velocity.x != 0 || rb.velocity.y != 0)
+                {
+                    currentState = SoundState.STARTING;
+                }
+                break;
+            case SoundState.STARTING:
 
+        }
+        yield return new WaitForSeconds(1);
+    }
+    */
     // Update is called once per frame
     new protected void Update()
     {
