@@ -46,6 +46,7 @@ public class CharacterDialogue : InteractableObject, Entity
             CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
             audioSource.clip = audioLines[timesInteracted].audioLines[0];
             audioSource.Play();
+            
             character = FindObjectOfType<CharacterDialogueScript>();
             if (!disabled) timesInteracted++;
 
