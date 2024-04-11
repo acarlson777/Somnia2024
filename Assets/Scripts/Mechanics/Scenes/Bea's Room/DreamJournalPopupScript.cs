@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DreamJournalPopupScript : MonoBehaviour
 {
-
+    public AudioClip StartSound;
+    public AudioClip PageFlipSound;
     public GameObject[] bookPages;
     private int currPage; // NOT TECHNICALY A PAGE
     GameObject joystick;
     GameObject interact_button;
     GameObject settings_button;
     public bool debug = false;
+    public AudioSource audioSource;
+
     
     // Start is called before the first frame update
     private void Awake()
@@ -21,16 +24,21 @@ public class DreamJournalPopupScript : MonoBehaviour
         joystick?.SetActive(false);
         interact_button?.SetActive(false);
         settings_button?.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
+
 
     }
     void Start()
     {
         print("Created the Dream Journal PopUp");
         RecalculatePages();
-
+        audioSource.clip = StartSound;
+        audioSource.Play();
     }
     private void RecalculatePages()
     {
+        audioSource.clip = PageFlipSound;
+        audioSource.Play();
         for (int i = 0; i < bookPages.Length;i++)
         {
             
