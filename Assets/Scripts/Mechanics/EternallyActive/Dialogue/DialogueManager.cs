@@ -16,10 +16,13 @@ public class DialogueManager : MonoBehaviour
             print("Dialogue box not found!!!!");
         }
         canvas = DisplaySurface;
+        print(canvas);
         print("Dialogue Manager is Being Set up");
     }
 
-
+    void Update() {
+      print(canvas);
+    }
 
     /// <summary>
     ///   <para>Pops up a dialogue in the game, cannot pop if already active</para>
@@ -39,9 +42,13 @@ public class DialogueManager : MonoBehaviour
 #if UNITY_EDITOR
 
         if (dialogueBoxPrefab == null) {
-            dialogueBoxPrefab = Resources.Load("DialogueBox") as GameObject; 
+            dialogueBoxPrefab = Resources.Load("DialogueBox") as GameObject;
         }
+        
+        print("FIRST");
+        print(canvas);
         if (canvas == null) {
+          print(canvas);
             print("Cannot Display Dialogue in reloaded Scene, please manually stop and restart it.");
             print("However, this and the prior line are from PopDialogue which DID end up being called.");
             return false;
