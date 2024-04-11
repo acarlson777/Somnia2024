@@ -1404,6 +1404,7 @@ GameObject:
   - component: {fileID: 433303083}
   - component: {fileID: 433303088}
   - component: {fileID: 433303089}
+  - component: {fileID: 433303090}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -1528,6 +1529,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &433303090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433303082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f9ab060cc6145b29b6e6629f485dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table:
+  - charPortrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    charName: Bea
+    charText: im going to sleeeeep yayy
+    charVoiceLine: {fileID: 0}
+  - charPortrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    charName: Bea
+    charText: honestly i dont know what the point of this clickthrough is maybe scrap?
+    charVoiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: CT8 - Second Time Falling Asleep
 --- !u!4 &448678185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7631110863345032697, guid: 7e4f0796e4c384903a57bd0e29c09eca, type: 3}
@@ -5234,6 +5259,59 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 17.673815, y: 29.40531, z: 19.721607}
   m_Center: {x: 3.0430834, y: -5.6418333, z: 9.760801}
+--- !u!1 &1803316721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803316723}
+  - component: {fileID: 1803316722}
+  m_Layer: 0
+  m_Name: characterdialogueclckthrough
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1803316722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803316721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da2616dd4db3749a20fbac47e95c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamJournalPopup: 1
+  table:
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: Darn! I'm really confused right now. I should open my dream journal!!
+    voiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: 
+--- !u!4 &1803316723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803316721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.876276, y: 4.9999995, z: -10.876276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1829955447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8481682944248218963, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}

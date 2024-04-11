@@ -10,6 +10,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 {
     bool sceneChanged = false;
     bool startedDialogue = false;
+    public bool dreamJournalPopup;
 
     // Sore in an object to acceess throu Unitu Inspector -> convert to string[]
     [SerializeField]
@@ -64,11 +65,13 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
         if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
         {
+            if (dreamJournalPopup) PopupManager.CreatePopUp("EmptyDreamJournalPopup");
             if (sceneName != "")
             {
                 InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
                 sceneChanged = true;
             }
+
             else
             {
                 gameObject.SetActive(false);
