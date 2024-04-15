@@ -20,9 +20,21 @@ public class DialogueManager : MonoBehaviour
         print("Dialogue Manager is Being Set up");
     }
 
-    void Update() {
-      print(canvas);
+    private static bool isEmptyDialogue(string[] dialogue)
+    {
+        foreach (string t in dialogue)
+        {
+            if (t!=null)
+            {
+                if (!t.Equals(""))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
+
 
     /// <summary>
     ///   <para>Pops up a dialogue in the game, cannot pop if already active</para>
@@ -30,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public static bool PopDialogue(string[] textLines)
     {
-        if (textLines == null || textLines.Length == 0) return false;
+        if (textLines == null || textLines.Length == 0 || isEmptyDialogue(textLines)) return false;
         // Step 1: Check if a Dialogue is currently active
         // Implementation 1: Check if a gameobject with the name of "DialogueBox" exists
         GameObject dialogueBox = GameObject.Find("DialogueBox");
@@ -40,13 +52,12 @@ public class DialogueManager : MonoBehaviour
         }
         // Step 2: Make a new DialogueBox with the textLines as before
 #if UNITY_EDITOR
-
+    
         if (dialogueBoxPrefab == null) {
             dialogueBoxPrefab = Resources.Load("DialogueBox") as GameObject;
         }
         
-        print("FIRST");
-        print(canvas);
+
         if (canvas == null) {
           print(canvas);
             print("Cannot Display Dialogue in reloaded Scene, please manually stop and restart it.");
