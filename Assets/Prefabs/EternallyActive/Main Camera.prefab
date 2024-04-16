@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6033601508985598106}
   - component: {fileID: 6033601508985598084}
   - component: {fileID: 3726680808527053590}
-  - component: {fileID: 8139114137591202372}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -93,8 +92,7 @@ MonoBehaviour:
   convergeConstant: 4.5
   offset: {x: -20, y: 18, z: -20}
   objectToFollow: {fileID: 0}
-  yDistanceThreshold: 0
-  pauseYChangeTime: 0
+  timeToCombine: 0
 --- !u!114 &3726680808527053590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,11 +126,3 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &8139114137591202372
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033601508985598104}
-  m_Enabled: 1

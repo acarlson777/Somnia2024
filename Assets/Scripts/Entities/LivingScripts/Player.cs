@@ -20,7 +20,7 @@ public class Player : Living, Entity
     {
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
         entityMaxSpeed = 4.2f;
-        K_friction = 20f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
+        K_friction = 0.6f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = WalkingSound;
         audioSource.loop = true;
@@ -69,14 +69,13 @@ public class Player : Living, Entity
     }
     
     // Update is called once per frame
-    new protected void Update()
+    protected void FixedUpdate()
     {
-        base.Update();
         if (!JoystickInput.atRest())
         {
-            vel = JoystickInput.worldOrientedJoystickDirection * speed * Time.deltaTime;
+            vel = JoystickInput.worldOrientedJoystickDirection * speed;
         }
-        if (vel.sqrMagnitude > entityMaxSpeed*entityMaxSpeed) // Can be optimized
+        if (vel.sqrMagnitude > entityMaxSpeed*entityMaxSpeed) 
         {
             vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
         }
@@ -84,19 +83,19 @@ public class Player : Living, Entity
         vel.y = 0;
         // Apply Horizontal Friction
         
-        if (vel.magnitude < K_friction * Time.deltaTime)
+        if (vel.magnitude < K_friction)
         {
             vel.x = 0;
             vel.z = 0;
         }
         else
         {
-            Vector3 friction = vel.normalized * -K_friction * Time.deltaTime;
-            vel += friction;
+            vel += vel.normalized * -K_friction;
         }
         
         vel.y = rb.velocity.y;
         rb.velocity = vel;
+
 #if UNITY_EDITOR
         if( brain == null)
         {
