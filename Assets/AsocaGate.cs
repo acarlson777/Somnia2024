@@ -19,6 +19,7 @@ public class AsocaGate : MonoBehaviour
   {
       if (character.timesInteracted >= character.lines.Count)
       {
+          if (GameObject.Find("CharacterDialogueBox") == null)
           gateObject.SetActive(false);
       }
   }
