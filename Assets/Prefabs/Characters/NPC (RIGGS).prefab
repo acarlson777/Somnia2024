@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 249780237322979881}
   - component: {fileID: 249780237322979880}
   - component: {fileID: 1381094356444603669}
-  - component: {fileID: 249780237322979887}
   - component: {fileID: 249780237322979872}
+  - component: {fileID: -667446111323921937}
   m_Layer: 0
   m_Name: NPC (RIGGS)
   m_TagString: entity
@@ -140,26 +140,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249780237322979886}
   m_Enabled: 1
---- !u!114 &249780237322979887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249780237322979886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd706340c526e2a45bac94f703ba15d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityCollider: {fileID: 249780237322979882}
-  interactCollider: {fileID: 249780237322979881}
-  BoxColliderThickness: 0
-  entityMaxSpeed: 2.1
-  lines:
-  - lines:
-    - yo
-    - its me riggs
 --- !u!136 &249780237322979872
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -174,6 +154,35 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-667446111323921937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249780237322979886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines:
+  - lines:
+    - BOBER
+  audioLines:
+  - audioLines:
+    - {fileID: 0}
+  timesInteracted: 0
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 21300000, guid: 07319d3edbc2f4f768006c2c80cfa9f3, type: 3}
+  name: 
+  disabled: 0
+  prevLineNumber: 0
 --- !u!1 &249780237553440005
 GameObject:
   m_ObjectHideFlags: 0
