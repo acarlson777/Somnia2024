@@ -57,7 +57,7 @@ public class CharacterDialogue : InteractableObject, Entity
             nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
             nameText.text = name;
             portrait.sprite = characterPortrait;
-            portraitSet = true;
+            //portraitSet = true;
             interactedWith = false;
         }
     }
@@ -72,8 +72,7 @@ public class CharacterDialogue : InteractableObject, Entity
                 audioSource.Play();
                 prevLineNumber = character.lineNumber;
             }
-        }
-        if (character == null)
+        } else 
         {
            audioSource.Stop();
         }
