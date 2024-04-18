@@ -832,12 +832,9 @@ MonoBehaviour:
   soundsToPlay: 
   lines:
   - lines:
-    - this is a diallogue
-    - now click again to go to S9 - Sphinx Cave Riddle Minigame
-  - lines:
-    - dasd
-    - sdasd
-  SceneToSwitchTo: CT11 (Entrance To Sphinx
+    - It's a door...
+    - I wonder where it leads
+  SceneToSwitchTo: CT11 (Entrance To Sphinx)
 --- !u!65 &41646333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2172,7 +2169,7 @@ GameObject:
   - component: {fileID: 103194333}
   - component: {fileID: 103194336}
   - component: {fileID: 103194335}
-  - component: {fileID: 103194334}
+  - component: {fileID: 103194337}
   m_Layer: 0
   m_Name: BLUEDGEDGE PLEASE
   m_TagString: Untagged
@@ -2195,20 +2192,6 @@ Transform:
   m_Father: {fileID: 568059262}
   m_RootOrder: 100
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &103194334
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103194332}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &103194335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2259,6 +2242,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103194332}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &103194337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103194332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.48666, y: 2, z: 1.0728111}
+  m_Center: {x: -3.2264214, y: -0.000000091699455, z: -0.21359456}
 --- !u!1 &103827585
 GameObject:
   m_ObjectHideFlags: 0
@@ -50528,6 +50524,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3683cea648d14c269da9eff8e31eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1983807135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5631316416746892960, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+  m_PrefabInstance: {fileID: 1222791328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983807130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437fc26d424524cf1ae01a74c3d6a4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1983892313
 GameObject:
   m_ObjectHideFlags: 0
@@ -56351,7 +56358,7 @@ PrefabInstance:
     - target: {fileID: 3036296369137253081, guid: 81f27975481534dd28b26b9c52012a37, type: 3}
       propertyPath: entity
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1983807135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f27975481534dd28b26b9c52012a37, type: 3}
 --- !u!1001 &6033601508421609716

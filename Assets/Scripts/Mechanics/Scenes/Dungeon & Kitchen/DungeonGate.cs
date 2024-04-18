@@ -5,6 +5,7 @@ using UnityEngine;
 public class DungeonGate : MonoBehaviour
 {
     public GameObject Bars;
+    public Door door;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class DungeonGate : MonoBehaviour
     public void OpenGate()
     {
 
-        gameObject.GetComponent<Door>().enabled = true;
+        door.enabled = true;
         Bars.SetActive(false);
     }
 
@@ -22,7 +23,7 @@ public class DungeonGate : MonoBehaviour
     {
 
         Bars.SetActive(true);
-        gameObject.GetComponent<Door>().enabled = false;
+        door.enabled = false;
     }
 
   
