@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ThroneRoomDoorForReal : InteractableObject, Entity
 {
+    public string[] lockedDialogue;
     public string sceneName;
     bool locked = true;
 
@@ -20,6 +21,6 @@ public class ThroneRoomDoorForReal : InteractableObject, Entity
         {
             gameObject.GetComponent<SceneClickThrough>().StartClickThrough();
         }
-        else DialogueManager.PopDialogue(new string[] { "I should talk to the others first." });
+        else DialogueManager.PopDialogue(lockedDialogue);
     }
 }
