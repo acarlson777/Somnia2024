@@ -5898,6 +5898,7 @@ GameObject:
   - component: {fileID: 478214253}
   - component: {fileID: 478214257}
   - component: {fileID: 478214258}
+  - component: {fileID: 478214259}
   m_Layer: 0
   m_Name: ExitScene
   m_TagString: entity
@@ -6035,6 +6036,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bars: {fileID: 186553180}
+  door: {fileID: 478214257}
+--- !u!114 &478214259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478214251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f9ab060cc6145b29b6e6629f485dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table:
+  - charPortrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    charName: Pumpkid
+    charText: Thank you Bea!! We will lead you back to the throne room now.
+    charVoiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: S3 (Exiting Throne Room)
 --- !u!1 &482235417
 GameObject:
   m_ObjectHideFlags: 0
@@ -16965,6 +16987,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571277169}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1581199304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581199306}
+  - component: {fileID: 1581199305}
+  m_Layer: 0
+  m_Name: characterdialogueclckthrough
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1581199305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581199304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da2616dd4db3749a20fbac47e95c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamJournalPopup: 0
+  table:
+  - portrait: {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
+    name: Fish Queen
+    text: Gosh diggity darn dagnabbit!
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
+    name: Fish Queen
+    text: How dare you escape the dungeon! That's it. You're trapped here now. Good
+      luck getting out!
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: I'm about to eat
+    voiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: 
+--- !u!4 &1581199306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581199304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.876276, y: 4.9999995, z: -10.876276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1600373772
 GameObject:
   m_ObjectHideFlags: 0
