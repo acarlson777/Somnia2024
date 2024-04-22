@@ -53424,6 +53424,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055870599}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2057816497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057816499}
+  - component: {fileID: 2057816498}
+  m_Layer: 0
+  m_Name: characterdialogueclckthrough
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2057816498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057816497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da2616dd4db3749a20fbac47e95c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamJournalPopup: 0
+  table:
+  - portrait: {fileID: 21300000, guid: 877fcc0634cf04aab81fc0ab0b253bf2, type: 3}
+    name: Gumdrop Girl
+    text: I think I left it around here somewhere!
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 136a7139b8a544afea0d600a0fa835aa, type: 3}
+    name: Sugar
+    text: Well hello there sweets! I'm Sugar can I help you all with something?
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    name: Riggs
+    text: We're looking for a childhood toy, it's a doll of great importance.
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 136a7139b8a544afea0d600a0fa835aa, type: 3}
+    name: Sugar
+    text: Ooh well I think I know exactly what you all are talking about!
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 136a7139b8a544afea0d600a0fa835aa, type: 3}
+    name: Sugar
+    text: Please, come with me!
+    voiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: 
+--- !u!4 &2057816499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057816497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.876276, y: 4.9999995, z: -10.876276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2057992929
 GameObject:
   m_ObjectHideFlags: 0

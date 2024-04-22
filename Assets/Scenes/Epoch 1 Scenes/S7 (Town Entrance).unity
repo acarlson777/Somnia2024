@@ -3959,6 +3959,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &174341343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174341345}
+  - component: {fileID: 174341344}
+  m_Layer: 0
+  m_Name: characterdialogueclckthrough
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &174341344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174341343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da2616dd4db3749a20fbac47e95c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamJournalPopup: 0
+  table:
+  - portrait: {fileID: 21300000, guid: b685daf488dcf4df296fb715d5a310cf, type: 3}
+    name: Wolfgang
+    text: Welcome to Candyland Bea, home of little annoying brats like yourself.
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: Why thanks wolfygangilicious i will go explore now!
+    voiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: 
+--- !u!4 &174341345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174341343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.876276, y: 4.9999995, z: -10.876276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174929416
 GameObject:
   m_ObjectHideFlags: 0
@@ -22933,7 +22990,12 @@ MonoBehaviour:
   - audioLines:
     - {fileID: 0}
     - {fileID: 0}
-  - audioLines:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
   timesInteracted: 0
   portrait: {fileID: 0}
@@ -29743,7 +29805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5a7ab842e254e3e8d0a1f78abf2564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: CT10 - At the Town Center meeting Salt
+  sceneName: S8 (Town Center Key 1)
 --- !u!65 &1472819724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40141,7 +40203,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237553440001, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440001, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d90eb899c92314ad9922bc2f65ea232c, type: 2}
+    - target: {fileID: 249780237553440006, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.215
       objectReference: {fileID: 0}
     - target: {fileID: 249780237553440007, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: m_Sprite
@@ -40153,6 +40235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 249780237322979887, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+    - {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
 --- !u!1 &1989238638
 GameObject:
