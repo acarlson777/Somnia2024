@@ -11,7 +11,7 @@ public class ItemCollector : MonoBehaviour
         collectedItems.Add(itemName);
     }
 
-    public HashSet<string> GetCollectedItems() { 
+    public HashSet<string> GetCollectedItems() {
         return collectedItems;
     }
 
@@ -22,6 +22,6 @@ public class ItemCollector : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(Sphinx.count);
+        // Debug.Log(Sphinx.timesInteracted);
     }
 }
