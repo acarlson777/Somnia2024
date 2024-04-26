@@ -28,7 +28,8 @@ public class InteractToSleep : InteractableObject, Entity
             interacted = true;
             //AudioManagerSingleton.PlayRandomOnce(this.gameObject);
             //Find soundtrack using string name then play random once
-            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(soundsToPlay, this.gameObject);
+            if (soundsToPlay != null && soundsToPlay.Length != 0) 
+                AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(soundsToPlay, this.gameObject);
 
         }
     }
