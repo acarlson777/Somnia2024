@@ -25,6 +25,10 @@ public class DreamJournalPopupScript : MonoBehaviour
         interact_button?.SetActive(false);
         settings_button?.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
 
 
     }
