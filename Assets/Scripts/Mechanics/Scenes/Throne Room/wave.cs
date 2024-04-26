@@ -40,7 +40,7 @@ public class wave : MonoBehaviour
     }
 
     public Axes axis;
-    [Range(-2*Mathf.PI, 2*Mathf.PI)]
+    [Range(-180, 180)]
     public float range;
 
     [Range(0,2)]
