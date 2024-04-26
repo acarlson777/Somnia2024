@@ -1,62 +1,127 @@
-﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Sphinx : InteractableObject, Entity
 {
+    public List<Voicelines> lines;
+    public List<AudioLines> audioLines;
+    public static int timesInteracted = 0;
+    public string itemName;
     public List<string> itemsToCollectList;
     private HashSet<string> itemsToCollect;
-    public static int count = 0; //Remember to reset Sphinx.count upon entering the orig town center (not the riddle minigame towncenter)
-    public List<DialogueLines> lines;
 
-    new private void Start()
+    [HideInInspector] public Image portrait;
+    [SerializeField] Sprite characterPortrait;
+    [SerializeField] new public string name;
+    [HideInInspector] TextMeshProUGUI nameText;
+    bool portraitSet = false;
+    bool interactedWith = false;
+    public bool disabled = false;
+
+    private AudioSource audioSource;
+    CharacterDialogueScript character;
+    public int prevLineNumber;
+
+    new protected void Start()
     {
         base.Start();
+        audioSource = gameObject.AddComponent<AudioSource>();
         itemsToCollect = new HashSet<string>(itemsToCollectList);
     }
 
-    new public void Interact(Entity other)
+    new public void Interact(Entity entity)
     {
-        if (other is Player)
+        if (disabled) {
+            CharacterDialogueManager.PopCharacterDialogue(new string[] { "..." });
+            timesInteracted = 0;
+        }
+        if (entity is Player)
         {
-            if (count >= lines.Count)
+            portraitSet = false;
+            interactedWith = true;
+            if (timesInteracted >= lines.Count)
             {
-                count = lines.Count - 1;
+                timesInteracted = lines.Count - 1;
             }
-            
-            
-            if (count == 0)
+            print("putting a dialogue" + timesInteracted);
+
+            // Logic here
+
+            if (timesInteracted == 0)
             {
-                ItemCollector itemCollector = other.gameObject.GetComponent<ItemCollector>();
+                ItemCollector itemCollector = entity.gameObject.GetComponent<ItemCollector>();
                 itemCollector.EmptyCollectedItems();
             }
 
-            if (count == 2)
-            {
+            if (timesInteracted == 2){
                 Debug.Log("yoooooooo");
-                ItemCollector itemCollector = other.gameObject.GetComponent<ItemCollector>();
+                ItemCollector itemCollector = entity.gameObject.GetComponent<ItemCollector>();
                 if (itemCollector.GetCollectedItems().SetEquals(itemsToCollect)) //Sort both lists prior to checking equality
                 {
                     //sphinxDoor.OpenDoor();
-                    DialogueManager.PopDialogue(new string[] {"success"});
+                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Gratulacje! Sukcess!!" });
+
+
                     InstantiateLoadingScreen.Instance.LoadNewScene("Main Menu");
                     PlayerPrefs.SetString("Last Scene", "Bea's Room");
                 } else
                 {
-                    DialogueManager.PopDialogue(new string[] { "failure" });
+                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Niepowodzenie!" });
                 }
             } else
             {
-                DialogueManager.PopDialogue(lines[count].lines);
+                CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
             }
 
-            count++;
+
+
+
+            // audioSource.clip = audioLines[timesInteracted].audioLines[0];
+            // audioSource.Play();
+
+            character = FindObjectOfType<CharacterDialogueScript>();
+            if (!disabled) timesInteracted++;
+
+        }
+        if (GameObject.Find("CharacterDialogueBox") != null && !portraitSet && interactedWith)
+        {
+            portrait = GameObject.Find("Portraits").GetComponent<Image>();
+            nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
+            nameText.text = name;
+            portrait.sprite = characterPortrait;
+            portraitSet = true;
+            interactedWith = false;
+        }
+    }
+
+    new private void Update()
+    {
+        if (character != null)
+        {
+            if (prevLineNumber != character.lineNumber)
+            {
+                audioSource.clip = audioLines[timesInteracted-1].audioLines[character.lineNumber];
+                audioSource.Play();
+                prevLineNumber = character.lineNumber;
+            }
+        }
+        if (character == null)
+        {
+           audioSource.Stop();
         }
     }
 
     [System.Serializable]
-    public class DialogueLines
+    public class Voicelines
     {
         public string[] lines;
+    }
+    [System.Serializable]
+    public class AudioLines
+    {
+        public AudioClip[] audioLines;
     }
 }
