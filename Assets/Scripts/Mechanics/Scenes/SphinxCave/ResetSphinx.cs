@@ -5,6 +5,6 @@ public class ResetSphinx : MonoBehaviour
 {
     void Start()
     {
-        Sphinx.count = 0;
+        Sphinx.timesInteracted = 0;
     }
 }
