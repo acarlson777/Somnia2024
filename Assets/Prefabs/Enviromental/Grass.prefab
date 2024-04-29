@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 3
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 6713222991602674090}
   - component: {fileID: 6713222991602674100}
   - component: {fileID: 4559255916741303367}
+  - component: {fileID: 80405922}
+  - component: {fileID: 80405926}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -127,7 +129,7 @@ BoxCollider:
   m_GameObject: {fileID: 6713222991602674103}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
@@ -138,10 +140,48 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6713222991602674103}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa430d4c421ff44959194177f1523742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationMin: -83
-  rotationMax: 132
+  rotationMinX: 0
+  rotationMaxX: 0
+  rotationMinY: 0
+  rotationMaxY: 0
+  rotationMinZ: 0
+  rotationMaxZ: 45
+  timeToTake: 2
+  timeTaken: 0
+--- !u!114 &80405922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713222991602674103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854ac704d1f94453492d74cdafb3cd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axis: 0
+  range: 60
+  speed: 0.583
+  randomStart: 1
+--- !u!114 &80405926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713222991602674103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854ac704d1f94453492d74cdafb3cd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axis: 2
+  range: 15
+  speed: 0.58
+  randomStart: 0
