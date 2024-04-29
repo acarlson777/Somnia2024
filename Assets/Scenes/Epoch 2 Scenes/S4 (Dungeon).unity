@@ -1332,6 +1332,10 @@ PrefabInstance:
       propertyPath: speed
       value: 4000
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746892960, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: WalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 66e191ee8434b44c9a96e80e1b0dd5f8, type: 3}
     - target: {fileID: 5631316416746892961, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_Name
       value: Bea
@@ -1385,6 +1389,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416927084936, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631316416927084936, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
@@ -1400,6 +1408,10 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316416927084936, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 869fdf2b828cf4b11a42449e9f85c95f, type: 2}
     - target: {fileID: 5631316416927084938, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2467,6 +2479,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2699997, y: 3.0999997, z: 0.05}
   m_Center: {x: -0.0000038146973, y: -0.0000038146973, z: -0.06}
+--- !u!1 &526073075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1704230798587853533, guid: 985280f9646044674bfd73c2e007542f, type: 3}
+  m_PrefabInstance: {fileID: 1803692593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534681404
 GameObject:
   m_ObjectHideFlags: 0
@@ -9812,6 +9829,14 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1724743053411293604, guid: b85573089766140a0837b5c07654b9a1, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724743053411293605, guid: b85573089766140a0837b5c07654b9a1, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1724743053411293607, guid: b85573089766140a0837b5c07654b9a1, type: 3}
       propertyPath: maxIntensity
       value: 7
@@ -11270,6 +11295,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1704230798587853530, guid: 985280f9646044674bfd73c2e007542f, type: 3}
   m_PrefabInstance: {fileID: 1803692593}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2066541406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526073075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e64843efaff4a4f923d82cc636c293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2067230831
 GameObject:
   m_ObjectHideFlags: 0
@@ -11623,6 +11660,38 @@ PrefabInstance:
     - target: {fileID: 5897565990292524476, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 331.90002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0]._name
+      value: drippycausewewanna
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cf16a44c1c02c4499b33a1560d631c5e, type: 3}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3]._name
+      value: drip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
+      value: drippycausewewanna
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
