@@ -14,11 +14,11 @@ public class BeasRoomMusic : MonoBehaviour
         yield return new WaitForSeconds(1);
         AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("BeasRoom", 1f, gameObject);
         // plays scratch every 14-30 seconds
-        while (true)
+        while (true)    
         {
             yield return new WaitForSeconds(Random.Range(14, 30));
             AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("scratch", gameObject);
 
         }
-    }
+    }   
 }
