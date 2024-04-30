@@ -7,6 +7,7 @@ public class DungeonMusic : MonoBehaviour
     void Start()
     {
         StartCoroutine(DelayedMusicPlay());
+        AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("wind", 2, gameObject);
     }
 
     IEnumerator DelayedMusicPlay()
@@ -15,9 +16,11 @@ public class DungeonMusic : MonoBehaviour
         // plays drip every 4-5 seconds
         while (true)
         {
+            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("scraping", gameObject);
             yield return new WaitForSeconds(Random.Range(4, 5));
             AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("drip", gameObject);
-            print("ttestey78rysei8yghszef");
+            yield return new WaitForSeconds(Random.Range(4, 5));
         }
     }
+
 }
