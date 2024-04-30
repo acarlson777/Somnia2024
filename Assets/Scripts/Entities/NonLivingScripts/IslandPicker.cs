@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class IslandPicker : NonLiving, Entity
 {
-    public IslandSelectorUpDown[] selectors;
+    public IslandSelectorBackForth[] selectors;
     void Awake()
     {
         GameObject[] others = GameObject.FindGameObjectsWithTag("TrainSelector");
-        selectors = new IslandSelectorUpDown[others.Length];
+        selectors = new IslandSelectorBackForth[others.Length];
         for (int i = 0; i < others.Length; i++) 
         {
-            selectors[i] = others[i].GetComponent<IslandSelectorUpDown>();
+            selectors[i] = others[i].GetComponent<IslandSelectorBackForth>();
         }
     }
 
