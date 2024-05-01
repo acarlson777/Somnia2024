@@ -99,16 +99,13 @@ public abstract class SoundInstance : SoundInteraction
     //Instead, check if the caller gameobject has the audioSource Attached to it already | if gameObject already has the audioSource, set the current audioSource to that source
     private void CreateSoundInstance(GameObject caller)
     {
-        AudioSource currentAudioSource = caller.GetComponent<AudioSource>();
-        if (currentAudioSource != null)
+        audioSource = caller.GetComponent<AudioSource>();
+        if (audioSource == null)
         {
-            if (currentAudioSource.clip == audioClip)
-            {
-                GameObject.Destroy(currentAudioSource);
-            }
-        }
+            audioSource = caller.AddComponent<AudioSource>();
 
-        audioSource = caller.AddComponent<AudioSource>();
+        }
+        ;
         audioSource.clip = audioClip;
         audioSource.volume = volume;
     }
