@@ -6,6 +6,8 @@ using TMPro;
 
 public class Sphinx : InteractableObject, Entity
 {
+
+    public LoadSceneInteractable gate;
     public List<Voicelines> lines;
     public List<AudioLines> audioLines;
     public static int timesInteracted = 0;
@@ -20,6 +22,9 @@ public class Sphinx : InteractableObject, Entity
     bool portraitSet = false;
     bool interactedWith = false;
     public bool disabled = false;
+
+
+
 
     private AudioSource audioSource;
     CharacterDialogueScript character;
@@ -54,6 +59,10 @@ public class Sphinx : InteractableObject, Entity
             {
                 ItemCollector itemCollector = entity.gameObject.GetComponent<ItemCollector>();
                 itemCollector.EmptyCollectedItems();
+            }
+
+            if(timesInteracted == 1){
+              gate.gameObject.SetActive(true);
             }
 
             if (timesInteracted == 2){

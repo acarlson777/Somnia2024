@@ -11200,13 +11200,21 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
+  gate: {fileID: 0}
+  lines:
+  - lines:
+    - 
+  audioLines: []
+  itemName: 
   itemsToCollectList:
   - 
   - 
   - 
-  lines:
-  - lines:
-    - 
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 0}
+  name: 
+  disabled: 0
+  prevLineNumber: 0
 --- !u!65 &1240242622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18906,6 +18914,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3683cea648d14c269da9eff8e31eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2030609691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030609687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862144cd857ed46bfafb32caea28554f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
 --- !u!1 &2036002749
 GameObject:
   m_ObjectHideFlags: 0
