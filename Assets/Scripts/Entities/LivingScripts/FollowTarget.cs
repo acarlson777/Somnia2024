@@ -80,11 +80,36 @@ public class FollowTarget : MonoBehaviour
         markT.y = transform.position.y;
         return (markT- transform.position).magnitude;
     }
+    private Vector3[] getPositionsAroundMark()
+    {
+        return new Vector3[] { Mark.transform.position, Mark.transform.position + Vector3.left/2, Mark.transform.position + Vector3.right /2, Mark.transform.position + Vector3.forward/2, Mark.transform.position + Vector3.back/2};
+    }
 
     bool CanSeeMark()
     {
         if (DistanceToMark() > SightDistance) return false;
-        return !Physics.Linecast(transform.position, Mark.transform.position,1<<layerNum);
+        foreach (Vector3 p in getPositionsAroundMark())
+        {
+
+            if (Physics.Linecast(transform.position, p, 1 << layerNum))
+            {
+                 return false;
+
+            }
+            else
+            {
+
+            }
+        }
+        return true;
+    }
+    private void OnDrawGizmos()
+    {
+        foreach (Vector3 p in getPositionsAroundMark())
+
+            Gizmos.DrawLine(transform.position, p);
+   
+
     }
 
     void MoveToLastSeen()
