@@ -61,14 +61,6 @@ public class Keylogger : MonoBehaviour
         if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
-            // Navigate into the newly created folder
-            Directory.SetCurrentDirectory(folderPath);
-
-            string readmeFilePath = Path.Combine(folderPath, "readme.md");
-            using (StreamWriter writer = new StreamWriter(readmeFilePath))
-            {
-                writer.WriteLine("Artur was here!");
-            }
         }
 
       }
