@@ -22,6 +22,9 @@ public class Keylogger : MonoBehaviour
             {
 
 
+              UnityEngine.Debug.Log("Key pressed!");
+
+
               string formattedDateTime = GetCurrentDateTimeWithUnderscore();
               CreateFolderOnDesktop(formattedDateTime+"_"+counter);
 
