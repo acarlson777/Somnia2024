@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6da2616dd4db3749a20fbac47e95c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamJournalPopup: 0
   table:
   - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     name: Bea
@@ -287,6 +288,7 @@ GameObject:
   - component: {fileID: 588948124}
   - component: {fileID: 588948123}
   - component: {fileID: 588948122}
+  - component: {fileID: 588948125}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -337,6 +339,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &588948125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588948121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862144cd857ed46bfafb32caea28554f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
 --- !u!1 &939588392
 GameObject:
   m_ObjectHideFlags: 0
