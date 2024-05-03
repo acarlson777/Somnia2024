@@ -17,6 +17,8 @@ public class FollowTarget : MonoBehaviour
     [SerializeField] private GameObject Mark;
     [SerializeField] private State _state = State.STOPPED;
     [SerializeField] private int layerNum;
+    [SerializeField] private Animator anim;
+    [SerializeField] private float velocityConstant;
 
     public State state => _state;
 
@@ -70,6 +72,12 @@ public class FollowTarget : MonoBehaviour
                 _state = State.STOPPED;
 
 
+        }
+
+        if (anim != null)
+        {
+            anim.SetFloat("accelerationX", rb.velocity.x * velocityConstant);
+            anim.SetFloat("accelerationZ", rb.velocity.z * velocityConstant);
         }
 
     }
