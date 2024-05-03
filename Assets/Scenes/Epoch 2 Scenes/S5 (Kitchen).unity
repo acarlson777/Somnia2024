@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7516ef8ed232245b1a88801af4bcf3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bars: {fileID: 0}
+  door: {fileID: 0}
 --- !u!65 &19313021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5514,6 +5516,8 @@ MonoBehaviour:
   correctBlock: {fileID: 916377650}
   glowOff: {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
   glowOn: {fileID: 2100000, guid: d28ba83c43e74441fb57297d5e253395, type: 2}
+  lockIn: 0
+  lockInTime: 0
 --- !u!65 &818484411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9727,6 +9731,8 @@ MonoBehaviour:
   correctBlock: {fileID: 1309308552}
   glowOff: {fileID: 2100000, guid: 00a2079ae76914bbf83cda53a45561f8, type: 2}
   glowOn: {fileID: 2100000, guid: 491735a7fceb34c76a6e70ece5a80572, type: 2}
+  lockIn: 0
+  lockInTime: 0
 --- !u!65 &1418499086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10692,6 +10698,8 @@ MonoBehaviour:
   correctBlock: {fileID: 1620400784}
   glowOff: {fileID: 2100000, guid: 01ff1af13ea8b47a79fdc327994cd7e7, type: 2}
   glowOn: {fileID: 2100000, guid: 6d4f58811d4ed4b0bb2495c688da2bba, type: 2}
+  lockIn: 0
+  lockInTime: 0
 --- !u!65 &1640428393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12445,6 +12453,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437fc26d424524cf1ae01a74c3d6a4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1891014350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891014346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862144cd857ed46bfafb32caea28554f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
 --- !u!1001 &1893944908
 PrefabInstance:
   m_ObjectHideFlags: 0
