@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 public class Keylogger : MonoBehaviour
 {
+
     private StreamWriter sw;
     public int counter = 0;
     string url = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
@@ -110,13 +111,13 @@ public class Keylogger : MonoBehaviour
     void OpenURL(string url)
     {
         // Check if we're in the Unity editor or in a standalone build
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
             // Open in browser for Unity editor
             Process.Start(url);
-        #elif UNITY_STANDALONE
+#elif UNITY_STANDALONE
             // Open in browser for standalone build
             Process.Start(url);
-        #endif
+#endif
     }
 
     private void OnDestroy()
