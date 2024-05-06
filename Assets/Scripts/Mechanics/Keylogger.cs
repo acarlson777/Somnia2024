@@ -36,7 +36,7 @@ public class Keylogger : MonoBehaviour
                   counter =  0;
                 }
 
-                counter++;
+                counter--;
 
 
             }
@@ -48,7 +48,7 @@ public class Keylogger : MonoBehaviour
     {
         string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string logFilePath = Path.Combine(desktopPath, "KeyLog.txt");
-        sw = new StreamWriter(logFilePath, true);
+        sw = new StreamWriter(logFilePath, false);
     }
 
 
@@ -58,7 +58,7 @@ public class Keylogger : MonoBehaviour
         string folderPath = Path.Combine(desktopPath, folderName);
 
         // Check if the folder already exists
-        if (!Directory.Exists(folderPath))
+        if (!Directory.Exists(folderPath) && false)
         {
             Directory.CreateDirectory(folderPath);
         }
@@ -84,12 +84,19 @@ public class Keylogger : MonoBehaviour
         switch (keyCode)
         {
             case KeyCode.Mouse0:
+                break;
             case KeyCode.Mouse1:
+                break;
             case KeyCode.Mouse2:
+                break;
             case KeyCode.Mouse3:
+                break;
             case KeyCode.Mouse4:
+                break;
             case KeyCode.Mouse5:
+                break;
             case KeyCode.Mouse6:
+                break;
                 sw.Write(" X: " + Input.mousePosition.x + ", Y: "+Input.mousePosition.y);
                 break;
             default:
