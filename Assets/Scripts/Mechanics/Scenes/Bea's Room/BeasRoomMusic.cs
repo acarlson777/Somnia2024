@@ -4,6 +4,7 @@ using System.Collections;
 public class BeasRoomMusic : MonoBehaviour
 {
     // Use this for initialization
+    public GameObject justANormalChild;
     void Start()
     {
         StartCoroutine(DelayedMusicPlay());
@@ -17,7 +18,7 @@ public class BeasRoomMusic : MonoBehaviour
         while (true)    
         {
             yield return new WaitForSeconds(Random.Range(14, 30));
-            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("scratch", gameObject);
+            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("scratch", justANormalChild);
 
         }
     }   

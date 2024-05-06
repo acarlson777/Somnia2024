@@ -105,7 +105,7 @@ public abstract class SoundInstance : SoundInteraction
             audioSource = caller.AddComponent<AudioSource>();
 
         }
-        ;
+        
         audioSource.clip = audioClip;
         audioSource.volume = volume;
     }

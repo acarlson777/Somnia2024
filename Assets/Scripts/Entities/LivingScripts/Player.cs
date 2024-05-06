@@ -35,7 +35,11 @@ public class Player : Living, Entity
         base.Start();
         
     }
-    
+    private void Update()
+    {
+        print(audioSource.clip);
+    }
+
     IEnumerator Walking()
     {
         yield return null; // NO clue why this line is necessary but if you delete it the while (true) loop wont work. DO NOT DELETE 
@@ -44,7 +48,7 @@ public class Player : Living, Entity
             switch (currentState)
             {
                 case SoundState.WALKING:
-                    if (rb.velocity.x == 0 && rb.velocity.z == 0)
+                    if (Mathf.Abs(rb.velocity.x) <= 0.01 && Mathf.Abs(rb.velocity.z) <= 0.01)
                     {
                         currentState = SoundState.STOPPING;
                     }

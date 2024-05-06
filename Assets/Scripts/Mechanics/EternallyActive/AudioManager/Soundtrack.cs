@@ -47,7 +47,7 @@ public class Soundtrack : AudioInteraction
 
     public void FadeInRandomOnce(float seconds, GameObject caller)
     {
-        if (currentNextSoundLogicCoroutine != null) { AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine); }
+        if (currentNextSoundLogicCoroutine != null) { Debug.Log("Another Sound was playing so we delete that one."); AudioManagerSingleton.Instance.StopCoroutine(currentNextSoundLogicCoroutine); }
         if (currentlyPlayingSound != null) { currentlyPlayingSound.Stop(); }
         activeSound = FindSoundOfName(sounds[index]);
         activeSound.FadeIn(seconds, caller);
@@ -98,11 +98,7 @@ public class Soundtrack : AudioInteraction
     {
         yield return new WaitForSeconds(currentlyPlayingSound.clip.length - fadeTime);
         FadeOut(fadeTime);
-        index++;
-        if (index >= sounds.Length)
-        {
-            index = 0;
-        }
+        index = (index + 1) % sounds.Length;
         yield return new WaitForSeconds(fadeTime);
         FadeIn(fadeTime, lastCaller);
     }
