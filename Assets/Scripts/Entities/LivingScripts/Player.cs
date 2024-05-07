@@ -37,7 +37,7 @@ public class Player : Living, Entity
     }
     private void Update()
     {
-        print(audioSource.clip);
+        //print(audioSource.clip);
     }
 
     IEnumerator Walking()
