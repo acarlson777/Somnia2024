@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Door : InteractableObject, Entity
 {
+    [SerializeField] private AudioClip audioClip;
     public string sceneName;
     public string[] disabledText;
 
@@ -16,6 +17,12 @@ public class Door : InteractableObject, Entity
         
         if (other is Player)
         {
+            //GetComponent<AudioSource>()?.PlayOneShot(audioClip);
+            if (audioClip != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(audioClip);
+            }
+
             if (gameObject.GetComponent<SceneClickThrough>() == null)
             InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
             else { gameObject.GetComponent<SceneClickThrough>().StartClickThrough(); }

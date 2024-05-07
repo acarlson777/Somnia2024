@@ -2,41 +2,18 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ImprisonedRiggs : InteractableObject, Entity
+public class ImprisonedRiggs : MonoBehaviour
 {
-    public static int count = 0;
-    public List<DialogueLines> lines;
     public bool exitIsActive = false;
 
-    new private void Start()
+   
+
+    public void Update()
     {
-        base.Start();
+        CharacterDialogue d = GetComponent<CharacterDialogue>();
+        exitIsActive = d.timesInteracted == d.lines.Count;
     }
 
-    new public void Interact(Entity other)
-    {
-        if (other is Player)
-        {
-            if (count == 0)
-            {
-                exitIsActive = true;
-            }
 
-            DialogueManager.PopDialogue(lines[count].lines);
-            count++;
-            if (count > lines.Count)
-            {
-                count = lines.Count - 1;
-            }
-
-
-        }
-    }
-
-    [System.Serializable]
-    public class DialogueLines
-    {
-        public string[] lines;
-    }
 }
 
