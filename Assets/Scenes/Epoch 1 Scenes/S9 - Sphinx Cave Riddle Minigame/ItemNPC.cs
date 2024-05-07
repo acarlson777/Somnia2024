@@ -14,6 +14,7 @@ public class ItemNPC : CharacterDialogue
                 timesInteracted = lines.Count - 2;
             }
             timesInteracted = lines.Count - 1;
+            base.Interact(entity);
             return;
         }
         base.Interact(entity);
