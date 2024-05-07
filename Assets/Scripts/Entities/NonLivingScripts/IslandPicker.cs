@@ -9,7 +9,7 @@ public class IslandPicker : NonLiving, Entity
     {
         GameObject[] others = GameObject.FindGameObjectsWithTag("TrainSelector");
         selectors = new IslandSelectorBackForth[others.Length];
-        for (int i = 0; i < others.Length; i++) 
+        for (int i = 0; i < others.Length; i++)
         {
             selectors[i] = others[i].GetComponent<IslandSelectorBackForth>();
         }
@@ -28,7 +28,7 @@ public class IslandPicker : NonLiving, Entity
             {
                 if (selectors[i].isOn)
                 {
-                    DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo Train! We are going to -> "+ selectors[i].showName });
+                    DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo! Next destination "+ selectors[i].showName+"!" });
                     InstantiateLoadingScreen.Instance.LoadNewScene(selectors[i].IslandName);
                 }
             }

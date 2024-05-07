@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46ca9ec726d44da0889f2333fae9b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  justANormalChild: {fileID: 0}
 --- !u!4 &77019429
 Transform:
   m_ObjectHideFlags: 0
@@ -2204,8 +2205,8 @@ MonoBehaviour:
   itemsToSleep: []
   inspectorBed: 0
   not_ready_dialogue:
-  - This is my bed, so nice and comfy.
-  - However, I dont feel like sleeping right now. Maybe first I should read a little?
+  - I've been having very strange dreams.
+  - How can I go back to sleep without writing them in my dream journal?
   sceneToLoad: put scene with all unlocked islands here
 --- !u!65 &823743494
 BoxCollider:
@@ -2948,7 +2949,7 @@ MonoBehaviour:
   soundsToPlay: creak
   lines:
   - lines:
-    - Closet Creaks Menacingly
+    - Closet creaks menacingly...
 --- !u!135 &975063786
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3798,14 +3799,8 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lines:
   - lines:
-    - This is your second time reading this journal although it seems like the first
-  - lines:
-    - The following journal will look the same as the previous jounral you read
-    - Perhaps due to some secret idea hidden in the lore...
-    - Or perhaps because the creators of this game ran out of time for this build
-    - Who knows...
-  - lines:
-    - readme.md (click again to read)
+    - Good evening dream journal.
+    - I have so much to tell you.
 --- !u!54 &1171144111
 Rigidbody:
   m_ObjectHideFlags: 0

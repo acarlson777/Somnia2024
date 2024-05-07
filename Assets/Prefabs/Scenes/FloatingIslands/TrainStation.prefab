@@ -25915,14 +25915,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4177083566281971032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.27, y: 3.41, z: 56.82}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 5.88, y: 3.56, z: 48.17}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4177083565306771563}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!212 &4177083566281971035
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25964,7 +25964,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 819353e07b1b743b7a29b15b68257327, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc5d32dee855b4e6d826cffc8ac9cc19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -40337,6 +40337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6816433492715181584, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1abca595441f5471694e4236e158464b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
 --- !u!4 &7268198337712323913 stripped
@@ -40876,6 +40880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6816433492715181584, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 36c4f2113c10e44c4b90ecd288fd66cb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
 --- !u!4 &7268198337058012163 stripped
@@ -41403,6 +41411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6816433492715181584, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bd64ab9cd8b14458ae3cd7151bf207e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
 --- !u!4 &7268198338753300969 stripped
@@ -41551,9 +41563,9 @@ MonoBehaviour:
   - audioLines:
     - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
   selectors:
-  - {fileID: 4177083566955459872}
-  - {fileID: 4177083565615140235}
-  - {fileID: 4177083566881666672}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   firstTime: 1
   firstTimeDialogue:
   - Welcome Bea, my name is Wolfgang.
@@ -41630,6 +41642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6816433492715181584, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b58a831ceb14d469fa7d8cf9949a8694, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
 --- !u!4 &7268198338777392039 stripped
@@ -41644,6 +41660,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4177083566337008079}
     m_Modifications:
+    - target: {fileID: 3688576164339309578, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688576164339309578, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 6713222991602674090, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -41662,7 +41686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6713222991602674090, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.557953
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 6713222991602674090, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41670,7 +41694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6713222991602674090, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.2385554
+      value: 3.27
       objectReference: {fileID: 0}
     - target: {fileID: 6713222991602674090, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42394,6 +42418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6816433492715181584, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37171410e6b5246ab8e7b8007cee7a4b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
 --- !u!4 &7268198338247179079 stripped
@@ -42468,6 +42496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 6816433492715181584, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1abca595441f5471694e4236e158464b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467e7b116cdcb41789a659c0c0bebc99, type: 3}
 --- !u!4 &4177083565220470784 stripped
