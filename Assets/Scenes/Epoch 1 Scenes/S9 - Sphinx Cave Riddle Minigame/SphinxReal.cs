@@ -5,11 +5,12 @@ using System.Collections.Generic;
 public class SphinxReal : CharacterDialogue
 {
     public List<string> itemsToCollect;
+    [SerializeField] private List<string> itemsBeaHasCollected;
     public string nextScene;
     public GameObject exit;
     public static int lastInteractIndex;
 
-    new private void Interact(Entity entity)
+    new public void Interact(Entity entity)
     {
         timesInteracted = lastInteractIndex;
         if (timesInteracted == lines.Count - 3)
@@ -22,6 +23,7 @@ public class SphinxReal : CharacterDialogue
                 base.Interact(entity);
                 exit.SetActive(false);
                 InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
+                timesInteracted = lines.Count - 3;
             } else
             {
                 timesInteracted = lines.Count - 1;
@@ -33,5 +35,11 @@ public class SphinxReal : CharacterDialogue
         }
         base.Interact(entity);
         lastInteractIndex = timesInteracted;
+    }
+
+    new private void Update()
+    {
+        base.Update();
+        itemsBeaHasCollected = Inventory.inventory;
     }
 }

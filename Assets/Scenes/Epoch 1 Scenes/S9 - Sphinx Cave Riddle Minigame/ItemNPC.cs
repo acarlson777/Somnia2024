@@ -5,8 +5,10 @@ public class ItemNPC : CharacterDialogue
 {
     public string item;
 
-    new private void Interact(Entity entity)
+    new public void Interact(Entity entity)
     {
+        Debug.Log("NPC DIALOGUE");
+        Debug.Log(lines.Count);
         if (timesInteracted >= lines.Count - 3)
         {
             if (Inventory.addItem(item))
