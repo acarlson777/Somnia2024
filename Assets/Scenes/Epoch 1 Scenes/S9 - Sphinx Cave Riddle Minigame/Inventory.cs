@@ -19,6 +19,11 @@ public class Inventory : MonoBehaviour
 
     public static void emptyInventory()
     {
-        inventory.Clear();
+        inventory = new List<string>();
+    }
+
+    private void Update()
+    {
+        //
     }
 }
