@@ -51,8 +51,7 @@ public class IslandSelectorBackForth : NonLiving, Entity
             DialogueManager.PopDialogue(lockedDialogue);
             return;
         }
-        GetComponent<AudioSource>().clip = audio;
-        GetComponent<AudioSource>().Play();
+        AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(audio, gameObject);
 
         if (!isOn) // if we are switchin' it on
         {

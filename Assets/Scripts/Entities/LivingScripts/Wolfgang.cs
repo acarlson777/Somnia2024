@@ -206,6 +206,7 @@ public class Wolfgang : Living, Entity
                 audioSource.clip = audioLines[timesInteracted - 1].audioLines[character.lineNumber];
                 audioSource.volume = 0.8f*PlayerPrefs.GetFloat("sfxVolume");
                 audioSource.Play();
+
                 prevLineNumber = character.lineNumber;
             }
         }
