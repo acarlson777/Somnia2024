@@ -4088,7 +4088,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lockedDialogue: []
   showName: Castle
-  audio: 
+  audioName: lever
   locked: 0
   IslandName: Castle
   isOn: 1
@@ -5047,7 +5047,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lockedDialogue: []
   showName: Candyland
-  audio: 
+  audioName: lever
   locked: 0
   IslandName: Candyland
   isOn: 1
@@ -7387,7 +7387,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lockedDialogue: []
   showName: Whale
-  audio: 
+  audioName: lever
   locked: 0
   IslandName: Whale
   isOn: 1
@@ -42538,6 +42538,42 @@ PrefabInstance:
     - target: {fileID: 5897565990292524476, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 331.90002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0]._name
+      value: yurmother
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 337aa1950115649748d14d6fc069c8c6, type: 3}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3]._name
+      value: lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].fadeTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
+      value: yurmother
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}

@@ -37,10 +37,17 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void PlayRandomSongFromSoundtrackOnce(string name, GameObject caller)
     {
+        
         currentSong = name;
-        Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
-        soundtrack.SetRandomSong();
-        soundtrack.PlayRandomOnce(caller);
+        AudioInteraction aInteraction = FindSoundOfName(name);
+        print(aInteraction.GetType());
+
+        if (aInteraction is Soundtrack)
+        {
+            Soundtrack soundtrack = (Soundtrack)aInteraction;
+            soundtrack.SetRandomSong();
+            soundtrack.PlayRandomOnce(caller);
+        }
     }
 
     public void Stop(string name)
@@ -73,7 +80,7 @@ public class AudioManagerSingleton : MonoBehaviour
         soundtrack.SetRandomSong();
         soundtrack.FadeInRandomOnce(seconds, caller);
     }
-
+  
     public void FadeOut(string name, float seconds)
     {
         currentSong = null;
@@ -96,6 +103,7 @@ public class AudioManagerSingleton : MonoBehaviour
         {
             if (name == song.Name)
             {
+                
                 return song;
             }
         }
@@ -114,6 +122,10 @@ public class AudioManagerSingleton : MonoBehaviour
     void Start()
     {
         allSounds.AddRange(sfxList);
+        foreach (SfxInstance sfx in sfxList)
+        {
+            print(sfx.toString());
+        }
         allSounds.AddRange(songList);
         allSounds.AddRange(soundtrackList);
 

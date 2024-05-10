@@ -109,6 +109,10 @@ public abstract class SoundInstance : SoundInteraction
         audioSource.clip = audioClip;
         audioSource.volume = volume;
     }
+    public string toString()
+    {
+        return "Sound(name=" + _name + ")";
+    }
 }
 
 
