@@ -16816,6 +16816,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  audioName: 
 --- !u!54 &240100006
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20755,9 +20756,9 @@ MonoBehaviour:
   - audioLines:
     - {fileID: 8300000, guid: fc958ce9e85984c969967579e66877d4, type: 3}
   selectors:
-  - {fileID: 1919544013}
-  - {fileID: 1786714073}
-  - {fileID: 31738039}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   firstTime: 1
   firstTimeDialogue:
   - Welcome Bea, my name is Wolfgang.
@@ -52281,6 +52282,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4177083566709642342, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_Name
       value: TrainStation
@@ -52329,6 +52334,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6613829525578615543, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.data[1]._name
+      value: train
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.data[0].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.data[1].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a0eeadd2fe53f41eba433fc144fde673, type: 3}
+    - target: {fileID: 8633839391825539195, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: WalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e0669e8bf3dd46278deee8a0f7b7e9d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
 --- !u!1 &1977043648

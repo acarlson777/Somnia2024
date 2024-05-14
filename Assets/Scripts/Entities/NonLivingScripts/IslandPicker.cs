@@ -5,9 +5,11 @@ using UnityEngine;
 public class IslandPicker : NonLiving, Entity
 {
     public IslandSelectorBackForth[] selectors;
+    public string audioName;
     void Awake()
     {
         GameObject[] others = GameObject.FindGameObjectsWithTag("TrainSelector");
+
         selectors = new IslandSelectorBackForth[others.Length];
         for (int i = 0; i < others.Length; i++)
         {
@@ -28,7 +30,8 @@ public class IslandPicker : NonLiving, Entity
             {
                 if (selectors[i].isOn)
                 {
-                    DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo! Next destination "+ selectors[i].showName+"!" });
+                    DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo Train! We are going to -> "+ selectors[i].showName });
+                    AudioManagerSingleton.Instance.FadeIn(audioName, 5, gameObject);
                     InstantiateLoadingScreen.Instance.LoadNewScene(selectors[i].IslandName);
                 }
             }
