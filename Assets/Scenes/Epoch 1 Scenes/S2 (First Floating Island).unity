@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028416, g: 0.22571386, b: 0.3069211, a: 1}
+  m_IndirectSpecularColor: {r: 0.18018591, g: 0.22560108, b: 0.30677563, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1370,6 +1370,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 738642205434946648, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_Dithering
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4177083565082626107, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: IslandName
       value: CT1 (Bea exits train, Bea enters castle)
@@ -1574,11 +1578,21 @@ PrefabInstance:
       propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
       value: lever
       objectReference: {fileID: 0}
+    - target: {fileID: 8633839391825539074, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633839391825539074, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8633839391825539195, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: WalkingSound
       value: 
       objectReference: {fileID: 8300000, guid: 8e0669e8bf3dd46278deee8a0f7b7e9d, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4177083566715252024, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+    - {fileID: 8633839391825539198, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
 --- !u!224 &852013542 stripped
 RectTransform:

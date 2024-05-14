@@ -70,7 +70,6 @@ public class IslandSelectorUpDown : NonLiving, Entity
 
     public new void Update()
     {
-        base.Update();
         if (isOn)
         {
             // Move down so that half is showing

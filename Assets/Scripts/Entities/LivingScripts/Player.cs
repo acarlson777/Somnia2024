@@ -20,13 +20,13 @@ public class Player : Living, Entity
     {
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
         entityMaxSpeed = 4.2f;
-        K_friction = 0.6f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
+        K_friction = 2f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = WalkingSound;
         audioSource.loop = true;
+        audioSource.volume = 0;
         audioSource.Play();
-        audioSource.Pause();
-        StartCoroutine(Walking());
+    
     }
     new void Start()
     {
@@ -37,68 +37,23 @@ public class Player : Living, Entity
     }
     private void Update()
     {
+        base.Update();
+        bool stopped = Mathf.Abs(rb.velocity.x) <= 0.001 && Mathf.Abs(rb.velocity.z) <= 0.001;
+        float targetVolume = stopped ? -2 : 1;
+        float targetFinalVolume = targetVolume * AudioManagerSingleton.getSFXVolume();
+        float dif = targetFinalVolume - audioSource.volume;
+        audioSource.volume = Mathf.Clamp01(audioSource.volume + dif * (1 - Mathf.Exp(-Time.deltaTime)));
+
     }
 
-    IEnumerator Walking()
-    {
-        yield return null; // NO clue why this line is necessary but if you delete it the while (true) loop wont work. DO NOT DELETE 
-        while (true)
-        {
-            bool stopped = Mathf.Abs(rb.velocity.x) <= 0.01 && Mathf.Abs(rb.velocity.z) <= 0.01;
-            switch (currentState)
-            {
-                case SoundState.WALKING:
-                    if (stopped)
-                    {
-                        currentState = SoundState.STOPPING;
-                    }
-                    break;
-                case SoundState.STOPPED:
-                    if (!stopped)
-                    {
-                        currentState = SoundState.STARTING;
-                    }
-                    break;
-                case SoundState.STARTING:
-                    audioSource.UnPause();
-                    currentState = SoundState.WALKING;
-                    break;
-                case SoundState.STOPPING:
-                    audioSource.Pause();
-                    currentState = SoundState.STOPPED;
-                    break;
-            }
-            yield return new WaitForSeconds(0.01f);
-        }
-    }
-    
     // Update is called once per frame
-    protected void FixedUpdate()
+    new public void FixedUpdate()
     {
         if (!JoystickInput.atRest())
         {
             vel = JoystickInput.worldOrientedJoystickDirection * speed;
         }
-        if (vel.sqrMagnitude > entityMaxSpeed*entityMaxSpeed) 
-        {
-            vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
-        }
-        // Overwrite the y axis so it doesn't count towards the magnitude
-        vel.y = 0;
-        // Apply Horizontal Friction
-        
-        if (vel.magnitude < K_friction)
-        {
-            vel.x = 0;
-            vel.z = 0;
-        }
-        else
-        {
-            vel += vel.normalized * -K_friction;
-        }
-        
-        vel.y = rb.velocity.y;
-        rb.velocity = vel;
+        base.FixedUpdate();
 
 #if UNITY_EDITOR
         if( brain == null)

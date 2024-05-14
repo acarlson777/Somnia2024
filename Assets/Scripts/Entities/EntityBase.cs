@@ -15,7 +15,7 @@ public interface Entity
     void Interact(Entity entity);
 }
 
-public class EntityBase : MonoBehaviour,Entity
+public abstract class EntityBase : MonoBehaviour,Entity
 {
     // Each entity should be a:
     //    - World Collidable(aka. collider
@@ -40,7 +40,7 @@ public class EntityBase : MonoBehaviour,Entity
     {
         rb = GetComponent<Rigidbody>();
     }
-
+    public void Update() { }
 
     public void Start()
     {
@@ -49,24 +49,24 @@ public class EntityBase : MonoBehaviour,Entity
         Initialize();
     }
     // Update is called once per frame
-    public void Update()
+    public void FixedUpdate()
     {
         vel += accel;
-        if (vel.magnitude > entityMaxSpeed) // Can be optimized
+        if (vel.sqrMagnitude > entityMaxSpeed*entityMaxSpeed) // Can be optimized
         {
             vel *= entityMaxSpeed / vel.magnitude; // Set the magnitude to maxSpeed
         }
         // Overwrite the y axis so it doesn't count towards the magnitude
         vel.y = 0;
         // Apply Horizontal Friction
-        if (vel.magnitude < K_friction * Time.deltaTime)
+        if (vel.magnitude < K_friction * Time.fixedDeltaTime)
         {
             vel.x = 0;
             vel.z = 0;
         }
         else
         {
-            Vector3 friction = vel.normalized * -K_friction * Time.deltaTime;
+            Vector3 friction = vel.normalized * -K_friction * Time.fixedDeltaTime;
             vel += friction;
         }
         vel.y = rb.velocity.y;

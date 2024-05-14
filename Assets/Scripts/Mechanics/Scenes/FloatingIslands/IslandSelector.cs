@@ -52,7 +52,7 @@ public class IslandSelector : NonLiving, Entity
                 i.TurnOff();
             }
         }
-        isOn = !isOn;
+        isOn = true;
 
         gameObject.GetComponent<Renderer>().material = isOn ? onMaterial : offMaterial;
     }

@@ -16,8 +16,15 @@ public class AudioManagerSingleton : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    public static float getSFXVolume()
+    {
+        return PlayerPrefs.GetFloat("sfxVolume");
+    }
 
-
+    public static float getMusicVolume()
+    {
+        return PlayerPrefs.GetFloat("songVolume");
+    }
 
     //AUDIO MANAGER CODE
     public void Play(string name, GameObject caller)

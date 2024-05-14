@@ -11,6 +11,12 @@ public class CameraInitialZoom : MonoBehaviour
     public Camera camera;
     public float waitForStart;
 
+
+    public void Start()
+    {
+        endZoom = camera.orthographicSize;
+        StartCoroutine(zoomOverTime());
+    }
     IEnumerator zoomOverTime()
     {
         yield return new WaitForSeconds(waitForStart);
@@ -23,9 +29,4 @@ public class CameraInitialZoom : MonoBehaviour
         }
     }
 
-    public void Start()
-    {
-        endZoom = camera.orthographicSize;
-        StartCoroutine(zoomOverTime());
-    }
 }

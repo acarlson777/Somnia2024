@@ -28,9 +28,8 @@ public class Living : EntityBase
     }
 
     // Update is called once per frame
-    new protected void Update()
+    new public void Update()
     {
-        base.Update(); // Update normal entity stuff like physics and other stuff???    
 
         // update things that are specific to living entities like brain
 #if UNITY_EDITOR /// if we are in the editor then check if we have reloaded a script and made brain == null
@@ -47,7 +46,7 @@ public class Living : EntityBase
         print(other.GetName() + " interacted with me... a " + GetName());
     }
     public void PressInteract()
-    {
+    {   
         print("interacting");
         if (brain.GetClosestEntity() != null)
         {
@@ -68,4 +67,6 @@ public class Living : EntityBase
             gameobjectsTouching.Remove(col.gameObject);
         }
     }
+
+   
 }
