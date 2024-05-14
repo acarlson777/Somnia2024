@@ -44,16 +44,17 @@ public class Player : Living, Entity
         yield return null; // NO clue why this line is necessary but if you delete it the while (true) loop wont work. DO NOT DELETE 
         while (true)
         {
+            bool stopped = Mathf.Abs(rb.velocity.x) <= 0.01 && Mathf.Abs(rb.velocity.z) <= 0.01;
             switch (currentState)
             {
                 case SoundState.WALKING:
-                    if (Mathf.Abs(rb.velocity.x) <= 0.01 && Mathf.Abs(rb.velocity.z) <= 0.01)
+                    if (stopped)
                     {
                         currentState = SoundState.STOPPING;
                     }
                     break;
                 case SoundState.STOPPED:
-                    if (rb.velocity.x != 0 || rb.velocity.z != 0)
+                    if (!stopped)
                     {
                         currentState = SoundState.STARTING;
                     }

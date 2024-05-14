@@ -728,6 +728,7 @@ MonoBehaviour:
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   selectors: []
+  audioName: 
 --- !u!54 &582950266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1397,22 +1398,6 @@ PrefabInstance:
       propertyPath: lockedDialogue.Array.data[0]
       value: You can't move the lever, it seems to be locked firmly in place.
       objectReference: {fileID: 0}
-    - target: {fileID: 4177083566006621341, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 418.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177083566006621341, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 418.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177083566006621341, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 418.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177083566066952051, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
-      propertyPath: waitForStart
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: lines.Array.size
       value: 0
@@ -1533,9 +1518,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6613829525578615543, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613829525578615543, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: sfxList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.size
@@ -1546,13 +1539,25 @@ PrefabInstance:
       value: lever
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.data[1]._name
+      value: train
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: sfxList.Array.data[0].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.data[1].volume
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: sfxList.Array.data[0].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 337aa1950115649748d14d6fc069c8c6, type: 3}
+    - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: sfxList.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a0eeadd2fe53f41eba433fc144fde673, type: 3}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.data[3]._name
       value: levers
@@ -1569,6 +1574,10 @@ PrefabInstance:
       propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
       value: lever
       objectReference: {fileID: 0}
+    - target: {fileID: 8633839391825539195, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: WalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e0669e8bf3dd46278deee8a0f7b7e9d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
 --- !u!224 &852013542 stripped
