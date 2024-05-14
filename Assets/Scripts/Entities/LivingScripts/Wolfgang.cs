@@ -148,6 +148,7 @@ public class Wolfgang : Living, Entity
             interactedWith = true;
             print(timesInteracted);
             audioSource.clip = audioLines[timesInteracted].audioLines[0];
+            audioSource.volume = 0.1f * PlayerPrefs.GetFloat("sfxVolume");
             audioSource.Play();
 
             if (firstTime)
@@ -204,7 +205,7 @@ public class Wolfgang : Living, Entity
             if (prevLineNumber != character.lineNumber)
             {
                 audioSource.clip = audioLines[timesInteracted - 1].audioLines[character.lineNumber];
-                audioSource.volume = 0.8f*PlayerPrefs.GetFloat("sfxVolume");
+                audioSource.volume = 0.1f*PlayerPrefs.GetFloat("sfxVolume");
                 audioSource.Play();
 
                 prevLineNumber = character.lineNumber;
