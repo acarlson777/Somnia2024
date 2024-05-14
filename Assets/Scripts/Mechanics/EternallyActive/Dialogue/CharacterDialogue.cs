@@ -94,6 +94,6 @@ public class CharacterDialogue : InteractableObject, Entity
     {
         public AudioClip audio;
         [Range(0, 1)]
-        public float volume = 1;
+        public float volume = 1 ;
     }
 }

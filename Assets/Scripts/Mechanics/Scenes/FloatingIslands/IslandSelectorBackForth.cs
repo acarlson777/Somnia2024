@@ -7,6 +7,8 @@ public class IslandSelectorBackForth : NonLiving, Entity
     [SerializeField] public string[] lockedDialogue;
     public string showName;
 
+    public string audioName;
+
     IslandSelectorBackForth[] otherSelectors; // Will contain a reference to all selectors (including us) in the scene, populated during Start
 
     [SerializeField] private bool locked = false;
@@ -49,6 +51,8 @@ public class IslandSelectorBackForth : NonLiving, Entity
             DialogueManager.PopDialogue(lockedDialogue);
             return;
         }
+        AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(audioName, gameObject);
+
         if (!isOn) // if we are switchin' it on
         {
             // we make all other ones become off

@@ -146,15 +146,16 @@ public class Wolfgang : Living, Entity
         {
             portraitSet = false;
             interactedWith = true;
-            if (timesInteracted >= lines.Count)
-            {
-                timesInteracted = lines.Count - 1;
-            }
+            print(timesInteracted);
+            audioSource.clip = audioLines[timesInteracted].audioLines[0];
+            audioSource.Play();
+
             if (firstTime)
             {
                 firstTime = false;
                 string island = getSelectedName();
                 string show = getSelectedShowName();
+              
                 if (island == null)
                 {
                     CharacterDialogueManager.PopCharacterDialogue(firstTimeDialogue);
@@ -180,6 +181,10 @@ public class Wolfgang : Living, Entity
             //audioSource.Play();
             character = FindObjectOfType<CharacterDialogueScript>();
             timesInteracted++;
+            if (timesInteracted >= audioLines.Count)
+            {
+                timesInteracted = audioLines.Count - 1;
+            }
 
         }
         if (GameObject.Find("CharacterDialogueBox") != null && !portraitSet && interactedWith)
@@ -192,22 +197,23 @@ public class Wolfgang : Living, Entity
             interactedWith = false;
         }
     }
-
     new private void Update()
     {
-        /*if (character != null)
+        if (character != null)
         {
             if (prevLineNumber != character.lineNumber)
             {
                 audioSource.clip = audioLines[timesInteracted - 1].audioLines[character.lineNumber];
+                audioSource.volume = 0.8f*PlayerPrefs.GetFloat("sfxVolume");
                 audioSource.Play();
+
                 prevLineNumber = character.lineNumber;
             }
         }
-        if (character == null)
+        else
         {
             audioSource.Stop();
-        }*/
+        }
     }
 
     [System.Serializable]
