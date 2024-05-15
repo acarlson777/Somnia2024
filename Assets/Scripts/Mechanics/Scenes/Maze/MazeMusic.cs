@@ -7,6 +7,7 @@ public class MazeMusic : MonoBehaviour
     void Start()
     {
         StartCoroutine(DelayedMusicPlay());
+        AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("wind", 2, gameObject);
     }
 
     IEnumerator DelayedMusicPlay()
