@@ -40,7 +40,7 @@ public class Player : Living, Entity
     {
         base.Update();
         bool stopped = Mathf.Abs(rb.velocity.x) <= 0.001 && Mathf.Abs(rb.velocity.z) <= 0.001;
-        float targetVolume = stopped ? -2 : 1;
+        float targetVolume = stopped ? -2 : 0.8f;
         float targetFinalVolume = targetVolume * AudioManagerSingleton.getSFXVolume();
         float dif = targetFinalVolume - audioSource.volume;
         audioSource.volume = Mathf.Clamp01(audioSource.volume + dif * (1 - Mathf.Exp(-Time.deltaTime)));

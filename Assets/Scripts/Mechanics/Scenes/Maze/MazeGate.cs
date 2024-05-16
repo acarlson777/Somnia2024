@@ -23,7 +23,6 @@ public class MazeGate : InteractableObject, Entity
         base.Update();
         if (open)
         {
-            AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(audioName, gameObject);
             transform.position = Vector3.MoveTowards(transform.position, endPos, Time.deltaTime * gateSpeed);
         }
         else
@@ -39,6 +38,7 @@ public class MazeGate : InteractableObject, Entity
 
     public void OpenGate()
     {
+        AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(audioName, gameObject);
         open = true;
     }
     public void CloseGate()
