@@ -18,9 +18,10 @@ public class Player : Living, Entity
 
     void Awake()
     {
+        
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
         entityMaxSpeed = 4.2f;
-        K_friction = 2f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
+        K_friction = 20f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = WalkingSound;
         audioSource.loop = true;
@@ -35,7 +36,7 @@ public class Player : Living, Entity
         base.Start();
         
     }
-    private void Update()
+    new private void Update()
     {
         base.Update();
         bool stopped = Mathf.Abs(rb.velocity.x) <= 0.001 && Mathf.Abs(rb.velocity.z) <= 0.001;
