@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474409229916669314}
+  - component: {fileID: 4883186857330224050}
   m_Layer: 0
   m_Name: Worm
   m_TagString: Untagged
@@ -32,6 +33,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4883186857330224050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474409229916669315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4729e41567a4fc469ed8379ea81f301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
+  endPos: {x: -1.11, y: -0.91, z: -17.5}
+  timeToTake: 15
+  timeToTakeThisRun: 0
+  randomness: 0.11
+  timeTaken: 0
 --- !u!1 &6670742122797865175
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +62,8 @@ GameObject:
   - component: {fileID: 1542548241038247022}
   - component: {fileID: 1421367809210544573}
   - component: {fileID: 5604517722851566825}
+  - component: {fileID: 5989232064130355214}
+  - component: {fileID: 533373931398173249}
   m_Layer: 0
   m_Name: Worm
   m_TagString: Untagged
@@ -130,6 +151,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axis: 0
-  range: 30
+  range: 10
+  speed: 0.81
+  randomStart: 1
+--- !u!114 &5989232064130355214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670742122797865175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854ac704d1f94453492d74cdafb3cd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axis: 1
+  range: 10
+  speed: 1
+  randomStart: 1
+--- !u!114 &533373931398173249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670742122797865175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854ac704d1f94453492d74cdafb3cd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axis: 2
+  range: 10
   speed: 1
   randomStart: 1
