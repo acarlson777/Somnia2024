@@ -8,6 +8,7 @@ public class PasswordSymbol: InteractableObject, Entity
     public string symbol = "";
     public Material startingMat;
     public Material onMat;
+    public string audioName;
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -44,6 +45,7 @@ public class PasswordSymbol: InteractableObject, Entity
     public new void Interact(Entity entity)
     {
         // if the player has interacted with us then just light on or off!
+        AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce(audioName, gameObject);
         lit = !lit;
         if (lit)
         {

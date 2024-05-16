@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.005
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -19447,6 +19447,10 @@ PrefabInstance:
       propertyPath: speed
       value: 100000
       objectReference: {fileID: 0}
+    - target: {fileID: 5631316416746892960, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: WalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e0669e8bf3dd46278deee8a0f7b7e9d, type: 3}
     - target: {fileID: 5631316416746892961, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_Name
       value: Bea
@@ -19533,6 +19537,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416927084943, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: accelerationConstant
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079361429711983660, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
+      propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -34371,6 +34379,7 @@ MonoBehaviour:
   symbol: g
   startingMat: {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
   onMat: {fileID: 2100000, guid: d28ba83c43e74441fb57297d5e253395, type: 2}
+  audioName: button
   symbolSpeed: 1
   symbolEndDistance: -0.5
 --- !u!54 &656151603
@@ -47281,6 +47290,7 @@ MonoBehaviour:
   symbol: v
   startingMat: {fileID: 2100000, guid: 00a2079ae76914bbf83cda53a45561f8, type: 2}
   onMat: {fileID: 2100000, guid: 491735a7fceb34c76a6e70ece5a80572, type: 2}
+  audioName: 
   symbolSpeed: 1
   symbolEndDistance: -0.5
 --- !u!54 &926308779
@@ -79500,6 +79510,7 @@ MonoBehaviour:
   symbol: f
   startingMat: {fileID: 2100000, guid: 01ff1af13ea8b47a79fdc327994cd7e7, type: 2}
   onMat: {fileID: 2100000, guid: 6d4f58811d4ed4b0bb2495c688da2bba, type: 2}
+  audioName: 
   symbolSpeed: 1
   symbolEndDistance: -0.5
 --- !u!54 &1511565570
@@ -82548,6 +82559,90 @@ PrefabInstance:
     - target: {fileID: 5897565990292524476, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 331.90002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0]._name
+      value: windy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[1]._name
+      value: butt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[2]._name
+      value: door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[1].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[2].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e6a1b6d1aae0547c39f1d0574a873eaa, type: 3}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 337aa1950115649748d14d6fc069c8c6, type: 3}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: sfxList.Array.data[2].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f5d165e9068d7462c842bcd10f1135c6, type: 3}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3]._name
+      value: wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[4]._name
+      value: button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[5]._name
+      value: stonedoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].fadeTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[4].sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[5].sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
+      value: windy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[4].sounds.Array.data[0]
+      value: butt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
+      propertyPath: soundtrackList.Array.data[5].sounds.Array.data[0]
+      value: door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
@@ -93273,6 +93368,7 @@ MonoBehaviour:
   symbol: h
   startingMat: {fileID: 2100000, guid: 638f6553e6e7749149274a2094bdb55b, type: 2}
   onMat: {fileID: 2100000, guid: 1bb6ae88981934b508b770538c108cb2, type: 2}
+  audioName: 
   symbolSpeed: 1
   symbolEndDistance: -0.5
 --- !u!54 &1773616718
@@ -96052,6 +96148,7 @@ MonoBehaviour:
   symbol: i
   startingMat: {fileID: 2100000, guid: 56f1acce6246f4928bac3ed84381886b, type: 2}
   onMat: {fileID: 2100000, guid: ee4e1c096d0184789876234232475bf7, type: 2}
+  audioName: 
   symbolSpeed: 1
   symbolEndDistance: -0.5
 --- !u!54 &1816779135
@@ -108221,6 +108318,10 @@ PrefabInstance:
     - target: {fileID: 6157125339666463101, guid: 749570ebd49b44c8aa5665a5fb391075, type: 3}
       propertyPath: open
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157125339666463101, guid: 749570ebd49b44c8aa5665a5fb391075, type: 3}
+      propertyPath: audioName
+      value: stonedoor
       objectReference: {fileID: 0}
     - target: {fileID: 6157125339666463101, guid: 749570ebd49b44c8aa5665a5fb391075, type: 3}
       propertyPath: gateEndDistance
