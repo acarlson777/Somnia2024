@@ -32,7 +32,7 @@ public class MoreMooreManager : MonoBehaviour
     public bool give(){
       if(total > 0){
         gave++;
-        total --;
+        total--;
 
         if(gave == 8){
           // DO TRANSITION
