@@ -23,7 +23,13 @@ public class SphinxReal : CharacterDialogue, Entity
                 timesInteracted = lines.Count - 2;
                 base.Interact(entity);
                 exit.SetActive(false);
-                InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
+                if (!nextScene.Equals(""))
+                {
+                    InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
+                } else
+                {
+                    //Set active stuff for whale
+                }
                 timesInteracted = lines.Count - 2;
             }
             else { 
