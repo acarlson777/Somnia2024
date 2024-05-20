@@ -9,6 +9,8 @@ public class SphinxReal : CharacterDialogue, Entity
     public string nextScene;
     public GameObject exit;
     public static int lastInteractIndex;
+    public GameObject firstNPCs;
+    public GameObject secondNPCs;
 
     new public void Interact(Entity entity)
     {
@@ -22,13 +24,15 @@ public class SphinxReal : CharacterDialogue, Entity
                 Debug.Log("Yes");
                 timesInteracted = lines.Count - 2;
                 base.Interact(entity);
-                exit.SetActive(false);
                 if (!nextScene.Equals(""))
                 {
+                    exit.SetActive(false);
                     InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
                 } else
                 {
-                    //Set active stuff for whale
+                    firstNPCs.SetActive(false);
+                    FindObjectOfType<Player>().gameobjectsTouching.Clear();
+                    secondNPCs.SetActive(true);
                 }
                 timesInteracted = lines.Count - 2;
             }
