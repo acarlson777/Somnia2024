@@ -32,9 +32,9 @@ public class MoreMooreManager : MonoBehaviour
     public bool give(){
       if(total > 0){
         gave++;
-        total --;
+        total--;
 
-        if(gave == 8){
+        if(gave == 6){
           // DO TRANSITION
           InstantiateLoadingScreen.Instance.LoadNewScene("CS8 (Whale Mouth)");
         }

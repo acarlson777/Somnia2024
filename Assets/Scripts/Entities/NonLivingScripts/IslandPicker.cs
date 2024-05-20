@@ -28,12 +28,14 @@ public class IslandPicker : NonLiving, Entity
         {
             for (int i = 0; i < selectors.Length; i++)
             {
+
                 if (selectors[i].isOn)
                 {
                     DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo Train! We are going to -> "+ selectors[i].showName });
                     AudioManagerSingleton.Instance.FadeIn(audioName, 5, gameObject);
                     InstantiateLoadingScreen.Instance.LoadNewScene(selectors[i].IslandName);
                 }
+                print(selectors[i].IslandName + ":" + selectors[i].isOn);
             }
         }
     }
