@@ -7,6 +7,8 @@ public class Player : Living, Entity
     private FocusArrowScript arrowScript;
     public AudioClip WalkingSound;
     private AudioSource audioSource;
+    
+
     public enum SoundState
     {
         WALKING,
@@ -20,7 +22,10 @@ public class Player : Living, Entity
     {
         
         arrowScript =  gameObject.AddComponent<FocusArrowScript>();
-        entityMaxSpeed = 4.2f;
+        if (entityMaxSpeed < 2.5f)
+        {
+            entityMaxSpeed = 4.2f;
+        }
         K_friction = 20f; // should be roufly 5 times the entity max Speed to not get an "ice floor" effect
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = WalkingSound;
