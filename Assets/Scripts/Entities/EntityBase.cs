@@ -25,7 +25,7 @@ public abstract class EntityBase : MonoBehaviour,Entity
     public BoxCollider entityCollider;
     public SphereCollider interactCollider;
     public float BoxColliderThickness;
-    protected bool debug = true;
+    protected bool debug = false;
     public Vector3 arrowOffset;
     public Vector3 focusArrowOffset => arrowOffset;
 

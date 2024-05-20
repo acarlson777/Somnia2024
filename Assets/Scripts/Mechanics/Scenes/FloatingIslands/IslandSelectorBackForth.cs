@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IslandSelectorBackForth : NonLiving, Entity
 {
-    [SerializeField] public string[] lockedDialogue;
+    [SerializeField] private string[] lockedDialogue;
     public string showName;
 
     public string audioName;
@@ -19,8 +19,13 @@ public class IslandSelectorBackForth : NonLiving, Entity
 
     void Awake()
     {
+        if (IslandName.Equals("CT1 (Bea exits train, Bea enters castle)"))
+        {
+            print(name);
+        }
         if (locked) return;
         GameObject[] others = GameObject.FindGameObjectsWithTag("TrainSelector");
+        
         otherSelectors = new IslandSelectorBackForth[others.Length];
         for (int i = 0; i < others.Length; i++) // does contain a reference to ourselves
         {
