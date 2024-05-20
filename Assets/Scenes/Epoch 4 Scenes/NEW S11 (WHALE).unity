@@ -225,7 +225,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 591230431}
     m_Modifications:
     - target: {fileID: 481744296800024186, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: manager
@@ -233,19 +233,19 @@ PrefabInstance:
       objectReference: {fileID: 296125145}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -238.42
+      value: 12.733566
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: -3.4971485
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -206.95
+      value: -1.3934631
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -281,6 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6b35079c386479790df6963cc14f44, type: 3}
+--- !u!4 &145993675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
+  m_PrefabInstance: {fileID: 145993674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &156100931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,7 +489,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 591230431}
     m_Modifications:
     - target: {fileID: 481744296800024186, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: manager
@@ -492,19 +497,19 @@ PrefabInstance:
       objectReference: {fileID: 296125145}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -240.43
+      value: 10.723572
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: -3.4971485
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -211.68
+      value: -6.123459
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -540,6 +545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6b35079c386479790df6963cc14f44, type: 3}
+--- !u!4 &241137791 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
+  m_PrefabInstance: {fileID: 241137790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &296125144
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,13 +588,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296125144}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -241.87747, y: 6.776304, z: -200.42375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.276093, y: -3.5108447, z: 5.132782}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 591230431}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &317993087
 PrefabInstance:
@@ -1188,8 +1198,24 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  lines: []
-  audioLines: []
+  lines:
+  - lines:
+    - Hi for the first time!
+    - Your next interaction will give you an item!
+  - lines:
+    - I have given you my item!
+  - lines:
+    - You have already got my item!
+  audioLines:
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -1197,6 +1223,50 @@ MonoBehaviour:
   disabled: 0
   prevLineNumber: 0
   item: 1
+--- !u!1 &582781682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582781684}
+  - component: {fileID: 582781683}
+  m_Layer: 0
+  m_Name: RESET
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &582781683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582781682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2e750fc60724424af637b71d2d6bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &582781684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582781682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -235.67888, y: 8.745228, z: -190.8848}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &583131118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &591230431
 Transform:
   m_ObjectHideFlags: 0
@@ -1329,8 +1399,15 @@ Transform:
   - {fileID: 1075747556}
   - {fileID: 895364835}
   - {fileID: 1356946296}
+  - {fileID: 481744296196509687}
+  - {fileID: 296125146}
+  - {fileID: 1045026702}
+  - {fileID: 1268828688}
+  - {fileID: 1876747359}
+  - {fileID: 145993675}
+  - {fileID: 241137791}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &661514731
 PrefabInstance:
@@ -1960,8 +2037,24 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  lines: []
-  audioLines: []
+  lines:
+  - lines:
+    - Hi for the first time!
+    - Your next interaction will give you an item!
+  - lines:
+    - I have given you my item!
+  - lines:
+    - You have already got my item!
+  audioLines:
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -2441,7 +2534,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 591230431}
     m_Modifications:
     - target: {fileID: 481744296800024186, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: manager
@@ -2449,19 +2542,19 @@ PrefabInstance:
       objectReference: {fileID: 296125145}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -239.44
+      value: 11.713562
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: -3.4971485
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -209.517
+      value: -3.9604645
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2497,6 +2590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6b35079c386479790df6963cc14f44, type: 3}
+--- !u!4 &1045026702 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
+  m_PrefabInstance: {fileID: 1045026701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1075747555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2712,7 +2810,7 @@ Transform:
   - {fileID: 1629647155}
   - {fileID: 1958795036}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1242195723
 PrefabInstance:
@@ -2781,7 +2879,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 591230431}
     m_Modifications:
     - target: {fileID: 481744296800024186, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: manager
@@ -2789,19 +2887,19 @@ PrefabInstance:
       objectReference: {fileID: 296125145}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -238.09
+      value: 13.063568
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: -3.4971485
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -212.02
+      value: -6.4634705
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2837,6 +2935,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6b35079c386479790df6963cc14f44, type: 3}
+--- !u!4 &1268828688 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
+  m_PrefabInstance: {fileID: 1268828687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1273362316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 735568086166956956, guid: e4f5821ee962a423088670d32c6bcea2, type: 3}
@@ -2864,8 +2967,24 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  lines: []
-  audioLines: []
+  lines:
+  - lines:
+    - Hi for the first time!
+    - Your next interaction will give you an item!
+  - lines:
+    - I have given you my item!
+  - lines:
+    - You have already got my item!
+  audioLines:
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -2882,7 +3001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 735568086166956956, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: m_Name
-      value: NPC (GUMDROP GIRL)
+      value: 2 NPC (GUMDROP GIRL) 2
       objectReference: {fileID: 0}
     - target: {fileID: 735568086166957028, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: m_RootOrder
@@ -3456,6 +3575,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: 0
+--- !u!114 &1506097185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506097183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b1ccf8d96d74a328c6d91029972c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1520349563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3664,8 +3795,24 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  lines: []
-  audioLines: []
+  lines:
+  - lines:
+    - Hi for the first time!
+    - Your next interaction will give you an item!
+  - lines:
+    - I have given you my item!
+  - lines:
+    - You have already got my item!
+  audioLines:
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -3700,8 +3847,24 @@ MonoBehaviour:
   BoxColliderThickness: 0
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  lines: []
-  audioLines: []
+  lines:
+  - lines:
+    - Hi for the first time!
+    - Your next interaction will give you an item!
+  - lines:
+    - I have given you my item!
+  - lines:
+    - You have already got my item!
+  audioLines:
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
+  - audioLines:
+    - audio: {fileID: 0}
+      volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -4013,7 +4176,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 591230431}
     m_Modifications:
     - target: {fileID: 481744296800024186, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: manager
@@ -4021,19 +4184,19 @@ PrefabInstance:
       objectReference: {fileID: 296125145}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -236.7
+      value: 14.4535675
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: -3.4971485
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -209.39
+      value: -3.8334656
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4069,6 +4232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6b35079c386479790df6963cc14f44, type: 3}
+--- !u!4 &1876747359 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
+  m_PrefabInstance: {fileID: 1876747358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886630997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4235,6 +4403,8 @@ MonoBehaviour:
   itemsBeaHasCollected: []
   nextScene: 
   exit: {fileID: 0}
+  firstNPCs: {fileID: 1163695883}
+  secondNPCs: {fileID: 591230430}
 --- !u!1 &1960537357
 GameObject:
   m_ObjectHideFlags: 0
@@ -4749,7 +4919,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 591230431}
     m_Modifications:
     - target: {fileID: 481744296800024186, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: manager
@@ -4757,19 +4927,19 @@ PrefabInstance:
       objectReference: {fileID: 296125145}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -242.53
+      value: 8.623566
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: -3.4971485
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -209.34
+      value: -3.7834625
       objectReference: {fileID: 0}
     - target: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4805,3 +4975,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6b35079c386479790df6963cc14f44, type: 3}
+--- !u!4 &481744296196509687 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481744296800024189, guid: da6b35079c386479790df6963cc14f44, type: 3}
+  m_PrefabInstance: {fileID: 481744296196509686}
+  m_PrefabAsset: {fileID: 0}
