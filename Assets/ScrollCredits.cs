@@ -8,6 +8,7 @@ public class ScrollCredits : MonoBehaviour
     public List<TextMeshProUGUI> textyBoxies;
     public float moveSpeed = 100f;
     public float waitTime = 1f;
+    public float delayTime;
 
     void Start()
     {
@@ -19,13 +20,13 @@ public class ScrollCredits : MonoBehaviour
         foreach (TextMeshProUGUI textBox in textyBoxies)
         {
             StartCoroutine(MoveNextTextBextWextShext(textBox));
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(delayTime);
         }
     }
 
     private IEnumerator MoveNextTextBextWextShext(TextMeshProUGUI textBox)
     {
-        while (textBox.rectTransform.anchoredPosition.y < 0)
+        while (textBox.rectTransform.anchoredPosition.y < 50)
         {
             textBox.rectTransform.anchoredPosition += new Vector2(0, moveSpeed * Time.deltaTime);
             yield return null;
