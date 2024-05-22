@@ -5,42 +5,38 @@ using TMPro;
 
 public class ScrollCredits : MonoBehaviour
 {
-    //public TextMeshProUGUI[] creditsText;
-    //public Canvas canvas;
-    public float scrollSpeed = 1f;
-    public float middlePosition = 0f;
-    public float initialPause = 1f;
-    bool isPaused = false;
-    bool scrolling = true;
-    // Start is called before the first frame update
+    public List<TextMeshProUGUI> textyBoxies;
+    public float moveSpeed = 100f;
+    public float waitTime = 1f;
+
     void Start()
     {
+        StartCoroutine(ScrollTextBoxes());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ScrollTextBoxes()
     {
-        StartCoroutine(scrollTheText());
-
-    }
-
-    IEnumerator scrollTheText()
-    {
-        yield return new WaitForSeconds(initialPause);
-        while (scrolling)
+        foreach (TextMeshProUGUI textBox in textyBoxies)
         {
-            transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
-            yield return new WaitForSeconds(0.1f);
-
-            if (!isPaused && transform.position.y >= middlePosition)
-            {
-                isPaused = true;
-                yield return new WaitForSeconds(3f);
-                isPaused = false;
-            }
-            if (transform.position.y > 1000) scrolling = false;
-
+            StartCoroutine(MoveNextTextBextWextShext(textBox));
+            yield return new WaitForSeconds(10f);
         }
-        yield return null;
     }
+
+    private IEnumerator MoveNextTextBextWextShext(TextMeshProUGUI textBox)
+    {
+        while (textBox.rectTransform.anchoredPosition.y < 0)
+        {
+            textBox.rectTransform.anchoredPosition += new Vector2(0, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+        yield return new WaitForSeconds(waitTime);
+
+        while (textBox.rectTransform.anchoredPosition.y < 1000)
+        {
+            textBox.rectTransform.anchoredPosition += new Vector2(0, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
 }
