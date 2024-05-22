@@ -25,6 +25,9 @@ public class SubmitPasswordButton : InteractableObject, Entity
 
         if (entity is Player)
         {
+            List<string> dialogueToOutput = new List<string>(){"submitting rune pattern..."};
+            
+
             List<string> password = new List<string>();
             // goes through the correct password symbols in hierarchy
             foreach (PasswordSymbol passwordSymbol in passwordSymbols)
@@ -41,14 +44,27 @@ public class SubmitPasswordButton : InteractableObject, Entity
                 if(gateSymbol.submitPassword(password.ToArray()))
                 {
                     passwordWorked = true;
+                    
                 }
                 else
                 {
                     Debug.Log("wrong pass");
+                    
                 }
            
 
             }
+
+            if (passwordWorked)
+            {
+                dialogueToOutput.Add("Patterns detected");
+            } else
+            {
+                dialogueToOutput.Add("No patterns found");
+            }
+
+            DialogueManager.PopDialogue(dialogueToOutput.ToArray());
+
             bool correctSymbolsActivated = true;
             if (!passwordWorked) { return; }
             foreach (GateSymbol gate in gateSymbols)
