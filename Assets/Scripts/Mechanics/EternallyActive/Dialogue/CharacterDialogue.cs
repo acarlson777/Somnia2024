@@ -44,7 +44,10 @@ public class CharacterDialogue : InteractableObject, Entity
             }
             print("putting a dialogue" + timesInteracted);
             CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
-            audioSource.clip = audioLines[timesInteracted].audioLines[0].audio;
+            audioSource.clip = audioLines[timesInteracted].lines[0].audio;
+            audioSource.volume = audioLines[timesInteracted].lines[0].volume * PlayerPrefs.GetFloat("sfxVolume");
+
+            print("HALLO");
             audioSource.Play();
             
             character = FindObjectOfType<CharacterDialogueScript>();
@@ -68,8 +71,8 @@ public class CharacterDialogue : InteractableObject, Entity
         {
             if (prevLineNumber != character.lineNumber)
             {
-                audioSource.clip = audioLines[timesInteracted-1].audioLines[character.lineNumber].audio;
-                audioSource.volume = audioLines[timesInteracted - 1].audioLines[character.lineNumber].volume * PlayerPrefs.GetFloat("sfxVolume");
+                audioSource.clip = audioLines[timesInteracted-1].lines[character.lineNumber].audio;
+                audioSource.volume = audioLines[timesInteracted - 1].lines[character.lineNumber].volume * PlayerPrefs.GetFloat("sfxVolume");
                 audioSource.Play();
                 prevLineNumber = character.lineNumber;
             }
@@ -87,7 +90,7 @@ public class CharacterDialogue : InteractableObject, Entity
     [System.Serializable]
     public class AudioLines
     {
-        public SoundEffect[] audioLines;
+        public SoundEffect[] lines;
     }
     [System.Serializable]
     public class SoundEffect
