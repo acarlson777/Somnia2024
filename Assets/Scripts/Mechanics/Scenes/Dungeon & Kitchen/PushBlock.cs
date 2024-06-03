@@ -9,17 +9,26 @@ public class PushBlock : MonoBehaviour
     [SerializeField]
     public Material glowOff;
     public Material glowOn;
+    private Material mat;
+    private void Start()
+    {
+        mat = gameObject.GetComponent<Renderer>().material;
+  
+    }
 
 
     public void startGlow(){
 
-      gameObject.GetComponent<Renderer>().material = glowOn;
+      //gameObject.GetComponent<Renderer>().material = glowOn;
+        mat.SetColor(Shader.PropertyToID("_EmissionColor"), mat.color * 0.1f);
+
 
     }
 
     public void stopGlow(){
 
-      gameObject.GetComponent<Renderer>().material = glowOff;
+        mat.SetColor(Shader.PropertyToID("_EmissionColor"), Color.black);
+
 
     }
 
