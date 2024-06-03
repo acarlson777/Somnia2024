@@ -34753,18 +34753,10 @@ MonoBehaviour:
   - lines:
     - the item was not added2
   audioLines:
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -38398,6 +38390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917571283}
   - component: {fileID: 917571284}
+  - component: {fileID: 917571285}
   m_Layer: 0
   m_Name: house (1)
   m_TagString: Untagged
@@ -38413,7 +38406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917571282}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -96, y: -2.0637932, z: 70.18}
+  m_LocalPosition: {x: -96.07, y: -2.06, z: 70.11}
   m_LocalScale: {x: 0.369, y: 0.35, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38440,7 +38433,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38472,6 +38465,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &917571285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917571282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.950003, y: 22.63579, z: 0.5}
+  m_Center: {x: -0.000030517578, y: 0, z: 0}
 --- !u!1 &919416647
 GameObject:
   m_ObjectHideFlags: 0
@@ -52056,21 +52062,11 @@ MonoBehaviour:
   - lines:
     - faliure!
   audioLines:
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -52547,7 +52543,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -52841,6 +52837,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   audioClip: {fileID: 0}
   sceneName: SPHINX
+  enabled: 0
   disabledText: []
 --- !u!65 &1241450177
 BoxCollider:
@@ -57733,6 +57730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314941020}
   - component: {fileID: 1314941021}
+  - component: {fileID: 1314941022}
   m_Layer: 0
   m_Name: house (3)
   m_TagString: Untagged
@@ -57748,7 +57746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314941019}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -85.54, y: -2.0637932, z: 59.72}
+  m_LocalPosition: {x: -85.61, y: -2.06, z: 59.65}
   m_LocalScale: {x: 0.369, y: 0.35, z: 3.5000005}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57775,7 +57773,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -57807,6 +57805,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1314941022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314941019}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.950003, y: 22.63579, z: 0.5}
+  m_Center: {x: -0.000045776367, y: 0, z: -0.00000071525574}
 --- !u!1001 &1315582405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59886,18 +59897,10 @@ MonoBehaviour:
   - lines:
     - the item was not added
   audioLines:
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -62358,6 +62361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1420168610}
   - component: {fileID: 1420168611}
+  - component: {fileID: 1420168612}
   m_Layer: 0
   m_Name: house (2)
   m_TagString: Untagged
@@ -62373,7 +62377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420168609}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -90.8, y: -2.0637932, z: 64.98}
+  m_LocalPosition: {x: -90.87, y: -2.06, z: 64.91}
   m_LocalScale: {x: 0.369, y: 0.35, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62400,7 +62404,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -62432,6 +62436,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1420168612
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420168609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.950003, y: 22.63579, z: 0.5}
+  m_Center: {x: -0.000030517578, y: 0, z: 0.0000014305115}
 --- !u!1 &1422930511
 GameObject:
   m_ObjectHideFlags: 0
@@ -62525,6 +62542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425726677}
   - component: {fileID: 1425726678}
+  - component: {fileID: 1425726679}
   m_Layer: 0
   m_Name: house
   m_TagString: Untagged
@@ -62540,7 +62558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425726676}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -101.16, y: -2.0637932, z: 75.34}
+  m_LocalPosition: {x: -101.23, y: -2.06, z: 75.27}
   m_LocalScale: {x: 0.369, y: 0.35, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -62567,7 +62585,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -62599,6 +62617,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1425726679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425726676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.950003, y: 22.63579, z: 0.5}
+  m_Center: {x: -0.000061035156, y: 0, z: 0.00000035762787}
 --- !u!1001 &1428484925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70047,7 +70078,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93801,7 +93832,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
