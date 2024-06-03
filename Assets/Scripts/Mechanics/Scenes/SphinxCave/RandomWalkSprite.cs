@@ -7,6 +7,7 @@ public class RandomWalkSprite : MonoBehaviour
     [SerializeField] private float maxTimeBetweenMovements;
     [SerializeField] private float moveStrength;
     [SerializeField] private bool withinZone = true;
+    [SerializeField] private bool moveYToo = false;
     [Range(0f, 100f)]
     [SerializeField] private float RETURN_CONSTANT;
     [SerializeField] private GameObject zone;
@@ -28,7 +29,15 @@ public class RandomWalkSprite : MonoBehaviour
             while (withinZone)
             {
                 Debug.Log("RANDOM WORKING");
-                Vector3 currentForceBeingAdded = new Vector3(Random.Range(-1.0f, 1.0f) * moveStrength, 0, Random.Range(-1.0f, 1.0f) * moveStrength);
+                Vector3 currentForceBeingAdded;
+                if (moveYToo)
+                {
+                    currentForceBeingAdded = new Vector3(Random.Range(-1.0f, 1.0f) * moveStrength, Random.Range(-1.0f, 1.0f) * moveStrength, Random.Range(-1.0f, 1.0f) * moveStrength);
+                } else
+                {
+                    currentForceBeingAdded = new Vector3(Random.Range(-1.0f, 1.0f) * moveStrength, 0, Random.Range(-1.0f, 1.0f) * moveStrength);
+
+                }
                 rb.velocity = new Vector3(0, 0, 0);
                 rb.AddForce(currentForceBeingAdded);
                 yield return new WaitForSeconds(Random.Range(minTimeBetweenMovements, maxTimeBetweenMovements));
