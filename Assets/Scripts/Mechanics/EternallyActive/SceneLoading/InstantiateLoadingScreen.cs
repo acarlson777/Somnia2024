@@ -24,7 +24,6 @@ public class InstantiateLoadingScreen : MonoBehaviour
         loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
         sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
         loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
-        print(loadingScreenCanvasPrefab);
     }
     private void Start()
     {
