@@ -55,12 +55,15 @@ public class SceneClickThrough : MonoBehaviour
         Sprite[] portraits = ConvertListToArray(row => row.charPortrait);
         string[] names = ConvertListToArray(row => row.charName);
         voiceAudio = ConvertListToArray(row => row.charVoiceLine);
-        if (portraits[lineNumber] == null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 0);
-        if (portrait != null && portraits[lineNumber] != null) portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 1);
         if (portrait != null)
+        {
+            if (portraits[lineNumber] == null)
+                portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 0);
+            else 
+                portrait.color = new Color(portrait.color.r, portrait.color.g, portrait.color.b, 1);
             portrait.sprite = portraits[lineNumber];
-        if (nameText != null) nameText.text = names[lineNumber];
-
+            nameText.text = names[lineNumber];
+        }
 
         if (GameObject.Find("CharacterDialogueBox") == null && !sceneChanged && startedDialogue)
         {

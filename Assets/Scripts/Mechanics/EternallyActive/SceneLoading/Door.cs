@@ -5,8 +5,9 @@ public class Door : InteractableObject, Entity
 {
     [SerializeField] private AudioClip audioClip;
     public string sceneName;
+    public new bool enabled;
     public string[] disabledText;
-
+    
     new public void Interact(Entity other)
     {
         if (!enabled)

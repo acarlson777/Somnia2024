@@ -55,8 +55,15 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(loadingScreenLength);
         fadeOut = false;
         yield return new WaitForSeconds(2);
-        Destroy(loadingScreenCanvas.gameObject);
+        if (loadingScreenCanvas == null)
+        {
+            Debug.Log("Loading Screen Canvas does not exist, This may be because the previous scene did not properly make it!");
+        }
+        else
+        {
+            Destroy(loadingScreenCanvas.gameObject);
+        }
         fading = false;
-        Destroy(gameObject);
+        Destroy(gameObject); // Destroy ourselves
     }
 }

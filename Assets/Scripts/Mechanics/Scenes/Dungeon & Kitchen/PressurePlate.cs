@@ -12,6 +12,7 @@ public class PressurePlate : MonoBehaviour
     public Material glowOff;
     public Material glowOn;
     public bool lockIn;
+    private bool lockedIn = false;
     public float lockInTime;
 
 
@@ -54,6 +55,17 @@ public class PressurePlate : MonoBehaviour
         correctBlock.gameObject.transform.position = pressurePlatePos;
         correctBlock.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         correctBlock.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        lockedIn = true;
         AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("button", gameObject);
+    }
+
+    private void Update()
+    {
+        if (lockedIn)
+        {
+            Vector3 pressurePlatePos = transform.position;
+            pressurePlatePos.y += 0.5f;
+            correctBlock.gameObject.transform.position = pressurePlatePos;
+        }
     }
 }

@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScrollCredits : MonoBehaviour
 {
-    public List<TextMeshProUGUI> textyBoxies;
+    public List<GameObject> textyBoxies;
     public float moveSpeed = 100f;
     public float waitTime = 1f;
     public float delayTime;
@@ -17,25 +17,25 @@ public class ScrollCredits : MonoBehaviour
 
     private IEnumerator ScrollTextBoxes()
     {
-        foreach (TextMeshProUGUI textBox in textyBoxies)
+        foreach (GameObject textBox in textyBoxies)
         {
             StartCoroutine(MoveNextTextBextWextShext(textBox));
             yield return new WaitForSeconds(delayTime);
         }
     }
 
-    private IEnumerator MoveNextTextBextWextShext(TextMeshProUGUI textBox)
+    private IEnumerator MoveNextTextBextWextShext(GameObject textBox)
     {
-        while (textBox.rectTransform.anchoredPosition.y < 50)
+        while (textBox.GetComponent<RectTransform>().anchoredPosition.y < 50)
         {
-            textBox.rectTransform.anchoredPosition += new Vector2(0, moveSpeed * Time.deltaTime);
+            textBox.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, moveSpeed * Time.deltaTime);
             yield return null;
         }
         yield return new WaitForSeconds(waitTime);
 
-        while (textBox.rectTransform.anchoredPosition.y < 1000)
+        while (textBox.GetComponent<RectTransform>().anchoredPosition.y < 1000)
         {
-            textBox.rectTransform.anchoredPosition += new Vector2(0, moveSpeed * Time.deltaTime);
+            textBox.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, moveSpeed * Time.deltaTime);
             yield return null;
         }
     }

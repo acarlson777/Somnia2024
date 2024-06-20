@@ -29,8 +29,6 @@ public class Cutscene : MonoBehaviour
     void Update()
     {
              
-
-        
     }
 
     IEnumerator StartCutscene()
@@ -45,5 +43,7 @@ public class Cutscene : MonoBehaviour
     {
         Debug.Log("video ended");
         InstantiateLoadingScreen.Instance.LoadNewScene(sceneName);
+
     }
+   
 }

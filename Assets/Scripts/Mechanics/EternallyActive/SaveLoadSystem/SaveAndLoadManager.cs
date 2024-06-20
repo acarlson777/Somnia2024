@@ -18,7 +18,7 @@ public class SaveAndLoadManager : MonoBehaviour
     public static void LoadSavedScene()
     {
         print("Loading Scene: " + PlayerPrefs.GetString("Last Scene", "Bea's Room"));
-        InstantiateLoadingScreen.Instance.LoadNewScene(PlayerPrefs.GetString("Last Scene","Tutorial")); // will default to the 1th scene               because 0th is main menu
+        InstantiateLoadingScreen.Instance.LoadNewScene(PlayerPrefs.GetString("Last Scene","Tutorial")); // will default to the 1th scene because 0th is main menu
     }
     public static void ResetGameData()
     {
@@ -27,5 +27,10 @@ public class SaveAndLoadManager : MonoBehaviour
     public void ResetGame()
     {
         ResetGameData();
+    }
+
+    public static string GetSavedScene()
+    {
+        return PlayerPrefs.GetString("Last Scene", "Tutorial");
     }
 }
