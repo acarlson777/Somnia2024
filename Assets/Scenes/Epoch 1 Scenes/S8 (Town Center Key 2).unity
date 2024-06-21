@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18315327, g: 0.22670661, b: 0.29429692, a: 1}
+  m_IndirectSpecularColor: {r: 0.18315376, g: 0.2267072, b: 0.294298, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11307,6 +11307,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   audioClip: {fileID: 0}
   sceneName: SPHINX
+  enabled: 0
   disabledText: []
 --- !u!65 &251782802
 BoxCollider:
@@ -22811,18 +22812,10 @@ MonoBehaviour:
   - lines:
     - the item was not added
   audioLines:
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -28291,18 +28284,18 @@ MonoBehaviour:
   - lines:
     - the item was not added
   audioLines:
-  - audioLines:
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
+      volume: 0
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
+      volume: 0
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
+      volume: 0
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
+      volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -37124,18 +37117,18 @@ MonoBehaviour:
   - lines:
     - the item was not added
   audioLines:
-  - audioLines:
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
+      volume: 0
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
+      volume: 0
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
+      volume: 0
+  - lines:
     - audio: {fileID: 0}
-      volume: 1
+      volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -42856,18 +42849,10 @@ MonoBehaviour:
   - lines:
     - the item was not added2
   audioLines:
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -79414,21 +79399,11 @@ MonoBehaviour:
   - lines:
     - faliure!
   audioLines:
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
-  - audioLines:
-    - audio: {fileID: 0}
-      volume: 1
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
+  - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortrait: {fileID: 0}
@@ -83791,6 +83766,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903143951}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1904420906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904420908}
+  - component: {fileID: 1904420907}
+  m_Layer: 0
+  m_Name: BackgroundMusicHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1904420907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904420906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f7fd3760b075f4b91e7340c56aa44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundTrackName: SweetAbyssSoundtrack
+--- !u!4 &1904420908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904420906}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.281227, y: -11.739252, z: 12.850171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904714533
 GameObject:
   m_ObjectHideFlags: 0

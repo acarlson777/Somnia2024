@@ -9219,6 +9219,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842650885}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &845061479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845061481}
+  - component: {fileID: 845061480}
+  m_Layer: 0
+  m_Name: BackgroundMusicHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &845061480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845061479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f7fd3760b075f4b91e7340c56aa44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundTrackName: SphinxLairSoundtrack
+--- !u!4 &845061481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845061479}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.281227, y: -11.739252, z: 12.850171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849454259
 GameObject:
   m_ObjectHideFlags: 0
@@ -17505,6 +17550,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   audioClip: {fileID: 8300000, guid: 2d672af686be54a658b38ab2532d9b41, type: 3}
   sceneName: S8 (Town Center Key 2)
+  enabled: 0
   disabledText: []
 --- !u!65 &1880181251
 BoxCollider:
@@ -20790,6 +20836,10 @@ PrefabInstance:
       propertyPath: exit
       value: 
       objectReference: {fileID: 1880181249}
+    - target: {fileID: 3583086597815098897, guid: a5f034081c0a14884b65af32d3caa992, type: 3}
+      propertyPath: nextScene
+      value: S2 (Third Floating Island)
+      objectReference: {fileID: 0}
     - target: {fileID: 3583086597815098897, guid: a5f034081c0a14884b65af32d3caa992, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
       value: 1

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028416, g: 0.22571386, b: 0.3069211, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5769,14 +5769,78 @@ PrefabInstance:
       propertyPath: locked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4177083565082626107, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: lockedDialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565082626107, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: lockedDialogue.Array.data[0]
+      value: The lever won't budge.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565128456881, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565128456881, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: locked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4177083565128456881, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: IslandName
-      value: S7 (Town Entrance)
+      value: CS5 (Bea and Wolfgang)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565128456881, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: lockedDialogue.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565128456881, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: lockedDialogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565245890258, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: lockedDialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565245890258, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: lockedDialogue.Array.data[0]
+      value: The lever won't budge.
       objectReference: {fileID: 0}
     - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: audioLines.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: firstTimeDialogue.Array.data[0]
+      value: Welcome back dear Bea.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: firstTimeDialogue.Array.data[1]
+      value: Go ahead and choose a destination with the levers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.data[0].audioLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.data[1].audioLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.data[0].audioLines.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f1ddc786d85e94eb5a73f5a8a22b1114, type: 3}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.data[0].audioLines.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 79dcce3a1c84f4a1b991231fdb2b0c5f, type: 3}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.data[1].audioLines.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f1ddc786d85e94eb5a73f5a8a22b1114, type: 3}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.data[1].audioLines.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 79dcce3a1c84f4a1b991231fdb2b0c5f, type: 3}
     - target: {fileID: 4177083566709642342, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_Name
       value: TrainStation

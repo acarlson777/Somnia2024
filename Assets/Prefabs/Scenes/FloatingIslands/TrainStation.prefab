@@ -35022,6 +35022,7 @@ Transform:
   - {fileID: 4215543603009772104}
   - {fileID: 4177083566337008079}
   - {fileID: 8580596424002662606}
+  - {fileID: 4447838081047309287}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41007,6 +41008,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7138077301302499033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4447838081047309287}
+  - component: {fileID: 6344617604283602206}
+  m_Layer: 0
+  m_Name: BackgroundMusicHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4447838081047309287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138077301302499033}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.382408, y: -36.845783, z: 10.224007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4177083566709642343}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6344617604283602206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138077301302499033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f7fd3760b075f4b91e7340c56aa44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundTrackName: SpaceTrainStationSoundtrack
 --- !u!1 &7406741419969122888
 GameObject:
   m_ObjectHideFlags: 0
@@ -43355,40 +43401,16 @@ PrefabInstance:
       value: 331.90002
       objectReference: {fileID: 0}
     - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
-      propertyPath: sfxList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
-      propertyPath: soundtrackList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
       propertyPath: sfxList.Array.data[0]._name
       value: yurmother
-      objectReference: {fileID: 0}
-    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
-      propertyPath: sfxList.Array.data[0].volume
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
       propertyPath: sfxList.Array.data[0].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 337aa1950115649748d14d6fc069c8c6, type: 3}
     - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
-      propertyPath: soundtrackList.Array.data[3]._name
-      value: lever
-      objectReference: {fileID: 0}
-    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
-      propertyPath: soundtrackList.Array.data[3].fadeTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.size
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7270271030099497643, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
-      propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
-      value: yurmother
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}

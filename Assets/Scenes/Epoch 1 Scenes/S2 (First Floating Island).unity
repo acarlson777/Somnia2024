@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028416, g: 0.22571386, b: 0.3069211, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1459,6 +1459,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4177083565082626107, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177083565082626107, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: IslandName
       value: S3 (Throne Room)
       objectReference: {fileID: 0}
@@ -1541,7 +1545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: audioLines.Array.data[0].audioLines.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: audioLines.Array.data[1].audioLines.Array.size
@@ -1567,6 +1571,10 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[0].audioLines.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 810cab9044e4d4eb18846a79286de850, type: 3}
+    - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: audioLines.Array.data[0].audioLines.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ce3c3f93386043fe8653ada35f5e477, type: 3}
     - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: audioLines.Array.data[1].audioLines.Array.data[0]
       value: 

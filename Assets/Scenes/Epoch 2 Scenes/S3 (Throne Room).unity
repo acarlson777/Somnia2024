@@ -8122,6 +8122,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &723277929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 723277931}
+  - component: {fileID: 723277930}
+  m_Layer: 0
+  m_Name: BackgroundMusicHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &723277930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723277929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f7fd3760b075f4b91e7340c56aa44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundTrackName: DungeonAndCastleSoundtrack
+--- !u!4 &723277931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723277929}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.281227, y: -11.739252, z: 12.850171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724058419
 GameObject:
   m_ObjectHideFlags: 0
@@ -18071,7 +18116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2004147973, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4287050260684467966, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackToStop
@@ -18079,15 +18124,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.size
-      value: 4
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.data[0]._name
-      value: church
+      value: yurmother
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.data[0].volume
@@ -18096,18 +18141,22 @@ PrefabInstance:
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.data[0].audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ca717a6cbde284268bb882b26ba61c8e, type: 3}
+      objectReference: {fileID: 8300000, guid: 337aa1950115649748d14d6fc069c8c6, type: 3}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[0]._name
       value: BeasRoom
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3]._name
-      value: bell
+      value: BeachyDreamsSoundtrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[7]._name
+      value: DungeonAndCastleSoundtrack
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3].fadeTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.size
@@ -18115,7 +18164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
-      value: church
+      value: BeachyDreams
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218962, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_Name

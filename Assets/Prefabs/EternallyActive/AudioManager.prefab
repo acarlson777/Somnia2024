@@ -44,7 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46148158f9a55464dba4e7c6af81e6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxList: []
+  sfxList:
+  - _name: yurmother
+    _isVolumeFading: 0
+    volume: 0.5
+    audioClip: {fileID: 8300000, guid: 337aa1950115649748d14d6fc069c8c6, type: 3}
+    audioSource: {fileID: 0}
+  - _name: train
+    _isVolumeFading: 0
+    volume: 0.5
+    audioClip: {fileID: 8300000, guid: a0eeadd2fe53f41eba433fc144fde673, type: 3}
+    audioSource: {fileID: 0}
+  - _name: church
+    _isVolumeFading: 0
+    volume: 0.5
+    audioClip: {fileID: 8300000, guid: ca717a6cbde284268bb882b26ba61c8e, type: 3}
+    audioSource: {fileID: 0}
   songList:
   - _name: BeasTheme
     _isVolumeFading: 0
@@ -66,6 +81,71 @@ MonoBehaviour:
     volume: 1
     audioClip: {fileID: 8300000, guid: 8cff03607a2134d739e10c0d429cb873, type: 3}
     audioSource: {fileID: 0}
+  - _name: BeachyDreams
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 5f7b01909c91c2249af2de764d6aef25, type: 3}
+    audioSource: {fileID: 0}
+  - _name: BeasLullaby
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: f0f1574e02e06b547832a86e9af6bcd8, type: 3}
+    audioSource: {fileID: 0}
+  - _name: BeasThemeREAL
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: c1b44d9f459924d4ebe144c6f73a73c1, type: 3}
+    audioSource: {fileID: 0}
+  - _name: Bedroom
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 3151d803f00a88b4b85b8709f0daa0d6, type: 3}
+    audioSource: {fileID: 0}
+  - _name: BellyOfDarkness
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 23737e74d770c5848890ae6131d89b87, type: 3}
+    audioSource: {fileID: 0}
+  - _name: DungeonAndCastle
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 097f759ad496b448f997679fe2e67456, type: 3}
+    audioSource: {fileID: 0}
+  - _name: Fireflies
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: d33da850b623cbb4690aad5ffccd7702, type: 3}
+    audioSource: {fileID: 0}
+  - _name: SpaceTrainStation
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 57e38b633cf16274a976b6e42d88a7de, type: 3}
+    audioSource: {fileID: 0}
+  - _name: SphinxLair
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 2a2b3dafb273d894fa328db7498f3a0d, type: 3}
+    audioSource: {fileID: 0}
+  - _name: Swallowed
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 0352a87c9f7656e4ca142d34c0934b6c, type: 3}
+    audioSource: {fileID: 0}
+  - _name: SweetAbyss
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: d3102379355760140964396b057f2529, type: 3}
+    audioSource: {fileID: 0}
+  - _name: TheMazeREAL
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 1d9bf8dc33ef0c64cb8512cc0b849268, type: 3}
+    audioSource: {fileID: 0}
+  - _name: TheBetrayal
+    _isVolumeFading: 0
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 0f3a658930334614e96aeabdbc5128ac, type: 3}
+    audioSource: {fileID: 0}
   soundtrackList:
   - _name: BeasRoom
     fadeTime: 1
@@ -80,3 +160,47 @@ MonoBehaviour:
     fadeTime: 1
     sounds:
     - BeasTheme
+  - _name: BeachyDreamsSoundtrack
+    fadeTime: 1
+    sounds:
+    - BeachyDreams
+  - _name: BeastLullabySoundtrack
+    fadeTime: 1
+    sounds:
+    - BeastLullaby
+  - _name: BedroomSoundtrack
+    fadeTime: 1
+    sounds:
+    - Bedroom
+  - _name: BellyOfDarknessSoundtrack
+    fadeTime: 1
+    sounds:
+    - BellyOfDarknessSoundtrack
+  - _name: DungeonAndCastleSoundtrack
+    fadeTime: 1
+    sounds:
+    - DungeonAndCastle
+  - _name: FirefliesSoundtrack
+    fadeTime: 1
+    sounds:
+    - Fireflies
+  - _name: SpaceTrainStationSoundtrack
+    fadeTime: 1
+    sounds:
+    - SpaceTrainStation
+  - _name: SphinxLairSoundtrack
+    fadeTime: 1
+    sounds:
+    - SphinxLair
+  - _name: SwallowedSoundtrack
+    fadeTime: 1
+    sounds:
+    - Swallowed
+  - _name: SweetAbyssSoundtrack
+    fadeTime: 1
+    sounds:
+    - SweetAbyss
+  - _name: TheBetrayalSoundtrack
+    fadeTime: 1
+    sounds:
+    - TheBetrayal
