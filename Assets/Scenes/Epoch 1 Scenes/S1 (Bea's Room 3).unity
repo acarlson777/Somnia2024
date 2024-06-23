@@ -1533,12 +1533,13 @@ MonoBehaviour:
   BoxColliderThickness: 1
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
-  itemsToSleep: []
+  itemsToSleep:
+  - {fileID: 1057552337}
   inspectorBed: 0
   not_ready_dialogue:
   - This is my bed, so nice and comfy.
-  - However, I dont feel like sleeping right now. Maybe first I should read a little?
-  sceneToLoad: CT8 - Second Time Falling Asleep
+  - I need to find my whale and look at my journal though.
+  sceneToLoad: S2 (Third Floating Island)
 --- !u!54 &433303089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1790,7 +1791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.75
+      value: -6.23
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2601,8 +2602,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1057552339}
   - component: {fileID: 1057552338}
+  - component: {fileID: 1057552340}
+  - component: {fileID: 1057552341}
+  - component: {fileID: 1057552342}
   m_Layer: 0
-  m_Name: Stuffed Bear (1)
+  m_Name: Whale Doll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,13 +2672,64 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057552337}
   m_LocalRotation: {x: 0.61237246, y: 0.3535534, z: -0.3535534, w: 0.61237246}
-  m_LocalPosition: {x: -4.553, y: 2.629, z: -9.281}
+  m_LocalPosition: {x: -5.29, y: 1.264, z: -2.2}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 90, y: 60, z: 0}
+--- !u!114 &1057552340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057552337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81bdd7feb77ee488b9de29da17bd45df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  soundsToPlay: 
+  lines:
+  - lines:
+    - There's my doll, why is it on the floor..
+  interacted: 0
+--- !u!54 &1057552341
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057552337}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1057552342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057552337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.760004, y: 18.121645, z: 0.20000288}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1063263864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,6 +3786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46ca9ec726d44da0889f2333fae9b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  justANormalChild: {fileID: 0}
 --- !u!1001 &1331088337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4815,6 +4871,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1512601147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512601149}
+  - component: {fileID: 1512601148}
+  m_Layer: 0
+  m_Name: characterdialogueclckthrough
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1512601148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512601147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da2616dd4db3749a20fbac47e95c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamJournalPopup: 0
+  table:
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: What was that...
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: And Riggs betrayed me, I need to find my doll.
+    voiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: 
+--- !u!4 &1512601149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512601147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.876276, y: 4.9999995, z: -10.876276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1597028619
 GameObject:
   m_ObjectHideFlags: 0
