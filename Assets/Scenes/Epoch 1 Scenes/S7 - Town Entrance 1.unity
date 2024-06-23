@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802848, g: 0.2257149, b: 0.30692306, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10164,18 +10164,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.data[0]._name
       value: windd
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: sfxList.Array.data[1]._name
+      value: commotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.data[0].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: sfxList.Array.data[1].volume
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
@@ -10183,11 +10191,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: e6a1b6d1aae0547c39f1d0574a873eaa, type: 3}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: sfxList.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 594ace37ed80a4c70a975ffc11919992, type: 3}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: sfxList.Array.data[0].audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3]._name
+      value: SweetAbyssSoundtrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[4]._name
       value: wind
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[5]._name
+      value: commotionSoundTrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3].fadeTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[4].fadeTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[5].fadeTime
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
@@ -10196,7 +10228,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
+      value: SweetAbyss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[4].sounds.Array.data[0]
       value: windd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[5].sounds.Array.data[0]
+      value: commotion
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218962, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_Name
@@ -55684,6 +55724,10 @@ PrefabInstance:
       value: 'Asoca: Sure! it''s definitely this way.'
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: audioLines.Array.data[0].audioLines.Array.size
       value: 9
       objectReference: {fileID: 0}
@@ -55742,6 +55786,10 @@ PrefabInstance:
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: audioLines.Array.data[0].audioLines.Array.data[8].volume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735568086166956954, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: m_Constraints
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 735568086166956956, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: m_Name
@@ -55803,7 +55851,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1902919776674088103, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
 --- !u!1 &1853691239
 GameObject:

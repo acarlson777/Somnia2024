@@ -14,5 +14,6 @@ public class BackgroundSongPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack(soundTrackName, 1f, gameObject);
+        yield return null;
     }
 }

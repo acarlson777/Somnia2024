@@ -40,6 +40,7 @@ public class AudioManagerSingleton : MonoBehaviour
         Soundtrack soundtrack = (Soundtrack) FindSoundOfName(name);
         soundtrack.SetRandomSong();
         soundtrack.Play(caller);
+        Debug.Log("AUDIO MANAGER PLAYING RANDOM SONGS");
     }
 
     public void PlayRandomSongFromSoundtrackOnce(string name, GameObject caller)

@@ -28,7 +28,6 @@ public class RandomWalkSprite : MonoBehaviour
         {
             while (withinZone)
             {
-                Debug.Log("RANDOM WORKING");
                 Vector3 currentForceBeingAdded;
                 if (moveYToo)
                 {
@@ -52,7 +51,6 @@ public class RandomWalkSprite : MonoBehaviour
         {
             while (!withinZone)
             {
-                Debug.Log("RETURN WORKING");
                 rb.velocity = new Vector3(0, 0, 0);
                 rb.AddForce(Vector3.Normalize(zone.transform.position-transform.position) * RETURN_CONSTANT); ;
                 yield return new WaitForSeconds(Random.Range(minTimeBetweenMovements, maxTimeBetweenMovements));

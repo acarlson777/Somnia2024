@@ -21,6 +21,8 @@ public class Soundtrack : AudioInteraction
     private GameObject lastCaller;
     private SoundInstance activeSound;
 
+    private uint _debug = 0;
+
 
     public void Play(GameObject caller)
     {
@@ -74,7 +76,7 @@ public class Soundtrack : AudioInteraction
         currentlyPlayingSound = activeSound.audioSource;
         lastCaller = caller;
         currentNextSoundLogicCoroutine = AudioManagerSingleton.Instance.StartCoroutine(NextSoundLogic());
-        Debug.Log("Soundtrack \"" + Name + "\" is fading in" + " with song \"" + activeSound.Name + "\"");
+        Debug.Log("Soundtrack \"" + Name + "\" is fading in" + " with song \"" + activeSound.Name + "\""+_debug++);
     }
 
     public void FadeOut(float seconds)
@@ -97,6 +99,7 @@ public class Soundtrack : AudioInteraction
     IEnumerator NextSoundLogic()
     {
         yield return new WaitForSeconds(currentlyPlayingSound.clip.length - fadeTime);
+
         FadeOut(fadeTime);
         index = (index + 1) % sounds.Length;
         yield return new WaitForSeconds(fadeTime);
