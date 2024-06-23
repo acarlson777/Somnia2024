@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802848, g: 0.2257149, b: 0.30692306, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862144cd857ed46bfafb32caea28554f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 0
 --- !u!1 &29783259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,6 +1590,10 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[3].audioLines.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4177083566281971035, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4177083566709642342, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_Name
       value: TrainStation
@@ -1639,6 +1642,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4215543601953736009, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
     - target: {fileID: 4249171598007973867, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.98
