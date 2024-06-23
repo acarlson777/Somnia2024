@@ -10,23 +10,22 @@ public class TownMusic : MonoBehaviour
     {
         if (justANormalChild == null)
         {
-            justANormalChild = Instantiate(gameObject);
+            justANormalChild = Instantiate(new GameObject());
         }
-        AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("wind", 1f, gameObject);
-        //coroutine = DelayedMusicPlay();
-        //StartCoroutine(coroutine);
+        
+        StartCoroutine(DelayedMusicPlay());
     }
 
     IEnumerator DelayedMusicPlay()
     {
         yield return new WaitForSeconds(1);
         AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrack("commotionSoundTrack", justANormalChild);
+        AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("wind", 1f, gameObject);
         /* plays commotion foreva!!
         while (true)    
         {
             AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrack("commotion", gameObject);
             yield return new WaitForSeconds(26);    
         }*/
-        StopCoroutine(coroutine);
     }   
 }
