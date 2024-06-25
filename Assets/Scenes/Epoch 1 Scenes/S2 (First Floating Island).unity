@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1802848, g: 0.2257149, b: 0.30692306, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,8 +180,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 986499236}
-  m_RootOrder: 9
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 45.704, z: 0}
 --- !u!212 &29783261
 SpriteRenderer:
@@ -1773,15 +1773,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: sfxList.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.size
-      value: 4
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: sfxList.Array.data[0]._name
-      value: lever
+      value: yurmother
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: sfxList.Array.data[1]._name
@@ -1805,11 +1805,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: a0eeadd2fe53f41eba433fc144fde673, type: 3}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.data[3]._name
-      value: levers
+      value: BeachyDreamsSoundtrack
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.data[3].fadeTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.size
@@ -1817,7 +1817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
-      value: lever
+      value: BeachyDreams
       objectReference: {fileID: 0}
     - target: {fileID: 8633839391825539074, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_LocalPosition.x

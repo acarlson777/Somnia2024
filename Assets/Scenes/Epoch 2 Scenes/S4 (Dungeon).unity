@@ -431,7 +431,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1480,7 +1480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.33
+      value: -11.63
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1488,7 +1488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.95
+      value: -18.99
       objectReference: {fileID: 0}
     - target: {fileID: 5631316416746893017, guid: ff94c1c80bc3340a4aa5489a6d92b6a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3626,7 +3626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862144cd857ed46bfafb32caea28554f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 0
 --- !u!1 &672289639
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,7 +4516,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5043,7 +5042,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7590,10 +7589,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 2048329707}
   glowOff: {fileID: 2100000, guid: 6120c4ae145bd4b20bddd931e86a7546, type: 2}
   glowOn: {fileID: 2100000, guid: 6120c4ae145bd4b20bddd931e86a7546, type: 2}
+  correctBlock: {fileID: 2048329707}
   lockIn: 1
+  blockSpecific: 1
   lockInTime: 0.25
 --- !u!65 &1264129032
 BoxCollider:
@@ -8018,7 +8018,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8623,7 +8623,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8921,7 +8921,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9253,7 +9253,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
+  - {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9764,10 +9764,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 1035554990}
   glowOff: {fileID: 2100000, guid: f4edcc6887ba24148ac136fcef8ce2a1, type: 2}
   glowOn: {fileID: 2100000, guid: f4edcc6887ba24148ac136fcef8ce2a1, type: 2}
+  correctBlock: {fileID: 1035554990}
   lockIn: 1
+  blockSpecific: 1
   lockInTime: 0.25
 --- !u!65 &1683880470
 BoxCollider:
@@ -10509,10 +10510,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 1245328957}
   glowOff: {fileID: 2100000, guid: a018aff5f709449488d83f68d5061e9e, type: 2}
   glowOn: {fileID: 2100000, guid: a018aff5f709449488d83f68d5061e9e, type: 2}
+  correctBlock: {fileID: 1245328957}
   lockIn: 1
+  blockSpecific: 1
   lockInTime: 0.25
 --- !u!65 &1861083101
 BoxCollider:

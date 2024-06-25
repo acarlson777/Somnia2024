@@ -1137,6 +1137,8 @@ GameObject:
   - component: {fileID: 96204136}
   - component: {fileID: 96204135}
   - component: {fileID: 96204134}
+  - component: {fileID: 96204138}
+  - component: {fileID: 96204139}
   m_Layer: 0
   m_Name: Pressure Plate 3
   m_TagString: Untagged
@@ -1172,9 +1174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 1935813188}
-  glowOff: {fileID: 2100000, guid: 01ff1af13ea8b47a79fdc327994cd7e7, type: 2}
-  glowOn: {fileID: 2100000, guid: 6d4f58811d4ed4b0bb2495c688da2bba, type: 2}
+  glowOff: {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
+  glowOn: {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
   lockIn: 0
   lockInTime: 1
 --- !u!65 &96204135
@@ -1210,7 +1211,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01ff1af13ea8b47a79fdc327994cd7e7, type: 2}
+  - {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1240,6 +1241,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96204132}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &96204138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96204132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines:
+  - lines:
+    - it seems I need to put a crate here
+  audioLines:
+  - lines:
+    - audio: {fileID: 0}
+      volume: 0
+  timesInteracted: 0
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 21300000, guid: f3ab3fbc43ec341859e131a94d3cb0af, type: 3}
+  name: 
+  disabled: 0
+  prevLineNumber: 0
+--- !u!54 &96204139
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96204132}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &105793377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +1973,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 881ab0b0598bb4f2caf718c17253249d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2724,6 +2771,8 @@ GameObject:
   - component: {fileID: 252565071}
   - component: {fileID: 252565070}
   - component: {fileID: 252565069}
+  - component: {fileID: 252565073}
+  - component: {fileID: 252565074}
   m_Layer: 0
   m_Name: Pressure Plate 1
   m_TagString: Untagged
@@ -2759,9 +2808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 1843381724}
-  glowOff: {fileID: 2100000, guid: 00a2079ae76914bbf83cda53a45561f8, type: 2}
-  glowOn: {fileID: 2100000, guid: 491735a7fceb34c76a6e70ece5a80572, type: 2}
+  glowOff: {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
+  glowOn: {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
   lockIn: 0
   lockInTime: 1
 --- !u!65 &252565070
@@ -2797,7 +2845,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 00a2079ae76914bbf83cda53a45561f8, type: 2}
+  - {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2827,11 +2875,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252565067}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &262691215 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 249780237553440001, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-  m_PrefabInstance: {fileID: 447233845}
+--- !u!114 &252565073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252565067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines:
+  - lines:
+    - it seems I need to put a crate here
+  audioLines:
+  - lines:
+    - audio: {fileID: 0}
+      volume: 0
+  timesInteracted: 0
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 21300000, guid: f3ab3fbc43ec341859e131a94d3cb0af, type: 3}
+  name: 
+  disabled: 0
+  prevLineNumber: 0
+--- !u!54 &252565074
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252565067}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &268677157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,6 +5009,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: name
+      value: Riggs
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[0]
+      value: You go Bea!
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[1]
+      value: Solve that puzzle whilst I stand over here doing nothing!
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 249780237322979872, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_Height
       value: 2.55
@@ -4930,11 +5043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979880, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 94
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979880, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979881, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_Enabled
@@ -4954,7 +5067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -80.33
+      value: -77.744
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4962,7 +5075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.41
+      value: 24.543
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5013,7 +5126,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
     m_RemovedComponents:
-    - {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
     - {fileID: 1381094356444603669, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
     - {fileID: 249780237322979881, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
     - {fileID: 249780237322979882, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
@@ -5779,7 +5891,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: bc2b8e5de084843ecad5d35a5ae908e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9698,7 +9810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833151216}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -30.5, y: -25, z: 52.22}
+  m_LocalPosition: {x: -30.5, y: -25, z: 52.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10857,7 +10969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890480876}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -42.5, y: -25, z: 62.52}
+  m_LocalPosition: {x: -42.5, y: -25, z: 62.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10878,7 +10990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   speed: 10
-  endDistance: {x: 0, y: 0, z: -2.5}
+  endDistance: {x: 0, y: 0, z: -2}
   correspondingPlate: {fileID: 0}
 --- !u!65 &890480879
 BoxCollider:
@@ -13073,7 +13185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161716476}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -29.24, y: -25, z: 61}
+  m_LocalPosition: {x: -29.19, y: -25, z: 61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13094,7 +13206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   speed: 10
-  endDistance: {x: -2.5, y: 0, z: 0}
+  endDistance: {x: -2, y: 0, z: 0}
   correspondingPlate: {fileID: 0}
 --- !u!65 &1161716479
 BoxCollider:
@@ -15110,6 +15222,8 @@ GameObject:
   - component: {fileID: 1294469482}
   - component: {fileID: 1294469481}
   - component: {fileID: 1294469480}
+  - component: {fileID: 1294469484}
+  - component: {fileID: 1294469485}
   m_Layer: 0
   m_Name: Pressure Plate 2
   m_TagString: Untagged
@@ -15145,9 +15259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 1430718803}
-  glowOff: {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
-  glowOn: {fileID: 2100000, guid: d28ba83c43e74441fb57297d5e253395, type: 2}
+  glowOff: {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
+  glowOn: {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
   lockIn: 0
   lockInTime: 1
 --- !u!65 &1294469481
@@ -15183,7 +15296,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
+  - {fileID: 2100000, guid: bcd6edeb005a4b64da75d895004ebf27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15213,6 +15326,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294469478}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1294469484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294469478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines:
+  - lines:
+    - it seems I need to put a crate here
+  audioLines:
+  - lines:
+    - audio: {fileID: 0}
+      volume: 0
+  timesInteracted: 0
+  portrait: {fileID: 0}
+  characterPortrait: {fileID: 21300000, guid: f3ab3fbc43ec341859e131a94d3cb0af, type: 3}
+  name: 
+  disabled: 0
+  prevLineNumber: 0
+--- !u!54 &1294469485
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294469478}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &1304684176
 GameObject:
   m_ObjectHideFlags: 0
@@ -17006,7 +17165,7 @@ GameObject:
   - component: {fileID: 1430718804}
   - component: {fileID: 1430718803}
   m_Layer: 0
-  m_Name: Block 2
+  m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17024,8 +17183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be200de7b6034c4cb2cbf8137b9af04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowOff: {fileID: 2100000, guid: c3ed78989c61749e0ab6403930b3e172, type: 2}
-  glowOn: {fileID: 2100000, guid: d28ba83c43e74441fb57297d5e253395, type: 2}
+  glowOff: {fileID: 2100000, guid: e453e342d3c05e74dafb32358b1293be, type: 2}
+  glowOn: {fileID: 2100000, guid: 797b275c30ddef948afc758ca1948210, type: 2}
 --- !u!54 &1430718804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17075,7 +17234,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c3ed78989c61749e0ab6403930b3e172, type: 2}
+  - {fileID: 2100000, guid: e453e342d3c05e74dafb32358b1293be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20261,7 +20420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679308636}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -43.78, y: -25, z: 53.7}
+  m_LocalPosition: {x: -43.87, y: -25, z: 53.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20282,7 +20441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   speed: 10
-  endDistance: {x: 2.5, y: 0, z: 0}
+  endDistance: {x: 2, y: 0, z: 0}
   correspondingPlate: {fileID: 0}
 --- !u!65 &1679308639
 BoxCollider:
@@ -20347,31 +20506,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679308636}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1681393930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 249780237322979886, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-  m_PrefabInstance: {fileID: 447233845}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1681393940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681393930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121c0d1c60dbf4af49636885473e3e6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetDistance: 2
-  SightDistance: 10
-  Speed: 1
-  Mark: {fileID: 2124800594}
-  _state: 0
-  layerNum: 3
-  anim: {fileID: 262691215}
-  velocityConstant: 1
 --- !u!1 &1686575541
 GameObject:
   m_ObjectHideFlags: 0
@@ -22170,7 +22304,7 @@ GameObject:
   - component: {fileID: 1843381725}
   - component: {fileID: 1843381724}
   m_Layer: 0
-  m_Name: Block 1
+  m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22188,8 +22322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be200de7b6034c4cb2cbf8137b9af04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowOff: {fileID: 2100000, guid: fbd2ae049b3ba4d78aabf97c268d68d3, type: 2}
-  glowOn: {fileID: 2100000, guid: 491735a7fceb34c76a6e70ece5a80572, type: 2}
+  glowOff: {fileID: 2100000, guid: e453e342d3c05e74dafb32358b1293be, type: 2}
+  glowOn: {fileID: 2100000, guid: 797b275c30ddef948afc758ca1948210, type: 2}
 --- !u!54 &1843381725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22239,7 +22373,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbd2ae049b3ba4d78aabf97c268d68d3, type: 2}
+  - {fileID: 2100000, guid: e453e342d3c05e74dafb32358b1293be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22808,7 +22942,7 @@ GameObject:
   - component: {fileID: 1935813189}
   - component: {fileID: 1935813188}
   m_Layer: 0
-  m_Name: Block 3
+  m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22826,8 +22960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be200de7b6034c4cb2cbf8137b9af04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowOff: {fileID: 2100000, guid: 9aedbe37a53434dcf896e13aff53d15a, type: 2}
-  glowOn: {fileID: 2100000, guid: 6d4f58811d4ed4b0bb2495c688da2bba, type: 2}
+  glowOff: {fileID: 2100000, guid: e453e342d3c05e74dafb32358b1293be, type: 2}
+  glowOn: {fileID: 2100000, guid: 797b275c30ddef948afc758ca1948210, type: 2}
 --- !u!54 &1935813189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22877,7 +23011,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9aedbe37a53434dcf896e13aff53d15a, type: 2}
+  - {fileID: 2100000, guid: e453e342d3c05e74dafb32358b1293be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

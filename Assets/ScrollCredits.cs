@@ -9,6 +9,7 @@ public class ScrollCredits : MonoBehaviour
     public float moveSpeed = 100f;
     public float waitTime = 1f;
     public float delayTime;
+    public bool midGame;
 
     void Start()
     {
@@ -21,6 +22,11 @@ public class ScrollCredits : MonoBehaviour
         {
             StartCoroutine(MoveNextTextBextWextShext(textBox));
             yield return new WaitForSeconds(delayTime);
+        }
+
+        if (midGame)
+        {
+            InstantiateLoadingScreen.Instance.LoadNewScene("S1 (Bea's Room 5)");
         }
     }
 

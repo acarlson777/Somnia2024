@@ -8,10 +8,11 @@ public class PressurePlate : MonoBehaviour
 
     [SerializeField]
     public bool isOccupied = false; // To track whether a block with correct ID is on the pressure plate
-    public PushBlock correctBlock;
     public Material glowOff;
     public Material glowOn;
+    public PushBlock correctBlock;
     public bool lockIn;
+    public bool blockSpecific;
     private bool lockedIn = false;
     public float lockInTime;
 
@@ -20,7 +21,14 @@ public class PressurePlate : MonoBehaviour
 
       PushBlock pushBlock = other.GetComponent<PushBlock>();
 
-        if (pushBlock != null && pushBlock == correctBlock){
+        if (pushBlock != null && pushBlock.name.Equals("Block") && !blockSpecific){
+            isOccupied = true;
+            gameObject.GetComponent<Renderer>().material = glowOn;
+            if (lockIn) { StartCoroutine(LockIn()); }
+            pushBlock.startGlow();
+        }
+        else if (pushBlock != null && pushBlock == correctBlock && blockSpecific)
+        {
             isOccupied = true;
             gameObject.GetComponent<Renderer>().material = glowOn;
             if (lockIn) { StartCoroutine(LockIn()); }
@@ -31,14 +39,20 @@ public class PressurePlate : MonoBehaviour
     void OnTriggerExit(Collider other){
         PushBlock pushBlock = other.GetComponent<PushBlock>();
 
-        if (pushBlock != null && pushBlock == correctBlock){
+        if (pushBlock != null && pushBlock.name.Equals("Block") && !blockSpecific)
+        {
             isOccupied = false;
             gameObject.GetComponent<Renderer>().material = glowOff;
             pushBlock.stopGlow();
 
+        } else if (pushBlock != null && pushBlock == correctBlock && blockSpecific)
+        {
+            isOccupied = false;
+            gameObject.GetComponent<Renderer>().material = glowOff;
+            pushBlock.stopGlow();
         }
     }
-
+    
     IEnumerator LockIn()
     {
         print("Locking in");
@@ -58,14 +72,17 @@ public class PressurePlate : MonoBehaviour
         lockedIn = true;
         AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("button", gameObject);
     }
+    
 
     private void Update()
     {
+    
         if (lockedIn)
         {
             Vector3 pressurePlatePos = transform.position;
             pressurePlatePos.y += 0.5f;
             correctBlock.gameObject.transform.position = pressurePlatePos;
         }
+
     }
 }
