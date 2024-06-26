@@ -26,7 +26,7 @@ public class SphinxReal : CharacterDialogue, Entity
                 base.Interact(entity);
                 if (!nextScene.Equals(""))
                 {
-                    exit.SetActive(false);
+                    //exit.SetActive(false);
                     InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
                 } else
                 {
