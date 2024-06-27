@@ -59189,7 +59189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f7fd3760b075f4b91e7340c56aa44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundTrackName: SweetAbyssSoundtrack
+  soundTrackName: SweetAbyssSoundtrack2
 --- !u!4 &1328474157
 Transform:
   m_ObjectHideFlags: 0
@@ -66223,8 +66223,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696074375323167615, guid: 83958c0765e0bd14f8cb9e24f58eede0, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.data[0]
-      value: I talked to Sour Patch Jose earlier and he was recommending I take legal
-        action but I don't know if I have the sweet sweet funds to make that happen
+      value: I talked to Sour Patch Jose earlier and he told me to take legal action
+        but I don't know if I have the sweet sweet funds to make that happen.
       objectReference: {fileID: 0}
     - target: {fileID: 6696074375323167615, guid: 83958c0765e0bd14f8cb9e24f58eede0, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.data[1]
@@ -96998,8 +96998,12 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: songList.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.size
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.data[0]._name
@@ -97018,8 +97022,16 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: songList.Array.data[17]._name
+      value: SweetAbyss2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: songList.Array.data[14].volume
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: songList.Array.data[17].volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: sfxList.Array.data[0].audioClip
@@ -97029,6 +97041,10 @@ PrefabInstance:
       propertyPath: sfxList.Array.data[1].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a0eeadd2fe53f41eba433fc144fde673, type: 3}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: songList.Array.data[17].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a7cda677fe2175a45a04697b1c18cd42, type: 3}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[0]._name
       value: BeasRoom
@@ -97042,11 +97058,19 @@ PrefabInstance:
       value: BeastLullabySoundtrack
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[14]._name
+      value: SweetAbyssSoundtrack2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3].fadeTime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[4].fadeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[14].fadeTime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
@@ -97058,12 +97082,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[14].sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
       value: BeachyDreams
       objectReference: {fileID: 0}
     - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: soundtrackList.Array.data[4].sounds.Array.data[0]
       value: BeastLullaby
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751655868331631045, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
+      propertyPath: soundtrackList.Array.data[14].sounds.Array.data[0]
+      value: SweetAbyss2
       objectReference: {fileID: 0}
     - target: {fileID: 8481682944248218962, guid: 67dc940c3a9bc466b8118533c354de4c, type: 3}
       propertyPath: m_Name
