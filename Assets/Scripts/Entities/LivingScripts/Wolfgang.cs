@@ -164,7 +164,7 @@ public class Wolfgang : Living, Entity
                 }
                 else
                 {
-                    CharacterDialogueManager.PopCharacterDialogue(new string[] { "Hello", "My name is Wolfgang", "You seem to want to go to " + show, "please proceed onto the train!" });
+                    CharacterDialogueManager.PopCharacterDialogue(new string[] {"You seem to want to go to " + show, "please proceed onto the train!" });
 
                 }
             }
