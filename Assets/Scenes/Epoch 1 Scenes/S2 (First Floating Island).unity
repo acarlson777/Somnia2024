@@ -909,6 +909,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   selectors: []
   audioName: 
+  managersForSoundToContinueAcrossScenes: {fileID: 0}
 --- !u!54 &582950266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1759,6 +1760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4177083566715252019, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: managersForSoundToContinueAcrossScenes
+      value: 
+      objectReference: {fileID: 1937448115}
     - target: {fileID: 4215543601953736009, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3429,6 +3434,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1937448115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3337554071881643326, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+  m_PrefabInstance: {fileID: 789282289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1957176783
 PrefabInstance:
   m_ObjectHideFlags: 0

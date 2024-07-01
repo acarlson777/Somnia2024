@@ -21,7 +21,7 @@ public class PressurePlate : MonoBehaviour
 
       PushBlock pushBlock = other.GetComponent<PushBlock>();
 
-        if (pushBlock != null && pushBlock.name.Equals("Block") && !blockSpecific){
+        if (pushBlock.name.Equals("Block") && !blockSpecific){
             isOccupied = true;
             gameObject.GetComponent<Renderer>().material = glowOn;
             if (lockIn) { StartCoroutine(LockIn()); }
