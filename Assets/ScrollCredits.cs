@@ -27,6 +27,9 @@ public class ScrollCredits : MonoBehaviour
         if (midGame)
         {
             InstantiateLoadingScreen.Instance.LoadNewScene("S1 (Bea's Room 5)");
+        } else
+        {
+            InstantiateLoadingScreen.Instance.LoadNewScene("Main Menu");
         }
     }
 
