@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SaveAndLoadManager : MonoBehaviour
 {
+    private static List<string> excludeList = new List<string> {"Credits", "FromHomeCredits"};
+
     private void OnApplicationQuit()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0) 
@@ -13,7 +15,9 @@ public class SaveAndLoadManager : MonoBehaviour
     public static void SaveCurrentScene()
     {
         print("Saving Scene!!!");
-        PlayerPrefs.SetString("Last Scene", SceneManager.GetActiveScene().name);
+        if (ValidateSceneToSave(SceneManager.GetActiveScene().name)) { 
+            PlayerPrefs.SetString("Last Scene", SceneManager.GetActiveScene().name);
+        }
     }
     public static void LoadSavedScene()
     {
@@ -32,5 +36,10 @@ public class SaveAndLoadManager : MonoBehaviour
     public static string GetSavedScene()
     {
         return PlayerPrefs.GetString("Last Scene", "Tutorial");
+    }
+
+    private static bool ValidateSceneToSave(string sceneToBeSaved)
+    {
+        return !excludeList.Contains(sceneToBeSaved);
     }
 }
