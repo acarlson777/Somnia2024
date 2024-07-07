@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028416, g: 0.22571386, b: 0.3069211, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5513,10 +5513,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 916377650}
   glowOff: {fileID: 2100000, guid: 4013f1b8846424df9b9cfee82f0578c8, type: 2}
   glowOn: {fileID: 2100000, guid: d28ba83c43e74441fb57297d5e253395, type: 2}
+  correctBlock: {fileID: 916377650}
   lockIn: 0
+  blockSpecific: 0
   lockInTime: 0
 --- !u!65 &818484411
 BoxCollider:
@@ -7554,7 +7555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897565990292524476, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 331.90002
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70ebf02343a548c99e581672cddb7d9, type: 3}
@@ -9728,10 +9729,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 1309308552}
   glowOff: {fileID: 2100000, guid: 00a2079ae76914bbf83cda53a45561f8, type: 2}
   glowOn: {fileID: 2100000, guid: 491735a7fceb34c76a6e70ece5a80572, type: 2}
+  correctBlock: {fileID: 1309308552}
   lockIn: 0
+  blockSpecific: 0
   lockInTime: 0
 --- !u!65 &1418499086
 BoxCollider:
@@ -10695,10 +10697,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
-  correctBlock: {fileID: 1620400784}
   glowOff: {fileID: 2100000, guid: 01ff1af13ea8b47a79fdc327994cd7e7, type: 2}
   glowOn: {fileID: 2100000, guid: 6d4f58811d4ed4b0bb2495c688da2bba, type: 2}
+  correctBlock: {fileID: 1620400784}
   lockIn: 0
+  blockSpecific: 0
   lockInTime: 0
 --- !u!65 &1640428393
 BoxCollider:

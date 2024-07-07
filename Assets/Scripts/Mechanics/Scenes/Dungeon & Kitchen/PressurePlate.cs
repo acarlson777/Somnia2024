@@ -18,7 +18,11 @@ public class PressurePlate : MonoBehaviour
 
 
     void OnTriggerEnter(Collider other){
-
+        if (!other.gameObject.name.Equals("Block") && !blockSpecific)
+        {
+            return;
+        }
+        
       PushBlock pushBlock = other.GetComponent<PushBlock>();
 
         if (pushBlock.name.Equals("Block") && !blockSpecific){

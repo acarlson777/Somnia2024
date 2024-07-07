@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
 
     [HideInInspector] public bool fadeOut;
     [HideInInspector] public bool fadeIn = false;
-    public int loadingScreenLength;
+    public float loadingScreenLength;
     public static bool fading;
 
     // scene load the second the Scene Loader game obejct is instantiated

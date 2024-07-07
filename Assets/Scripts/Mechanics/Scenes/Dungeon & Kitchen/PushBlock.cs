@@ -19,7 +19,8 @@ public class PushBlock : MonoBehaviour
 
     public void startGlow(){
 
-      //gameObject.GetComponent<Renderer>().material = glowOn;
+        //gameObject.GetComponent<Renderer>().material = glowOn;
+        AudioManagerSingleton.Instance.Play("lever",gameObject);
         mat.SetColor(Shader.PropertyToID("_EmissionColor"), mat.color * 0.1f);
 
 
