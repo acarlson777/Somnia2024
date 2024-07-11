@@ -6,8 +6,6 @@ public class ImprisonedRiggs : MonoBehaviour
 {
     public bool exitIsActive = false;
 
-   
-
     public void Update()
     {
         CharacterDialogue d = GetComponent<CharacterDialogue>();
