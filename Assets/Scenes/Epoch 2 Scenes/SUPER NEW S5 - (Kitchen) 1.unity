@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96204132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
   m_Name: 
@@ -1355,6 +1355,8 @@ MonoBehaviour:
   portrait: {fileID: 0}
   characterPortraits: []
   names: []
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!54 &96204139
@@ -2012,6 +2014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186553182}
   - component: {fileID: 186553181}
+  - component: {fileID: 186553183}
   m_Layer: 0
   m_Name: BarsDungeon
   m_TagString: Untagged
@@ -2026,7 +2029,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186553180}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2086,6 +2089,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &186553183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186553180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.95, y: 19.95, z: 10}
+  m_Center: {x: 0, y: 0, z: -0.22}
 --- !u!1 &189500922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,7 +2986,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252565067}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
   m_Name: 
@@ -2991,6 +3007,8 @@ MonoBehaviour:
   portrait: {fileID: 0}
   characterPortraits: []
   names: []
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!54 &252565074
@@ -3549,25 +3567,87 @@ PrefabInstance:
       value: Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
-      propertyPath: lines.Array.data[0].lines.Array.size
+      propertyPath: audioLines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: 'I''m frozen in fear, '
+      value: You may be wondering how we ended up here in the first place.
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: Help me get to the lower table by putting a box for me to climb across!
+      value: We were told to put the dishes away by Woebegone and she put us up here
+        before leaving.
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[2]
+      value: "1. We couldn\u2019t lift the dishes, 2. We couldn\u2019t get down"
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[0]
+      value: Help!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[1]
+      value: "This is good practice for when we\u2019re in trouble, we haven\u2019t
+        gone through Screaming 101 yet"
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[2]
+      value: "1. We couldn\u2019t lift the dishes, 2. We couldn\u2019t get down"
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Little Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 43d93cd719d8bc64d849533f0d17bed1, type: 3}
     - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Name
       value: NPC (PUMPKID)) (2)
@@ -5258,134 +5338,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &447233845
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: name
-      value: Riggs
-      objectReference: {fileID: 0}
-    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: characterPortrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
-    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: lines.Array.data[0].lines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: You go Bea!
-      objectReference: {fileID: 0}
-    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: Solve that puzzle whilst I stand over here doing nothing!
-      objectReference: {fileID: 0}
-    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: audioLines.Array.data[0].lines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979872, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Height
-      value: 2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979872, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Radius
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979880, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Constraints
-      value: 94
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979880, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979881, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979882, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979886, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Name
-      value: NPC (RIGGS)
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -77.744
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.198
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 24.543
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237553440001, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b91eecd8719ccae48bbc6da34365dbec, type: 2}
-    - target: {fileID: 249780237553440006, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237553440006, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237553440006, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 249780237553440007, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
-    m_RemovedComponents:
-    - {fileID: 1381094356444603669, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-    - {fileID: 249780237322979881, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-    - {fileID: 249780237322979882, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
 --- !u!1 &448218543
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,9 +6033,9 @@ GameObject:
   - component: {fileID: 478214255}
   - component: {fileID: 478214254}
   - component: {fileID: 478214253}
-  - component: {fileID: 478214257}
   - component: {fileID: 478214258}
   - component: {fileID: 478214259}
+  - component: {fileID: 478214260}
   m_Layer: 0
   m_Name: ExitScene
   m_TagString: entity
@@ -6187,29 +6139,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &478214257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478214251}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528d0256819004e04a733e500e32575c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityCollider: {fileID: 478214255}
-  interactCollider: {fileID: 0}
-  BoxColliderThickness: 0
-  arrowOffset: {x: 0, y: 0, z: 0}
-  entityMaxSpeed: 2.1
-  audioClip: {fileID: 0}
-  sceneName: CT4 (Pumpkids are saved, back to Throne Room)
-  enabled: 0
-  disabledText:
-  - You have to complete the puzzle before you can escape!
-  - Dont think there is an easy way out of here!
 --- !u!114 &478214258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6223,7 +6152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bars: {fileID: 186553180}
-  door: {fileID: 478214257}
+  firstMainPumpkid: {fileID: 811238315}
+  secondMainPumpkid: {fileID: 1110102049}
+  door: {fileID: 478214260}
 --- !u!114 &478214259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6239,11 +6170,37 @@ MonoBehaviour:
   table:
   - charPortrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     charName: Pumpkid
-    charText: Thank you Bea!! We will lead you back to the throne room now.
+    charText: Thank you Bea.
+    charVoiceLine: {fileID: 0}
+  - charPortrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    charName: Pumpkid
+    charText: With that out of the way, back to the throne room we go!
     charVoiceLine: {fileID: 0}
   lineNumber: 0
   voiceAudio: []
   sceneName: NEW S3 (Exiting Throne Room)
+--- !u!114 &478214260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478214251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528d0256819004e04a733e500e32575c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 478214255}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  audioClip: {fileID: 0}
+  sceneName: NEW S3 (Exiting Throne Room)
+  enabled: 0
+  disabledText:
+  - The door won't budge.
 --- !u!1 &481414973
 GameObject:
   m_ObjectHideFlags: 0
@@ -7344,33 +7301,102 @@ PrefabInstance:
       value: Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: names.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
-      propertyPath: characterPortraits.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
-      propertyPath: lines.Array.data[0].lines.Array.size
+      propertyPath: audioLines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: 'I''m frozen in fear, '
+      value: Help!!!
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: Help me get to the lower table by putting a box for me to climb across!
+      value: Just right in front of me will do, we were taught proper hay-falling-into
+        technique the other day.
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[2]
+      value: Anyways, back to screaming for help
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[3]
+      value: Help!!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[4]
+      value: Help us!!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[0]
+      value: 'Help me!! '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[1]
+      value: "And the others\u2026 don\u2019t forget the others"
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[2]
+      value: Anyways, back to screaming for help
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[3]
+      value: Help!!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[4]
+      value: Help us!!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Little Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 43d93cd719d8bc64d849533f0d17bed1, type: 3}
     - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Name
       value: NPC (PUMPKID))
@@ -7798,23 +7824,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586108060}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &591640895 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 249780237553440005, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
-  m_PrefabInstance: {fileID: 447233845}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &591640898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591640895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d9519d9922c4eaaac18326c8244230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &593239701
 GameObject:
   m_ObjectHideFlags: 0
@@ -9864,6 +9873,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810762486}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &811238315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+  m_PrefabInstance: {fileID: 917887667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &817510702
 GameObject:
   m_ObjectHideFlags: 0
@@ -10172,25 +10186,95 @@ PrefabInstance:
       value: Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
-      propertyPath: lines.Array.data[0].lines.Array.size
+      propertyPath: audioLines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: 'I''m frozen in fear, '
+      value: Help!!!
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: Help me get to the lower table by putting a box for me to climb across!
+      value: Bring that hay over here please!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[2]
+      value: 'It was meant originally for a different room but we ran out of space '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[3]
+      value: 'You would think a castle would have infinite space but stuff builds
+        up quick '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[0]
+      value: 'Help!!! '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[1]
+      value: Bring that hay over here please!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[2]
+      value: 'It was meant originally for a different room but we ran out of space '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[3]
+      value: 'You would think a castle would have infinite space but stuff builds
+        up quick '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Little Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 43d93cd719d8bc64d849533f0d17bed1, type: 3}
     - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Name
       value: NPC (PUMPKID)) (1)
@@ -11486,6 +11570,159 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893233924}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &917887667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1736643926}
+    m_Modifications:
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: name
+      value: Pumpkid
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: entityCollider
+      value: 
+      objectReference: {fileID: 917887669}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[0]
+      value: "You\u2019re not thinking about leaving without saving these guys are
+        you?"
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[1]
+      value: "The future of this castle\u2019s security depends on the wellbeing
+        of these pumpkids."
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Pumpkid
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_Name
+      value: NPC (PUMPKID) MAIN
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.394
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440007, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+--- !u!4 &917887668 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+  m_PrefabInstance: {fileID: 917887667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &917887669 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 249780237322979882, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+  m_PrefabInstance: {fileID: 917887667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &927027088
 GameObject:
   m_ObjectHideFlags: 0
@@ -11600,7 +11837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &929227176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13205,6 +13442,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107216159}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1110102049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+  m_PrefabInstance: {fileID: 1744665570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1119104613
 GameObject:
   m_ObjectHideFlags: 0
@@ -15767,7 +16009,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294469478}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
   m_Name: 
@@ -15788,6 +16030,8 @@ MonoBehaviour:
   portrait: {fileID: 0}
   characterPortraits: []
   names: []
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!54 &1294469485
@@ -19320,18 +19564,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dreamJournalPopup: 0
   table:
-  - portrait: {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
-    name: Fish Queen
-    text: Gosh diggity darn dagnabbit!
+  - portrait: {fileID: 21300000, guid: 43d93cd719d8bc64d849533f0d17bed1, type: 3}
+    name: Little Pumpkid
+    text: Helpppp!
     voiceLine: {fileID: 0}
-  - portrait: {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
-    name: Fish Queen
-    text: How dare you escape the dungeon! That's it. You're trapped here now. Good
-      luck getting out!
+  - portrait: {fileID: 21300000, guid: 43d93cd719d8bc64d849533f0d17bed1, type: 3}
+    name: Little Pumpkid
+    text: Help us!!
     voiceLine: {fileID: 0}
   - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     name: Bea
-    text: I'm about to eat
+    text: What th- Who are these guys?
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    name: Pumpkid
+    text: "These esteemed pumpkids are the castle\u2019s future guard. "
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: "They seem slightly helpless for the castle\u2019s future guard."
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    name: Pumpkid
+    text: "They\u2019re working on it, us pumpkids are particularly weak to gravity,
+      especially when young"
     voiceLine: {fileID: 0}
   lineNumber: 0
   voiceAudio: []
@@ -19723,7 +19979,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1613861440}
   - component: {fileID: 1613861441}
-  - component: {fileID: 1613861442}
   m_Layer: 0
   m_Name: GameObjects
   m_TagString: Untagged
@@ -19784,26 +20039,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1613861439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739dfc3344f5c4b778e08c1772e901b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ca39d0151c8f754b9532110fae101df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plate1: {fileID: 0}
-  plate2: {fileID: 0}
-  plate3: {fileID: 0}
+  plate1: {fileID: 252565069}
+  plate2: {fileID: 1294469480}
+  plate3: {fileID: 96204134}
   gate: {fileID: 478214258}
   doPreventGateFromClosing: 0
---- !u!114 &1613861442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613861439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862144cd857ed46bfafb32caea28554f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1616396976
 GameObject:
   m_ObjectHideFlags: 0
@@ -21628,6 +21871,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1736643925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736643926}
+  m_Layer: 0
+  m_Name: MainPumpkidManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736643926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736643925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -78.409, y: 1.347, z: 24.556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 917887668}
+  - {fileID: 1744665571}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737760535
 GameObject:
   m_ObjectHideFlags: 0
@@ -21920,6 +22196,137 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744439920}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1744665570
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1736643926}
+    m_Modifications:
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: name
+      value: Pumpkid
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[0]
+      value: 'I''m frozen in fear, '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[1]
+      value: Help me get to the lower table by putting a box for me to climb across!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_Name
+      value: NPC (PUMPKID) MAIN (POST-PUZZLE)
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.394
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440007, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
+    m_RemovedComponents:
+    - {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+--- !u!4 &1744665571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+  m_PrefabInstance: {fileID: 1744665570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763683526
 GameObject:
   m_ObjectHideFlags: 0

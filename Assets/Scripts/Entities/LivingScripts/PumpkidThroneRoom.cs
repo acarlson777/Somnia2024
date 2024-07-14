@@ -18,7 +18,7 @@ public class PumpkidThroneRoom : MonoBehaviour
     {
         if (!Woebegone.talkedWith) { character.disabled = true; }
         else character.disabled = false;
-        if (character.timesInteracted >= character.lines.Count && Woebegone.talkedWith)
+        if (character.timesInteracted >= character.lines.Count-1 && Woebegone.talkedWith)
         {
             talkedWith = true;
         }

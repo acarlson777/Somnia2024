@@ -5,6 +5,8 @@ using UnityEngine;
 public class DungeonGate : MonoBehaviour
 {
     public GameObject Bars;
+    public GameObject firstMainPumpkid;
+    public GameObject secondMainPumpkid;
     public Door door;
     // Start is called before the first frame update
     void Start()
@@ -14,16 +16,18 @@ public class DungeonGate : MonoBehaviour
 
     public void OpenGate()
     {
-
+        //Bars.SetActive(false);
         door.enabled = true;
-        Bars.SetActive(false);
+        firstMainPumpkid.SetActive(false);
+        secondMainPumpkid.SetActive(true);
     }
 
     public void CloseGate()
     {
-
-        Bars.SetActive(true);
+        //Bars.SetActive(true);
         door.enabled = false;
+        firstMainPumpkid.SetActive(true);
+        secondMainPumpkid.SetActive(false);
     }
 
   

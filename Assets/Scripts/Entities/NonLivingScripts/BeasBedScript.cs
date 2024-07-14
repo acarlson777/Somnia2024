@@ -14,7 +14,6 @@ public class BeasBedScript : InteractableObject, Entity
     {
         base.Start();
         itemCount = itemsToSleep.Length;
- 
     }
 
     new void Update()   

@@ -11,8 +11,9 @@ public class CharacterDialogue : InteractableObject, Entity
     public int timesInteracted = 0;
 
     [HideInInspector] public Image portrait;
-    [SerializeField] Sprite[] characterPortraits;
-    [SerializeField] new public string[] names;
+    [SerializeField] private List<Portraits> characterPortraits;
+    [SerializeField] private List<Names> names;
+    [SerializeField] bool oneCharacter;
     [HideInInspector] TextMeshProUGUI nameText;
     bool portraitSet = false;
     public bool interactedWith = false;
@@ -43,7 +44,15 @@ public class CharacterDialogue : InteractableObject, Entity
                 timesInteracted = lines.Count - 1;
             }
             print("putting a dialogue" + timesInteracted);
-            CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
+            if (oneCharacter)
+            {
+                CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
+            } else
+            {
+                CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines, names[timesInteracted].names, characterPortraits[timesInteracted].portraits);
+            }
+            
+
             audioSource.clip = audioLines[timesInteracted].lines[0].audio;
             audioSource.volume = audioLines[timesInteracted].lines[0].volume * PlayerPrefs.GetFloat("sfxVolume");
 
@@ -58,10 +67,12 @@ public class CharacterDialogue : InteractableObject, Entity
         {
             portrait = GameObject.Find("Portraits").GetComponent<Image>();
             nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
-            nameText.text = names[timesInteracted - 1];
-            portrait.sprite = characterPortraits[timesInteracted - 1];
+            if (oneCharacter) 
+            {
+                nameText.text = names[0].names[0];
+                portrait.sprite = characterPortraits[0].portraits[0];
+            }
             //portraitSet = true;
-            interactedWith = false;
         }
     }
 
@@ -91,6 +102,16 @@ public class CharacterDialogue : InteractableObject, Entity
     public class AudioLines
     {
         public SoundEffect[] lines;
+    }
+    [System.Serializable]
+    public class Names
+    {
+        public string[] names;
+    }
+    [System.Serializable]
+    public class Portraits
+    {
+        public Sprite[] portraits;
     }
     [System.Serializable]
     public class SoundEffect

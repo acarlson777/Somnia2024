@@ -589,103 +589,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325675641}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &335659308
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 335659309}
-  - component: {fileID: 335659312}
-  - component: {fileID: 335659311}
-  - component: {fileID: 335659310}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &335659309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335659308}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.138, y: -2.861, z: 0.77}
-  m_LocalScale: {x: 14.052625, y: 9.0012455, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1685965430}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &335659310
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335659308}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &335659311
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335659308}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 3f22d7de8fc8a4b8882dbe7a716b010f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &335659312
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335659308}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &349826478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: firstTimeDialogue.Array.data[0]
-      value: Greetings Patron Bea, how hath you been?
+      value: "Hello Mistress Bea\u2026and how are we this evening?"
       objectReference: {fileID: 0}
     - target: {fileID: 4177083566105464944, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: firstTimeDialogue.Array.data[1]
@@ -1695,10 +1598,6 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[3].audioLines.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4177083566281971035, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4177083566709642342, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_Name
       value: TrainStation
@@ -1822,6 +1721,10 @@ PrefabInstance:
     - target: {fileID: 6706646701133650260, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: soundtrackList.Array.data[3].sounds.Array.data[0]
       value: BeachyDreams
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852678560837357798, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
+      propertyPath: m_Height
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8633839391825539074, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3038,11 +2941,6 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7534485631917070707, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}
   m_PrefabInstance: {fileID: 930054228}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1685965430 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4177083566281971033, guid: 98a8f4c425c234c07a707353e7dd47a9, type: 3}
-  m_PrefabInstance: {fileID: 789282289}
   m_PrefabAsset: {fileID: 0}
 --- !u!20 &1705185611 stripped
 Camera:

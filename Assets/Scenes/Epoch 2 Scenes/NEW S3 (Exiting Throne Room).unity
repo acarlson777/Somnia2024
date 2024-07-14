@@ -320,7 +320,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &21988950
 PrefabInstance:
@@ -730,8 +730,10 @@ MonoBehaviour:
   - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
-  name: Pumpkid
+  characterPortraits: []
+  names: []
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!136 &37231984
@@ -811,7 +813,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &40460184
 GameObject:
@@ -2368,7 +2370,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 48.971, z: 0}
 --- !u!54 &235706073
 Rigidbody:
@@ -3203,7 +3205,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 141.35, y: 0, z: 0}
 --- !u!1 &296151694
 GameObject:
@@ -5126,7 +5128,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 54.83, y: 90, z: 0}
 --- !u!1001 &494966332
 PrefabInstance:
@@ -5498,7 +5500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &527674289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,15 +5517,38 @@ MonoBehaviour:
   table:
   - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     name: Bea
-    text: Wow, I've never seen something so beautiful!
+    text: Riggs!? Where have you been?
     voiceLine: {fileID: 0}
-  - portrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
-    name: Pumpkid
-    text: Hey!
+  - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    name: Riggs
+    text: I came straight here after you released me from the dungeon.
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
+    name: Woebegone
+    text: Bea, is it true that it was you who released Riggs from the dungeon?
     voiceLine: {fileID: 0}
   - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     name: Bea
-    text: Aah! Who are you?
+    text: "Maybe\u2026"
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: "Yes\u2026"
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
+    name: Woebegone
+    text: '*sigh* No matter, my pumpkids have reported to me that the Fish Queen
+      was seen escaping the castle grounds through the garden maze.'
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
+    name: Woebegone
+    text: Although his acts of theft were definitely treasonous enough to deserve
+      his placement in the dungeon, in lieu of missing Pumpkids, Bea take Riggs with
+      you and bring back the Fish Queen.
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    name: Pumpkid
+    text: I shall accompany you as well
     voiceLine: {fileID: 0}
   lineNumber: 0
   voiceAudio: []
@@ -5541,7 +5566,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &531951832
 PrefabInstance:
@@ -5758,7 +5783,7 @@ Transform:
   - {fileID: 1272541638}
   - {fileID: 943366243}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &544490275
 GameObject:
@@ -6612,6 +6637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44220e407c384f779acb9ef2fbaed52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 0}
 --- !u!54 &633908181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6671,8 +6697,10 @@ MonoBehaviour:
   - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
-  name: Woebegone
+  characterPortraits: []
+  names: []
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!4 &633908187
@@ -6688,7 +6716,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 47.45, z: 0}
 --- !u!212 &633908188
 SpriteRenderer:
@@ -7279,7 +7307,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &668794712
 PrefabInstance:
@@ -8293,7 +8321,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &753331675
 PrefabInstance:
@@ -10413,8 +10441,9 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   audioClip: {fileID: 0}
   sceneName: S6 (Maze Minigame)
-  enabled: 1
-  disabledText: []
+  enabled: 0
+  disabledText:
+  - There's more to explore.
 --- !u!54 &936569114
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10509,7 +10538,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &943366242
 GameObject:
@@ -10868,7 +10897,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 73.45, y: 90, z: 0}
 --- !u!1001 &957804077
 PrefabInstance:
@@ -11879,7 +11908,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1068841256
 GameObject:
@@ -11994,7 +12023,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 73.45, y: 90, z: 0}
 --- !u!1 &1083008900
 GameObject:
@@ -12263,6 +12292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44220e407c384f779acb9ef2fbaed52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 936569113}
 --- !u!224 &1087444181 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7534485631917070707, guid: caf2099a546a54b0e9a6b6e3c38ef85a, type: 3}
@@ -12532,6 +12562,10 @@ PrefabInstance:
     - target: {fileID: 249780237322979886, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_Name
       value: NPC (RIGGS)
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979886, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_RootOrder
@@ -14201,7 +14235,7 @@ GameObject:
   - component: {fileID: 1239603927}
   m_Layer: 0
   m_Name: ExitScene
-  m_TagString: entity
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14232,7 +14266,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!212 &1239603925
 SpriteRenderer:
@@ -14309,7 +14343,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239603918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd706340c526e2a45bac94f703ba15d1, type: 3}
   m_Name: 
@@ -14322,7 +14356,7 @@ MonoBehaviour:
   soundsToPlay: 
   lines:
   - lines:
-    - I'm not going back in there again.
+    - 
   - lines:
     - Never again.
   - lines:
@@ -15104,7 +15138,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 68.452, y: 86.539, z: -527.497}
 --- !u!1001 &1309269220
 PrefabInstance:
@@ -15716,6 +15750,10 @@ PrefabInstance:
       value: Woebegone
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: arrowOffset.y
       value: 1.8
       objectReference: {fileID: 0}
@@ -15728,16 +15766,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: My dear Bea, you've done well to release the pumpkids.
+      value: "Also, as a tip to you Bea, don\u2019t go around opening any more dungeon
+        cells without my permission. There are much more dangerous characters than
+        Riggs within this castle\u2019s walls."
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
@@ -15761,8 +15825,20 @@ PrefabInstance:
       value: She looks like a fish. She's somewhere in the palace. Please. Help me.
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[0]
+      value: "With haste to the maze! The Fish Queen won\u2019t be there forever."
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Woebegone
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].audioLines.Array.size
@@ -15781,6 +15857,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 135e8adae34644634aac79d399b496b1, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[0].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: fb9db7b13082f43669f6bde24e697e62, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
@@ -15792,6 +15872,18 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[0].lines.Array.data[2].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
     - target: {fileID: 249780237322979872, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Height
       value: 3.94
@@ -15810,7 +15902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalScale.x
@@ -16286,7 +16378,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415638061
 GameObject:
@@ -16425,7 +16517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6033601508985598107, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6033601508985598107, guid: c13c13f212c7e4bcbb2bf460612bd314, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16627,6 +16719,14 @@ PrefabInstance:
       value: Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: arrowOffset.y
       value: 1
       objectReference: {fileID: 0}
@@ -16634,6 +16734,10 @@ PrefabInstance:
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
       value: Lets go get her!
@@ -16654,6 +16758,10 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 249780237322979880, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Constraints
       value: 90
@@ -16662,13 +16770,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (PUMPKID))
       objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 249780237322979924, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalScale.x
@@ -16684,7 +16796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.22
+      value: 48.99
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16692,7 +16804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.08
+      value: -10.65
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16991,7 +17103,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 73.45, y: 90, z: 0}
 --- !u!1001 &1473207809
 PrefabInstance:
@@ -17148,7 +17260,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -277.983, y: -30, z: 0}
 --- !u!114 &1479399975
 MonoBehaviour:
@@ -18089,7 +18201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 29.94, y: 0, z: 0}
 --- !u!1 &1548707811
 GameObject:
@@ -18940,7 +19052,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 73.45, y: 90, z: 0}
 --- !u!1 &1642518570
 GameObject:
@@ -19757,6 +19869,159 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1729058846
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[2].lines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[0]
+      value: I have something that should help us out in the maze, let's get going!
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[0]
+      value: Quickly, to the maze!
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[2].lines.Array.data[0]
+      value: I have something that should help us out in the maze, let's get going!
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Riggs
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - target: {fileID: 249780237322979886, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_Name
+      value: NPC (RIGGS) NO MOVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 41.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.797
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440007, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
 --- !u!1 &1738308690
 GameObject:
   m_ObjectHideFlags: 0
@@ -22738,7 +23003,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2005111519
 GameObject:
@@ -23119,7 +23384,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 29.94, y: 0, z: 0}
 --- !u!1001 &2058741199
 PrefabInstance:
@@ -23640,7 +23905,7 @@ Transform:
   - {fileID: 382187836}
   - {fileID: 2051991315}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2104984217
 PrefabInstance:
@@ -24094,7 +24359,7 @@ RectTransform:
   - {fileID: 616186522}
   - {fileID: 482917170}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

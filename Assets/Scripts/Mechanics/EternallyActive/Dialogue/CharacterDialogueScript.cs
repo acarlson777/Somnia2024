@@ -17,8 +17,11 @@ public class CharacterDialogueScript : MonoBehaviour
 
     // variables for dialogue functionality
     public string[] numberOfLines;
+    public string[] characterNames;
+    public Sprite[] characterPortraits;
     public float textSpeed;
     [SerializeField] public int lineNumber = 0;
+    private bool oneCharacter = true;
 
     public bool isActive;
     [HideInInspector] public bool characterClickthroughDialogue = false;
@@ -70,12 +73,34 @@ public class CharacterDialogueScript : MonoBehaviour
     void StartText()
     {
         lineNumber = 0;
+        if (!oneCharacter)
+        {
+            Image portrait = GameObject.Find("Portraits").GetComponent<Image>();
+            TextMeshProUGUI nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
+            print("PLEASE WORK");
+            nameText.text = characterNames[lineNumber];
+            portrait.sprite = characterPortraits[lineNumber];
+        }
         StartCoroutine(WriteLine());
     }
 
     // sets the dialogue box's text from another script on another gameobject, taking in the length in lines of dialogue and the actual text
     public void SetText(string[] text)
     {
+        numberOfLines = new string[text.Length];
+        for (int line = 0; line < numberOfLines.Length; line++)
+        {
+            numberOfLines[line] = text[line];
+        }
+    }
+
+    public void SetText(string[] text, string[] names, Sprite[] portraits)
+    {
+        oneCharacter = false;
+
+        characterNames = names;
+        characterPortraits = portraits;
+
         numberOfLines = new string[text.Length];
         for (int line = 0; line < numberOfLines.Length; line++)
         {
@@ -136,6 +161,14 @@ public class CharacterDialogueScript : MonoBehaviour
                 charDialogue.lineNumber++;
                 charDialogue.GetComponent<AudioSource>().clip = charDialogue.voiceAudio[lineNumber];
                 charDialogue.GetComponent<AudioSource>().Play();
+            }
+            if (!oneCharacter)
+            {
+                Image portrait = GameObject.Find("Portraits").GetComponent<Image>();
+                TextMeshProUGUI nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
+                print("PLEASE WORK");
+                nameText.text = characterNames[lineNumber];
+                portrait.sprite = characterPortraits[lineNumber];
             }
             StartCoroutine(WriteLine());
         }

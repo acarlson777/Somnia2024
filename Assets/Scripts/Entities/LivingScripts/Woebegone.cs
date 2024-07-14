@@ -7,6 +7,7 @@ public class Woebegone : MonoBehaviour
 
     CharacterDialogue character;
     [HideInInspector] public static bool talkedWith = false;
+    public Door door;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,11 @@ public class Woebegone : MonoBehaviour
         if (character.timesInteracted >= character.lines.Count)
         {
             talkedWith = true;
+        }
+
+        if (door != null)
+        {
+            door.enabled = talkedWith;
         }
     }
 }

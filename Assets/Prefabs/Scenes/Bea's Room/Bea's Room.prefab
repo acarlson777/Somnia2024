@@ -3191,9 +3191,12 @@ MonoBehaviour:
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortraits:
-  - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+  - portraits:
+    - {fileID: 21300000, guid: de185e8315095624c91a83fd41e701ff, type: 3}
   names:
-  - Bea
+  - names:
+    - 
+  oneCharacter: 0
   interactedWith: 0
   disabled: 0
   prevLineNumber: 0
@@ -3722,7 +3725,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lines:
   - lines:
-    - Template Text
+    - "Ohhhh Mr. Fins.  You\u2019re looking unusually gloomy.  Are you feeling well?"
   audioLines:
   - lines:
     - audio: {fileID: 0}
@@ -3730,9 +3733,12 @@ MonoBehaviour:
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortraits:
-  - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+  - portraits:
+    - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
   names:
-  - Bea
+  - names:
+    - Bea
+  oneCharacter: 0
   interactedWith: 0
   disabled: 0
   prevLineNumber: 0
@@ -4977,7 +4983,13 @@ MonoBehaviour:
   table:
   - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     name: Bea
-    text: This is a template text box
+    text: 'Bea My dreams of late have been so strange.  I wish there was someone
+      I could talk to about them. '
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: "Things have been so out of sorts since the accident.  I suppose I\u2019ve
+      always got my journal\u2026and of course you\u2019ll never leave me Mr. Fins. "
     voiceLine: {fileID: 0}
   lineNumber: 0
   voiceAudio: []

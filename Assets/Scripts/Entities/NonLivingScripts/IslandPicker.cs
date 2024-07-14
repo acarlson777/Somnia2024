@@ -31,7 +31,7 @@ public class IslandPicker : NonLiving, Entity
 
                 if (selectors[i].isOn)
                 {
-                    DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo Train! We are going to -> "+ selectors[i].showName });
+                    //DialogueManager.PopDialogue(new string[] { "All aboard the Chew Choo Train! We are going to -> "+ selectors[i].showName });
                     AudioManagerSingleton.Instance.FadeIn(audioName, 1, gameObject);
                     InstantiateLoadingScreen.Instance.LoadNewScene(selectors[i].IslandName);
                     AudioManagerSingleton.Instance.FadeOut(audioName, 3);
