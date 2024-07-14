@@ -1353,8 +1353,8 @@ MonoBehaviour:
       volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: f3ab3fbc43ec341859e131a94d3cb0af, type: 3}
-  name: 
+  characterPortraits: []
+  names: []
   disabled: 0
   prevLineNumber: 0
 --- !u!54 &96204139
@@ -2989,8 +2989,8 @@ MonoBehaviour:
       volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: f3ab3fbc43ec341859e131a94d3cb0af, type: 3}
-  name: 
+  characterPortraits: []
+  names: []
   disabled: 0
   prevLineNumber: 0
 --- !u!54 &252565074
@@ -7344,9 +7344,17 @@ PrefabInstance:
       value: Pumpkid
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
       value: 2
@@ -15778,8 +15786,8 @@ MonoBehaviour:
       volume: 0
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: f3ab3fbc43ec341859e131a94d3cb0af, type: 3}
-  name: 
+  characterPortraits: []
+  names: []
   disabled: 0
   prevLineNumber: 0
 --- !u!54 &1294469485
@@ -19779,13 +19787,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739dfc3344f5c4b778e08c1772e901b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block1: {fileID: 1843381724}
-  block2: {fileID: 1430718803}
-  block3: {fileID: 1935813188}
-  plate1: {fileID: 252565069}
-  plate2: {fileID: 1294469480}
-  plate3: {fileID: 96204134}
+  plate1: {fileID: 0}
+  plate2: {fileID: 0}
+  plate3: {fileID: 0}
   gate: {fileID: 478214258}
+  doPreventGateFromClosing: 0
 --- !u!114 &1613861442
 MonoBehaviour:
   m_ObjectHideFlags: 0

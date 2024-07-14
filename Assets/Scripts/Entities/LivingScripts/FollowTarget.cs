@@ -14,8 +14,8 @@ public class FollowTarget : MonoBehaviour
     [SerializeField] private float TargetDistance = 1;
     [SerializeField] private float SightDistance = 999;
     [SerializeField] private float Speed = 1;
-    [SerializeField] private GameObject Mark;
-    [SerializeField] private State _state = State.STOPPED;
+    [SerializeField] public GameObject Mark;
+    [SerializeField] public State _state = State.STOPPED;
     [SerializeField] private int layerNum;
     [SerializeField] private Animator anim;
     [SerializeField] private float velocityConstant;
@@ -24,24 +24,24 @@ public class FollowTarget : MonoBehaviour
 
 
     //Targeting System Vars
-    private const float speedThreshold = 0.25f;
+    private const float speedThreshold = 0.00001f;
     private Vector3 lastSeen;
     private float lastDistanceToMark;
     private bool canSeeMark;
     private Rigidbody rb;
 
     // Start is called before the first frame update
-    private void Start()
+    protected void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (rb ==null)
+        if (rb == null)
         {
             Debug.Log("Follow Target Script Gamobject does not have a Rigidbody, please Attach one!");
         }
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         canSeeMark = CanSeeMark();
         if (canSeeMark)

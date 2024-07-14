@@ -5,6 +5,7 @@ public class DreamJournalEntityScript : InteractableObject , Entity
 {
     public List<Voicelines> lines;
     private int timesInteracted = 0;
+    [SerializeField] private string popUpName;
     new protected void Start()
     {
         base.Start();
@@ -15,7 +16,7 @@ public class DreamJournalEntityScript : InteractableObject , Entity
         {
             if (timesInteracted == lines.Count)
             {
-                PopupManager.CreatePopUp("DreamJournalPopup");
+                PopupManager.CreatePopUp(popUpName);
                 return;
             }
             if (timesInteracted >= lines.Count)

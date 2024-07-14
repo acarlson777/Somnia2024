@@ -8,14 +8,14 @@ public class CharacterDialogue : InteractableObject, Entity
 {
     public List<Voicelines> lines;
     public List<AudioLines> audioLines;
-     public int timesInteracted = 0;
+    public int timesInteracted = 0;
 
     [HideInInspector] public Image portrait;
-    [SerializeField] Sprite characterPortrait;
-    [SerializeField] new public string name;
+    [SerializeField] Sprite[] characterPortraits;
+    [SerializeField] new public string[] names;
     [HideInInspector] TextMeshProUGUI nameText;
     bool portraitSet = false;
-    bool interactedWith = false;
+    public bool interactedWith = false;
     public bool disabled = false;
 
     private AudioSource audioSource;
@@ -58,8 +58,8 @@ public class CharacterDialogue : InteractableObject, Entity
         {
             portrait = GameObject.Find("Portraits").GetComponent<Image>();
             nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
-            nameText.text = name;
-            portrait.sprite = characterPortrait;
+            nameText.text = names[timesInteracted - 1];
+            portrait.sprite = characterPortraits[timesInteracted - 1];
             //portraitSet = true;
             interactedWith = false;
         }

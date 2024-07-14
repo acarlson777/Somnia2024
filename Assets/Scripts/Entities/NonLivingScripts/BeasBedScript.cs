@@ -27,7 +27,7 @@ public class BeasBedScript : InteractableObject, Entity
         int temp = 0;
         foreach (GameObject item in itemsToSleep)
         {
-            if (item.GetComponent<InteractToSleep>().interacted) temp++;
+            if (item.GetComponent<CharacterDialogue>().interactedWith) temp++;
         }
         if (temp == itemCount) inspectorBed = true;
         if (other is Player)
