@@ -122,7 +122,6 @@ public class FollowTarget : MonoBehaviour
 
     void MoveToLastSeen()
     {
-   
         var distanceToLastSeen = (lastSeen - transform.position).magnitude;
         var d = distanceToLastSeen - (canSeeMark? TargetDistance : 0)+1;
 
