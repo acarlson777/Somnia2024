@@ -16,18 +16,26 @@ public class DungeonGate : MonoBehaviour
 
     public void OpenGate()
     {
-        //Bars.SetActive(false);
-        door.enabled = true;
-        firstMainPumpkid.SetActive(false);
-        secondMainPumpkid.SetActive(true);
+        Bars.SetActive(false);
+        
+        if (firstMainPumpkid != null)
+        {
+            door.enabled = true;
+            firstMainPumpkid.SetActive(false);
+            secondMainPumpkid.SetActive(true);
+        }
+
     }
 
     public void CloseGate()
     {
         //Bars.SetActive(true);
-        door.enabled = false;
-        firstMainPumpkid.SetActive(true);
-        secondMainPumpkid.SetActive(false);
+        if (firstMainPumpkid != null)
+        {
+            door.enabled = false;
+            firstMainPumpkid.SetActive(true);
+            secondMainPumpkid.SetActive(false);
+        }
     }
 
   

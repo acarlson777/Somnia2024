@@ -882,36 +882,23 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lines:
   - lines:
-    - Oh, hi there!
-    - Thanks for the rescue.
-    - Now quick, let's get out of here, to the dumbwaiter!
+    - 'Bravo!  You made quick work of that!  Follow me Bea!  '
   audioLines:
   - lines:
     - audio: {fileID: 8300000, guid: 2dba10a6e91dd4459a236b0970f1ac46, type: 3}
       volume: 1
-    - audio: {fileID: 8300000, guid: bc7900ab4d9ae4e9ebe51e63a69e7fec, type: 3}
-      volume: 1
-    - audio: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
-      volume: 1
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortraits: []
-  names: []
+  characterPortraits:
+  - portraits:
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+  names:
+  - names:
+    - Riggs
+  oneCharacter: 1
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
---- !u!114 &120631977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120631952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc8b4c3f26cae04fa6c092f278e4ff2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitIsActive: 0
 --- !u!4 &120631983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 249780237322979926, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
@@ -931,6 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   postPressurePlatesRiggs: {fileID: 120631970}
   riggsManager: {fileID: 625052573}
+  shouldActivateExit: 0
 --- !u!1 &122715407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,7 +1764,7 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   audioClip: {fileID: 8300000, guid: 2d672af686be54a658b38ab2532d9b41, type: 3}
   sceneName: SUPER NEW S5 - (Kitchen) 1
-  enabled: 0
+  enabled: 1
   disabledText:
   - I should look around first.
 --- !u!54 &272203031
@@ -2236,7 +2224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66e9c324336ba847bf7d655175e4b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 120631977}
+  postPressurePlatesRiggsHandler: {fileID: 120631984}
   exit: {fileID: 272203027}
 --- !u!1 &359658778
 GameObject:
@@ -4447,13 +4435,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dreamJournalPopup: 0
   table:
-  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
-    name: Bea
-    text: Gosh darn!
+  - portrait: {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
+    name: Fish Queen
+    text: "Oh dear, that Woebegone is sooooooo predictable.  Of course she\u2019d
+      send a child after me!  No matter. I\u2019ll soon have what I need.  "
     voiceLine: {fileID: 0}
-  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
-    name: Bea
-    text: 'I''m trapped in this dungeon. I guess that just happened :pensive:'
+  - portrait: {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
+    name: Fish Queen
+    text: "As for you\u2026well\u2026you can see on the floor just how long the last
+      prisoner was stuck in here. Tata!"
     voiceLine: {fileID: 0}
   lineNumber: 0
   voiceAudio: []
@@ -9245,9 +9235,24 @@ MonoBehaviour:
   entityMaxSpeed: 2.1
   lines:
   - lines:
-    - Help me!
-    - Help!
-    - Help me!
+    - "Thank goodness she\u2019s gone.  Not sure how much longer I could go on with
+      that stench!   "
+    - "Oi!  Name\u2019s Riggs! What landed you in this lovely corner of the castle?"
+    - "Well\u2026I was supposed to bring that Fishy Queen back upstairs to stand
+      trial.  But\u2026I don\u2019t seem to be doing too well at it.  Why are you
+      here?"
+    - "I\u2019m completely innocent!  Simple case of mistaken identities.  What\u2019s
+      your name then?"
+    - Bea
+    - "Well Miss Bea, I know a way out of here.  I\u2019d be obliged to show you
+      that way if you can get me out of this cell."
+    - "\u2026I suppose that would be the most sensible thing to do right now.  Any
+      ideas on where to start?"
+    - 'I have noticed that whenever the guards come down here to open or close the
+      gates, they stand in very specific places.  '
+  - lines:
+    - Like I said, the guards stand in very specific positions when they come down
+      here.  Do you notice anything on the floor?
   audioLines:
   - lines:
     - audio: {fileID: 8300000, guid: 2dba10a6e91dd4459a236b0970f1ac46, type: 3}
@@ -9256,10 +9261,47 @@ MonoBehaviour:
       volume: 1
     - audio: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
       volume: 1
+    - audio: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
+      volume: 1
+    - audio: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
+      volume: 1
+    - audio: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
+      volume: 1
+    - audio: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
+      volume: 1
+    - audio: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
+      volume: 1
+  - lines:
+    - audio: {fileID: 8300000, guid: 2dba10a6e91dd4459a236b0970f1ac46, type: 3}
+      volume: 1
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortraits: []
-  names: []
+  characterPortraits:
+  - portraits:
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+  - portraits:
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+  names:
+  - names:
+    - Riggs
+    - Riggs
+    - Bea
+    - Riggs
+    - Bea
+    - Riggs
+    - Bea
+    - Riggs
+  - names:
+    - Riggs
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!114 &1246820282
@@ -10145,6 +10187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bars: {fileID: 1358735279}
+  firstMainPumpkid: {fileID: 0}
+  secondMainPumpkid: {fileID: 0}
   door: {fileID: 272203030}
 --- !u!20 &1366904651 stripped
 Camera:
@@ -11181,6 +11225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bars: {fileID: 1587935221}
+  firstMainPumpkid: {fileID: 0}
+  secondMainPumpkid: {fileID: 0}
   door: {fileID: 272203030}
 --- !u!4 &1587935223
 Transform:
