@@ -18288,31 +18288,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 584285819}
-  - component: {fileID: 584285818}
+  - component: {fileID: 584285820}
   m_Layer: 0
   m_Name: clickthrough
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &584285818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584285817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef70fd16d2204c048f0e13410716e80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lines:
-  - lines:
-    - Hello
-    - ZBlah
-  sceneName: Maze
+  m_IsActive: 1
 --- !u!4 &584285819
 Transform:
   m_ObjectHideFlags: 0
@@ -18328,6 +18311,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &584285820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584285817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da2616dd4db3749a20fbac47e95c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamJournalPopup: 0
+  table:
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: "I can\u2019t believe Mr. Fins is gone. I don\u2019t even know where I
+      would begin to look. I guess I can start by asking around here."
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: Wait, is that?
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: Riggs!?
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    name: Riggs
+    text: Bea!
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    name: Riggs
+    text: "You\u2019re okay!"
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    name: Riggs
+    text: "After I gave you my lantern, I got the first train out of there and it
+      took me here, I\u2019ve been here ever since. I\u2019m glad you\u2019re okay
+      though because it looked like something big was headed that way. "
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: Yeah! Something massive filled the sky when the Fish Queen escaped. And
+      we had her cornered too!
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    name: Riggs
+    text: Man, I really hate the Fish Queen. Like, so much.
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: You could say that again. Anyways, would you mind helping me find my doll,
+      I did help you out that dungeon and al-
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    name: Riggs
+    text: "Sure, yeah! I can help. How can I help! I\u2019ll be the most helpful
+      helper that\u2019s ever helped. "
+    voiceLine: {fileID: 0}
+  - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    name: Bea
+    text: Alright then!
+    voiceLine: {fileID: 0}
+  lineNumber: 0
+  voiceAudio: []
+  sceneName: 
 --- !u!1 &587670410
 GameObject:
   m_ObjectHideFlags: 0
@@ -22561,7 +22611,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a168ceb4471944ae8959ade9ce1632b5, type: 2}
+  - {fileID: 2100000, guid: a357325ed7e1b914386ed64caa04a6ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34559,8 +34609,10 @@ MonoBehaviour:
   - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: 877fcc0634cf04aab81fc0ab0b253bf2, type: 3}
-  name: Asoca
+  characterPortraits: []
+  names: []
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!135 &1137745051 stripped
@@ -39572,7 +39624,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a168ceb4471944ae8959ade9ce1632b5, type: 2}
+  - {fileID: 2100000, guid: a357325ed7e1b914386ed64caa04a6ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42425,7 +42477,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a168ceb4471944ae8959ade9ce1632b5, type: 2}
+  - {fileID: 2100000, guid: a357325ed7e1b914386ed64caa04a6ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45030,6 +45082,9 @@ MonoBehaviour:
   layerNum: 3
   anim: {fileID: 1710724885}
   velocityConstant: 1
+  lastSeen: {x: 0, y: 0, z: 0}
+  lastDistanceToMark: 0
+  canSeeMark: 0
 --- !u!1 &1500393320
 GameObject:
   m_ObjectHideFlags: 0
@@ -48515,7 +48570,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a168ceb4471944ae8959ade9ce1632b5, type: 2}
+  - {fileID: 2100000, guid: a357325ed7e1b914386ed64caa04a6ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -55830,6 +55885,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1137745051}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: 877fcc0634cf04aab81fc0ab0b253bf2, type: 3}
@@ -55838,12 +55897,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
-      value: 6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: Well hello there sweet! I'm Asoca. You look confused. Are you confused?
+      value: Sample Text
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
@@ -55947,6 +56014,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[8].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
@@ -57591,6 +57662,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2967650988507564467, guid: ed6b1857a452e4a2c9c329b9c1903287, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed6b1857a452e4a2c9c329b9c1903287, type: 3}
 --- !u!1 &1924044216
@@ -59700,7 +59775,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a168ceb4471944ae8959ade9ce1632b5, type: 2}
+  - {fileID: 2100000, guid: a357325ed7e1b914386ed64caa04a6ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60426,8 +60501,10 @@ MonoBehaviour:
   - lines: []
   timesInteracted: 0
   portrait: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: 877fcc0634cf04aab81fc0ab0b253bf2, type: 3}
-  name: Asoca
+  characterPortraits: []
+  names: []
+  oneCharacter: 0
+  interactedWith: 0
   disabled: 0
   prevLineNumber: 0
 --- !u!65 &2030610156
@@ -60455,6 +60532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44220e407c384f779acb9ef2fbaed52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 0}
 --- !u!135 &2030610158
 SphereCollider:
   m_ObjectHideFlags: 0

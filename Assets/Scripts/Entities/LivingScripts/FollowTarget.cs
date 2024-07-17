@@ -24,10 +24,10 @@ public class FollowTarget : MonoBehaviour
 
 
     //Targeting System Vars
-    private const float speedThreshold = 0.00001f;
-    private Vector3 lastSeen;
-    private float lastDistanceToMark;
-    private bool canSeeMark;
+    private const float speedThreshold = 0.25f;
+    [SerializeField] private Vector3 lastSeen;
+    [SerializeField] private float lastDistanceToMark;
+    [SerializeField] private bool canSeeMark;
     private Rigidbody rb;
 
     // Start is called before the first frame update
