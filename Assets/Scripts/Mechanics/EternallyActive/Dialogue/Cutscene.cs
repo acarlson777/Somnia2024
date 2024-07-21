@@ -9,6 +9,7 @@ public class Cutscene : MonoBehaviour
 
     public string sceneName;
     [SerializeField] VideoPlayer video;
+    private float initialVolume;
     RawImage image;
 
     private void Awake()
@@ -19,16 +20,16 @@ public class Cutscene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         image.gameObject.SetActive(false);
         StartCoroutine(StartCutscene());
         video.loopPointReached += LoadScene;
+        initialVolume = video.GetDirectAudioVolume(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-             
+        video.SetDirectAudioVolume(0, initialVolume * PlayerPrefs.GetFloat("sfxVolume"));
     }
 
     IEnumerator StartCutscene()
