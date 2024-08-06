@@ -19,7 +19,7 @@ public class TownMusic : MonoBehaviour
     IEnumerator DelayedMusicPlay()
     {
         yield return new WaitForSeconds(1);
-        AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrack("commotionSoundTrack", justANormalChild);
+        //AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrack("commotionSoundTrack", justANormalChild);
         AudioManagerSingleton.Instance.FadeInRandomSongFromSoundtrack("wind", 1f, gameObject);
         /* plays commotion foreva!!
         while (true)    

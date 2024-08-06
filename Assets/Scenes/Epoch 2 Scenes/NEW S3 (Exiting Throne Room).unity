@@ -5522,11 +5522,11 @@ MonoBehaviour:
   - portrait: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     name: Riggs
     text: I came straight here after you released me from the dungeon.
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 86a3e909cf895d04796b1d20b3490157, type: 3}
   - portrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
     name: Woebegone
     text: Bea, is it true that it was you who released Riggs from the dungeon?
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 72a4caab34d03cb43bf82dae2e14ce62, type: 3}
   - portrait: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     name: Bea
     text: "Maybe\u2026"
@@ -5539,17 +5539,17 @@ MonoBehaviour:
     name: Woebegone
     text: '*sigh* No matter, my pumpkids have reported to me that the Fish Queen
       was seen escaping the castle grounds through the garden maze.'
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: ded6e74d34c23de4fa574b4fd6c57519, type: 3}
   - portrait: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
     name: Woebegone
     text: Although his acts of theft were definitely treasonous enough to deserve
       his placement in the dungeon, in lieu of missing Pumpkids, Bea take Riggs with
       you and bring back the Fish Queen.
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 72a4caab34d03cb43bf82dae2e14ce62, type: 3}
   - portrait: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     name: Pumpkid
     text: I shall accompany you as well
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
   lineNumber: 0
   voiceAudio: []
   sceneName: 
@@ -12672,6 +12672,9 @@ MonoBehaviour:
   layerNum: 3
   anim: {fileID: 1113036340}
   velocityConstant: 1
+  lastSeen: {x: 0, y: 0, z: 0}
+  lastDistanceToMark: 0
+  canSeeMark: 0
 --- !u!114 &1113036343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15847,7 +15850,7 @@ PrefabInstance:
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].audio
       value: 
-      objectReference: {fileID: 8300000, guid: fb9db7b13082f43669f6bde24e697e62, type: 3}
+      objectReference: {fileID: 8300000, guid: 72a4caab34d03cb43bf82dae2e14ce62, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[1].audio
       value: 
@@ -15859,7 +15862,7 @@ PrefabInstance:
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.data[0].audio
       value: 
-      objectReference: {fileID: 8300000, guid: fb9db7b13082f43669f6bde24e697e62, type: 3}
+      objectReference: {fileID: 8300000, guid: e800b0864a8d4d744b95cc74dbca9b53, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].volume
       value: 1
@@ -16740,7 +16743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: Lets go get her!
+      value: Let's go get her!
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
@@ -16753,10 +16756,10 @@ PrefabInstance:
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].audio
       value: 
-      objectReference: {fileID: 8300000, guid: be9d277dbd22a43fa80b4caa7ff8c055, type: 3}
+      objectReference: {fileID: 8300000, guid: cadc815467178fe45b281f9ce9a5105e, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].volume
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: characterPortraits.Array.data[0].portraits.Array.size
@@ -19925,6 +19928,10 @@ PrefabInstance:
       value: Riggs
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[1]
+      value: Riggs
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -19933,11 +19940,31 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[0].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: cd0f1f2a2c39944498c1ee6023975cac, type: 3}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[0].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 42893ab7714fe0749b952a7a3fe4599e, type: 3}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: characterPortraits.Array.data[0].portraits.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     - target: {fileID: 249780237322979886, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
