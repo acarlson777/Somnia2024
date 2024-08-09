@@ -130,6 +130,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 202904244186162371, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 202904244186162371, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[0]
+      value: Broken and empty. *whimper*
+      objectReference: {fileID: 0}
+    - target: {fileID: 202904244186162371, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Bea
+      objectReference: {fileID: 0}
+    - target: {fileID: 202904244186162371, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     - target: {fileID: 3221049730803079478, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
       propertyPath: popUpName
       value: 3rdDreamJournalPopup
@@ -190,5 +206,76 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3221049732187535133, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221049732217827485, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: itemsToSleep.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221049732217827485, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: itemsToSleep.Array.data[0]
+      value: 
+      objectReference: {fileID: 3221049731965559963}
+    - target: {fileID: 3221049732217827485, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: itemsToSleep.Array.data[1]
+      value: 
+      objectReference: {fileID: 3221049731965559961}
+    - target: {fileID: 3221049732217827485, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: itemsToSleep.Array.data[2]
+      value: 
+      objectReference: {fileID: 3221049731965559961}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+--- !u!1 &3221049731965559961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1590832507337968390, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+  m_PrefabInstance: {fileID: 3221049731965559960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3221049731965559962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221049731965559961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e6c4878b314c15a53a377af7dee2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityCollider: {fileID: 0}
+  interactCollider: {fileID: 0}
+  BoxColliderThickness: 0
+  arrowOffset: {x: 0, y: 0, z: 0}
+  entityMaxSpeed: 2.1
+  lines:
+  - lines:
+    - "Mr. Fins\u2026.are you in here?"
+  - lines:
+    - I already checked here.  Mr. Fins is gone.
+  audioLines:
+  - lines:
+    - audio: {fileID: 0}
+      volume: 0
+  - lines:
+    - audio: {fileID: 0}
+      volume: 0
+  timesInteracted: 0
+  portrait: {fileID: 0}
+  characterPortraits:
+  - portraits:
+    - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+  names:
+  - names:
+    - Bea
+  oneCharacter: 1
+  interactedWith: 0
+  disabled: 0
+  prevLineNumber: 0
+--- !u!1 &3221049731965559963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3221049731900254000, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+  m_PrefabInstance: {fileID: 3221049731965559960}
+  m_PrefabAsset: {fileID: 0}

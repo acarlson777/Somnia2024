@@ -11,6 +11,8 @@ public class SphinxReal : CharacterDialogue, Entity
     public static int lastInteractIndex;
     public GameObject firstNPCs;
     public GameObject secondNPCs;
+    [SerializeField] private GameObject saltEnding;
+    [SerializeField] private Behaviour realDoor;
 
     new public void Interact(Entity entity)
     {
@@ -28,7 +30,13 @@ public class SphinxReal : CharacterDialogue, Entity
                 {
                     //exit.SetActive(false);
                     InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
-                } else
+                } else if (nextScene.Equals("SaltEnding"))
+                {
+                    saltEnding.SetActive(true);
+                    realDoor.enabled = false;
+                    realDoor.gameObject.tag = "Untagged";
+                } 
+                else
                 {
                     firstNPCs.SetActive(false);
                     FindObjectOfType<Player>().gameobjectsTouching.Clear();

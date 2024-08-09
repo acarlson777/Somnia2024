@@ -43,7 +43,7 @@ public class CharacterDialogueClickthrough : MonoBehaviour
 
     public string sceneName;
 
-    private void Start()
+    public void Start()
     {
         StartCoroutine(StartClickThrough());
         audioSource = gameObject.AddComponent<AudioSource>();
