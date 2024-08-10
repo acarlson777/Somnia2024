@@ -18,7 +18,7 @@ public class Woebegone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (character.timesInteracted >= character.lines.Count)
+        if (character.timesInteracted >= 1)
         {
             talkedWith = true;
         }

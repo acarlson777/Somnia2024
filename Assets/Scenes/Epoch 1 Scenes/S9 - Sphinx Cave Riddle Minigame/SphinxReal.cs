@@ -13,10 +13,19 @@ public class SphinxReal : CharacterDialogue, Entity
     public GameObject secondNPCs;
     [SerializeField] private GameObject saltEnding;
     [SerializeField] private Behaviour realDoor;
+    public bool dollComplete = false;
+    private bool changeOccured = false;
 
     new public void Interact(Entity entity)
     {
         timesInteracted = lastInteractIndex;
+        if (!changeOccured)
+        {
+            firstNPCs.SetActive(false);
+            FindObjectOfType<Player>().gameobjectsTouching.Clear();
+            secondNPCs.SetActive(true);
+            changeOccured = true;
+        }
         if (timesInteracted >= lines.Count - 2)
         {
             itemsToCollect.Sort();
@@ -26,21 +35,21 @@ public class SphinxReal : CharacterDialogue, Entity
                 Debug.Log("Yes");
                 timesInteracted = lines.Count - 2;
                 base.Interact(entity);
-                if (!nextScene.Equals(""))
-                {
-                    //exit.SetActive(false);
-                    InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
-                } else if (nextScene.Equals("SaltEnding"))
+                if (nextScene.Equals("SaltEnding"))
                 {
                     saltEnding.SetActive(true);
                     realDoor.enabled = false;
                     realDoor.gameObject.tag = "Untagged";
-                } 
+                }
+                else if (!nextScene.Equals(""))
+                {
+                    //exit.SetActive(false);
+                    InstantiateLoadingScreen.Instance.LoadNewScene(nextScene);
+                }
                 else
                 {
-                    firstNPCs.SetActive(false);
-                    FindObjectOfType<Player>().gameobjectsTouching.Clear();
-                    secondNPCs.SetActive(true);
+                    dollComplete = true;
+                    realDoor.enabled = true;
                 }
                 timesInteracted = lines.Count - 2;
             }

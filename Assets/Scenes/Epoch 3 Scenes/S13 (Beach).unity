@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028452, g: 0.22571452, b: 0.30692238, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802848, g: 0.2257149, b: 0.30692306, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -332,7 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: lines.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: names.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: characterPortrait
@@ -340,27 +344,45 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b685daf488dcf4df296fb715d5a310cf, type: 3}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: audioLines.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: My favorite Patron, Bea. How are you today?
+      value: "Mistress Bea\u2026excuse me\u2026your Highness."
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: It's a lovely day out, go on,have some fun now.
+      value: "Please\u2026call me Mistress Bea.  "
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[2]
-      value: You will always be welcome aboard the Chew-Chew Choo-Choo.
+      value: "Of course.  Mistress Bea\u2026I am so proud of you!  I knew that you
+        would find a way for all of us.  Do you know where we are? "
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[3]
+      value: "This beach\u2026it looks so familiar\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[4]
+      value: This is the shore of good memories.  And it is where you will always
+        be able to find us.  Please, do return anytime you feel in need of a friend.
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.data[0]
@@ -375,8 +397,28 @@ PrefabInstance:
       value: You will always be welcome aboard the Chew-Chew Choo-Choo.
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Wolfgang
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[1]
+      value: Bea
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[2]
+      value: Wolfgang
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[3]
+      value: Bea
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[4]
+      value: Wolfgang
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.size
@@ -385,13 +427,21 @@ PrefabInstance:
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].audio
       value: 
-      objectReference: {fileID: 8300000, guid: 810cab9044e4d4eb18846a79286de850, type: 3}
+      objectReference: {fileID: 8300000, guid: e572d4b7884abb04c96c7a2ec01850bd, type: 3}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[1].audio
       value: 
-      objectReference: {fileID: 8300000, guid: 2ce3c3f93386043fe8653ada35f5e477, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[2].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fba21b6c4b05594a9886c265fde58b5, type: 3}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[3].audio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[4].audio
       value: 
       objectReference: {fileID: 8300000, guid: f1ddc786d85e94eb5a73f5a8a22b1114, type: 3}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
@@ -415,6 +465,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[4].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
@@ -422,6 +480,30 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[1].lines.Array.data[1].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: b685daf488dcf4df296fb715d5a310cf, type: 3}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: b685daf488dcf4df296fb715d5a310cf, type: 3}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - target: {fileID: -675566495498977441, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: b685daf488dcf4df296fb715d5a310cf, type: 3}
     - target: {fileID: 249780237322979886, guid: 1279570255cc1490b9011b5b07d61784, type: 3}
       propertyPath: m_Name
       value: NPC (WOLFGANG)
@@ -733,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: lines.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: characterPortrait
@@ -741,23 +823,31 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: audioLines.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: 'Bea! It''s great to see you here! '
+      value: "Your Highness\u2026thank you for everything."
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: Come on! Help me build this sandcastle. I'll be fun!
+      value: "I know you miss home Riggs.  Let\u2019s find a way to get you there."
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[2]
+      value: Really! Oh thank you! THANK YOU your Highness!
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.data[0]
@@ -768,8 +858,16 @@ PrefabInstance:
       value: Come on! Help me build this sandcastle. I'll be fun!
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[1]
+      value: Bea
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[2]
+      value: Riggs
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.size
@@ -781,6 +879,10 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 2dba10a6e91dd4459a236b0970f1ac46, type: 3}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[1].audio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[2].audio
       value: 
       objectReference: {fileID: 8300000, guid: cdb2c8a98d74c4478ae89592282491b2, type: 3}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
@@ -796,9 +898,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - target: {fileID: -667446111323921937, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     - target: {fileID: 249780237322979880, guid: 949fa25f81c681e4e8bf0fe6d4214d86, type: 3}
       propertyPath: m_Constraints
       value: 126
@@ -1017,28 +1135,41 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: characterPortrait
       value: 
       objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: Bea! Bea! Thanks for helping us in the castle the other day.
+      value: "Your majesty!  I am so grateful for everything you\u2019ve done for
+        the pumpkids.  You have my whole-hearted allegiance!  Thank you!"
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: You're the best!
+      value: "Your Highness\u2026thank you for everything."
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.data[0]
@@ -1049,8 +1180,12 @@ PrefabInstance:
       value: Isn't it beautiful?
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Pumpkid
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.size
@@ -1059,7 +1194,7 @@ PrefabInstance:
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].audio
       value: 
-      objectReference: {fileID: 8300000, guid: be9d277dbd22a43fa80b4caa7ff8c055, type: 3}
+      objectReference: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
     - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[1].audio
       value: 
@@ -1088,6 +1223,14 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[1].lines.Array.data[1].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     - target: {fileID: 249780237322979880, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Constraints
       value: 90
@@ -1102,27 +1245,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.107
+      value: -15.11
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.281
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.219
+      value: -30.23
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2033,24 +2176,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: audioLines.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: Hi Bea. I like the Sweet Abyss more but..
+      value: "You did it Bea!  I mean\u2026your majesty!  Thank you for not giving
+        up on us!"
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
@@ -2073,8 +2233,12 @@ PrefabInstance:
       value: Get it?
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Gumdrop Girl
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.size
@@ -2112,6 +2276,14 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[1].lines.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4412931991452305754, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 877fcc0634cf04aab81fc0ab0b253bf2, type: 3}
     - target: {fileID: 735568086166956956, guid: 5a2f1df52296943c1968d6b8609c50dd, type: 3}
       propertyPath: m_Name
       value: NPC (GUMDROP GIRL)
@@ -5654,7 +5826,7 @@ MonoBehaviour:
   arrowOffset: {x: 0, y: 0, z: 0}
   entityMaxSpeed: 2.1
   audioClip: {fileID: 0}
-  sceneName: Credits
+  sceneName: S1 (Final Bea's Room)
   enabled: 0
   disabledText:
   - Talk to the others, then return here to exit!
@@ -12420,7 +12592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: lines.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: names.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: characterPortrait
@@ -12428,7 +12604,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: audioLines.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.size
@@ -12436,20 +12616,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.size
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[0]
-      value: Dear Bea, you've done so well.
+      value: 'The kingdom has been restored and the future looks promising!  I owe
+        you a debt of gratitude Bea.  I was wrong to have doubted your strength and
+        resolve.  It is clear to me now that I cannot continue as Queen of the realm. 
+        That honor must pass on to you Bea.  '
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[1]
-      value: Your help in my castle and in the Night Whale will not be taken for
-        granted.
+      value: "I\u2026I don\u2019t know what to say."
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: lines.Array.data[0].lines.Array.data[2]
-      value: I will be forever in your debt.
+      value: "You only need say what you feel, for no legacy is so rich as honesty. 
+        You are ready\u2026Queen Bea."
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: lines.Array.data[1].lines.Array.data[0]
@@ -12464,12 +12651,24 @@ PrefabInstance:
       value: I will be forever in your debt.
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Woebegone
+      objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[1]
+      value: Bea
+      objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[2]
+      value: Woebegone
+      objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: audioLines.Array.data[1].lines.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[0].audio
@@ -12478,7 +12677,7 @@ PrefabInstance:
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[1].audio
       value: 
-      objectReference: {fileID: 8300000, guid: 0f5cd41d2cbaa4f3683c3d86ea88cc8f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: audioLines.Array.data[0].lines.Array.data[2].audio
       value: 
@@ -12511,6 +12710,22 @@ PrefabInstance:
       propertyPath: audioLines.Array.data[1].lines.Array.data[1].volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - target: {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
     - target: {fileID: 249780237322979886, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: m_Name
       value: NPC (WOEBEGONE)
