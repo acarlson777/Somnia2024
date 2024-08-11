@@ -11976,6 +11976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (PUMPKID)
       objectReference: {fileID: 0}
+    - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13320,7 +13324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705428720}
   m_LocalRotation: {x: -0, y: 0.65515405, z: -0, w: 0.75549537}
-  m_LocalPosition: {x: -7.14, y: 0, z: 3.23}
+  m_LocalPosition: {x: -5.56, y: 0, z: 3.82}
   m_LocalScale: {x: 0.11443, y: 0.12864, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15942,7 +15946,7 @@ MonoBehaviour:
   entityCollider: {fileID: 0}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
-  arrowOffset: {x: 0, y: 0, z: 0}
+  arrowOffset: {x: 0, y: 1.5, z: 0}
   entityMaxSpeed: 2.1
   lines:
   - lines:
@@ -31065,8 +31069,8 @@ MonoBehaviour:
     - "I don\u2019t understand.  Didn\u2019t you want this to happen?"
     - "Heaven\u2019s no child! Who wants to rot inside a giant whale!?  No, I thought
       that getting ahold of your silly little doll would somehow bring the whale
-      under my control.  After all, the whale seemed to follow wherever it went. 
-      With your doll and the whale to do my bidding, I could have a MONSTROUS reason
+      under my control.  After all, the whale seemed to follow wherever it went. "
+    - "With your doll and the whale to do my bidding, I could have a MONSTROUS reason
       for Queen Woeisme here to hand over her throne.  I didn\u2019t realize that
       the doll in your hands was the only thing keeping the whale at bay."
     - "Oh my goodness.  Well I don\u2019t see much point in explaining things further
@@ -31096,6 +31100,8 @@ MonoBehaviour:
       volume: 1
     - audio: {fileID: 8300000, guid: 45c85bc56747f614e99695b6c64588ec, type: 3}
       volume: 1
+    - audio: {fileID: 8300000, guid: 45c85bc56747f614e99695b6c64588ec, type: 3}
+      volume: 1
     - audio: {fileID: 8300000, guid: c3c81fbd0e83ecc45912e01c4bd0dca4, type: 3}
       volume: 1
     - audio: {fileID: 8300000, guid: ded6e74d34c23de4fa574b4fd6c57519, type: 3}
@@ -31117,6 +31123,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     - {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
     - {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
+    - {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
     - {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
     - {fileID: 21300000, guid: 8d8689e90bb8946fa8016c38435bc81a, type: 3}
   - portraits:
@@ -31129,6 +31136,7 @@ MonoBehaviour:
     - Woebegone
     - Fish Queen
     - Bea
+    - Fish Queen
     - Fish Queen
     - Fish Queen
     - Woebegone
@@ -31356,7 +31364,7 @@ MonoBehaviour:
   entityCollider: {fileID: 0}
   interactCollider: {fileID: 0}
   BoxColliderThickness: 0
-  arrowOffset: {x: 0, y: 0, z: 0}
+  arrowOffset: {x: 0, y: 1.5, z: 0}
   entityMaxSpeed: 2.1
   lines:
   - lines:
@@ -41106,14 +41114,16 @@ MonoBehaviour:
     - "\u2026 "
     - "Right.  I totally understand why you wouldn\u2019t want to say anything to
       me.  But please\u2026allow me to explain.  You see I\u2019m not from this world
-      either.  I\u2019ve been stuck here for quite some time.  The Fish Queen promised
-      that she could get me home if I got her your doll.  I didn\u2019t mean for
-      all of this to happen. "
+      either. "
+    - "I\u2019ve been stuck here for quite some time.  The Fish Queen promised that
+      she could get me home if I got her your doll.  I didn\u2019t mean for all of
+      this to happen. "
     - Why play games though?  Why help me and then betray me like that?
     - "When I met you in the dungeon I didn\u2019t know you had the doll.  I didn\u2019t
-      find out it was yours until we met back up in the Sweet Abyss.  I tried really
-      hard to sneak it away, but that Mr. Salt is so demanding!  I wish things went
-      down differently.  This is all my fault, I\u2019m sorry Bea. "
+      find out it was yours until we met back up in the Sweet Abyss."
+    - " I tried really hard to sneak it away, but that Mr. Salt is so demanding! 
+      I wish things went down differently.  This is all my fault, I\u2019m sorry
+      Bea. "
     - "Well\u2026you may be right about that.  I don\u2019t feel too inclined to
       forgive you, but I do understand what it\u2019s like to miss what you had. 
       There\u2019s no cause to trust you, but if you would help me find Mr. Salt,
@@ -41134,9 +41144,13 @@ MonoBehaviour:
       volume: 1
     - audio: {fileID: 8300000, guid: 24bee941e9f6a514386325eee5d1c9a4, type: 3}
       volume: 1
+    - audio: {fileID: 8300000, guid: 86a3e909cf895d04796b1d20b3490157, type: 3}
+      volume: 1
     - audio: {fileID: 0}
       volume: 1
     - audio: {fileID: 8300000, guid: cd0f1f2a2c39944498c1ee6023975cac, type: 3}
+      volume: 1
+    - audio: {fileID: 8300000, guid: 86a3e909cf895d04796b1d20b3490157, type: 3}
       volume: 1
     - audio: {fileID: 0}
       volume: 1
@@ -41160,7 +41174,9 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
     - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
     - {fileID: 21300000, guid: 42fba0879172c4a67b6d4e6b960e46de, type: 3}
@@ -41175,7 +41191,9 @@ MonoBehaviour:
     - Riggs
     - Bea
     - Riggs
+    - Riggs
     - Bea
+    - Riggs
     - Riggs
     - Bea
     - Riggs
@@ -42271,7 +42289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095031037}
   m_LocalRotation: {x: -0, y: 0.65515405, z: -0, w: 0.75549537}
-  m_LocalPosition: {x: -7.14, y: 0, z: 3.23}
+  m_LocalPosition: {x: -7.53, y: 0, z: 3.87}
   m_LocalScale: {x: 0.11443, y: 0.12864, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42867,7 +42885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127265953}
   m_LocalRotation: {x: -0, y: 0.4186661, z: -0, w: 0.9081403}
-  m_LocalPosition: {x: -8.6, y: 0, z: 0.94}
+  m_LocalPosition: {x: -8.63, y: 0, z: -0.13}
   m_LocalScale: {x: 0.089760005, y: 0.11921, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
