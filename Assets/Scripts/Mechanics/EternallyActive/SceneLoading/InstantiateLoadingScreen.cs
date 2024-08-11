@@ -21,7 +21,7 @@ public class InstantiateLoadingScreen : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         
-        loadingScreenPrefab = Resources.Load("LoadingScreen") as GameObject;
+        loadingScreenPrefab = Resources.Load("LoadingScreenParent") as GameObject;
         sceneLoaderPrefab = Resources.Load("Scene Loader") as GameObject;
         loadingScreenCanvasPrefab = Resources.Load("LoadingScreenCanvas") as GameObject;
     }

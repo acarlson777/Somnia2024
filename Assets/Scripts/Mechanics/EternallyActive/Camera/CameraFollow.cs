@@ -6,7 +6,9 @@ public class CameraFollow : MonoBehaviour
 {
     // CameraFollow converges on the player's position with an offset according to a constant
     public float convergeConstant;
-    public Vector3 offset;
+    private Vector3 offset;
+    public Vector3 dialogueOffset;
+    public Vector3 nonDialogueOffset;
     public GameObject objectToFollow;
     private Transform objectTransform;
     private Vector3 target;
@@ -16,8 +18,14 @@ public class CameraFollow : MonoBehaviour
     private float timeLeft = 0;
 
 
+    private GameObject characterDialogueBox;
+
+    //Make camera move down when dialogue is triggered when CharacterDialogueBox gameobjectr is found by name
+
+
     private void Start()
     {
+        offset = nonDialogueOffset;
         transform.position = objectToFollow.transform.position + offset;
         objectTransform = objectToFollow.transform;
     }
@@ -25,6 +33,18 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
         // Update Target Vec3
+        characterDialogueBox = GameObject.Find("CharacterDialogueBox");
+        if (characterDialogueBox != null)
+        {
+            offset = dialogueOffset;
+            convergeConstant = 4.5f;
+
+        } else
+        {
+            offset = nonDialogueOffset;
+            convergeConstant = 4.5f;
+        }
+
 
         target.x = objectTransform.position.x;
         target.z = objectTransform.position.z;

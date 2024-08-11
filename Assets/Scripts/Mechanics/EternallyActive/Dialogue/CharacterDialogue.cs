@@ -20,7 +20,7 @@ public class CharacterDialogue : InteractableObject, Entity
     public bool disabled = false;
 
     private AudioSource audioSource;
-    CharacterDialogueScript character;
+    public CharacterDialogueScript character;
     public int prevLineNumber;
 
     new protected void Start()

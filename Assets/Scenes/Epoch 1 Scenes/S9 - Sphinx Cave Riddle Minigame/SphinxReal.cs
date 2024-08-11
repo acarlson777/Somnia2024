@@ -19,12 +19,14 @@ public class SphinxReal : CharacterDialogue, Entity
     new public void Interact(Entity entity)
     {
         timesInteracted = lastInteractIndex;
-        if (!changeOccured)
+        if (!changeOccured  && !nextScene.Equals("SaltEnding"))
         {
+            /*
             firstNPCs.SetActive(false);
             FindObjectOfType<Player>().gameobjectsTouching.Clear();
             secondNPCs.SetActive(true);
             changeOccured = true;
+            */
         }
         if (timesInteracted >= lines.Count - 2)
         {
