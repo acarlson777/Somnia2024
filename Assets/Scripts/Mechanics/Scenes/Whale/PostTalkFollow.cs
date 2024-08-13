@@ -8,8 +8,11 @@ public class PostTalkFollow : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] CharacterDialogue characterDialogue;
+    [SerializeField] SphinxReal sphinxReal;
     [SerializeField] private GameObject preTalkCharacter;
     [SerializeField] private GameObject postTalkCharacter;
+    [SerializeField] private GameObject postTalkCharacterChild;
+    [SerializeField] private RuntimeAnimatorController baldCharacter;
 
     // Update is called once per frame  
     void Update()
@@ -20,6 +23,14 @@ public class PostTalkFollow : MonoBehaviour
             {
                 preTalkCharacter.SetActive(false);
                 postTalkCharacter.SetActive(true);
+            }
+        }
+
+        if (sphinxReal.character != null)
+        {
+            if (sphinxReal.character.lineNumber == 5)
+            {
+                postTalkCharacterChild.GetComponent<Animator>().runtimeAnimatorController = baldCharacter;
             }
         }
     }

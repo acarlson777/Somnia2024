@@ -8879,8 +8879,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterDialogue: {fileID: 2027026726}
+  sphinxReal: {fileID: 1958795037}
   preTalkCharacter: {fileID: 2027026725}
   postTalkCharacter: {fileID: 1002419349}
+  postTalkCharacterChild: {fileID: 1002419347}
+  baldCharacter: {fileID: 9100000, guid: f7519bd883565044889ebd311654bdd9, type: 2}
 --- !u!1 &491629099
 GameObject:
   m_ObjectHideFlags: 0
@@ -15788,24 +15791,26 @@ MonoBehaviour:
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: e86303d9ece77204e9ee3cad241e143f, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: ded6e74d34c23de4fa574b4fd6c57519, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: c3c81fbd0e83ecc45912e01c4bd0dca4, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: e800b0864a8d4d744b95cc74dbca9b53, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: bc5107eb077b6a94c8cc95ab699c3402, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
   - lines:
     - audio: {fileID: 8300000, guid: ded6e74d34c23de4fa574b4fd6c57519, type: 3}
-      volume: 0
+      volume: 0.4
+    - audio: {fileID: 8300000, guid: ded6e74d34c23de4fa574b4fd6c57519, type: 3}
+      volume: 0.4
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortraits:
@@ -15821,6 +15826,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
   - portraits:
     - {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
+    - {fileID: 21300000, guid: f0851fb242a9d4b57b54846434a0e051, type: 3}
   names:
   - names:
     - Bea
@@ -15833,6 +15839,7 @@ MonoBehaviour:
     - Fish Queen
     - Bea
   - names:
+    - Woebegone
     - Woebegone
   oneCharacter: 0
   interactedWith: 0
@@ -29083,6 +29090,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 4bbc353ebb6605843b98ae738ac8d81e, type: 2}
     - target: {fileID: 249780237553440006, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 249780237553440006, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -29097,7 +29108,7 @@ PrefabInstance:
     - target: {fileID: 249780237553440007, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
+      objectReference: {fileID: 2100000, guid: c658fa5eb85ca4169ab20cd5e1d01b8a, type: 2}
     m_RemovedComponents:
     - {fileID: -8811512621842577148, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
     - {fileID: 1381094356444603669, guid: 655368b0aec8e472d8e0917b40accb82, type: 3}
@@ -30985,20 +30996,20 @@ MonoBehaviour:
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: 8fba21b6c4b05594a9886c265fde58b5, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: e8c1b72bc5488ac4ebec164f9a3c71c5, type: 3}
-      volume: 0
+      volume: 0.4
   - lines:
     - audio: {fileID: 8300000, guid: 2d4aaa4667b32684aa9bc9f445f25d6d, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: 4ff580bb6abe7464989080bb0b6f99a1, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: 8fba21b6c4b05594a9886c265fde58b5, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: e8c1b72bc5488ac4ebec164f9a3c71c5, type: 3}
-      volume: 0
+      volume: 0.4
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortraits:
@@ -31441,19 +31452,19 @@ MonoBehaviour:
   audioLines:
   - lines:
     - audio: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: cadc815467178fe45b281f9ce9a5105e, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: cadc815467178fe45b281f9ce9a5105e, type: 3}
-      volume: 0
+      volume: 0.4
   - lines:
     - audio: {fileID: 8300000, guid: cadc815467178fe45b281f9ce9a5105e, type: 3}
       volume: 0
@@ -38671,30 +38682,30 @@ MonoBehaviour:
   audioLines:
   - lines:
     - audio: {fileID: 8300000, guid: faac20f455ec25d4f8cb14a0aacb4cdd, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: 24bee941e9f6a514386325eee5d1c9a4, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: 515b738b49236074aa85f4f09db850d3, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: 86a3e909cf895d04796b1d20b3490157, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
     - audio: {fileID: 8300000, guid: cd0f1f2a2c39944498c1ee6023975cac, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 8300000, guid: cd5f358d30e43c445aa264c082e575c7, type: 3}
-      volume: 0
+      volume: 0.4
     - audio: {fileID: 0}
       volume: 0
   - lines:
-    - audio: {fileID: 0}
-      volume: 0
-    - audio: {fileID: 0}
-      volume: 0
+    - audio: {fileID: 8300000, guid: 515b738b49236074aa85f4f09db850d3, type: 3}
+      volume: 0.4
+    - audio: {fileID: 8300000, guid: faac20f455ec25d4f8cb14a0aacb4cdd, type: 3}
+      volume: 0.4
   timesInteracted: 0
   portrait: {fileID: 0}
   characterPortraits:
