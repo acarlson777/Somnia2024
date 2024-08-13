@@ -25,7 +25,7 @@ public class SubmitPasswordButton : InteractableObject, Entity
 
         if (entity is Player)
         {
-            List<string> dialogueToOutput = new List<string>(){"submitting rune pattern..."};
+            List<string> dialogueToOutput = new List<string>(){"*Submitting Rune Pattern*"};
             
 
             List<string> password = new List<string>();
@@ -57,10 +57,10 @@ public class SubmitPasswordButton : InteractableObject, Entity
 
             if (passwordWorked)
             {
-                dialogueToOutput.Add("Patterns detected");
+                dialogueToOutput.Add("*Rune Pattern Detected*");
             } else
             {
-                dialogueToOutput.Add("No patterns found");
+                dialogueToOutput.Add("*No Rune Pattern Detected*");
             }
 
             DialogueManager.PopDialogue(dialogueToOutput.ToArray());

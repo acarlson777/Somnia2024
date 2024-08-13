@@ -74,7 +74,7 @@ public class PressurePlate : MonoBehaviour
         correctBlock.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         correctBlock.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         lockedIn = true;
-        AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("button", gameObject);
+        //AudioManagerSingleton.Instance.PlayRandomSongFromSoundtrackOnce("button", gameObject);
     }
     
 

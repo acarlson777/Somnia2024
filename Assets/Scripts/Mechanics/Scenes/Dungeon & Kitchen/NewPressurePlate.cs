@@ -11,13 +11,12 @@ public class NewPressurePlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (numberOfThingsOnPressurePlate == 0)
-        {
-            AudioManagerSingleton.Instance.Play("lever", gameObject);
-        }
-        
         if ((other.CompareTag("PistonObject") || other.name.Equals("Bea")) && !other.isTrigger)
         {
+            if (numberOfThingsOnPressurePlate == 0)
+            {
+                AudioManagerSingleton.Instance.Play("lever", gameObject);
+            }
             numberOfThingsOnPressurePlate++;
         }
     }

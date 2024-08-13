@@ -73,6 +73,11 @@ public class Joystick : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        JoystickInput.joystickDirection = Vector3.zero;
+    }
+
     private void Update()
     {
          

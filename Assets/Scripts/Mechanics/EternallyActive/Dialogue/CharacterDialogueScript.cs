@@ -111,7 +111,7 @@ public class CharacterDialogueScript : MonoBehaviour
     // progresses text box on click / autofills text on click
     void TextOnClick()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //MAKE IT WORK WITH MOBILE TOO THANKS - CAI
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameObject.Find("SettingsButtonButton").GetComponent<SettingsButtonScript>().isOn) //MAKE IT WORK WITH MOBILE TOO THANKS - CAI
         {
             if (dialogueText.text != numberOfLines[lineNumber])
             {
@@ -166,7 +166,6 @@ public class CharacterDialogueScript : MonoBehaviour
             {
                 Image portrait = GameObject.Find("Portraits").GetComponent<Image>();
                 TextMeshProUGUI nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
-                print("PLEASE WORK");
                 nameText.text = characterNames[lineNumber];
                 portrait.sprite = characterPortraits[lineNumber];
             }

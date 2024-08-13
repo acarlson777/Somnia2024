@@ -146,6 +146,14 @@ PrefabInstance:
       propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: abec0db83ea6340e296625baac8c68a7, type: 3}
+    - target: {fileID: 1844053000321915697, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: table.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844053000321915697, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: table.Array.data[0].text
+      value: "Mr. Fins\u2026.are you in here?"
+      objectReference: {fileID: 0}
     - target: {fileID: 3221049730803079478, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
       propertyPath: popUpName
       value: 3rdDreamJournalPopup
@@ -234,6 +242,10 @@ PrefabInstance:
       propertyPath: itemsToSleep.Array.data[2]
       value: 
       objectReference: {fileID: 3221049731965559961}
+    - target: {fileID: 4823347791537836814, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2adca770d9ea7504aaae5ae21c0d06ef, type: 3}
 --- !u!1 &3221049731965559961 stripped
@@ -281,6 +293,7 @@ MonoBehaviour:
   oneCharacter: 1
   interactedWith: 0
   disabled: 0
+  audioSource: {fileID: 0}
   character: {fileID: 0}
   prevLineNumber: 0
 --- !u!1 &3221049731965559963 stripped

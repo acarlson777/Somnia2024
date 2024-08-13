@@ -47,17 +47,15 @@ public class PressurePlatePrisonBarsButton : InteractableObject, Entity
             CharacterDialogueManager.PopCharacterDialogue(lines[timesInteracted].lines);
             timesInteracted++;
 
-
-        }
-
-        if (GameObject.Find("CharacterDialogueBox") != null && !portraitSet && interactedWith)
-        {
-            portrait = GameObject.Find("Portraits").GetComponent<Image>();
-            nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
-            nameText.text = name;
-            portrait.sprite = characterPortrait;
-            portraitSet = true;
-            interactedWith = false;
+            if (GameObject.Find("CharacterDialogueBox") != null && !portraitSet && interactedWith)
+            {
+                portrait = GameObject.Find("Portraits").GetComponent<Image>();
+                nameText = GameObject.Find("NameText").GetComponent<TextMeshProUGUI>();
+                nameText.text = name;
+                portrait.sprite = characterPortrait;
+                portraitSet = true;
+                interactedWith = false;
+            }
         }
     }
 

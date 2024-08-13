@@ -80,6 +80,7 @@ public class CharacterDialogueManager : MonoBehaviour
         }
 #endif
         dialogueBox = Instantiate(dialogueBoxPrefab, canvas.transform);
+        dialogueBox.transform.parent = GameObject.Find("DialogueContainer").transform;
         dialogueBox.name = "CharacterDialogueBox"; // Set its name to "CharacterDialogueBox"
         dialogueBox.GetComponent<CharacterDialogueScript>().SetText(textLines, names, characterPortraits);
         return true;

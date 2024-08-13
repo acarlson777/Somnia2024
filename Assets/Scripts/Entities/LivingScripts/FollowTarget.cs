@@ -52,7 +52,7 @@ public class FollowTarget : MonoBehaviour
         }
         //print("Can See Mark:" + canSeeMark);
         bool shouldMoveToLastSeen = (canSeeMark && lastDistanceToMark > TargetDistance) || (!canSeeMark);
-        print("Should Move To: " + shouldMoveToLastSeen);
+        //print("Should Move To: " + shouldMoveToLastSeen);
         if (shouldMoveToLastSeen)
         {
             if (canSeeMark)

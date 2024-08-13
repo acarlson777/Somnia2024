@@ -71,6 +71,20 @@ public class SphinxReal : CharacterDialogue, Entity
     new private void Update()
     {
         base.Update();
+        if (character != null)
+        {
+            if (prevLineNumber != character.lineNumber)
+            {
+                audioSource.clip = audioLines[timesInteracted - 1].lines[character.lineNumber].audio;
+                audioSource.volume = audioLines[timesInteracted - 1].lines[character.lineNumber].volume * PlayerPrefs.GetFloat("sfxVolume");
+                audioSource.Play();
+                prevLineNumber = character.lineNumber;
+            }
+        }
+        else
+        {
+            audioSource.Stop();
+        }
         itemsBeaHasCollected = Inventory.inventory;
     }
 
