@@ -20,9 +20,30 @@ public class ItemNPC : CharacterDialogue, Entity
                 timesInteracted = lines.Count - 1;
             }
             base.Interact(entity);
-            timesInteracted = lines.Count - 2;
+            //timesInteracted = lines.Count - 2;
             return;
         }
         base.Interact(entity);
+    }
+
+    new private void Update()
+    {
+        base.Update();
+        if (character != null)
+        {
+            if (prevLineNumber != character.lineNumber)
+            {
+                print(timesInteracted);
+                print(character.lineNumber);
+                audioSource.clip = audioLines[timesInteracted - 1].lines[character.lineNumber].audio;
+                audioSource.volume = audioLines[timesInteracted - 1].lines[character.lineNumber].volume * PlayerPrefs.GetFloat("sfxVolume");
+                audioSource.Play();
+                prevLineNumber = character.lineNumber;
+            }
+        }
+        else
+        {
+            audioSource.Stop();
+        }
     }
 }

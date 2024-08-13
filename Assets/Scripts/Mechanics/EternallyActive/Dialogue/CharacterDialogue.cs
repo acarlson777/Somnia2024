@@ -82,6 +82,8 @@ public class CharacterDialogue : InteractableObject, Entity
         {
             if (prevLineNumber != character.lineNumber)
             {
+                print(timesInteracted);
+                print(character.lineNumber);
                 audioSource.clip = audioLines[timesInteracted-1].lines[character.lineNumber].audio;
                 audioSource.volume = audioLines[timesInteracted - 1].lines[character.lineNumber].volume * PlayerPrefs.GetFloat("sfxVolume");
                 audioSource.Play();

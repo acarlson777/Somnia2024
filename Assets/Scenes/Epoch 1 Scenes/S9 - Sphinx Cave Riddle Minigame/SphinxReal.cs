@@ -53,13 +53,13 @@ public class SphinxReal : CharacterDialogue, Entity
                     dollComplete = true;
                     realDoor.enabled = true;
                 }
-                timesInteracted = lines.Count - 2;
+                //timesInteracted = lines.Count - 2;
             }
             else { 
                 Debug.Log("No");
                 timesInteracted = lines.Count - 1;
                 base.Interact(entity);
-                timesInteracted = lines.Count - 2;
+                //timesInteracted = lines.Count - 2;
             }
             lastInteractIndex = timesInteracted;
             return;
