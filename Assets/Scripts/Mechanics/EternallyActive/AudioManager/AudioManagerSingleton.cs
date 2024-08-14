@@ -96,7 +96,7 @@ public class AudioManagerSingleton : MonoBehaviour
         FindSoundOfName(name).FadeOut(seconds);
     }
 
-    public void FadeOutAndStopSoundtrack(string name, float seconds)
+    public void FadeOutAndStopSoundtrack(string name, float seconds) //SOMETHINGS WRONG HERE WITH THE NULL
     {
         if (name == null || name.Equals("")) return;
         currentSong = null;
@@ -132,7 +132,7 @@ public class AudioManagerSingleton : MonoBehaviour
         allSounds.AddRange(sfxList);
         foreach (SfxInstance sfx in sfxList)
         {
-            print(sfx.toString());
+            //print(sfx.toString());
         }
         allSounds.AddRange(songList);
         allSounds.AddRange(soundtrackList);

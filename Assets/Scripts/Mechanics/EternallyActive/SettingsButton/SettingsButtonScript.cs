@@ -32,9 +32,13 @@ public class SettingsButtonScript : MonoBehaviour
     {
         isOn = !isOn;
         settingsScreen.SetActive(isOn);
-        try { 
-        joystick.SetActive(!isOn);
-        interactableButton.SetActive(!isOn);
+        try {
+            GameObject dialogueBox = GameObject.Find("CharacterDialogueBox");
+            if (dialogueBox == null && isOn == false)
+            {
+                joystick.SetActive(!isOn);
+                interactableButton.SetActive(!isOn);
+            }
         } catch { }
     }
 }

@@ -35,7 +35,7 @@ public class BeasBedScript : InteractableObject, Entity
             {
                 if (gameObject.GetComponent<SceneClickThrough>() != null) gameObject.GetComponent<SceneClickThrough>().StartClickThrough();
                 else InstantiateLoadingScreen.Instance.LoadNewScene(sceneToLoad);
-                AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasRoom", 1);
+                //AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasRoom", 1);
             } else
             {
                 DialogueManager.PopDialogue(not_ready_dialogue);

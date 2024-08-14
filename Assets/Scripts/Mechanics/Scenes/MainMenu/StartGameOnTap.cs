@@ -34,7 +34,7 @@ public class StartGameOnTap : MonoBehaviour
         
         if (!SceneLoader.fading)
         {
-            AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
+            //AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack("BeasThemeSoundtrack", 1f);
             SaveAndLoadManager.LoadSavedScene(); // if there is no saved scene then it defaults to tutorial menu (build index 0)
             tapped = true;
         }
