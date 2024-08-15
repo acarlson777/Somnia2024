@@ -6,6 +6,7 @@ public class AudioManagerSingleton : MonoBehaviour
     //SINGLETON CODE
     public static AudioManagerSingleton Instance { get; private set; }
     public static string currentSong { get; private set; }
+    public static string currentSoundtrack { get; private set; }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -75,6 +76,7 @@ public class AudioManagerSingleton : MonoBehaviour
     public void FadeInRandomSongFromSoundtrack(string name, float seconds, GameObject caller)
     {
         currentSong = name;
+        currentSoundtrack = name;
         Soundtrack soundtrack = (Soundtrack) FindSoundOfName(name);
         soundtrack.SetRandomSong();
         soundtrack.FadeIn(seconds, caller);
@@ -98,8 +100,11 @@ public class AudioManagerSingleton : MonoBehaviour
 
     public void FadeOutAndStopSoundtrack(string name, float seconds) //SOMETHINGS WRONG HERE WITH THE NULL
     {
+        print(name);
         if (name == null || name.Equals("")) return;
         currentSong = null;
+        currentSoundtrack = null;
+        print(name);
         Debug.Log("Fading out and stopping " + name);
         Soundtrack soundtrack = (Soundtrack)FindSoundOfName(name);
         soundtrack.FadeOutAndStop(seconds);

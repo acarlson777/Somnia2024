@@ -52,7 +52,7 @@ public class InstantiateLoadingScreen : MonoBehaviour
 
     public void LoadNewScene(string newScene)
     {
-        AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack(AudioManagerSingleton.currentSong, 1);
+        AudioManagerSingleton.Instance.FadeOutAndStopSoundtrack(AudioManagerSingleton.currentSoundtrack, 1);
         if (newScene == mainMenuName && GetActiveSceneName() != newScene)
         {
             // we are loading from a random scene to the main menu
