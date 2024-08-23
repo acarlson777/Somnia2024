@@ -898,6 +898,7 @@ MonoBehaviour:
   oneCharacter: 1
   interactedWith: 0
   disabled: 0
+  audioSource: {fileID: 0}
   character: {fileID: 0}
   prevLineNumber: 0
 --- !u!4 &120631983 stripped
@@ -9261,6 +9262,7 @@ MonoBehaviour:
   oneCharacter: 0
   interactedWith: 0
   disabled: 0
+  audioSource: {fileID: 0}
   character: {fileID: 0}
   prevLineNumber: 0
 --- !u!114 &1246820282
@@ -12024,6 +12026,124 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: oneCharacter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[0]
+      value: Welcome to the dungeon!
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[1]
+      value: 'If I''m recalling it correctly, Queen Woebegone would usually bring
+        3 guards down here to step on the pressure plates. '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[0].lines.Array.data[2]
+      value: I'm not quite sure what to do...
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[0]
+      value: Is there any way to be in 3 places at once?
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[1]
+      value: 'If I''m recalling it correctly, Queen Woebegone would usually bring
+        3 guards down here to step on the pressure plates. '
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: lines.Array.data[1].lines.Array.data[2]
+      value: I'm not quite sure what to do...
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: names.Array.data[0].names.Array.data[0]
+      value: Pumpkid
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[0].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[1].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: cadc815467178fe45b281f9ce9a5105e, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[2].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[0].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: cadc815467178fe45b281f9ce9a5105e, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[1].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[2].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: e0a626d334ed5d348bfcef3c4970b9e6, type: 3}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[0].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[1].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[0].lines.Array.data[2].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: audioLines.Array.data[1].lines.Array.data[0].volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+      propertyPath: characterPortraits.Array.data[0].portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ae00d7bae3d42c0a4c96f5f4663f7d, type: 3}
     - target: {fileID: 249780237322979886, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_Name
       value: NPC (PUMPKID))
@@ -12108,8 +12228,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2874158cab357e24da71d62adaae79b4, type: 2}
-    m_RemovedComponents:
-    - {fileID: -7318474278654654965, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
 --- !u!1 &1751233598
 GameObject:
