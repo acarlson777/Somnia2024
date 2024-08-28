@@ -4155,6 +4155,7 @@ Transform:
   - {fileID: 665036940}
   - {fileID: 1033077348}
   - {fileID: 1316134798}
+  - {fileID: 1905376102}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12170,15 +12171,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.03
+      value: -10.222
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.31
+      value: 26.8
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.42
+      value: -22.492
       objectReference: {fileID: 0}
     - target: {fileID: 249780237322979926, guid: 530d3cfc24cb04090b8579e7234e1563, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13219,6 +13220,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899030332}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1905376101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1905376102}
+  - component: {fileID: 1905376103}
+  m_Layer: 0
+  m_Name: CornerCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1905376102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905376101}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 4.42, y: 0.39999962, z: -1.79}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 623541061}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1905376103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905376101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.15, y: 5.47, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1911427013
 GameObject:
   m_ObjectHideFlags: 0
